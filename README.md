@@ -1,4 +1,4 @@
-# TechWeb Group Project 22/23
+# TechWeb Group Project
 Repository for TechWeb's Project 22/23 - Università degli Studi di Padova
 
 Members: Michael Amista', Marco Brigo, Fabio Pantaleo, Filippo Sabbadin
