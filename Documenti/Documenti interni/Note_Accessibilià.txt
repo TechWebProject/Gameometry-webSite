@@ -1,0 +1,13 @@
+- slide automatiche (es. scrollBar in index): devono essere spiegate (es. italo.it dice "slide 1 di 2" --> non sufficiente)
+  NB: è necessario individuare un modo di riconoscere queste slide automatiche 
+
+- è necessario avere una barra di ricerca con completamento automatico per facilitare la ricerca stessa
+  ATTENZIONE: prestare molta attenzione con gli input (es. iliad.it nel momento in cui si inserisce un numero, ad ogni cifra 
+  parte lo screen reader che ripete lo scopo di quella casella di input --> 10 volte) 
+
+- i menu a tendina e tutte le componenti del sito devono risultare navigabili --> accessibili da uno screen reader
+  es. la navigazione tramite tab deve essere supportata (il calendario di italo.it non è navigabile e quindi risulta inaccessibile) 
+
+- intestazioni fondamentali (h1,h2,..hn) --> permettono di intuire dove un blocco inizia e finisce
+
+- ogni parte del sito deve essere *facilmente raggiungibile* --> evitare giri dell'oca
