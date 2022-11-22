@@ -3,44 +3,44 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>NomeSito</title>
+    <title>Gameometry</title>
     <meta name="description" content="Questa pagina è dedicata al mondo videoludico e, più nello specifico, alle recensioni legate a questo tipo di mondo" />
     <meta name="keywords" content="videogioco, videogiochi, console, pc, computer, recensione, recensioni, voto, notizie" />
     <meta name="author" content="Michael Amista', Marco Brigo, Fabio Pantaleo, Filippo Sabbadin" />
     
-    <link rel="stylesheet" href="#" media="handled, screen" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" media="handled, screen" /> 
     <link rel="stylesheet" href="#" media="handled, screen and (max-width:600px), only screen and (max-device-width: 600px)" /> 
     <link rel="stylesheet" href="#" media="print" />
 
-    <link rel="shortcut icon" type="image/png" href="#" />  
+    <link rel="shortcut icon" type="image/png" href="../Progetto/Immagini/play_logo.png" />  
 </head>
 <body>
-    <header>
-        <h1>NomeSito</h1>
-        <div id="logoPrincipale">
-            <a href="index.html"><img src="#" alt="NomeSito"/></a>
-        </div>
-        <nav id="menu"> 
-            <ul>
-                <li><a href="videogiochi.html">Videogiochi</a></li>  
-                <li><a href="recensioni.html">Recensioni</a></li>
-                <li><a href="notizie.html">Notizie</a></li>
-                <li><a href="eventi.html">Eventi</a></li>
-            </ul>
+    <div id="header">
+        <header>
+            <h1>Gameometry</h1>
+            <a id="logoSito" href="index.html"></a>
+            <nav id="menu"> 
+                <ul>
+                    <li><a href="videogiochi.html">VIDEOGIOCHI</a></li>  
+                    <li><a href="recensioni.html">RECENSIONI</a></li>
+                    <li><a href="notizie.html">NOTIZIE</a></li>
+                    <li><a href="eventi.html">EVENTI</a></li>
+                </ul>
+            </nav>
+            <div id="ricerca"><input id="searchBar" type="text" placeholder="Cerca nel sito"></input></div> 
+            <a class="areaRiservata" href="#"></a>
+        </header>
+        <nav id="breadcrumb"> 
+            <p>Ti trovi in: <span lang="en">Home</span></p> 
         </nav>
-        <div id="funzioniUtente">
-            <ul>
-                <li id="ricerca"><input type="text" placeholder="Cerca nel sito"></input></li> <!-- inserire immagine laterale (lente) -->
-                <li id="areaRiservata"></li> <!-- inserire immagine -->
-            </ul> 
-        </div>
-    </header>
-    <nav id="breadcrumb"> 
-        <p>Ti trovi in: <span lang="en">Home</span></p> 
-    </nav> 
+    </div> 
     <main>
         <div id="scrollBar">
-            <div id="scrollBar-items">  <!-- https://www.youtube.com/watch?v=WCkVw32wp2E -->
+            <div id="scrollBar-items">  
                 <div class="item">Box1</div>
                 <div class="item">Box2</div>
                 <div class="item">Box3</div>
@@ -58,95 +58,130 @@
             <div id="frecciaDx"> <!-- immagine freccia dx --> </div>
         </div>
         <div id="news-section">
+            <h2>ULTIME NEWS</h2>
+            <div class="news-grid-container">
+                <div class="news1">
+                    <div class="mainnewstitle">Morbius Released for the Nintendo DS</div>
+                </div>
+                <div class="news2"><div class="sidenewstitle">News 2</div></div>
+                <div class="news3">News 3</div>
+                <div class="news4">News 4</div>
+                <div class="news5">News 5</div>
+            </div>
         </div>
         <div id="ultimeRecensioni">  
+            <h2>ULTIME RECENSIONI</h2>
             <dl id="recensioni-critica">
-                <dt class="titoloCritica"><a href="#">titolo gioco recensione: breve commento</a></dt>
-                <dd>
-                    <img src="#" alt="" />
-                    <p>Anteprima recensione</p>
-                    <p class="punteggio">punteggio</p>  <!-- JavaScript -->
-                </dd>
-                <dt class="titoloCritica"><a href="#">titolo gioco recensione: breve commento</a></dt>
-                <dd>
-                    <img src="#" alt="" />
-                    <p>Anteprima recensione</p>
-                    <p class="punteggio">punteggio</p>  <!-- JavaScript -->
-                </dd>
-                <dt class="titoloCritica"><a href="#">titolo gioco recensione: breve commento</a></dt>
-                <dd>
-                    <img src="#" alt="" />
-                    <p>Anteprima recensione</p>
-                    <p class="punteggio">punteggio</p>  <!-- JavaScript -->
-                </dd>
-                <dt class="titoloCritica"><a href="#">titolo gioco recensione: breve commento</a></dt>
-                <dd>
-                    <img src="#" alt="" />
-                    <p>Anteprima recensione</p>
-                    <p class="punteggio">punteggio</p>  <!-- JavaScript -->
-                </dd>
-                <dt class="titoloCritica"><a href="#">titolo gioco recensione: breve commento</a></dt>
-                <dd>
-                    <img src="#" alt="" />
-                    <p>Anteprima recensione</p>
-                    <p class="punteggio">punteggio</p>  <!-- JavaScript -->
-                </dd>
+                <div>
+                    <figure id="r1"></figure>
+                    <dt class="titoloCritica"><a href="#">Titolo gioco recensione: breve commento</a></dt>
+                    <dd>
+                        <p>Anteprima recensione</p>
+                        <p class="punteggio">punteggio</p>  <!-- JavaScript -->
+                    </dd>
+                </div>
+                <div>
+                    <figure id="r1"></figure>
+                    <dt class="titoloCritica"><a href="#">Titolo gioco recensione: breve commento</a></dt>
+                    <dd>
+                        <p>Anteprima recensione</p>
+                        <p class="punteggio">punteggio</p>  <!-- JavaScript -->
+                    </dd>
+                </div>
+
+                <div>
+                    <figure id="r1"></figure>
+                    <dt class="titoloCritica"><a href="#">Titolo gioco recensione: breve commento</a></dt>
+                    <dd>
+                        <p>Anteprima recensione</p>
+                        <p class="punteggio">punteggio</p>  <!-- JavaScript -->
+                    </dd>
+                </div>
+
+                <div>
+                    <figure id="r1"></figure>
+                    <dt class="titoloCritica"><a href="#">Titolo gioco recensione: breve commento</a></dt>
+                    <dd>
+                        <p>Anteprima recensione</p>
+                        <p class="punteggio">punteggio</p>  <!-- JavaScript -->
+                    </dd>
+                </div>
+                
+                <div id="ultimaRecensione">
+                    <figure id="r1"></figure>
+                    <dt class="titoloCritica"><a href="#">Titolo gioco recensione: breve commento</a></dt>
+                    <dd>
+                        <p>Anteprima recensione</p>
+                        <p class="punteggio">punteggio</p>  <!-- JavaScript -->
+                    </dd>
+                </div>
             </dl>
+            
+            <h2>ULTIMI COMMENTI</h2>
             <dl id="recensioni-utenti">
-                <dt class="titoloUtente">titolo gioco</dt>
-                <dd>
-                    <img src="#" alt="" /> <!-- img profilo utente -->
-                    <ul class="contenutoRecensione">
-                        <li>nome utente</li>
-                        <li>commento</li>
-                    </ul>
-                    <p class="punteggio">punteggio</p>  <!-- JavaScript -->
-                </dd>
-                <dt class="titoloUtente">titolo gioco</dt>
-                <dd>
-                    <img src="#" alt="" /> <!-- img profilo utente -->
-                    <ul class="contenutoRecensione">
-                        <li>nome utente</li>
-                        <li>commento</li>
-                    </ul>
-                    <p class="punteggio">punteggio</p>  <!-- JavaScript -->
-                </dd>
-                <dt class="titoloUtente">titolo gioco</dt>
-                <dd>
-                    <img src="#" alt="" /> <!-- img profilo utente -->
-                    <ul class="contenutoRecensione">
-                        <li>nome utente</li>
-                        <li>commento</li>
-                    </ul>
-                    <p class="punteggio">punteggio</p>  <!-- JavaScript -->
-                </dd>
-                <dt class="titoloUtente">titolo gioco</dt>
-                <dd>
-                    <img src="#" alt="" /> <!-- img profilo utente -->
-                    <ul class="contenutoRecensione">
-                        <li>nome utente</li>
-                        <li>commento</li>
-                    </ul>
-                    <p class="punteggio">punteggio</p>  <!-- JavaScript -->
-                </dd>
-                <dt class="titoloUtente">titolo gioco</dt>
-                <dd>
-                    <img src="#" alt="" /> <!-- img profilo utente -->
-                    <ul class="contenutoRecensione">
-                        <li>nome utente</li>
-                        <li>commento</li>
-                    </ul>
-                    <p class="punteggio">punteggio</p>  <!-- JavaScript -->
-                </dd>
+                <div>
+                <figure id="r2"></figure>
+                <dt class="titoloCritica"><a href="#">Titolo gioco</a></dt>
+                    <dd>
+                        <ul class="contenutoRecensione">
+                            <li>nome utente</li>
+                            <li>commento</li>
+                        </ul>
+                        <p class="punteggio">punteggio</p>  <!-- JavaScript -->
+                    </dd>
+                </div>
+                <div>
+                    <figure id="r2"></figure>
+                    <dt class="titoloCritica"><a href="#">Titolo gioco</a></dt>
+                        <dd>
+                            <ul class="contenutoRecensione">
+                                <li>nome utente</li>
+                                <li>commento</li>
+                            </ul>
+                            <p class="punteggio">punteggio</p>  <!-- JavaScript -->
+                        </dd>
+                </div>
+                <div>
+                    <figure id="r2"></figure>
+                    <dt class="titoloCritica"><a href="#">Titolo gioco</a></dt>
+                        <dd>
+                            <ul class="contenutoRecensione">
+                                <li>nome utente</li>
+                                <li>commento</li>
+                            </ul>
+                            <p class="punteggio">punteggio</p>  <!-- JavaScript -->
+                        </dd>
+                </div>
+                <div>
+                    <figure id="r2"></figure>
+                    <dt class="titoloCritica"><a href="#">Titolo gioco</a></dt>
+                        <dd>
+                            <ul class="contenutoRecensione">
+                                <li>nome utente</li>
+                                <li>commento</li>
+                            </ul>
+                            <p class="punteggio">punteggio</p>  <!-- JavaScript -->
+                        </dd>
+                </div>
+                <div id="ultimoCommento">
+                    <figure id="r2"></figure>
+                    <dt class="titoloCritica"><a href="#">Titolo gioco</a></dt>
+                        <dd>
+                            <ul class="contenutoRecensione">
+                                <li>nome utente</li>
+                                <li>commento</li>
+                            </ul>
+                            <p class="punteggio">punteggio</p>  <!-- JavaScript -->
+                        </dd>
+                </div>
             </dl>
         </div>
     </main> 
     <footer>
         <div id="boxFooter">
-            <img src="#" alt="" /> <!-- spazio logo -->
             <p>
                 <ul>
-                    <li>NomeSito</li>
+                    <li><img src="../Progetto/Immagini/gameometry.png" alt="" /></li> <!-- spazio logo -->
                     <li id="aboutUs">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, nobis.</li>
                     <li id="infoAzienda">© 2022 TerroniNelNord Srl - Sede Legale: Via Bari, 15 - 73030 Montesano Salentino (LE) Italy?</li>
                 </ul>
