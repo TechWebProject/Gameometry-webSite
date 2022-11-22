@@ -1,0 +1,310 @@
+*{
+    padding: 0em; 
+    margin: 0em;
+}
+
+html,body{
+    font-size: 100%; 
+    font-family: "Poppins", "sans-serif"; /* DA DECIDERE */
+    /* BACKGROUND COLOR */
+    line-height: 1.5em; 
+    margin: auto;
+}
+
+body{
+    background-color: white;
+}
+
+html{
+    background-color: black;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*
+==============
+SEZIONE HEADER
+==============
+*/
+
+header{
+    padding: 0.5em;  
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr 0.5fr;
+    grid-gap: 15px;
+}
+
+header h1{
+    display: none;
+    text-indent: -9999px; 
+    line-height: 1.5em;
+}
+
+#header{
+    position: fixed;
+    width: 100%;
+    background-color: orange;
+}
+
+#logoSito{
+    grid-row: 1;
+    grid-column: 1/2;
+    background-image: url('../Progetto/Immagini/gameometry.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    align-content: center;
+}
+
+header nav{
+    grid-row: 1;
+    grid-column: 2/3;
+    padding: 0.6em;
+    padding-left: 3.5em;
+    align-self: center;
+}
+
+#menu ul li{
+    display: inline;
+    padding: 2.0em;
+}
+
+#ricerca{
+    grid-row: 1;
+    grid-column: 3/4;
+    padding: 0.6em;
+    text-align: right;
+}
+
+#searchBar{
+    width: 70%;
+    height: 2.0em;
+}
+
+.areaRiservata{
+    grid-row: 1;
+    grid-column: 4/4;
+    background-image: url('../Progetto/Immagini/utente.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 30%;
+    align-content: center;
+}
+
+#menu ul, #funzioniUtente ul{
+    text-align: center;
+}
+
+/*
+==================
+SEZIONE BREADCRUMB
+==================
+*/
+
+#breadcrumb{
+    background-color: grey;
+    align-content: center;
+    font-size: 1.1em;
+    padding: 0.6em 0em 0.6em 0.3em;
+}
+
+/*
+=================
+SEZIONE CONTENUTO
+=================
+*/
+
+main{
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 8.0em;    
+}
+
+/*
+===========
+ULTIME NEWS
+===========
+*/
+
+.news1 {
+    grid-area: news1;
+}
+
+.news2 {
+    grid-area: news2;
+    background-image: url('#');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.news3 {
+    grid-area: news3;
+}
+
+.news4 {
+    grid-area: news4;
+}
+
+.news5 {
+    grid-area: news5;
+}
+
+.news-grid-container {
+    display: grid;
+    grid-template-areas:
+        'news1 news1 news2 news3'
+        'news1 news1 news4 news5';
+    gap: 20px;
+    margin: 2em;
+    grid-template-rows: 230px 230px;
+    grid-template-columns: 200px;
+}
+
+.news-grid-container>div {
+    background-color: rgb(110, 110, 110);
+    font-size: 30px;
+    line-height: normal;
+    text-align: center;
+    color: rgb(240, 240, 240);
+    padding-top: 11rem;
+    margin: 0;
+}
+
+.mainnewstitle{
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+    margin-top: 12rem;
+    background-color: rgba(0, 0, 0, 0.8)
+}
+
+.sidenewstitle{
+    background-color: rgba(0, 0, 0, 0.8)
+}
+
+/*
+=================
+ULTIME RECENSIONI
+=================
+*/
+
+.titoloCritica{
+    text-align: left;
+    overflow: hidden;
+    padding-bottom: 0.5em;
+    padding-top: 1.0em;
+    font-size: 1.2em;
+    
+}
+
+.titoloCritica a:link{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.titoloCritica a:visited{color: black;} /* per non far cambiare colore ad un link già visitato */
+.titoloCritica a:hover{color: black;}
+.titoloCritica a:active{color: black;}
+
+.contenutoRecensione li{
+    list-style: none;
+}
+
+#recensioni-critica>dd {
+    padding: 0.2em;
+}
+
+#recensioni-critica dd>p{ /*per spostare il testo dall'immagine*/
+    font-size: 0.9em;
+    color: black;   
+}
+
+#r1{
+    background-image: url('../Progetto/Immagini/locandinaGioco.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10em;
+    float: left;
+    margin: 0.5em;
+    height: 10em;
+    width: 100px;
+    padding: 0.1em;
+    margin-right: 2em;
+    padding-right: 3em;
+    padding-left: 1.5em;
+}
+
+#recensioni-critica div{
+    border-bottom: 1px solid white;
+    border-top: none;
+    padding: 1em;
+    overflow: hidden;
+}
+
+h2{
+    margin-top: 1em;
+    padding: 0.4em;
+    color: white;
+    text-align: left;
+    background-color: rgb(255, 149, 0);
+    border: 0.5px solid rgb(255, 149, 0); /* rgb(134, 7, 7)*/
+    border-bottom: 0.5px solid white;
+}
+
+#recensioni-utenti div{
+    border-bottom: 1px solid rgb(255, 149, 0);
+    background-color: white;
+    border-top: none;
+    padding: 1em;
+    overflow: hidden;
+}
+
+#recensioni-critica #ultimoRecensione {
+    border-bottom: none;
+}
+
+#recensioni-utenti #ultimoCommento {
+    border-bottom: none;
+}
+
+#r2{
+    background-image: url('../Progetto/Immagini/utente.png');
+    background-position: center;
+    background-size: 10em;
+    float: left;
+    margin: 0.5em;
+    margin-right: 2em;
+    height: 10em;
+    width: 100px;
+    background-repeat: no-repeat;
+    padding:1em;
+    padding-right: 3em;
+    padding-left: 1.5em;
+}
+
+.punteggio{
+    float: right;
+}
+
+/*
+==============
+SEZIONE FOOTER
+==============
+*/
+
+footer{
+    background-color: grey;
+    text-align: center;
+}
+
+#boxFooter img{
+    width: 10%;
+    padding-top: 1.0em;
+}
+
+#aboutUs {
+    padding-bottom: 0.3em;
+}
