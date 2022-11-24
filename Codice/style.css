@@ -88,14 +88,36 @@ header nav{
     grid-row: 1;
     grid-column: 3/4;
     padding: 0.6em;
-    text-align: right;
+    background-color: white;
+    width: 79%;
+    height: 1em;
+    border-radius: 5px;
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    padding-right: 0em;
+    align-items: center;
 }
 
 #searchBar{
+    all:unset;
     width: 70%;
     height: 2.0em;
+    margin-right: 2.5em;
 }
 
+#cerca{
+    all:unset;
+    float:right;
+    cursor: pointer;
+    background-position: center;
+    background-image: url('../Codice/Immagini/cerca.png');
+    background-repeat: no-repeat;
+    background-size: 45%;
+    height: 1.5em;  
+    width: 50px;
+    
+}
 .areaRiservata{
     grid-row: 1;
     grid-column: 4/4;
@@ -120,7 +142,7 @@ SEZIONE BREADCRUMB
     background-color: grey;
     align-content: center;
     font-size: 1.1em;
-    padding: 0.6em 0em 0.6em 0.3em;
+    padding: 0.3em 0em 0.3em 1em;
 }
 
 #breadcrumb a:link{
