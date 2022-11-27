@@ -1,0 +1,484 @@
+*{
+    padding: 0em; 
+    margin: 0em;
+}
+
+html,body{
+    font-size: 100%; 
+    font-family: "Poppins", "sans-serif"; 
+    line-height: 1.5em; 
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*
+==============
+SEZIONE HEADER
+==============
+*/
+
+#menu a:link{
+    color:  black;
+    font-weight: bold;
+    text-decoration: none;
+}
+#menu a:visited{color:  black;} /* per non far cambiare colore ad un link già visitato*/
+#menu a:hover{
+    text-decoration: underline;
+    text-decoration: underline solid 1.5px;
+}
+#menu a:active{color:  black;}
+
+header{
+    padding: 0.5em;  
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr 0.5fr;
+    grid-gap: 15px;
+}
+
+header h1{
+    display: none;
+    text-indent: -9999px; 
+    line-height: 1.5em;
+}
+
+#header{
+    position: fixed;
+    width: 100%;
+    background-color: orange;
+}
+
+#logoSito{
+    grid-row: 1;
+    grid-column: 1/2;
+}
+#logoSito img{
+    padding-top: 0.8em;
+    width: 120%;
+}
+
+header nav{
+    grid-row: 1;
+    grid-column: 2/3;
+    padding: 0.6em;
+    padding-left: 3.5em;
+    align-self: center;
+    border-bottom: 1.0em;
+}
+
+#menu ul li{
+    display: inline;
+    padding: 2.0em;
+}
+
+#ricerca{
+    grid-row: 1;
+    grid-column: 3/4;
+    padding: 0.6em;
+    background-color: white;
+    width: 79%;
+    height: 1em;
+    border-radius: 5px;
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    padding-right: 0em;
+    align-items: center;
+}
+#searchBar{
+    all: unset;
+    width: 70%;
+    height: 2.0em;
+    margin-right: 2.5em;
+}
+
+#cerca{
+    float: right;
+    cursor: pointer;
+    height: 1.5em;  
+    width: 50px;
+}
+#cerca img{
+    padding-left: 1.0em;
+    width: 42%;
+}
+
+#areaRiservata{
+    grid-row: 1;
+    grid-column: 4/4;
+    align-self: center;
+}
+#areaRiservata img{
+    padding-top: 0.2em;
+    height: 2.0em;
+}
+
+#menu ul, #funzioniUtente ul{
+    text-align: center;
+}
+
+/*
+==================
+SEZIONE BREADCRUMB
+==================
+*/
+
+#breadcrumb{
+    align-content: center;
+    font-size: 1.1em;
+    padding: 0.3em 0em 0.3em 1em;
+    font-weight: bold;
+    background-color: gray;
+}
+
+#breadcrumb p{
+    text-align: center;
+}
+
+#breadcrumb a:link{
+    color: black;
+    text-decoration: none;
+}
+#breadcrumb a:visited{color: black;} /* per non far cambiare colore ad un link già visitato*/
+#breadcrumb a:hover{
+    text-decoration: underline;
+    text-decoration: underline solid 1.5px;
+}
+#breadcrumb a:active{color:  black;}
+
+/*
+=================
+SEZIONE CONTENUTO
+=================
+*/
+
+/*
+==============
+SLIDER
+==============
+*/
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42vh;
+    max-width: 1200px;
+}
+
+.horizontal-wrapper{
+    width: 100%;
+    height: 40vh;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel::-webkit-scrollbar{
+    display: none;
+}
+
+.horizontal-wrapper .carousel{
+    display: flex;
+    transition: 0.5s all ease-out;
+    overflow-x: scroll;
+    scroll-behavior:smooth;
+}
+
+.imgs{
+    cursor: pointer;
+    height: 37vh;
+    width: calc(100%/3);
+    margin-left: 10px;
+    border-radius: 8px;
+}
+
+.carousel img:hover{
+    box-shadow: 0 0 10px black;
+}
+
+#btn-left img, #btn-right img{
+    width: 90%;
+}
+
+#btn-left{
+    float: left;
+    cursor: pointer;
+}
+
+#btn-right{
+    padding-left: 0.15em;
+    cursor: pointer;
+}
+
+.carousel{
+    float: left;
+}
+
+.wrapper button{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-position:center;
+    background-size:contain;
+    background-repeat: no-repeat; 
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.wrapper button:hover{
+    opacity: 0.8;
+    box-shadow: 0 0 3px black;
+}
+
+main{
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 7.5em;    
+}
+
+/*
+===========
+ULTIME NEWS
+===========
+*/
+
+.news1 {
+    grid-area: news1;
+}
+
+.news2 {
+    grid-area: news2;
+}
+
+.news3 {
+    grid-area: news3;
+}
+
+.news4 {
+    grid-area: news4;
+}
+
+.news5 {
+    grid-area: news5;
+    max-height: 15.0em;
+}
+
+.news-box, .mainnews-box {
+    size: fixed;
+    display: flex;
+    flex-direction: column;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(100, 100, 100);
+    line-height: normal;
+    color: rgb(255, 255, 255);
+    margin: 0;
+}
+
+.mainnews-box {
+    max-width: 80%;
+    max-height: 36.0em;
+}
+
+.news-box {
+    max-width: 100%;
+}
+
+.news-box>img {
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 9.0em;
+}
+
+.mainnews-box>img {
+    align-items: center;
+    object-fit: cover;
+    width: 100%;
+}
+
+.news-grid-container {
+    display: grid;
+    grid-template-areas:
+        'news1 news1 news2'
+        'news1 news1 news3';
+    gap: 0.8em;
+    margin: 2em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    grid-template-columns: 40% 15%;
+    grid-template-rows: auto auto;
+}
+
+.mainnews-section, .sidenews-section {
+    position: static;
+    padding: 3%;
+    background-color: rgb(30, 30, 30);
+}
+
+.mainnews-title {
+    font-weight: bolder;
+}
+
+.mainnews-title {
+    line-height: 35px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.author {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    font-size: 12px;
+}
+
+.news-topic {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    font-size: 15px;
+}
+
+.sidenews-topic {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 12px;
+}
+
+.sidenews-title {
+    font-weight: bolder;
+}
+
+.side-author {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 10px;
+}
+
+/*
+=================
+ULTIME RECENSIONI
+=================
+*/
+
+.titoloCritica{
+    text-align: left;
+    overflow: hidden;
+    padding-bottom: 0.5em;
+    padding-top: 1.0em;
+    font-size: 1.2em;
+    
+}
+
+.titoloCritica a:link{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.titoloCritica a:visited{color: black;} /* per non far cambiare colore ad un link già visitato */
+.titoloCritica a:hover{
+    text-decoration: underline;
+    text-decoration: underline solid 1.5px;
+}
+.titoloCritica a:active{color: black;}
+
+.contenutoRecensione li{
+    list-style: none;
+}
+
+#recensioni-critica>dd {
+    padding: 0.2em;
+}
+
+#recensioni-critica dd>p{ /*per spostare il testo dall'immagine*/
+    font-size: 0.9em;
+    color: black;   
+}
+
+.r1{
+    float: left;
+    height: 15em;
+    width: 20%;
+    padding: 0.1em;
+    margin-right: 2.0em;
+    padding-right: 3.0em;
+}
+
+#recensioni-critica div{
+    border-bottom: 1px solid rgb(255, 149, 0);
+    border-top: none;
+    padding-left: none;
+    padding: 1.0em;
+    overflow: hidden;
+}
+
+h2{
+    margin-top: 1.0em;
+    padding: 0.4em;
+    color: white;
+    text-align: left;
+    background-color: rgb(255, 149, 0);
+    border: 0.5px solid rgb(255, 149, 0); /* rgb(134, 7, 7)*/
+    border-bottom: 0.5px solid white;
+}
+
+#recensioni-utenti div{
+    border-bottom: 1px solid rgb(255, 149, 0);
+    background-color: white;
+    border-top: none;
+    padding: 1.0em;
+    overflow: hidden;
+}
+
+#recensioni-critica div:last-child{
+    border-bottom: none;
+}
+
+#recensioni-utenti div:last-child{
+    border-bottom: none;
+}
+
+.r2{
+    float: left;
+    margin: 0.5em;
+    margin-right: 2em;
+    height: 11em;
+    width: 15%;
+    background-repeat: no-repeat;
+    padding:1em;
+    padding-right: 3em;
+    padding-left: 1.5em;
+}
+
+.punteggio{
+    float: right;
+}
+
+/*
+==============
+SEZIONE FOOTER
+==============
+*/
+
+footer{
+    background-color: orange;
+    text-align: center;
+}
+
+#boxFooter img{
+    width: 10%;
+    padding-top: 1.0em;
+}
+
+#aboutUs {
+    padding-bottom: 0.3em;
+}
