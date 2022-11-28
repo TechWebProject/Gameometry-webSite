@@ -251,7 +251,6 @@ ULTIME NEWS
 
 #news1{
     grid-area: news1;
-    padding-right: none;
 }
 
 #news2{
@@ -262,48 +261,27 @@ ULTIME NEWS
     grid-area: news3;
 }
 
-#news4{
-    grid-area: news4;
-}
-
-#news5{
-    grid-area: news5;
-    max-height: 15.0em;
-}
-
-.news-box, .mainnews-box{
-    size: fixed;
+.mainnews-box , .news-box{
     display: flex;
     flex-direction: column;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgb(100, 100, 100);
-    line-height: normal;
     color: rgb(255, 255, 255);
-    margin: 0;
-}
-
-.mainnews-box{
-    max-width: 80%;
-    max-height: 36.0em;
-}
+} 
 
 .news-box{
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .news-box>img{
     align-items: center;
     width: 100%;
-    height: 100%;
+    max-height: 18em;
     object-fit: cover;
-    max-height: 9.0em;
 }
 
 .mainnews-box>img{
     align-items: center;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
 }
 
@@ -313,11 +291,9 @@ ULTIME NEWS
         'news1 news1 news2'
         'news1 news1 news3';
     gap: 0.8em;
-    margin: 2em;
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    grid-template-columns: 40% 15%;
-    grid-template-rows: auto auto;
+    padding-top: 1.7em;
+    padding-bottom: 0.5em;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .mainnews-section, .sidenews-section{
@@ -333,19 +309,17 @@ ULTIME NEWS
 
 .author{
     padding-top: 4%;
-    padding-bottom: 4%;
+    padding-bottom: 4.1%;
     font-size: 12px;
 }
 
 .news-topic{
     padding-top: 4%;
-    padding-bottom: 4%;
     font-size: 15px;
 }
 
 .sidenews-topic{
     padding-top: 2%;
-    padding-bottom: 2%;
     font-size: 12px;
 }
 
@@ -355,7 +329,6 @@ ULTIME NEWS
 
 .side-author{
     padding-top: 2%;
-    padding-bottom: 2%;
     font-size: 10px;
 }
 
