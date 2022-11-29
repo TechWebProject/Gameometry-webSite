@@ -574,23 +574,27 @@ PAGINA VIDEOGIOCHI
         padding: 1.3em;
     }
 }
+
 @media screen and (max-width:1060px) {
     #menu ul li{
         display: inline;
         padding: 0.8em;
     }
 }
+
 @media screen and (max-width:950px) {
     #menu ul li{
         display: inline;
         padding: 0.2em;
     }
 }
+
+
 @media only screen and (max-width:800px) {
     main{
         max-width: 1024px;
         margin: auto;
-        padding-top: 28em;   
+        padding-top: 25em;   
         background-color: #191919; 
     }
     header{
@@ -598,7 +602,7 @@ PAGINA VIDEOGIOCHI
         display: grid;
         flex-direction: column;
         grid-template-columns: 1fr;
-        grid-template-rows: 4em 10em 2em 3em;
+        grid-template-rows: 4em 8em 2em 3em;
         grid-gap: 15px;
     }    
     #menu{
