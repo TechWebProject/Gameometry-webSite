@@ -1,0 +1,36 @@
+#news-grid-container {
+    display: grid;
+    grid-template-areas:
+        'news1'
+        'news2'
+        'news3'
+        'news4'
+        'news5';
+    grid-template-columns: 105%;
+    gap: 0.8em;
+    padding-top: 1.7em;
+    padding-bottom: 0.5em;
+    padding-right: 2.5em;
+}
+
+.news-box,
+.mainnews-box {
+    min-height: 18em;
+    max-height: 20em;
+}
+
+.sidenews-section>h2,
+.mainnews-section>h2 {
+    font-weight: bolder;
+    line-height: 1.5em;
+    font-size: 30px;
+}
+
+.mainnews-box>img,
+.news-box>img {
+    min-height: 6em;
+    max-height: 20em;
+    background-color: gray;
+    align-items: center;
+    object-fit: cover;
+}
