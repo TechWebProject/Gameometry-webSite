@@ -4,7 +4,6 @@
 }
 
 html,body{
-    font-size: 100%; 
     font-family: "Poppins", "sans-serif"; 
     line-height: 1.5em; 
     margin: auto;
@@ -316,7 +315,7 @@ ULTIME NEWS
 }
 
 .news-box>img{
-    min-height: 13.3em;
+    min-height: 13.1em;
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -334,34 +333,34 @@ ULTIME NEWS
 .mainnews-section>h2{
     font-weight: bolder;
     line-height: 1.5em;
-    font-size: 30px;
+    font-size: 1.5em;
 }
 
 .author{
     padding-top: 4%;
     padding-bottom: 4.5%;
-    font-size: 12px;
+    font-size: 1em;
 }
 
 .news-topic{
     padding-top: 4%;
-    font-size: 15px;
+    font-size: 1em;
 }
 
 .sidenews-topic{
     padding-top: 2%;
     padding-bottom: 0.8em;
-    font-size: 12px;
+    font-size: 1em;
 }
 
 .sidenews-section>h2{
     font-weight: bolder;
-    font-size: 22px;
+    font-size: 1em;
 }
 
 .side-author{
     padding-top: 2%;
-    font-size: 10px;
+    font-size: 0.8em;
 }
 
 /*
@@ -423,7 +422,7 @@ ULTIME RECENSIONI
 }
 
 h1{
-    font-size: 25px;
+    font-size: 1.6em;
     margin-top: 1.0em;
     margin-left: 0.3em;
     margin-right: 0.3em;
@@ -471,7 +470,7 @@ h1{
 .punteggio{
     float: right;
     color: white;
-    font-size: 30px;
+    font-size: 2em;
 }
 
 /*

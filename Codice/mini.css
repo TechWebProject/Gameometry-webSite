@@ -99,9 +99,9 @@ ULTIME NEWS
         'news4'
         'news5';
     grid-template-columns: 105%;
-    gap: 0.8em;
+    gap: 7em;
     padding-top: 1.7em;
-    padding-bottom: 0.5em;
+    padding-bottom: 5.5em;
     padding-right: 2.5em;
 }
 
@@ -118,12 +118,11 @@ ULTIME NEWS
     min-height: 18.0em;
     max-height: 20.0em;
 }
-
 .sidenews-section>h2,
 .mainnews-section>h2{
     font-weight: bolder;
     line-height: 1.5em;
-    font-size: 2.0em;
+    font-size: 1.50em;
     padding-top: 0.5em;
 }
 
@@ -139,27 +138,18 @@ ULTIME NEWS
     padding-top: 1.0em;
 }
 
-.news-topic{
-    padding-top: 0.0em;
-    font-size: 1.5em;
-}
-
-.author{
-    font-size: 1.0em;
-}
-
-.sidenews-topic{
-    font-size: 1.5em;
+.news-topic,.sidenews-topic{
+    font-size: 1em;
     padding: 0.0em;
 }
 
-.side-author{
+.author,.side-author{
     font-size: 1.0em;
 }
 
 .mainnews-box>img,
 .news-box>img{
-    min-height: 6em;
+    min-height: 15em;
     max-height: 20em;
     align-items: center;
     object-fit: cover;
