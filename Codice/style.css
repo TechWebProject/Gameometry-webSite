@@ -10,7 +10,7 @@ html,body{
     background-color: rgba(0,0,0,0.650);
 }
 
-a{
+a, abbr{
     text-decoration: none;
 }
 
@@ -255,7 +255,8 @@ SLIDER
 main{
     max-width: 1024px;
     margin: auto;
-    padding-top: 7.5em;   
+    padding-top: 7.5em;
+    padding-bottom: 1.5em;
     background-color: #191919; 
 }
 
@@ -391,11 +392,23 @@ ULTIME RECENSIONI
 }
 .titoloCritica a:active{color: white;}
 
+.contenutoRecensione{
+    display: flex;
+    float: left;
+    flex-direction: column;
+    margin-right: 6em;
+}
+
 .contenutoRecensione li{
     color: white;
     list-style: none;
 }
 
+.commento{
+    display: flex;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
 #recensioni-critica>dd {
     padding: 0.2em;
 }
@@ -442,7 +455,7 @@ h1{
     border-bottom: none;
 }
 
-#recensioni-utenti div{
+#recensioni-utenti>div{
     border-bottom: 1px solid #F77F00;
     border-top: none;
     padding: 1.0em;
@@ -605,12 +618,108 @@ PAGINA EVENTI
 }
 
 /*
+=========================
+PAGINA SINGOLA RECENSIONE
+=========================
+*/
+
+#headerRecensione{
+    overflow: hidden;
+    margin-top: 1em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    padding-top: 1em;
+    border-bottom: #F77F00 solid 1px;
+}
+
+#headerRecensione>div{
+    
+    padding-top: 1em;
+    padding-bottom: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 2em;
+}
+#himg{
+    float: left;
+    width: 30%;
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+    margin-right: 2.0em;
+    margin-top: 2em;
+}
+
+#titoloRecensione{
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-color:unset;
+    margin-top: unset;
+    padding-bottom: 0.6em;
+    font-weight: bold;
+    font-size: 2em;
+    color: white;
+}
+
+#headerRecensione>span{
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+    color: white;
+}
+
+#copertina{
+    margin-top:2em;
+    height: 300px;
+    background-image: url(../Codice/Immagini/copertina5.jpg);
+    background-size:cover;
+}
+
+#scores{
+    display: flex;
+    float: right;
+    width: 50%;
+    justify-content:space-evenly;
+    margin-top: 7em;
+}
+
+#scores>div{
+    display: flex;
+    border-radius: 30px;
+    flex-direction: column;
+    padding-top: 0.8em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#scores span{
+    color: white;
+    
+}
+#rec{
+    background-color: #f78000d3;
+}
+
+#ut{
+    background-color: #00aaffd3;
+}
+
+
+#contenuto{
+    line-break:anywhere;
+    color: white;
+    margin: 1.5em;
+    margin-bottom: 3em;
+}
+
+/*
 =============================
 ALTERAZIONE DIMENSIONI PAGINA
 =============================
 */
 
-@media screen and (max-width:1280px) {
+@media screen and (max-width:1500px) {
     #menu ul li{
         display: inline;
         padding: 1.3em;
