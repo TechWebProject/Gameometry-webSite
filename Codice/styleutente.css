@@ -1,0 +1,28 @@
+dl {
+    color: rgb(255, 255, 255);
+}
+
+.user-info>dt {
+    font-weight: bolder;
+    float: left;
+    margin-left: 3em;
+}
+
+.user-info {
+    padding-top: 8em;
+    padding-bottom: 5em;
+    line-height: 2em;
+}
+
+.user-icon {
+    margin: 3em;
+    padding: 1em;
+    width: 15em;
+    float: left;
+    background-color: white;
+    border-radius: 99%;
+}
+
+.user-info>dt::after {
+    content: ": ";
+}
