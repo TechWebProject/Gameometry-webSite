@@ -234,14 +234,12 @@ SLIDER
 #btn-left{
     width: 10%;
     float: left;
-    margin-left: 10px;
-    cursor: pointer;
+    margin-left: 5px;
 }
 
 #btn-right{
     width: 10%;
     margin-left: 13px;
-    cursor: pointer;
 }
 
 .carousel{
@@ -251,13 +249,13 @@ SLIDER
 .wrapper button{
     cursor: pointer;
     text-align:center;
-    width: 50%;
-    height: 11%;
+    color:white;
+    border: none;
     border-radius: 50%;
     opacity: 0.5;
-    font-size: 32px;
+    font-size: 4.0em;
     font-weight: bold;
-    background-color: #F77F00;
+    background-color: transparent;
 }
 
 .wrapper button:hover{
