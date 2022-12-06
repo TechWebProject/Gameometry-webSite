@@ -193,7 +193,7 @@ SLIDER
 ======
 */
 
-.wrapper {
+.wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,7 +201,7 @@ SLIDER
     max-width: 1200px;
 }
 
-.horizontal-wrapper {
+.horizontal-wrapper{
     width: 100%;
     height: 40vh;
     border-radius: 5px;
@@ -212,73 +212,63 @@ SLIDER
     overflow: hidden;
 }
 
-.carousel::-webkit-scrollbar {
+.carousel::-webkit-scrollbar{
     display: none;
 }
 
-.horizontal-wrapper .carousel {
+.horizontal-wrapper .carousel{
     scrollbar-width: none;
     display: flex;
     transition: 0.5s all ease-out;
     overflow-x: scroll;
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
 }
 
-.imgs {
+.imgs{
     cursor: pointer;
     height: 37vh;
-    margin-left: 8px;
+    margin-left: 8px; 
     border-radius: 8px;
 }
 
-.carousel img:hover {
-    box-shadow: 0 0 10px black;
-}
-
-#btn-left img,
-#btn-right img {
-    width: 80%;
-}
-
-#btn-left {
+#btn-left{
     width: 10%;
     float: left;
     margin-left: 10px;
     cursor: pointer;
 }
 
-#btn-right {
+#btn-right{
     width: 10%;
     margin-left: 13px;
     cursor: pointer;
 }
 
-.carousel {
+.carousel{
     float: left;
 }
 
-.wrapper button {
+.wrapper button{
     cursor: pointer;
-    width: 40px;
-    height: 40px;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    text-align:center;
+    width: 50%;
+    height: 11%;
     border-radius: 50%;
     opacity: 0.5;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: #F77F00;
 }
 
-.wrapper button:hover {
+.wrapper button:hover{
     opacity: 0.8;
-    box-shadow: 0 0 3px black;
 }
 
-main {
+main{
     max-width: 1024px;
     margin: auto;
-    padding-top: 7.5em;
-    padding-bottom: 1.5em;
-    background-color: #191919;
+    padding-top: 7.5em;   
+    background-color: #191919; 
 }
 
 /*
