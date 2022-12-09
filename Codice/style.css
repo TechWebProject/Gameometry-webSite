@@ -741,25 +741,24 @@ PAGINA DI ACCESSO
     display: flex;
     justify-content: center;
     font-size: 1.5em;
-    padding-top: 4.4em;
-    padding-bottom: 12.0em;
+    padding-top: 3em;
+    padding-bottom: 3em;
 }
 #logIn form{
-    width: 60%;
+    width: 50%;
     border-radius: 0.5em;
     background-color: #F77F00;
 }
 #logIn legend{
     font-weight: bolder;
     color: white;
-    padding-top: 0.5em;
+    padding-top: 0.7em;
     padding-bottom: 1.5em;
 }
 #logIn form fieldset{
     border: none;
-    height: 13.0em;
-    padding-left: 2.0em;
-    padding-right: 2.0em;
+    height: 14.0em;
+
 }
 #logIn label{
     display: block;
@@ -769,7 +768,8 @@ PAGINA DI ACCESSO
 
 #usernameBox, #passwordBox{
     display: block;
-    padding-bottom: 1.2em;
+    margin-bottom: 1.5em;
+    
 }
 
 #username, #password{
@@ -781,9 +781,13 @@ PAGINA DI ACCESSO
 }
 
 #submit{
-    padding: 0.2em;
+    padding: 0.4em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     border-radius: 0.2em;
     font-size: 0.7em;
+    margin-top: 0.2em;
+    margin-bottom: 0.6em;
     border: none;
 }
 
