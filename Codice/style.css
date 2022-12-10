@@ -432,9 +432,6 @@ ULTIME RECENSIONI
     padding: 0.2em;
 }
 
-#recensioni-critica dd>p {
-    color: white;
-}
 
 .r1 {
     float: left;
@@ -501,10 +498,23 @@ h1 {
 
 .punteggio {
     float: right;
-    color: white;
-    font-size: 2em;
+    background-color: white;
+    color: #F77F00;
+    font-weight: bold;
+    padding: 0.35em;
+    border-radius: 7px;
+    font-size: 1.5em;
 }
 
+.punteggioU{
+    float: right;
+    background-color: white;
+    font-weight: bold;
+    padding: 0.35em;
+    border-radius: 7px;
+    color: rgb(22, 179, 232);
+    font-size: 1.5em;
+}
 /*
 ==============
 SEZIONE FOOTER
@@ -673,8 +683,15 @@ PAGINA SINGOLA RECENSIONE
 
 }
 
+#punteggioCritica{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 0.2em;
+    margin-bottom: 0.4em;
+}
+
 #rec {
-    background-color: #f78000d3;
+    background-color: #f78000;
 }
 
 
