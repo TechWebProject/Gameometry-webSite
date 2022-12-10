@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Gameometry</title>
+    <meta name="description" content="Pagina dedicata alle informazioni di un singolo utente" />
+    <meta name="keywords" content="videogioco, videogiochi, utente, recensioni" />
+    <meta name="author" content="Michael Amista', Marco Brigo, Fabio Pantaleo, Filippo Sabbadin" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" media="handled, screen" />
+    <link rel="stylesheet" href="mini.css" media="handled, screen and (max-width:800px), only screen and (max-device-width: 800px)" />
+    <link rel="stylesheet" href="print.css" media="print" />
+
+    <link rel="shortcut icon" type="image/png" href="../Codice/Immagini/play_logo.png" />
+</head>
+
+<body>
+    <div id="header">
+        <header>
+            <h1>Gameometry</h1>
+            <a id="logoSito" href="index.html"><img src="../Codice/Immagini/gameometry.png" alt="logo del sito Gameometry"/></a>
+            <nav id="menu"> 
+                <ul>
+                    <li><a href="index.html"><span lang="en">HOME</span></a></li>
+                    <li><a href="videogiochi.html">VIDEOGIOCHI</a></li>  
+                    <li><a href="recensioni.html">RECENSIONI</a></li>
+                    <li><a href="notizie.html">NOTIZIE</a></li>
+                    <li><a href="eventi.html">EVENTI</a></li>
+                </ul>
+            </nav>
+            <div id="navUtente">
+                <div>
+                    <form id="ricerca">
+                        <input id="searchBar" type="text" placeholder="Cerca videogioco.."></input>
+                        <div id="cerca"><img src="../Codice/Immagini/cerca.png" alt="effettua la ricerca"/></div>
+                    </form> 
+                </div>
+                <button id="areaR" aria-label="clicca per accedere all'area riservata"><a id="areaRiservata" href="areaLogIn.html"><img src="../Codice/Immagini/utente.png" alt="area riservata"/></a></button>
+            </div>
+        </header>
+        <nav id="breadcrumb"> 
+            <p>Ti trovi in: <span lang="en"><a href="index.html">Home</a></span> » Area Personale</p>
+        </nav>
+    </div> 
+    <main>
+
+        <!--Pagina Utente-->
+
+
+        <h1> AREA PERSONALE </h1>
+
+        <dl class="user">
+            <img class="user-icon" src="./Immagini/utente.png" alt="Immagine profilo utente">
+            <dl class="user-info">
+                <dt>Nome Utente</dt>
+                <dd>user</dd>
+                <dt>Data di Creazione</dt>
+                <dd><time datetime="2022-12-02">02/12/2022</time></dd>
+                <dt>Numero Recensioni</dt>
+                <dd>tante</dd>
+                <dt>Numero Commenti</dt>
+                <dd>tanti</dd>
+            </dl>
+        </dl>
+
+        <!--Recensioni-->
+
+        <h2 class="title">I MIEI COMMENTI</h2>
+        <dl id="recensioni-utenti">
+            <div>
+                <img class="r2" src="../Codice/Immagini/utente.png" alt="immagine profilo utente registrato" />
+                <dt class="titoloCritica"><a href="#">Titolo gioco</a></dt>
+                <dd>
+                    <ul class="contenutoRecensione">
+                        <li>nome utente</li>
+                        <li>commento</li>
+                    </ul>
+                    <p class="punteggio">7.5</p> <!-- JavaScript -->
+                </dd>
+            </div>
+            <div>
+                <img class="r2" src="../Codice/Immagini/utente.png" alt="immagine profilo utente registrato">
+                <dt class="titoloCritica"><a href="#">Titolo gioco</a></dt>
+                <dd>
+                    <ul class="contenutoRecensione">
+                        <li>nome utente</li>
+                        <li>commento</li>
+                    </ul>
+                    <p class="punteggio">7.5</p> <!-- JavaScript -->
+                </dd>
+            </div>
+            <div>
+                <img class="r2" src="../Codice/Immagini/utente.png" alt="immagine profilo utente registrato">
+                <dt class="titoloCritica"><a href="#">Titolo gioco</a></dt>
+                <dd>
+                    <ul class="contenutoRecensione">
+                        <li>nome utente</li>
+                        <li>commento</li>
+                    </ul>
+                    <p class="punteggio">7.5</p> <!-- JavaScript -->
+                </dd>
+            </div>
+            <div>
+                <img class="r2" src="../Codice/Immagini/utente.png" alt="immagine profilo utente registrato">
+                <dt class="titoloCritica"><a href="#">Titolo gioco</a></dt>
+                <dd>
+                    <ul class="contenutoRecensione">
+                        <li>nome utente</li>
+                        <li>commento</li>
+                    </ul>
+                    <p class="punteggio">7.5</p> <!-- JavaScript -->
+                </dd>
+            </div>
+            <div>
+                <img class="r2" src="../Codice/Immagini/utente.png" alt="immagine profilo utente registrato">
+                <dt class="titoloCritica"><a href="#">Titolo gioco</a></dt>
+                <dd>
+                    <ul class="contenutoRecensione">
+                        <li>nome utente</li>
+                        <li>commento</li>
+                    </ul>
+                    <p class="punteggio">7.5</p> <!-- JavaScript -->
+                </dd>
+            </div>
+        </dl>
+        </div>
+
+    </main>
+    <footer>
+        <div id="boxFooter">
+            <p>
+                <ul>
+                    <li><img src="../Codice/Immagini/gameometry.png" alt="logo del sito gameometry" /> <img src="../Codice/Immagini/unipd-universita-di-padova.png" alt="logo università degli studi di Padova"/></li> 
+                    <li id="aboutUs">Gioca, recensisci e resta aggiornato sulle ultime novità del mondo videoludico. Diventa parte della comunità di Gameometry!</li>
+                    <li id="infoAzienda">© 2022 Gameometry Srl - Sede Legale: Via Bari, 15 - 73030 Montesano Salentino (LE) Italy</li>
+                </ul>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
