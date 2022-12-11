@@ -384,11 +384,11 @@ ULTIME RECENSIONI
 */
 
 .titoloCritica {
-    text-align: left;
+    
     overflow: hidden;
-    padding-bottom: 1.0em;
     padding-top: 0.5em;
     font-size: 1.2em;
+    margin-bottom: 1em;
 }
 
 .titoloCritica a:link {
@@ -415,7 +415,7 @@ ULTIME RECENSIONI
     display: flex;
     float: left;
     flex-direction: column;
-    margin-right: 6em;
+    margin-right: 4em;
 }
 
 .contenutoRecensione li {
@@ -439,16 +439,20 @@ ULTIME RECENSIONI
     height: 15em;
     width: 25%;
     padding: 0.1em;
+    margin: 0.5em;
+    padding-top: 1em;
+    margin-top: 1em;
     margin-right: 1.0em;
     padding-right: 1.0em;
 }
 
-#recensioni-critica div {
+#recensioni-critica>div {
     border-bottom: 1px solid #F77F00;
     border-top: none;
-    padding-left: none;
-    padding: 1.0em;
     overflow: hidden;
+    padding: 1.0em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
 h1 {
@@ -481,6 +485,9 @@ h1 {
     margin-right: 0.5em;
 }
 
+.MameUser{
+    margin-top: 1em;
+}
 .contenutoRecensione li:last-child {
     padding-top: 1.2em;
 }
@@ -488,6 +495,7 @@ h1 {
 .r2 {
     float: left;
     margin: 0.5em;
+    margin-top: 1em;
     margin-right: 2em;
     height: 11em;
     width: 18%;
