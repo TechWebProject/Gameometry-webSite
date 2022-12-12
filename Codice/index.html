@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Gameometry</title>
+    <meta name="description" content="Questa pagina è dedicata al mondo videoludico e, più nello specifico, alle recensioni legate a questo tipo di mondo" />
+    <meta name="keywords" content="videogioco, videogiochi, console, pc, computer, recensione, recensioni, voto, notizie" />
+    <meta name="author" content="Michael Amista', Marco Brigo, Fabio Pantaleo, Filippo Sabbadin" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" media="handheld, screen" /> 
+    <link rel="stylesheet" href="mini.css" media="handheld, screen and (max-width:800px), only screen and (max-device-width: 800px)" /> 
+    <link rel="stylesheet" href="print.css" media="print" />
+
+    <link rel="shortcut icon" type="image/png" href="../Codice/Immagini/play_logo.png" />  
+</head>
+<body>
+    <div id="header">
+        <header>
+            <h1>Gameometry</h1>
+            <a id="logoSito" href="index.html"><img src="../Codice/Immagini/gameometry.png" alt="logo del sito Gameometry"/></a>
+            <nav id="menu"> 
+                <ul>
+                    <li><a href="index.html"><span lang="en">HOME</span></a></li>
+                    <li><a href="videogiochi.html">VIDEOGIOCHI</a></li>  
+                    <li><a href="recensioni.html">RECENSIONI</a></li>
+                    <li><a href="notizie.html">NOTIZIE</a></li>
+                    <li><a href="eventi.html">EVENTI</a></li>
+                </ul>
+            </nav>
+            <div id="navUtente">
+                <div>
+                    <form id="ricerca">
+                        <label alt="Barra di ricerca"><input id="searchBar" type="text" placeholder="Cerca videogioco.."></input></label>
+                        
+                        <div id="cerca"><img src="../Codice/Immagini/cerca.png" alt="effettua la ricerca"/></div>
+                    </form> 
+                </div>
+                <button id="areaR" aria-label="clicca per accedere all'area riservata"><a id="areaRiservata" href="areaLogIn.html"><img src="../Codice/Immagini/utente.png" alt="area riservata"/></a></button>
+            </div>
+        </header>
+        <nav id="breadcrumb"> 
+            <p>Ti trovi in: <span lang="en">Home</span></p>
+        </nav>
+    </div> 
+    <main>
+        <h1>GIOCHI PIÙ VOTATI</h1>
+        <div class="wrapper">
+            <div class="horizontal-wrapper">
+                <button id="btn-left" aria-label="Scorrimento a sinistra">&lsaquo; </button> 
+                <div class="carousel">
+                    <img src="../Codice/Immagini/locandinaUncharted4.jpg" alt="locandina gioco" class="imgs" alt="trend1">
+                    <img src="../Codice/Immagini/locandinaUncharted4.jpg" alt="locandina gioco" class="imgs" alt="trend2">
+                    <img src="../Codice/Immagini/locandinaUncharted4.jpg" alt="locandina gioco" class="imgs" alt="trend3">
+                    <img src="../Codice/Immagini/locandinaUncharted4.jpg" alt="locandina gioco" class="imgs" alt="trend4">
+                    <img src="../Codice/Immagini/locandinaUncharted4.jpg" alt="locandina gioco" class="imgs" alt="trend5">
+                    <img src="../Codice/Immagini/locandinaUncharted4.jpg" alt="locandina gioco" class="imgs" alt="trend6">
+                    <img src="../Codice/Immagini/locandinaUncharted4.jpg" alt="locandina gioco" class="imgs" alt="trend7">
+                    <img src="../Codice/Immagini/locandinaUncharted4.jpg" alt="locandina gioco" class="imgs" alt="trend8">
+                    <img src="../Codice/Immagini/locandinaUncharted4.jpg" alt="locandina gioco" class="imgs" alt="trend9">
+                    <img src="../Codice/Immagini/locandinaUncharted4.jpg" alt="locandina gioco" class="imgs" alt="trend10">
+                </div>
+                <button id="btn-right" aria-label="Scorrimento a destra">&rsaquo; </button>
+            </div>
+        </div>
+        <script type="text/JavaScript" src="../Codice/scriptjs.js"></script>
+
+        <h1><span lang="en">BREAKING NEWS</span></h1>
+        <div id="news-grid-container">
+            <div id="news1">
+                <div class="mainnews-box">
+                    <img src="../Codice/Immagini/locandinaGioco.png" alt="locandina God of War Ragnarok" />
+                    <div class="mainnews-section">
+                        <h2><span lang="en">God of War</span> Ragnarok</h2>
+                        <div class="news-topic">L'attore di Kratos vince il premio "<span lang="en">best performance</span>" ai <span lang="en">game awards</span>. Christopher Judge porta a casa la prima statuetta.</div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="news2">
+                <div class="news-box">
+                    <img src="../Codice/Immagini/spidermanMM.jpg" alt="locandina spiderman miles morales" />
+                    <div class="sidenews-section">
+                        <h2><span lang="en">Spider</span>-<span lang="en">Man</span>: Miles Morales</h2>
+                        <div class="sidenews-topic">Disponibile su <abbr lang="en" title="personal computer">PC</abbr> dal <time datetime="2022-11-18">18 novembre 2022</time></div>
+                    </div>
+                </div>
+            </div>
+            <div id="news3">
+                <div class="news-box">
+                    <img src="../Codice/Immagini/gta5.webp" alt="locandina gta 5" />
+                    <div class="sidenews-section">
+                        <h2>Grand Theft Auto 5</h2>
+                        <div class="sidenews-topic">Nuovo aggiornamento in arrivo per <abbr lang="en" title="play station 5">PS5</abbr> e Xbox</div>
+                    </div>
+                </div>
+            </div>
+            <div id="news4">
+                <div class="news-box">
+                    <img src="../Codice/Immagini/ACMirage.jpg" alt="locandina del nuovo gioco Assassin’s Creed Mirage" />
+                    <div class="sidenews-section">
+                        <h2><span lang="en">Assassin’s Creed Mirage</span></h2>
+                        <div class="sidenews-topic">Il mondo di <span lang="en">Assassin’s Creed</span> si sposta a Baghdad</div>
+                    </div>
+                </div>
+            </div>
+            <div id="news5">
+                <div class="news-box">
+                    <img src="../Codice/Immagini/tlou1.jpg" alt="locandina the last of us parte 1" />
+                    <div class="sidenews-section">
+                        <h2><span lang="en">The Last of Us</span> Parte 1</h2>
+                        <div class="sidenews-topic">Arriverà sulle piattaforme <span lang="en">Windows</span> il <time datetime="2023-03-03">3 marzo 2023</time></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1>ULTIME RECENSIONI</h1>
+        <div id="recensioni-critica">
+            <div class="post">
+                <img class="r1" src="../Codice/Immagini/locandinaGioco.png" alt="immagine profilo utente registrato" />
+                    <div class="commento">
+                        <div class="contenutoRecensione">
+                        <span class="titoloCritica"><a href="../Codice/recensioneGioco.html">Titolo gioco recensione: breve commento</a></span>
+                            <ul>
+                                <li>una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della 
+                                    mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione.
+                                    Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità 
+                                    di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso 
+                                    è stato raggiunto con uno slancio formidabile, e questo è di fatto l'unico spoiler che troverete in questa recensione
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="punteggio">7.5</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="post">
+                <img class="r1" src="../Codice/Immagini/locandinaGioco.png" alt="immagine profilo utente registrato" />
+                    <div class="commento">
+                        <div class="contenutoRecensione">
+                        <span class="titoloCritica"><a href="../Codice/recensioneGioco.html">Titolo gioco recensione: breve commento</a></span>
+                            <ul>
+                                <li>una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della 
+                                    mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione.
+                                    Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità 
+                                    di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso 
+                                    è stato raggiunto con uno slancio formidabile, e questo è di fatto l'unico spoiler che troverete in questa recensione
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="punteggio">7.5</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="post">
+                <img class="r1" src="../Codice/Immagini/locandinaGioco.png" alt="immagine profilo utente registrato" />
+                    <div class="commento">
+                        <div class="contenutoRecensione">
+                        <span class="titoloCritica"><a href="../Codice/recensioneGioco.html">Titolo gioco recensione: breve commento</a></span>
+                            <ul>
+                                <li>una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della 
+                                    mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione.
+                                    Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità 
+                                    di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso 
+                                    è stato raggiunto con uno slancio formidabile, e questo è di fatto l'unico spoiler che troverete in questa recensione
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="punteggio">7.5</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <h1>ULTIMI COMMENTI</h1>
+        <div id="recensioni-utenti">
+            <div class="post">
+            <img class="r2" src="../Codice/Immagini/utente.png" alt="immagine profilo utente registrato" />
+                <div class="commento">
+                    <ul class="contenutoRecensione">
+                        <span class="titoloCritica"><a href="../Codice/recensioneGioco.html">Titolo gioco recensione: breve commento</a></span>
+                        <li>nome utente</li>
+                        <li>una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della 
+                            mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione.
+                            Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità 
+                            di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso 
+                            è stato raggiunto con uno slancio formidabile, e questo è di fatto l'unico spoiler che troverete in questa recensione
+                        </li>
+                    </ul>
+                    <div>
+                        <p class="punteggioU">7.5</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post">
+                <img class="r2" src="../Codice/Immagini/utente.png" alt="immagine profilo utente registrato" />
+                    <div class="commento">
+                        <ul class="contenutoRecensione">
+                            <span class="titoloCritica"><a href="../Codice/recensioneGioco.html">Titolo gioco recensione: breve commento</a></span>
+                            <li class="NameUser">nome utente</li>
+                            <li>una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della 
+                                mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione.
+                                Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità 
+                                di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso 
+                                è stato raggiunto con uno slancio formidabile, e questo è di fatto l'unico spoiler che troverete in questa recensione</li>
+                        </ul>
+                        <div>
+                            <p class="punteggioU">7.5</p>
+                        </div>
+                    </div>
+    
+            </div>
+            <div class="post">
+                <img class="r2" src="../Codice/Immagini/utente.png" alt="immagine profilo utente registrato" />
+                    <div class="commento">
+                        <ul class="contenutoRecensione">
+                            <span class="titoloCritica"><a href="../Codice/recensioneGioco.html">Titolo gioco recensione: breve commento</a></span>
+                            <li class="NameUser">nome utente</li>
+                            <li>una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della 
+                                mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione.
+                                Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità 
+                                di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso 
+                                è stato raggiunto con uno slancio formidabile, e questo è di fatto l'unico spoiler che troverete in questa recensione</li>
+                        </ul>
+                        <div>
+                            <p class="punteggioU">7.5</p>
+                        </div>
+                    </div>
+    
+            </div>
+
+            <div class="post">
+                <img class="r2" src="../Codice/Immagini/utente.png" alt="immagine profilo utente registrato" />
+                    <div class="commento">
+                        <ul class="contenutoRecensione">
+                            <span class="titoloCritica"><a href="../Codice/recensioneGioco.html">Titolo gioco recensione: breve commento</a></span>
+                            <li>nome utente</li>
+                            <li>una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della 
+                                mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione.
+                                Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità 
+                                di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso 
+                                è stato raggiunto con uno slancio formidabile, e questo è di fatto l'unico spoiler che troverete in questa recensione</li>
+                        </ul>
+                        <div>
+                            <p class="punteggioU">7.5</p>
+                        </div>
+                    </div>
+    
+            </div>
+            
+        </div>
+    </main> 
+    <footer>
+        <div id="boxFooter">
+            <p>
+                <ul>
+                    <li><img src="../Codice/Immagini/gameometry.png" alt="logo del sito gameometry" /> <img src="../Codice/Immagini/unipd-universita-di-padova.png" alt="logo università degli studi di Padova"/></li> 
+                    <li id="aboutUs">Gioca, recensisci e resta aggiornato sulle ultime novità del mondo videoludico. Diventa parte della comunità di Gameometry!</li>
+                    <li id="infoAzienda">© 2022 Gameometry Srl - Sede Legale: Via Bari, 15 - 73030 Montesano Salentino (LE) Italy</li>
+                </ul>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
