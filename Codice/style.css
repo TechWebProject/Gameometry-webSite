@@ -881,13 +881,12 @@ ALTERAZIONE DIMENSIONI PAGINA
     }
 }
 
-@media screen and (max-width:970px) {
+@media screen and (max-width:971px) {
     #menu ul li {
         display: inline;
         padding: 0.5em;
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
-
     #searchBar {
         font-size: 0.8em;
     }
