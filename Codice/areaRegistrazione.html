@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Gameometry - Accesso</title>
+    <title>Gameometry - Registrazione</title>
     <meta name="description" content="Questa pagina è dedicata all'accesso lato utente del sito videoludico Gameometry" />
     <meta name="keywords" content="videogioco, videogiochi, piattaforma, genere, ..." />
     <meta name="author" content="Michael Amista', Marco Brigo, Fabio Pantaleo, Filippo Sabbadin" />
@@ -43,26 +43,29 @@
             </div>
         </header>
         <nav id="breadcrumb"> 
-            <p>Ti trovi in: <span lang="en"><a href="index.html">Home</a></span> » Accesso</p>
+            <p>Ti trovi in: <span lang="en"><a href="index.html">Home</a></span> » Registrazione</p>
         </nav>
     </div> 
     <main>
-        <h1>AREA DI ACCESSO</h1>
-        <div id="logIn">
-            <form action="accesso">
-                <h2 id="loginTitle"><span lang="en">Login</span></h2>
+        <h1>REGISTRAZIONE</h1>
+        <div id="registrazione">
+            <form action="registrazione">
+                <h2 id="loginTitle">Registrazione</h2>
                 <fieldset>
+                    <span id="mailBox">
+                        <label for="email"><span lang="en">Email</span></label>
+                        <input name="email" id="email" placeholder="Digita la tua mail" maxlength="20" />
+                    </span>
                     <span id="usernameBox">
                         <label for="username"><span lang="en">Username</span></label>
-                        <input name="username" id="username" placeholder="Digita username" maxlength="20" />
+                        <input name="username" id="username" placeholder="Scegli uno username" maxlength="20" />
                     </span>
                     <span id="passwordBox">
                         <label for="password"><span lang="en">Password</span></label>
-                        <input type="password" name="password" id="password" placeholder="Digita password" maxlength="20" />
+                        <input type="password" name="password" id="password" placeholder="Scegli una password" maxlength="20" />
                     </span>
-                    <span id="registerBox">
-                        <button id="registrati" aria-label="clicca per registrarti al sito"><a href="areaRegistrazione.html">registrati</a></button>
-                        <button id="submit" aria-label="clicca per accedere al sito">accedi</button>
+                    <span id="submitButton">
+                        <button id="register" aria-label="clicca per registrarti al sito">registrati</button>
                     </span>
                 </fieldset>
             </form>

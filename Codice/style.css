@@ -130,7 +130,7 @@ header div {
 #areaR{
     background-color: #F77F00;
     border: none;
-    margin-right: 2em;
+    margin-right: 2.0em;
 }
 
 #areaRiservata {
@@ -452,7 +452,7 @@ ULTIME RECENSIONI
     margin-right: 0.5em;
 }
 
-h1 {
+h1, .titleH2 {
     font-size: 1.6em;
     margin-top: 1.0em;
     margin-left: 0.3em;
@@ -686,7 +686,6 @@ PAGINA SINGOLA RECENSIONE
 
 #scores span {
     color: white;
-
 }
 
 #punteggioCritica{
@@ -700,12 +699,31 @@ PAGINA SINGOLA RECENSIONE
     background-color: #f78000;
 }
 
-
 #contenuto {
     line-break: anywhere;
     color: white;
     margin: 1.5em;
     margin-bottom: 3em;
+}
+
+#inputCommento{
+    margin: 1.0em;
+    width: 70%;
+}
+#areaCommento{
+    display: block;
+    font-family: "Poppins", "sans-serif";
+    font-size: 1.2em;
+    line-height: 1.5em;
+    border-radius: 5px;
+    width: 135%;
+}
+#inviaCommento{
+    margin-top: 1.0em;
+    border-radius: 0.2em;
+    font-size: 1.0em;
+    padding: 0.2em;
+    border: none;
 }
 
 /*
@@ -762,7 +780,7 @@ PAGINA DI ACCESSO
 =================
 */
 
-#logIn{
+#logIn, #registrazione{
     text-align: center;
     display: flex;
     justify-content: center;
@@ -770,13 +788,16 @@ PAGINA DI ACCESSO
     padding-top: 3em;
     padding-bottom: 3em;
 }
+#registrazione{
+    padding-top: 1.0em;
+}
 #loginTitle{
     color: white;
     font-weight: bolder;
     padding: 1.0em;
     font-size: 1.2em;
 }
-#logIn form{
+#logIn form, #registrazione form{
     width: 50%;
     border-radius: 0.5em;
     background-color: #F77F00;
@@ -785,18 +806,22 @@ PAGINA DI ACCESSO
     border: none;
     height: 12.0em;
 }
-#logIn label{
+#registrazione form fieldset{
+    border: none;
+    height: 15.0em;
+}
+#logIn label, #registrazione label{
     display: block;
     padding-bottom: 0.4em;
     color: white;
 }
 
-#usernameBox, #passwordBox{
+#mailBox, #usernameBox, #passwordBox, #registerBox{
     display: block;
     margin-bottom: 1.5em;
 }
 
-#username, #password{
+#username, #password, #email{
     font-size: 0.8em;
     height: 1.5em;
     border-radius: 0.3em;
@@ -804,7 +829,7 @@ PAGINA DI ACCESSO
     text-align: center;
 }
 
-#submit{
+#submit, #register, #registrati{
     padding: 0.4em;
     padding-left: 0.5em;
     padding-right: 0.5em;
@@ -813,6 +838,12 @@ PAGINA DI ACCESSO
     margin-top: 0.2em;
     margin-bottom: 0.6em;
     border: none;
+}
+#registrati{
+    margin-right: 1.0em;
+}
+#registrati a{
+    color: black;
 }
 
 /*
