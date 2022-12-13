@@ -42,7 +42,7 @@ SEZIONE HEADER
 header {
     padding: 0.5em;
     display: grid;
-    grid-template-columns: 1fr 4fr 2fr 0.5fr;
+    grid-template-columns: 1fr 4fr 2fr;
     grid-gap: 15px;
 }
 
@@ -125,12 +125,12 @@ header div {
 
 #cerca img {
     padding-right: 0.5em;
-    padding-left: 1.0em;
 }
 
 #areaR{
     background-color: #F77F00;
     border: none;
+    margin-right: 2em;
 }
 
 #areaRiservata {
@@ -837,22 +837,26 @@ ALTERAZIONE DIMENSIONI PAGINA
     #menu ul li {
         display: inline;
         padding: 0.8em;
-        font-size: 0.8em
+        font-size: 1em
     }
 
-    #searchBar {
-        font-size: 0.6em;
+    #ricerca {
+        width: 100%;
+    }
+
+    header nav{
+        padding-left: 1em;
     }
 }
 
-@media screen and (max-width:950px) {
+@media screen and (max-width:970px) {
     #menu ul li {
         display: inline;
-        padding: 0.2em;
-        font-size: 0.8em;
+        padding: 0.5em;
+        font-size: 0.9em;
     }
 
     #searchBar {
-        font-size: 0.4em;
+        font-size: 0.8em;
     }
 }

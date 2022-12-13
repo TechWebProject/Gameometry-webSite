@@ -33,10 +33,18 @@ header{
 }
 
 #menu ul li{
-    padding: 1.0em;
-    font-size: 1.3em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-top: 0;
+    padding-bottom:0;
+    font-size: 1.5em;
+    border-right: 1px solid white;
     grid-row: 2;
     grid-column: 1;
+}
+
+#menu ul li:last-child{
+    border-right: none;
 }
 
 header div{
@@ -68,12 +76,17 @@ header div{
     width: 70%;
     height: 2.0em;
     margin-right: 2em;
-    font-size: 0.7em;
+    font-size: 1.4em;
 }
 
 #areaRiservata{
     grid-row: 4;
     grid-column: 1;
+}
+
+#areaRiservata img {
+    width: 80%;
+    height: 3em;
 }
 
 /*
@@ -210,3 +223,118 @@ PAGINA DI ACCESSO
 #logIn{
     padding-bottom: 28.5em;
 }
+
+/*
+=================
+PAGINA RECENSIONE
+=================
+*/
+
+#areaCommento{
+    font-size: 1.5em;
+}
+#inviaCommento{
+    font-size: 2.0em;
+}
+
+
+@media screen and (max-width: 800px){
+    #menu ul li{
+        padding-left: 1.2em;
+        padding-right: 1.2em;
+        font-size: 1em;
+    }
+
+    #ricerca{
+        padding-bottom: 0.5em;
+        height: 0.8em;
+    }
+    
+    #cerca img{
+        padding-left: 0.5em;
+        width: 50%;
+        height: 1.2em;
+    }
+
+    #searchBar{
+        width: 100%;
+        font-size: 1em;
+    }
+
+    #areaRiservata img {
+        width: 80%;
+        height: 2em;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    #menu ul li{
+        padding-left: 1.2em;
+        padding-right: 1.2em;
+        font-size: 0.8em;
+    }
+}
+
+
+@media screen and (max-device-width: 600px) {
+
+    #menu{
+        margin-top:2em;
+    }
+
+    #menu ul li{
+        padding-left: 0.6em;
+        padding-right: 0.6em;
+        font-size: 2em;
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    
+    #ricerca{
+        padding-bottom: 0.8em;
+        height: 1.4em;
+    }
+    
+    #cerca img{
+        padding-left: 0.5em;
+        width: 100%;
+        height: 2em;
+    }
+
+    #searchBar{
+        width: 200%;
+        font-size: 1.8em;
+    }
+
+    #areaRiservata img {
+        width: 100%;
+        height: 4em;
+    }
+
+    #navUtente{
+        margin-top: 3.5em;
+    }
+    
+    #breadcrumb{
+        font-size: 1.8em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        margin-top: 1.5em;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-top: 3em;
+        padding: 0.4em;
+        border-radius: 7px;
+        color: white;
+        text-align: left;
+        background-color: #F77F00;
+        border: 0.5px solid #F77F00;
+    }
+    
+}
+
+
