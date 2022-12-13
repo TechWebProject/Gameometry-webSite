@@ -46,7 +46,7 @@
             <p>Ti trovi in: <span lang="en"><a href="index.html">Home</a></span> » Recensione Gioco</p>
         </nav>
     </div> 
-    <main>
+    <main id="recensioneGioco">
         <div id="headerRecensione">
             <h1 id="titoloRecensione">God of War: Ragnarok</h1>
             <span>Il Fimbulvetr è giunto al termine, la fine dei nove regni inizia ora</span>
@@ -74,6 +74,38 @@
         <div id="inputCommento">
             <form action="inserisciCommento"> <!-- da collegare il php -->
                 <textarea id="areaCommento" name="commento" rows="10" placeholder="Lascia un commento" maxlength="900"></textarea>
+                <div id="votazione">
+                    <p>Lascia un voto:</p>
+                    <input name="rating" type="radio" id="rate1" value="1" />
+                    <label id="voto" for="rate">1</label>
+                 
+                    <input name="rating" type="radio" id="rate2" value="2" />
+                    <label id="voto" for="rate">2</label>
+                 
+                    <input name="rating" type="radio" id="rate3" value="3" />
+                    <label id="voto" for="rate">3</label>
+                 
+                    <input name="rating" type="radio" id="rate4" value="4" />
+                    <label id="voto" for="rate">4</label>
+                 
+                    <input name="rating" type="radio" id="rate5" value="5" />
+                    <label id="voto" for="rate">5</label>
+
+                    <input name="rating" type="radio" id="rate6" value="6" />
+                    <label id="voto" for="rate">6</label>
+
+                    <input name="rating" type="radio" id="rate7" value="7" />
+                    <label id="voto" for="rate">7</label>
+
+                    <input name="rating" type="radio" id="rate8" value="8" />
+                    <label id="voto" for="rate">8</label>
+
+                    <input name="rating" type="radio" id="rate9" value="9" />
+                    <label id="voto" for="rate">9</label>
+
+                    <input name="rating" type="radio" id="rate10" value="10" />
+                    <label id="voto" for="rate">10</label>
+                </div>
                 <input id="inviaCommento" type="submit" value="Commenta">
             </form>
         </div>

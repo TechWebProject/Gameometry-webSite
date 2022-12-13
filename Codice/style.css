@@ -729,6 +729,18 @@ PAGINA SINGOLA RECENSIONE
     border: none;
 }
 
+#votazione{
+    color: white;
+    margin-top: 1.0em;
+}
+#votazione p{
+    float: left;
+    margin-right: 1.0em;
+}
+#voto{
+    margin-right: 0.5em;
+}
+
 /*
 =============
 PAGINA UTENTE
