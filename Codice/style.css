@@ -27,7 +27,7 @@ SEZIONE HEADER
 }
 
 #menu a:visited{
-    color: white;
+    color: #AD343E;
 }
 
 #menu a:hover{
@@ -178,7 +178,7 @@ SEZIONE BREADCRUMB
 }
 
 #breadcrumb a:visited {
-    color: black;
+    color: #AD343E;
 }
 
 #breadcrumb a:hover {
@@ -396,7 +396,7 @@ ULTIME RECENSIONI
 }
 
 .titoloCritica a:visited {
-    color: white;
+    color: #AD343E;
 }
 
 .titoloCritica a:hover {
