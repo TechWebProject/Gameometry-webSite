@@ -723,10 +723,15 @@ PAGINA SINGOLA RECENSIONE
 }
 #inviaCommento{
     margin-top: 1.0em;
-    border-radius: 0.2em;
+    border-radius: 0.4em;
     font-size: 1.0em;
-    padding: 0.2em;
-    border: none;
+    padding: 0.6em;
+    background-color: #191919;
+    color: white;
+    border: 3px solid white;
+}
+#inviaCommento:hover{
+    background-color: #F77F00;
 }
 
 #votazione{
