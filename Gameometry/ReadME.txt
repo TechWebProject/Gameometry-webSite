@@ -3,7 +3,7 @@ UTILIZZO XAMPP
 ==================
 
 1- Scaricare Xampp
-2- Andare sulla directory di Xampp (solitamente su C: ) , in htdocs spostare la cartella col progetto (DBprova)
+2- Andare sulla directory di Xampp (solitamente su C: ) , in htdocs spostare la cartella col progetto (Gameometry)
 3- Avviare Xampp e cliccare su Start su Apache e su MySQL
 4- Aprire il browser e scrivere sulla barra di ricerca localhost/Gameometry/Codice/index.php
 
