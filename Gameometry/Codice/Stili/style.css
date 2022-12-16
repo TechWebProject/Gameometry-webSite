@@ -585,6 +585,7 @@ PAGINA VIDEOGIOCHI
 PAGINA EVENTI
 =============
 */
+
 #ultimiEventi:last-child {
     padding-bottom: 0.6em;
 }
@@ -660,7 +661,7 @@ PAGINA SINGOLA RECENSIONE
     margin-top: 2em;
     width: 100%;
     height: 300px;
-    background-image: url(../Codice/Immagini/copertina5.jpg);
+    background-image: url('../Codice/Immagini/copertina5.jpg');
     background-size: cover;
     padding-bottom: 2em;
     margin-left: 1em;

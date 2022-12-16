@@ -15,7 +15,7 @@ $html->appendChild($doc->createTextNode($head));
 
 //header
 $header=file_get_contents('sezioniComuni/header.html');
-$header = str_replace("Notizie","Recensione",$header); /*Recensione dovrà essere sostituita con il titolo del relativo gioco*/
+$header = str_replace("Notizie","<a href=recensioni.php>Recensioni</a> &raquo; Recensione Videogioco",$header); /*Recensione dovrà essere sostituita con il titolo del relativo gioco*/
 $body->appendChild($doc->createTextNode($header));
 
 
