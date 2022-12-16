@@ -59,7 +59,7 @@ $spanUser2 = $spanUser2->appendChild($doc->createTextNode('Username'));
 $spanUserInput = $spanUser->appendChild($doc->createElement('input'));
 $spanUserInput->setAttribute('name','username');
 $spanUserInput->setAttribute('id','username');
-$spanUserInput->setAttribute('placeholder','Digita il tuo username');
+$spanUserInput->setAttribute('placeholder','Scegli il tuo username');
 $spanUserInput->setAttribute('maxlength','30'); /* deve essere uguale alla dimensione dell'attributo nel DB */
 
 $spanPassword = $fieldset->appendChild($doc->createElement('span'));
@@ -73,7 +73,7 @@ $spanPasswordInput = $spanPassword->appendChild($doc->createElement('input'));
 $spanPasswordInput->setAttribute('type','password');
 $spanPasswordInput->setAttribute('name','password');
 $spanPasswordInput->setAttribute('id','password');
-$spanPasswordInput->setAttribute('placeholder','Digita la tua password');
+$spanPasswordInput->setAttribute('placeholder','Scegli la tua password');
 $spanPasswordInput->setAttribute('maxlength','30'); /* deve essere uguale alla dimensione dell'attributo nel DB */
 
 $spanRegister = $fieldset->appendChild($doc->createElement('span'));
