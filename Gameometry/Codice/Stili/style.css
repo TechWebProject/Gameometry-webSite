@@ -861,11 +861,12 @@ PAGINA DI ACCESSO
     margin-top: 0.2em;
     margin-bottom: 0.6em;
     border: none;
+    background-color: white;
 }
 #registrati{
     margin-right: 1.0em;
 }
-#registrati a{
+#registrati a, #register a, #submit a{
     color: black;
 }
 
