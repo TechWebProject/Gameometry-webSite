@@ -8,11 +8,11 @@ $body = $doc->appendChild($doc->createElement('body'));
 
 //head
 $head=file_get_contents('sezioniComuni/head.html');
+$head = str_replace("<title>Gameometry</title>","<title>Gameometry | Notizie</title>", $head);
 $html->appendChild($doc->createTextNode($head));
 
 //header
 $header=file_get_contents('sezioniComuni/header.html');
-$header = str_replace("&raquo; Notizie","",$header);
 $body->appendChild($doc->createTextNode($header));
 
 

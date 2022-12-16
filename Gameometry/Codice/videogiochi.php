@@ -8,7 +8,7 @@ $body = $doc->appendChild($doc->createElement('body'));
 
 //head
 $head=file_get_contents('sezioniComuni/head.html');
-$head = str_replace("<title>Gameometry</title>","<title>Gameometry - Videogiochi</title>", $head);
+$head = str_replace("<title>Gameometry</title>","<title>Gameometry | Videogiochi</title>", $head);
 $html->appendChild($doc->createTextNode($head));
 
 //header
