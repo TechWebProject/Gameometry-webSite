@@ -13,6 +13,8 @@ $html->appendChild($doc->createTextNode($head));
 //header
 $header=file_get_contents('sezioniComuni/header.html');
 $header = str_replace("&raquo; Notizie","",$header);
+$head = str_replace("Questa pagina è dedicata al mondo videoludico e, più nello specifico, alle recensioni legate a questo tipo di mondo");
+$head = str_replace("videogioco, videogiochi, utente, recensioni", "gameometry, videogioco, videogiochi, console, pc, computer, recensione, recensioni, voto, notizie", $head);
 $body->appendChild($doc->createTextNode($header));
 
 

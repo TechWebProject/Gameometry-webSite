@@ -9,6 +9,8 @@ $body = $doc->appendChild($doc->createElement('body'));
 //head
 $head=file_get_contents('sezioniComuni/head.html');
 $head = str_replace("<title>Gameometry</title>","<title>Gameometry | Accesso</title>", $head);
+$head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Accedi a Gameometry e gestisci i tuoi commenti");
+$head = str_replace("videogioco, videogiochi, utente, recensioni", "gameometry, accesso, login, videogioco, videogiochi, utente, recensioni", $head);
 $html->appendChild($doc->createTextNode($head));
 
 //header

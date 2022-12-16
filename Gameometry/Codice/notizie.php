@@ -9,6 +9,8 @@ $body = $doc->appendChild($doc->createElement('body'));
 //head
 $head=file_get_contents('sezioniComuni/head.html');
 $head = str_replace("<title>Gameometry</title>","<title>Gameometry | Notizie</title>", $head);
+$head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Questa pagina è dedicata alle ultime notizie riguardanti il mondo videoludico");
+$head = str_replace("videogioco, videogiochi, utente, recensioni", "gameometry, videogioco, videogiochi, notizie, ...", $head);
 $html->appendChild($doc->createTextNode($head));
 
 //header
