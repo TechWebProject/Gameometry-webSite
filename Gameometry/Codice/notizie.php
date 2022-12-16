@@ -15,7 +15,9 @@ $html->appendChild($doc->createTextNode($head));
 $header=file_get_contents('sezioniComuni/header.html');
 $body->appendChild($doc->createTextNode($header));
 
-
+//main
+$main = file_get_contents('Componenti/listaNotizie.html');
+$body->appendChild($doc->createTextNode($main));
 
 //footer
 $footer=file_get_contents("sezioniComuni/footer.html");

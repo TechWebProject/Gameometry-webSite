@@ -16,7 +16,9 @@ $header=file_get_contents('sezioniComuni/header.html');
 $header = str_replace("Notizie","Eventi",$header);
 $body->appendChild($doc->createTextNode($header));
 
-
+//main
+$main = file_get_contents('Componenti/listaEventi.html');
+$body->appendChild($doc->createTextNode($main));
 
 //footer
 $footer=file_get_contents("sezioniComuni/footer.html");
