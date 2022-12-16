@@ -9,7 +9,7 @@ $body = $doc->appendChild($doc->createElement('body'));
 //head
 $head=file_get_contents('sezioniComuni/head.html');
 $head = str_replace("<title>Gameometry</title>","<title>Gameometry | Recensione</title>", $head); /*Recensione dovrà essere sostituita con il titolo del relativo gioco*/
-$head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Questa pagina è dedicata alle recensioni videoludiche sugli ultimi prodotti usciti");
+$head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Questa pagina è dedicata alle recensioni videoludiche sugli ultimi prodotti usciti", $head);
 $head = str_replace("videogioco, videogiochi, utente, recensioni", "gameometry, recensioni, recensione, videogioco, videogiochi, voto, commento", $head);
 $html->appendChild($doc->createTextNode($head));
 
