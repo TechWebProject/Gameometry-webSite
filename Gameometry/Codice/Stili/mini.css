@@ -190,6 +190,10 @@ ULTIME RECENSIONI
     padding-top: 1.2em;
 }
 
+.punteggio {
+    max-height: 1.8em;
+}
+
 /*
 ==============
 SEZIONE FOOTER

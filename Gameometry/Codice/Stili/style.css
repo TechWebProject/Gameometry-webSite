@@ -76,6 +76,7 @@ header nav {
     padding-left: 2em;
     align-self: center;
     border-bottom: 1.0em;
+    list-style-type: none;
 }
 
 #menu ul li {
@@ -375,22 +376,14 @@ ULTIME NEWS
     font-size: 1em;
 }
 
-#ultime-notizie:last-child {
-    padding-bottom: 0.6em;
-}
-
 /*
 =================
 ULTIME RECENSIONI
 =================
 */
 
-.titoloCritica {
-    
-    overflow: hidden;
-    padding-top: 0.5em;
+.titoloCritica{
     font-size: 1.2em;
-    margin-bottom: 1em;
 }
 
 .titoloCritica a:link {
@@ -412,16 +405,9 @@ ULTIME RECENSIONI
     color: white;
 }
 
-.contenutoRecensione {
-    display: flex;
-    float: left;
-    flex-direction: column;
-    margin-right: 4em;
-}
-
-.contenutoRecensione li {
+.contenutoRecensione p {
+    padding-top: 0.5em;
     color: white;
-    list-style: none;
 }
 
 .commento {
@@ -433,7 +419,6 @@ ULTIME RECENSIONI
 #recensioni-critica>dd {
     padding: 0.2em;
 }
-
 
 .r1 {
     float: left;
@@ -497,23 +482,25 @@ h1, .titleH2 {
     float: left;
     margin: 0.5em;
     margin-top: 1em;
-    margin-right: 2em;
+    margin-right: 5em;
+    margin-left: 1.5em;
     height: 11em;
-    width: 18%;
+    width: 11em;
     background-repeat: no-repeat;
-    padding: 1em;
-    padding-right: 3em;
-    padding-left: 1.5em;
+    padding: 0.5em;
+    background-color: white;
+    border-radius: 100%;
 }
 
 .punteggio {
-    float: right;
     background-color: white;
     color: #F77F00;
     font-weight: bold;
-    padding: 0.35em;
+    padding: 0.5em;
     border-radius: 7px;
     font-size: 1.5em;
+    max-height: 1.0em;
+    text-align: center;
 }
 
 .punteggioU{
@@ -586,7 +573,7 @@ PAGINA EVENTI
 =============
 */
 
-#ultimiEventi:last-child {
+#ultimiEventi:last-child, #ultime-notizie:last-child {
     padding-bottom: 0.6em;
 }
 
@@ -773,12 +760,13 @@ dl{
 }
 
 .user-icon{
-    margin: 3em;
-    padding: 1em;
+    height: 15em;
     width: 15em;
+    padding: 0.5em;
+    margin: 5em;
     float: left;
     background-color: white;
-    border-radius: 99%;
+    border-radius: 100%;
 }
 
 .user-info>dt::after{
