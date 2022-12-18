@@ -12,6 +12,7 @@ header{
     grid-template-rows: 4em 2em 2em;
     grid-gap: 15px;
     padding-bottom: 2em;
+    max-height: 9.0em;
 }  
 
 #logoSito{
@@ -98,7 +99,7 @@ SEZIONE CONTENUTO
 main{
     max-width: 1024px;
     margin: auto;
-    padding-top: 15em;
+    padding-top: 12em;
     background-color: #191919; 
 }
 

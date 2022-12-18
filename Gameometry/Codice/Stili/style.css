@@ -44,6 +44,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 4fr 2fr;
     grid-gap: 15px;
+    max-height: 4.0em;
 }
 
 header h1 {
@@ -61,12 +62,11 @@ header h1 {
 #logoSito {
     grid-row: 1;
     grid-column: 1/2;
-    align-self: center;
+    padding-top: 0.5em;
 }
 
 #logoSito img {
-    padding-top: 0.8em;
-    width: 120%;
+    width: 100%;
 }
 
 header nav {
@@ -89,10 +89,6 @@ header div {
     justify-content: center;
 }
 
-#navUtente{
-    margin-top:1.5em;
-    margin-bottom: 1.5em;
-}
 #ricerca {
     grid-row: 1;
     grid-column: 3/4;
@@ -280,7 +276,7 @@ SLIDER
 main{
     max-width: 1024px;
     margin: auto;
-    padding-top: 9.0em;   
+    padding-top: 6.5em;   
     background-color: #191919; 
 }
 
