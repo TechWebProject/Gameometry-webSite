@@ -1,6 +1,6 @@
-==================
+==============
 UTILIZZO XAMPP
-==================
+==============
 
 1- Scaricare Xampp
 2- Andare sulla directory di Xampp (solitamente su C: ) , in htdocs spostare la cartella col progetto (Gameometry)
@@ -8,9 +8,9 @@ UTILIZZO XAMPP
 4- Aprire il browser e scrivere sulla barra di ricerca localhost/Gameometry/Codice/index.php
 
 
-======================
+=================
 LETTURA DIRECTORY
-======================
+=================
 
 -Immagini: cartella che corrisponde alla cartella per le immagini utilizzate nel progetto
 
