@@ -16,9 +16,7 @@ LETTURA DIRECTORY
 
 -imgs: cartella utilizzata dal codice per reperire le img attualmente presenti in locale ma anche sul DB
 
--connect.php: file importato dove serve per connettersi al DB + una funzione per rimuovere dai nome le estensioni dei file
-
--index.html: pagina fittizia in quanto mi serviva solo l'utilizzo del  bottone che rievoca l'utilizzo dell'li "videogiochi" nell'header
+-connect.php: file importato, serve per connettersi al DB + una funzione per rimuovere dal nome le estensioni dei file
 
 -*autoinsert: codice da runnare da vs non appena si aggiunge una nuova immagine sulla cartella imgs. Invia una query che inserisce sul db le sue info (fin ora utili)
 
