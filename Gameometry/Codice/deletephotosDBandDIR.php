@@ -1,7 +1,7 @@
 <?php
-include 'connect.php';
+include 'Componenti/connect.php';
 
-$dir = scandir("imgs");
+$dir = scandir("Gameometry/Codice/imgs");
 $str = 'imgs/';
 
 echo "\n";

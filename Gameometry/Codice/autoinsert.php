@@ -1,7 +1,7 @@
 <?php
 include 'Componenti/connect.php';
 
-$dir = scandir("imgs");
+$dir = scandir("Gameometry/Codice/imgs");
 $str = 'imgs/';
 
 $db1=OpenCon();
@@ -25,6 +25,8 @@ for($i = $count+2 ; $i < count($dir); $i++){
     $res = $str.$dir[$i];
     $trimmedword = RemoveSpecialChar($dir,$i);
     $trimmedword = str_replace('locandina ','',$trimmedword);
+    $trimmedword= mysqli_real_escape_string($db2,$trimmedword);
+    $res = mysqli_real_escape_string($db2,$res);
     $query = "INSERT INTO videogioco (titolo,imgLocandina) VALUES ('$trimmedword','$res')";
     $useless=mysqli_query($db2,$query);
 }
