@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+include 'Componenti/connect.php';
 
 $dir = scandir("imgs");
 $str = 'imgs/';
@@ -24,6 +24,7 @@ $db2 = OpenCon(); //Apro nuova connessione col db per questa nuova tipo di query
 for($i = $count+2 ; $i < count($dir); $i++){
     $res = $str.$dir[$i];
     $trimmedword = RemoveSpecialChar($dir,$i);
+    $trimmedword = str_replace('locandina ','',$trimmedword);
     $query = "INSERT INTO videogioco (titolo,imgLocandina) VALUES ('$trimmedword','$res')";
     $useless=mysqli_query($db2,$query);
 }

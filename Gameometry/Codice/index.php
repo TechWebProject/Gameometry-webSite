@@ -52,6 +52,10 @@ foreach ($imgz as $attributes) {
     $imgtag = $divSlider->appendChild($doc->createElement('img'));
     foreach ($attributes as $key => $value) {
         $imgtag->setAttribute($key, $value);
+        if($key=='alt'){
+            $key=str_replace('locandina ','',$value);
+            $imgtag->setAttribute('name',$value);
+        }
     }
     $imgtag->setAttribute('class','imgs');
 }

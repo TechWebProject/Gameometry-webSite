@@ -43,6 +43,10 @@ foreach ($imgz as $attributes) {
     $imgtag = $div_sezioneVideogiochi->appendChild($doc->createElement('img'));
     foreach ($attributes as $key => $value) {
         $imgtag->setAttribute($key, $value);
+        if($key=='alt'){
+            $value=str_replace('locandina ','',$value);
+            $imgtag->setAttribute('name',$value);
+        }
     }
     $imgtag->setAttribute('class','imgs');
 }

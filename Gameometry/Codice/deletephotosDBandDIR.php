@@ -37,6 +37,7 @@ CloseCon($db1);
 /* Parte 2: Query che elimina sulla row corrispondente al nome file */
 
 $db2=OpenCon();
+$nomeFile=str_replace('locandina ','',$nomeFile);
 $query = "DELETE FROM videogioco WHERE titolo='$nomeFile'";
 mysqli_query($db2,$query);
 CloseCon($db2);
