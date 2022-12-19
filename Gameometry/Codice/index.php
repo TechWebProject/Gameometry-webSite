@@ -80,6 +80,32 @@ $h1Recensioni = $h1Recensioni->appendChild($doc->createTextNode('ULTIME RECENSIO
 $divRec = $main->appendChild($doc->createElement('div'));
 $divRec->setAttribute('id','recensioni-critica');
 
+/*
+
+//Query che trova quanti videogiochi ci sono attualmente
+$db1=OpenCon();
+
+$tmpquery= "SELECT COUNT(*) as Conto FROM videogioco";
+
+$result = mysqli_query($db1,$tmpquery);
+
+$r = mysqli_fetch_all($result,MYSQLI_ASSOC);
+
+$count = $r[0]['Conto'];
+
+for($i=0;$i<4;$i++){
+//Query che prende in base alla data più recente le ultime 5 (abbiamo attributo data su recensione) -> la query mi deve restituire contenuto,data,voto,chiave esterna
+// -> con la chiave esterna titolo riesco a reperirmi la img del gioco
+    $divRecX = $divRec->appendChild($doc->createElement('div'));
+    $imgRecX = $divRecX->appendChild($doc->createElement('img'));
+    $imgRecX->setAttribute('class','r1'); 
+    $imgRecX->setAttribute('src',PercorsoDaimgLocandina);
+    $imgRecX->setAttribute('alt',titolo);
+    $imgRecX->setAttribute('name',titolo);
+}
+
+*/
+
 $divRec1 = $divRec->appendChild($doc->createElement('div'));
 $divRec1->setAttribute('class','post');
 $imgRec1 = $divRec1->appendChild($doc->createElement('img'));
