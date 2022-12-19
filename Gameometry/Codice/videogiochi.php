@@ -23,7 +23,7 @@ $main = $body->appendChild($doc->createElement('main'));
 
 $h1_Video = $main->appendChild($doc->createElement('h1'));
 $h1_Video->setAttribute('id','newsTitle');
-$h1_Video = $h1_Video->appendChild($doc->createTextNode('VIDEOGIOCHI'));
+$h1_Video = $h1_Video->appendChild($doc->createTextNode('LA NOSTRA SELEZIONE DI VIDEOGIOCHI'));
 
 $div_sezioneVideogiochi = $main->appendChild($doc->createElement('div'));
 $div_sezioneVideogiochi->setAttribute('id','sezioneVideogiochi');
