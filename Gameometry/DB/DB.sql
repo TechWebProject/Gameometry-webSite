@@ -27,6 +27,7 @@ CREATE TABLE Utente(
     email VARCHAR(100) PRIMARY KEY,
     nickname VARCHAR(30) UNIQUE NOT NULL,
     password VARCHAR(30) NOT NULL,
+    dataIscrizione DATE NOT NULL,
     imgProfilo VARCHAR(100)
 );
 
