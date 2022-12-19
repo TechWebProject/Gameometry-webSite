@@ -27,16 +27,11 @@ $header = str_replace(
 );
 $html->appendChild($doc->createTextNode($header));
 
-//////////////
-//io vi ammazzo
-/////////////
-
-
 $main = $html->appendChild($doc->createElement('main'));
 $imgbanner = $html->appendChild($doc->createElement('img'));
 $imgbanner->setAttribute('id', 'bannergioco');
 $imgbanner->setAttribute('alt', 'Immagine di copertina');
-$imgbanner->setAttribute('src', "./imgs/banner_gtav.jpeg"); //(da cambiare con il database)
+$imgbanner->setAttribute('src', "Immagini/banner_gtav.jpeg"); //(da cambiare con il database)
 $main->appendChild($imgbanner);
 
 $h1 = $html->appendChild($doc->createElement('h1'));
