@@ -562,10 +562,11 @@ PAGINA VIDEOGIOCHI
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(auto-fill, 25.0em);
+    grid-template-rows: repeat(auto-fill, 1fr);
     grid-row-gap: 2.0em;
     grid-column-gap: 2.0em;
     padding-bottom: 1.5em;
+    margin-top: 2.0em;
     margin-bottom: 5.0em;
     align-items: center;
     justify-items: center;

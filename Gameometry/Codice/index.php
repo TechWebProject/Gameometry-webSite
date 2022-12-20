@@ -37,8 +37,8 @@ $rightRow = $rightRow->appendChild($doc->createTextNode('&lsaquo;'));
 $divSlider = $divInternalCarousel->appendChild($doc->createElement('div'));
 $divSlider->setAttribute('class','carousel');
 
-$dir = scandir("imgs");
-$str = 'imgs/';
+$dir = scandir("Locandine");
+$str = 'Locandine/';
 
 $imgz = array(count($dir)-2);
 

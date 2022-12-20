@@ -1,14 +1,14 @@
 <?php
 include 'Componenti/connect.php';
 
-$dir = scandir("Gameometry/Codice/imgs");
-$str = 'imgs/';
+$dir = scandir("Gameometry/Codice/Locandine");
+$str = 'Locandine/';
 
 echo "\n";
 echo "========================================"."\n";
 $nomeFile = readline('Inserisci il nome del file da eliminare: ');
 
-/* Parte 1: Query che ricerca il path salvato sul DB e lo elimina dalla cartella imgs locale */
+/* Parte 1: Query che ricerca il path salvato sul DB e lo elimina dalla cartella Locandine locale */
 
 $db1=OpenCon();
 

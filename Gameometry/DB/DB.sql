@@ -8,6 +8,7 @@ CREATE TABLE Videogioco(
     rilascio DATE NOT NULL,
     casaProduttrice VARCHAR(50) NOT NULL,
     imgLocandina VARCHAR(100) NOT NULL,
+    imgBanner VARCHAR(100) NOT NULL,
     trama TEXT NOT NULL,
     piattaformaV VARCHAR(100) NOT NULL,
     genereV VARCHAR(100) NOT NULL

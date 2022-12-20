@@ -28,8 +28,8 @@ $h1_Video = $h1_Video->appendChild($doc->createTextNode('LA NOSTRA SELEZIONE DI 
 $div_sezioneVideogiochi = $main->appendChild($doc->createElement('div'));
 $div_sezioneVideogiochi->setAttribute('id','sezioneVideogiochi');
 
-$dir = scandir("imgs");
-$str = 'imgs/';
+$dir = scandir("Locandine");
+$str = 'Locandine/';
 
 $imgz = array(count($dir)-2);
 

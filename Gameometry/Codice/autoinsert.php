@@ -1,8 +1,8 @@
 <?php
 include 'Componenti/connect.php';
 
-$dir = scandir("Gameometry/Codice/imgs");
-$str = 'imgs/';
+$dir = scandir("Gameometry/Codice/Locandine");
+$str = 'Locandine/';
 
 $db1=OpenCon();
 

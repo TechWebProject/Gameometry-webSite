@@ -3,7 +3,7 @@ function OpenCon(){
     $dbhost = "localhost";
     $dbuser = "root";
     $dbpass = "";
-    $db = "gameometry";
+    $db = "gameometrydb";
     $conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
     
     if(!$conn){
