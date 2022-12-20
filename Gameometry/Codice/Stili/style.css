@@ -554,13 +554,19 @@ PAGINA VIDEOGIOCHI
 
 #sezioneVideogiochi img {
     padding: none;
-    width: 75%;
+    width: 16.0em;
     height: 22.0em;
+}
+
+#sezioneVideogiochi button {
+    background: transparent;
+    border: none;
 }
 
 #sezioneVideogiochi {
     width: 100%;
     display: grid;
+    object-fit: contain;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(auto-fill, 1fr);
     grid-row-gap: 2.0em;
@@ -578,8 +584,7 @@ PAGINA EVENTI
 =============
 */
 
-#ultimiEventi:last-child,
-#ultime-notizie:last-child {
+#ultimiEventi:last-child,#ultime-notizie:last-child {
     padding-bottom: 0.6em;
 }
 

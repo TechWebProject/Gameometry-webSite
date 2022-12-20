@@ -221,6 +221,33 @@ footer{
 }
 
 /*
+==================
+PAGINA VIDEOGIOCHI
+==================
+*/
+
+#sezioneVideogiochi {
+    width: 100%;
+    display: grid;
+    object-fit: contain;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto-fill, 1fr);
+    grid-row-gap: 4.0em;
+    grid-column-gap: 2.0em;
+    margin-top: 2.0em;
+    margin-bottom: 5.0em;
+    align-items: center;
+    justify-items: center;
+}
+
+#sezioneVideogiochi img {
+    width: 42.0em;
+    height: 60.0em;
+    padding-bottom: 4.0em;
+    border-bottom: 1px solid #F77F00;
+}
+
+/*
 =================
 PAGINA DI ACCESSO
 =================
