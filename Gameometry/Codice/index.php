@@ -93,6 +93,9 @@ $r = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
 $count = $r[0]['Conto'];
 
+mysqli_free_result($result);
+CloseCon($db1);
+
 for($i=0;$i<4;$i++){
 //Query che prende in base alla data più recente le ultime 5 (abbiamo attributo data su recensione) -> la query mi deve restituire contenuto,data,voto,chiave esterna
 // -> con la chiave esterna titolo riesco a reperirmi la img del gioco
@@ -102,6 +105,21 @@ for($i=0;$i<4;$i++){
     $imgRecX->setAttribute('src',PercorsoDaimgLocandina);
     $imgRecX->setAttribute('alt',titolo);
     $imgRecX->setAttribute('name',titolo);
+    $divCommentoX = $divRecX->appendChild($doc->createElement('div'));
+    $divCommentoX->setAttribute('class','commento');
+    $divContenutoRecX = $divCommentoX->appendChild($doc->createElement('div'));
+    $divContenutoRecX->setAttribute('class','contenutoRecensione');
+    $spanRecX = $divContenutoRecX->appendChild($doc->createElement('span'));
+    $spanRecX->setAttribute('class','titoloCritica');
+    $linkSpanRecX = $spanRecX->appendChild($doc->createElement('a'));
+    $linkSpanRecX->setAttribute('href','recensioneGioco.php');
+    $linkSpanRecX = $linkSpanRecX->appendChild($doc->createTextNode('Titolo recensione videogioco: breve commento'));
+    $contenutoRecX = $divContenutoRecX->appendChild($doc->createElement('p'));
+    $recX = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità  di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso è stato raggiunto con uno slancio formidabile, e questo è di fatto l'unico spoiler che troverete in questa recensione";
+    $contenutoRecX = $contenutoRecX->appendChild($doc->createTextNode($rec1));
+    $punteggioX = $divCommentoX->appendChild($doc->createElement('p'));
+    $punteggioX->setAttribute('class','punteggio');
+    $punteggioX = $punteggioX->appendChild($doc->createTextNode('7.5'));
 }
 
 */
