@@ -1001,14 +1001,6 @@ TEMPLATE GIOCO
     min-width: 50%;
 }
 
-#separatore {
-    margin-top: 0.6em;
-    text-align: center;
-    font-size: 100px;
-    color: gray;
-    font-weight: lighter;
-}
-
 /*
 =============================
 ALTERAZIONE DIMENSIONI PAGINA

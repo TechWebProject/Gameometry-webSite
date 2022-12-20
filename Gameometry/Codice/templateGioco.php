@@ -113,12 +113,12 @@ $nostropunteggio = $html->appendChild($doc->createElement('span'));
 $nostropunteggio->appendChild($doc->createTextNode('Il nostro punteggio')); //DATABASE
 $rec->appendChild($nostropunteggio);
 
-/////////
+/*
 $divisore = $html->appendChild($doc->createElement('div'));
 $divisore->setAttribute('id', 'separatore');
 $divisore->appendChild($doc->createTextNode('|'));
 $boxpunteggi->appendchild($divisore);
-////////
+*/
 
 $scoresutenti = $html->appendChild($doc->createElement('div'));
 $scoresutenti->setAttribute('id', 'scores');
