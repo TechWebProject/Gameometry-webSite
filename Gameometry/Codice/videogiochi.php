@@ -40,12 +40,16 @@ for($i = 2; $i < count($dir); $i++){
 }
 
 foreach ($imgz as $attributes) {
-    $imgtag = $div_sezioneVideogiochi->appendChild($doc->createElement('img'));
+    $imgForm = $div_sezioneVideogiochi->appendChild($doc->createElement('form'));
+    $imgForm->setAttribute('action', 'templateGioco.php');
+    $imgForm->setAttribute('method', 'POST');
+    $imgtag = $imgForm->appendChild($doc->createElement('img'));
     foreach ($attributes as $key => $value) {
         $imgtag->setAttribute($key, $value);
         if($key=='alt'){
             $value=str_replace('locandina ','',$value);
-            $imgtag->setAttribute('name',$value);
+            $imgtag->setAttribute('name','immagine');
+            $imgtag->setAttribute('value',$value);
         }
     }
     $imgtag->setAttribute('class','imgs');

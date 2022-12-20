@@ -27,6 +27,21 @@ $header = str_replace(
 );
 $html->appendChild($doc->createTextNode($header));
 
+//QUERY
+$title = $_POST['immagine'];
+$db1=OpenCon();
+
+$tmpquery= "SELECT trama FROM videogioco WHERE titolo=$title";
+
+$result = mysqli_query($db1,$tmpquery);
+
+$r = mysqli_fetch_all($result,MYSQLI_ASSOC);
+
+$trama = $r[0]['trama'];
+
+mysqli_free_result($result); 
+CloseCon($db1); 
+
 $main = $html->appendChild($doc->createElement('main'));
 $imgbanner = $html->appendChild($doc->createElement('img'));
 $imgbanner->setAttribute('id', 'bannergioco');
