@@ -34,7 +34,7 @@ CREATE TABLE Utente(
 CREATE TABLE Commento(
     idCommento VARCHAR(30) PRIMARY KEY,
     data DATE NOT NULL,
-    voto FLOAT(1,1),
+    voto INTEGER NOT NULL,
     contenuto VARCHAR(900) NOT NULL,
     idUtente VARCHAR(100) NOT NULL,
     idVideogioco VARCHAR(100) NOT NULL,
