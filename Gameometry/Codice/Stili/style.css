@@ -912,6 +912,11 @@ TEMPLATE GIOCO
     margin-bottom: 5em;
 }
 
+#boxattributi dd{
+    text-indent: 0em;
+    padding-left: 3em;
+}
+
 #titologioco {
     background-color: transparent;
     padding-top: 3em;
