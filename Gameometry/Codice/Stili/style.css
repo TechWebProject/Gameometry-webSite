@@ -946,12 +946,14 @@ TEMPLATE GIOCO
 
 #trama {
     background-color: transparent;
-    padding: 5%;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    padding-right: 0%;
+    padding-left: 8%;
     border: 0em;
     font-weight: bolder;
     font-size: 32px;
     font-size: 28px;
-    padding-left: 10%;
     color: white;
 }
 
