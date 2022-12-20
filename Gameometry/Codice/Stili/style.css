@@ -992,6 +992,13 @@ TEMPLATE GIOCO
 
 #recutenti {
     background-color: rgb(92, 0, 184);
+    margin-right: 20%;
+    min-width: 50%;
+}
+
+#scores>#rec {
+    margin-left: 20%;
+    min-width: 50%;
 }
 
 #separatore {
