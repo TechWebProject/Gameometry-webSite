@@ -6,10 +6,6 @@ $html = $doc->appendChild($doc->createElement('html'));
 $html->setAttribute('lang', 'it');
 $body = $doc->appendChild($doc->createElement('body'));
 
-//$nomegioco = (DATABASE)
-//$banner = (DATABASE)
-//$locandina = (DATABASE)
-
 //head
 $head = file_get_contents('sezioniComuni/head.html');
 $head = str_replace("<title>Gameometry</title>", "<title>Gameometry | Videogioco</title>", $head);
@@ -19,25 +15,30 @@ $head = str_replace("videogioco, videogiochi, utente, recensioni", "gameometry, 
 $html->appendChild($doc->createTextNode($head));
 
 //header
+$title = $_POST['immagine'];
 $header = file_get_contents('sezioniComuni/header.html');
 $header = str_replace(
     '<span lang="en"><a href="index.php">Home</a></span> &raquo; Notizie</p>',
-    '<span lang="en"><a href="index.php">Home</a></span> &raquo; <span lang="it"><a href="index.php">Videogiochi</a></span> &raquo; Nome_Videogioco</p>',
+    '<span lang="en"><a href="index.php">Home</a></span> &raquo; <span lang="it"><a href="index.php">Videogiochi</a></span> &raquo; '.$title.'</p>',
     $header
 );
 $html->appendChild($doc->createTextNode($header));
 
 //QUERY
-$title = $_POST['immagine'];
 $db1=OpenCon();
-
-$tmpquery= "SELECT trama FROM videogioco WHERE titolo=$title";
+$title=mysqli_real_escape_string($db1,$title);
+$tmpquery= "SELECT trama,rilascio,casaProduttrice,imgLocandina,piattaformaV,genereV FROM videogioco WHERE titolo='$title'";
 
 $result = mysqli_query($db1,$tmpquery);
 
 $r = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
 $trama = $r[0]['trama'];
+$data_uscita=$r[0]['rilascio'];
+$publisher=$r[0]['casaProduttrice'];
+$imgLocandina=$r[0]['imgLocandina'];
+$piattaforma=$r[0]['piattaformaV'];
+$genere=$r[0]['genereV'];
 
 mysqli_free_result($result); 
 CloseCon($db1); 
@@ -51,7 +52,8 @@ $main->appendChild($imgbanner);
 
 $h1 = $html->appendChild($doc->createElement('h1'));
 $h1->setAttribute('id', 'titologioco');
-$h1->appendChild($doc->createTextNode("Titolo Gioco")); //DATABASE
+$title=str_replace("\'","'",$title);
+$h1->appendChild($doc->createTextNode($title)); //DATABASE
 $main->appendChild($h1);
 
 $lista = $html->appendChild($doc->createElement('dl'));
@@ -61,7 +63,7 @@ $main->appendChild($lista);
 $imglocandina = $html->appendChild($doc->createElement('img'));
 $imglocandina->setAttribute('id', 'locandinagioco');
 $imglocandina->setAttribute('alt', 'locandina del gioco');
-$imglocandina->setAttribute('src', "./Locandine/locandina Grand Theft Auto 5.webp"); //(da cambiare con il database)
+$imglocandina->setAttribute('src', $imgLocandina); //(da cambiare con il database)
 $lista->appendChild($imglocandina);
 
 $listaattributi = $html->appendChild($doc->createElement('dl'));
@@ -69,19 +71,19 @@ $listaattributi->setAttribute('id', 'attributigioco');
 $lista->appendChild($listaattributi);
 
 $attributo1 = $html->appendChild($doc->createElement('dt'));
-$attributo1->appendChild($doc->createTextNode("Publisher")); //DATABASE
+$attributo1->appendChild($doc->createTextNode("Publisher")); 
 $listaattributi->appendChild($attributo1);
 //
 $attributo1db = $html->appendChild($doc->createElement('dd'));
-$attributo1db->appendChild($doc->createTextNode("nome_publisher")); //DATABASE
+$attributo1db->appendChild($doc->createTextNode($publisher)); //DATABASE
 $listaattributi->appendChild($attributo1db);
 //
 $attributo2 = $html->appendChild($doc->createElement('dt'));
-$attributo2->appendChild($doc->createTextNode("Data di uscita")); //DATABASE
+$attributo2->appendChild($doc->createTextNode("Data di uscita")); 
 $listaattributi->appendChild($attributo2);
 //
 $attributo2db = $html->appendChild($doc->createElement('dd'));
-$attributo2db->appendChild($doc->createTextNode("data")); //DATABASE
+$attributo2db->appendChild($doc->createTextNode($data_uscita)); //DATABASE
 $listaattributi->appendChild($attributo2db);
 //
 $attributo3 = $html->appendChild($doc->createElement('dt'));
@@ -89,7 +91,7 @@ $attributo3->appendChild($doc->createTextNode("Piattaforma")); //DATABASE
 $listaattributi->appendChild($attributo3);
 //
 $attributo3db = $html->appendChild($doc->createElement('dd'));
-$attributo3db->appendChild($doc->createTextNode("piattaformadb")); //DATABASE
+$attributo3db->appendChild($doc->createTextNode($piattaforma)); //DATABASE
 $listaattributi->appendChild($attributo3db);
 //
 $attributo4 = $html->appendChild($doc->createElement('dt'));
@@ -97,7 +99,7 @@ $attributo4->appendChild($doc->createTextNode("Genere")); //DATABASE
 $listaattributi->appendChild($attributo4);
 //
 $attributo4db = $html->appendChild($doc->createElement('dd'));
-$attributo4db->appendChild($doc->createTextNode("generedb")); //DATABASE
+$attributo4db->appendChild($doc->createTextNode($genere)); //DATABASE
 $listaattributi->appendChild($attributo4db);
 //
 
@@ -159,7 +161,7 @@ $main->appendChild($htrama);
 
 $descrizionetrama = $html->appendChild($doc->createElement('p'));
 $descrizionetrama->setAttribute('id', 'descrizione');
-$descrizionetrama->appendChild($doc->createTextNode("According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible. Yellow, black. Yellow, black. Yellow, black. Yellow, black. Ooh, black and yellow! Let's shake it up a little. Barry! Breakfast is ready!"));
+$descrizionetrama->appendChild($doc->createTextNode($trama));
 $main->appendChild($descrizionetrama);
 
 
