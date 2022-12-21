@@ -3,7 +3,8 @@
     margin: 0em;
 }
 
-html,body {
+html,
+body {
     font-family: "Poppins", "sans-serif";
     line-height: 1.5em;
     margin: auto;
@@ -31,6 +32,7 @@ abbr {
 
 .error-message {
     padding-top: 8em;
+    margin-left: 2em;
     max-width: 1300px;
     color: white;
     font-size: 25px;
@@ -40,7 +42,7 @@ abbr {
 .error-image {
     float: left;
     padding-top: 3em;
-    padding-left: 20%;
+    padding-left: 15%;
     max-width: 30em;
 }
 
