@@ -37,7 +37,7 @@ $div_copert = $divheader->appendChild($doc->createElement('div'));
 $div_copert->setAttribute('id','copertina');
 
 $div_scores = $divheader->appendChild($doc->createElement('div'));
-$div_scores->setAttribute('id','scores');
+$div_scores->setAttribute('class','scores');
 
 $div_rec = $div_scores->appendChild($doc->createElement('div'));
 $div_rec->setAttribute('id','rec');

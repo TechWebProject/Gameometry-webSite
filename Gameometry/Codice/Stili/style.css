@@ -667,7 +667,7 @@ PAGINA SINGOLA RECENSIONE
     margin-bottom: 1em;
 }
 
-#scores {
+.scores {
     display: flex;
     width: 50%;
     justify-content: space-evenly;
@@ -675,7 +675,7 @@ PAGINA SINGOLA RECENSIONE
     margin-top: 1em
 }
 
-#scores>div {
+.scores>div {
     display: flex;
     align-items: center;
     border-radius: 30px;
@@ -686,7 +686,7 @@ PAGINA SINGOLA RECENSIONE
     padding-right: 1em;
 }
 
-#scores span {
+.scores span {
     color: white;
 }
 
@@ -967,14 +967,17 @@ TEMPLATE GIOCO
     color: white;
 }
 
+#link_recensione{
+    display: flex;
+    justify-content: center;
+
+}
 #lanostrarecensione {
     text-align: center;
     background-color: white;
     font-weight: bolder;
     border-radius: 3em;
     color: black;
-    margin-left: 36%;
-    margin-right: 36%;
     padding: 2em;
 }
 
@@ -995,9 +998,8 @@ TEMPLATE GIOCO
     margin-top: 3em;
 }
 
-#scores {
+.scores {
     flex: 3;
-    font-size: 22px;
 }
 
 #recutenti {
@@ -1006,7 +1008,7 @@ TEMPLATE GIOCO
     min-width: 50%;
 }
 
-#scores>#rec {
+.scores>#rec {
     margin-left: 20%;
     min-width: 50%;
 }
@@ -1043,6 +1045,7 @@ ALTERAZIONE DIMENSIONI PAGINA
     header nav {
         padding-left: 1em;
     }
+
 }
 
 @media screen and (max-width:972px) {
@@ -1054,5 +1057,9 @@ ALTERAZIONE DIMENSIONI PAGINA
 
     #searchBar {
         font-size: 0.8em;
+    }
+
+    .scores{
+        font-size: 16px;
     }
 }

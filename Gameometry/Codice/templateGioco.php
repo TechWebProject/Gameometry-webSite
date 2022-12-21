@@ -106,18 +106,20 @@ $attributo4db->appendChild($doc->createTextNode($genere));
 $listaattributi->appendChild($attributo4db);
 //
 
-$nostrarecensione = $html->appendChild($doc->createElement('a'));
+$div_Recensione = $html->appendChild($doc->createElement('div'));
+$div_Recensione->setAttribute('id', 'link_recensione');
+$nostrarecensione = $div_Recensione->appendChild($doc->createElement('a'));
 $nostrarecensione->setAttribute('href', ''); //Pagina recensione
 $nostrarecensione->setAttribute('id', 'lanostrarecensione');
 $nostrarecensione->appendChild($doc->createTextNode("Leggi la nostra recensione"));
-$main->appendChild($nostrarecensione);
+$main->appendChild($div_Recensione);
 
 $boxpunteggi = $html->appendChild($doc->createElement('div'));
 $boxpunteggi->setAttribute('id', 'boxpunteggi');
 $main->appendChild($boxpunteggi);
 
 $scores = $html->appendChild($doc->createElement('div'));
-$scores->setAttribute('id', 'scores');
+$scores->setAttribute('class', 'scores');
 $boxpunteggi->appendChild($scores);
 
 $rec = $html->appendChild($doc->createElement('div'));
@@ -141,7 +143,7 @@ $boxpunteggi->appendchild($divisore);
 */
 
 $scoresutenti = $html->appendChild($doc->createElement('div'));
-$scoresutenti->setAttribute('id', 'scores');
+$scoresutenti->setAttribute('class', 'scores');
 $boxpunteggi->appendChild($scoresutenti);
 
 $recutenti = $html->appendChild($doc->createElement('div'));

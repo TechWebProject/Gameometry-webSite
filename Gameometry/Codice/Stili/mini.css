@@ -195,6 +195,35 @@ ULTIME RECENSIONI
     max-height: 1.8em;
 }
 
+
+.scores{
+    font-size: 27px;
+}
+
+#punteggioCritica,#punteggioUtenti{
+    margin-bottom: 1em;
+}
+
+#boxattributi{
+    flex-direction: column;
+    align-items: center;
+}
+#locandinagioco{
+    width: 50%;
+    height: auto;
+}
+#attributigioco{
+    font-size:26px;
+    padding-bottom:2em; 
+}
+
+#lanostrarecensione{
+    font-size: 26px;
+}
+
+#descrizione{
+    font-size:20px;
+}
 /*
 ==============
 SEZIONE FOOTER
@@ -301,6 +330,35 @@ PAGINA RECENSIONE
     #areaRiservata img {
         width: 80%;
         height: 2em;
+    }
+    .scores{
+        font-size: 16px;
+    }
+    
+    #boxattributi{
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2em;
+    }
+    #locandinagioco{
+        width: 35%;
+        height: auto;
+    }
+    #attributigioco{
+        font-size:16px;
+        padding-bottom:2em; 
+    }
+    
+    #lanostrarecensione{
+        font-size: 16px;
+    }
+    
+    #descrizione{
+        font-size:16px;
+    }
+
+    #trama{
+        padding-bottom: 1em;
     }
 }
 
