@@ -19,7 +19,7 @@ $title = $_POST['immagine'];
 $header = file_get_contents('sezioniComuni/header.html');
 $header = str_replace(
     '<span lang="en"><a href="index.php">Home</a></span> &raquo; Notizie</p>',
-    '<span lang="en"><a href="index.php">Home</a></span> &raquo; <span lang="it"><a href="index.php">Videogiochi</a></span> &raquo; '.$title.'</p>',
+    '<span lang="en"><a href="index.php">Home</a></span> &raquo; <span lang="it"><a href="videogiochi.php">Videogiochi</a></span> &raquo; '.$title.'</p>',
     $header
 );
 $html->appendChild($doc->createTextNode($header));
@@ -40,7 +40,6 @@ $banner=$r[0]['imgBanner'];
 $imgLocandina=$r[0]['imgLocandina'];
 $piattaforma=$r[0]['piattaformaV'];
 $genere=$r[0]['genereV'];
-
 mysqli_free_result($result); 
 CloseCon($db1); 
 
