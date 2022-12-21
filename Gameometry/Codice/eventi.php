@@ -2,6 +2,7 @@
 include "Componenti/connect.php";
 
 $doc = new DOMDocument;
+$doc->appendChild($doc->createTextNode('<!DOCTYPE html>'));
 $html = $doc->appendChild($doc->createElement('html'));
 $html->setAttribute('lang','it');
 $body = $doc->appendChild($doc->createElement('body'));
@@ -9,7 +10,7 @@ $body = $doc->appendChild($doc->createElement('body'));
 //head
 $head=file_get_contents('sezioniComuni/head.html');
 $head = str_replace("<title>Gameometry</title>","<title>Gameometry | Eventi</title>", $head);
-$head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Questa pagina è dedicata ai diversi eventi videoludici organizzati dagli appassionati di questo mondo", $head);
+$head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Questa pagina &egrave; dedicata ai diversi eventi videoludici organizzati dagli appassionati di questo mondo", $head);
 $head = str_replace("videogioco, videogiochi, utente, recensioni", "gameometry, videogiochi, videogioco, videoludico, eventi, ...", $head);
 $html->appendChild($doc->createTextNode($head));
 

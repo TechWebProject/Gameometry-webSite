@@ -2,6 +2,7 @@
 include "Componenti/connect.php";
 
 $doc = new DOMDocument;
+$doc->appendChild($doc->createTextNode('<!DOCTYPE html>'));
 $html = $doc->appendChild($doc->createElement('html'));
 $html->setAttribute('lang','it');
 $body = $doc->appendChild($doc->createElement('body'));

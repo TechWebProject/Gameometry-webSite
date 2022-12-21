@@ -2,6 +2,7 @@
 include "Componenti/connect.php";
 
 $doc = new DOMDocument;
+$doc->appendChild($doc->createTextNode('<!DOCTYPE html>'));
 $html = $doc->appendChild($doc->createElement('html'));
 $html->setAttribute('lang','it');
 $body = $doc->appendChild($doc->createElement('body'));
@@ -13,7 +14,7 @@ $html->appendChild($doc->createTextNode($head));
 //header
 $header=file_get_contents('sezioniComuni/header.html');
 $header = str_replace("&raquo; Notizie","",$header);
-$head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Questa pagina è dedicata al mondo videoludico e, più nello specifico, alle recensioni legate a questo tipo di mondo", $head);
+$head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Questa pagina &egrave; dedicata al mondo videoludico e, pi&ugrave; nello specifico, alle recensioni legate a questo tipo di mondo", $head);
 $head = str_replace("videogioco, videogiochi, utente, recensioni", "gameometry, videogioco, videogiochi, console, pc, computer, recensione, recensioni, voto, notizie", $head);
 $body->appendChild($doc->createTextNode($header));
 
@@ -49,12 +50,17 @@ for($i = 2; $i < 12; $i++){ /* per il momento impostato così, sarebbe bello far
 }
 
 foreach ($imgz as $attributes) {
-    $imgtag = $divSlider->appendChild($doc->createElement('img'));
+    $imgForm = $divSlider->appendChild($doc->createElement('form'));
+    $imgForm->setAttribute('action', 'templateGioco.php');
+    $imgForm->setAttribute('method', 'POST');
+    $buttonImg = $imgForm->appendChild($doc->createElement('button'));
+    $buttonImg->setAttribute('name','immagine');
+    $imgtag = $buttonImg->appendChild($doc->createElement('img'));
     foreach ($attributes as $key => $value) {
         $imgtag->setAttribute($key, $value);
         if($key=='alt'){
-            $key=str_replace('locandina ','',$value);
-            $imgtag->setAttribute('name',$value);
+            $value=str_replace('locandina ','',$value);
+            $buttonImg->setAttribute('value',$value);
         }
     }
     $imgtag->setAttribute('class','imgs');
@@ -140,7 +146,7 @@ $linkSpanRec1 = $spanRec1->appendChild($doc->createElement('a'));
 $linkSpanRec1->setAttribute('href','recensioneGioco.php');
 $linkSpanRec1 = $linkSpanRec1->appendChild($doc->createTextNode('Titolo recensione videogioco: breve commento'));
 $contenutoRec1 = $divContenutoRec1->appendChild($doc->createElement('p'));
-$rec1 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità  di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso è stato raggiunto con uno slancio formidabile, e questo è di fatto l'unico spoiler che troverete in questa recensione";
+$rec1 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità&agrave; di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso &egrave; stato raggiunto con uno slancio formidabile, e questo &egrave; di fatto l'unico spoiler che troverete in questa recensione";
 $contenutoRec1 = $contenutoRec1->appendChild($doc->createTextNode($rec1));
 $punteggio1 = $divCommento1->appendChild($doc->createElement('p'));
 $punteggio1->setAttribute('class','punteggio');
@@ -162,7 +168,7 @@ $linkSpanRec2 = $spanRec2->appendChild($doc->createElement('a'));
 $linkSpanRec2->setAttribute('href','recensioneGioco.php');
 $linkSpanRec2 = $linkSpanRec2->appendChild($doc->createTextNode('Titolo recensione videogioco: breve commento'));
 $contenutoRec2 = $divContenutoRec2->appendChild($doc->createElement('p'));
-$rec2 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità  di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso è stato raggiunto con uno slancio formidabile, e questo è di fatto l'unico spoiler che troverete in questa recensione";
+$rec2 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità&agrave; di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso &egrave; stato raggiunto con uno slancio formidabile, e questo &egrave; di fatto l'unico spoiler che troverete in questa recensione";
 $contenutoRec2 = $contenutoRec2->appendChild($doc->createTextNode($rec1));
 $punteggio2 = $divCommento2->appendChild($doc->createElement('p'));
 $punteggio2->setAttribute('class','punteggio');
@@ -184,7 +190,7 @@ $linkSpanRec3 = $spanRec3->appendChild($doc->createElement('a'));
 $linkSpanRec3->setAttribute('href','recensioneGioco.php');
 $linkSpanRec3 = $linkSpanRec3->appendChild($doc->createTextNode('Titolo recensione videogioco: breve commento'));
 $contenutoRec3 = $divContenutoRec3->appendChild($doc->createElement('p'));
-$rec3 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità  di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso è stato raggiunto con uno slancio formidabile, e questo è di fatto l'unico spoiler che troverete in questa recensione";
+$rec3 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità&agrave; di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso &egrave; stato raggiunto con uno slancio formidabile, e questo &egrave; di fatto l'unico spoiler che troverete in questa recensione";
 $contenutoRec3 = $contenutoRec3->appendChild($doc->createTextNode($rec1));
 $punteggio3 = $divCommento3->appendChild($doc->createElement('p'));
 $punteggio3->setAttribute('class','punteggio');
@@ -206,7 +212,7 @@ $linkSpanRec4 = $spanRec4->appendChild($doc->createElement('a'));
 $linkSpanRec4->setAttribute('href','recensioneGioco.php');
 $linkSpanRec4 = $linkSpanRec4->appendChild($doc->createTextNode('Titolo recensione videogioco: breve commento'));
 $contenutoRec4 = $divContenutoRec4->appendChild($doc->createElement('p'));
-$rec4 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità  di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso è stato raggiunto con uno slancio formidabile, e questo è di fatto l'unico spoiler che troverete in questa recensione";
+$rec4 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità&agrave; di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso &egrave; stato raggiunto con uno slancio formidabile, e questo &egrave; di fatto l'unico spoiler che troverete in questa recensione";
 $contenutoRec4 = $contenutoRec4->appendChild($doc->createTextNode($rec1));
 $punteggio4 = $divCommento4->appendChild($doc->createElement('p'));
 $punteggio4->setAttribute('class','punteggio');
@@ -228,7 +234,7 @@ $linkSpanRec5 = $spanRec5->appendChild($doc->createElement('a'));
 $linkSpanRec5->setAttribute('href','recensioneGioco.php');
 $linkSpanRec5 = $linkSpanRec5->appendChild($doc->createTextNode('Titolo recensione videogioco: breve commento'));
 $contenutoRec5 = $divContenutoRec5->appendChild($doc->createElement('p'));
-$rec5 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità  di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso è stato raggiunto con uno slancio formidabile, e questo è di fatto l'unico spoiler che troverete in questa recensione";
+$rec5 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità&agrave; di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso &egrave; stato raggiunto con uno slancio formidabile, e questo &egrave; di fatto l'unico spoiler che troverete in questa recensione";
 $contenutoRec5 = $contenutoRec5->appendChild($doc->createTextNode($rec1));
 $punteggio5 = $divCommento5->appendChild($doc->createElement('p'));
 $punteggio5->setAttribute('class','punteggio');
