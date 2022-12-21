@@ -115,3 +115,10 @@ insert into Utente (email, nickname, password, dataIscrizione) values ('bcorsham
 insert into Utente (email, nickname, password, dataIscrizione) values ('dfrisdick1b@netvibes.com', 'nrosewall1b', 'LoibL0gP', '2022-06-22');
 insert into Utente (email, nickname, password, dataIscrizione) values ('mnorcliff1c@pen.io', 'rcrus1c', '6nQV6YQG', '2022-09-17');
 insert into Utente (email, nickname, password, dataIscrizione) values ('nsteere1d@ovh.net', 'grosetti1d', 'nMTyC61iWGM', '2022-08-02');
+
+INSERT INTO Recensione(idRecensione,voto,contenuto,titolo,dataPubblicazione,idVideogioco) VALUES("1","5","Recensione di prova1","Far Cry 3: gran gioco","2012-11-30","Far Cry 3");
+INSERT INTO Recensione(idRecensione,voto,contenuto,titolo,dataPubblicazione,idVideogioco) VALUES("2","6","Recensione di prova2","God of War: gran gioco","2018-04-22","God of War");
+INSERT INTO Recensione(idRecensione,voto,contenuto,titolo,dataPubblicazione,idVideogioco) VALUES("3","7","Recensione di prova3","Uncharted 2: gran gioco","2009-10-15","Uncharted 2 - Il Covo dei Ladri");
+INSERT INTO Recensione(idRecensione,voto,contenuto,titolo,dataPubblicazione,idVideogioco) VALUES("4","8","Recensione di prova4","Uncharted 3: gran gioco","2011-11-03","Uncharted 3 - L'Inganno di Drake");
+INSERT INTO Recensione(idRecensione,voto,contenuto,titolo,dataPubblicazione,idVideogioco) VALUES("5","9","Recensione di prova5","Uncharted 4: gran gioco","2016-05-11","Uncharted 4 - Fine di un Ladro");
+INSERT INTO Recensione(idRecensione,voto,contenuto,titolo,dataPubblicazione,idVideogioco) VALUES("6","10","Recensione di prova6","Ghost Recon Wildlands: gran gioco","1999-05-11","Ghost Recon Wildlands");

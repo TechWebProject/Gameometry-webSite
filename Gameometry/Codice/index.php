@@ -91,31 +91,36 @@ $h1Recensioni = $h1Recensioni->appendChild($doc->createTextNode('ULTIME RECENSIO
 $divRec = $main->appendChild($doc->createElement('div'));
 $divRec->setAttribute('id','recensioni-critica');
 
-/*
+//ultime recensioni
+$db2=OpenCon();
+$query = "SELECT * FROM recensione ORDER BY dataPubblicazione desc LIMIT 5";
+$result2 = mysqli_query($db2,$query);
+$arr = mysqli_fetch_all($result2,MYSQLI_ASSOC);
 
-//Query che trova quanti videogiochi ci sono attualmente
-$db1=OpenCon();
-
-$tmpquery= "SELECT COUNT(*) as Conto FROM videogioco";
-
-$result = mysqli_query($db1,$tmpquery);
-
-$r = mysqli_fetch_all($result,MYSQLI_ASSOC);
-
-$count = $r[0]['Conto'];
-
-mysqli_free_result($result);
-CloseCon($db1);
-
-for($i=0;$i<4;$i++){
+for($i=0;$i<5;$i++){
 //Query che prende in base alla data più recente le ultime 5 (abbiamo attributo data su recensione) -> la query mi deve restituire contenuto,data,voto,chiave esterna
+    $chiavesterna = $arr[$i]['idVideogioco'];
+    $titoloRecX = $arr[$i]['titolo'];
+    $contenuto = $arr[$i]['contenuto'];
+    $voto = $arr[$i]['voto'];
+
+    $db3=OpenCon();
+    $chiavesterna=mysqli_real_escape_string($db3,$chiavesterna);
+    $queryXimg = "SELECT * FROM videogioco WHERE titolo='$chiavesterna'";
+    $result3 = mysqli_query($db3,$queryXimg);
+    $rr = mysqli_fetch_all($result3,MYSQLI_ASSOC);
+    $percorsoImg=$rr[0]['imgLocandina'];
+    mysqli_free_result($result3);
+    CloseCon($db3);
+
 // -> con la chiave esterna titolo riesco a reperirmi la img del gioco
     $divRecX = $divRec->appendChild($doc->createElement('div'));
     $imgRecX = $divRecX->appendChild($doc->createElement('img'));
     $imgRecX->setAttribute('class','r1'); 
-    $imgRecX->setAttribute('src',PercorsoDaimgLocandina);
-    $imgRecX->setAttribute('alt',titolo);
-    $imgRecX->setAttribute('name',titolo);
+    $imgRecX->setAttribute('src',$percorsoImg);
+    $imgRecX->setAttribute('alt',$chiavesterna);
+    $imgRecX->setAttribute('name','immagine');
+    $imgRecX->setAttribute('value',$chiavesterna);
     $divCommentoX = $divRecX->appendChild($doc->createElement('div'));
     $divCommentoX->setAttribute('class','commento');
     $divContenutoRecX = $divCommentoX->appendChild($doc->createElement('div'));
@@ -124,126 +129,17 @@ for($i=0;$i<4;$i++){
     $spanRecX->setAttribute('class','titoloCritica');
     $linkSpanRecX = $spanRecX->appendChild($doc->createElement('a'));
     $linkSpanRecX->setAttribute('href','recensioneGioco.php');
-    $linkSpanRecX = $linkSpanRecX->appendChild($doc->createTextNode('Titolo recensione videogioco: breve commento'));
+    $linkSpanRecX = $linkSpanRecX->appendChild($doc->createTextNode($titoloRecX));
     $contenutoRecX = $divContenutoRecX->appendChild($doc->createElement('p'));
-    $recX = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità  di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso è stato raggiunto con uno slancio formidabile, e questo è di fatto l'unico spoiler che troverete in questa recensione";
-    $contenutoRecX = $contenutoRecX->appendChild($doc->createTextNode($rec1));
+    $contenutoRecX = $contenutoRecX->appendChild($doc->createTextNode($contenuto));
     $punteggioX = $divCommentoX->appendChild($doc->createElement('p'));
     $punteggioX->setAttribute('class','punteggio');
-    $punteggioX = $punteggioX->appendChild($doc->createTextNode('7.5'));
+    $punteggioX = $punteggioX->appendChild($doc->createTextNode($voto));
 }
 
-*/
+mysqli_free_result($result2);
+CloseCon($db2);
 
-$divRec1 = $divRec->appendChild($doc->createElement('div'));
-$divRec1->setAttribute('class','post');
-$imgRec1 = $divRec1->appendChild($doc->createElement('img'));
-$imgRec1->setAttribute('class','r1');
-$imgRec1->setAttribute('src','Immagini/locandinaGioco.png');
-$imgRec1->setAttribute('alt','locandina videogioco recensito');
-$divCommento1 = $divRec1->appendChild($doc->createElement('div'));
-$divCommento1->setAttribute('class','commento');
-$divContenutoRec1 = $divCommento1->appendChild($doc->createElement('div'));
-$divContenutoRec1->setAttribute('class','contenutoRecensione');
-$spanRec1 = $divContenutoRec1->appendChild($doc->createElement('span'));
-$spanRec1->setAttribute('class','titoloCritica');
-$linkSpanRec1 = $spanRec1->appendChild($doc->createElement('a'));
-$linkSpanRec1->setAttribute('href','recensioneGioco.php');
-$linkSpanRec1 = $linkSpanRec1->appendChild($doc->createTextNode('Titolo recensione videogioco: breve commento'));
-$contenutoRec1 = $divContenutoRec1->appendChild($doc->createElement('p'));
-$rec1 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità&agrave; di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso &egrave; stato raggiunto con uno slancio formidabile, e questo &egrave; di fatto l'unico spoiler che troverete in questa recensione";
-$contenutoRec1 = $contenutoRec1->appendChild($doc->createTextNode($rec1));
-$punteggio1 = $divCommento1->appendChild($doc->createElement('p'));
-$punteggio1->setAttribute('class','punteggio');
-$punteggio1 = $punteggio1->appendChild($doc->createTextNode('7.5'));
-
-$divRec2 = $divRec->appendChild($doc->createElement('div'));
-$divRec2->setAttribute('class','post');
-$imgRec2 = $divRec2->appendChild($doc->createElement('img'));
-$imgRec2->setAttribute('class','r1');
-$imgRec2->setAttribute('src','Immagini/locandinaGioco.png');
-$imgRec2->setAttribute('alt','locandina videogioco recensito');
-$divCommento2 = $divRec2->appendChild($doc->createElement('div'));
-$divCommento2->setAttribute('class','commento');
-$divContenutoRec2 = $divCommento2->appendChild($doc->createElement('div'));
-$divContenutoRec2->setAttribute('class','contenutoRecensione');
-$spanRec2 = $divContenutoRec2->appendChild($doc->createElement('span'));
-$spanRec2->setAttribute('class','titoloCritica');
-$linkSpanRec2 = $spanRec2->appendChild($doc->createElement('a'));
-$linkSpanRec2->setAttribute('href','recensioneGioco.php');
-$linkSpanRec2 = $linkSpanRec2->appendChild($doc->createTextNode('Titolo recensione videogioco: breve commento'));
-$contenutoRec2 = $divContenutoRec2->appendChild($doc->createElement('p'));
-$rec2 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità&agrave; di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso &egrave; stato raggiunto con uno slancio formidabile, e questo &egrave; di fatto l'unico spoiler che troverete in questa recensione";
-$contenutoRec2 = $contenutoRec2->appendChild($doc->createTextNode($rec1));
-$punteggio2 = $divCommento2->appendChild($doc->createElement('p'));
-$punteggio2->setAttribute('class','punteggio');
-$punteggio2 = $punteggio2->appendChild($doc->createTextNode('7.5'));
-
-$divRec3 = $divRec->appendChild($doc->createElement('div'));
-$divRec3->setAttribute('class','post');
-$imgRec3 = $divRec3->appendChild($doc->createElement('img'));
-$imgRec3->setAttribute('class','r1');
-$imgRec3->setAttribute('src','Immagini/locandinaGioco.png');
-$imgRec3->setAttribute('alt','locandina videogioco recensito');
-$divCommento3 = $divRec3->appendChild($doc->createElement('div'));
-$divCommento3->setAttribute('class','commento');
-$divContenutoRec3 = $divCommento3->appendChild($doc->createElement('div'));
-$divContenutoRec3->setAttribute('class','contenutoRecensione');
-$spanRec3 = $divContenutoRec3->appendChild($doc->createElement('span'));
-$spanRec3->setAttribute('class','titoloCritica');
-$linkSpanRec3 = $spanRec3->appendChild($doc->createElement('a'));
-$linkSpanRec3->setAttribute('href','recensioneGioco.php');
-$linkSpanRec3 = $linkSpanRec3->appendChild($doc->createTextNode('Titolo recensione videogioco: breve commento'));
-$contenutoRec3 = $divContenutoRec3->appendChild($doc->createElement('p'));
-$rec3 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità&agrave; di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso &egrave; stato raggiunto con uno slancio formidabile, e questo &egrave; di fatto l'unico spoiler che troverete in questa recensione";
-$contenutoRec3 = $contenutoRec3->appendChild($doc->createTextNode($rec1));
-$punteggio3 = $divCommento3->appendChild($doc->createElement('p'));
-$punteggio3->setAttribute('class','punteggio');
-$punteggio3 = $punteggio3->appendChild($doc->createTextNode('7.5'));
-
-$divRec4 = $divRec->appendChild($doc->createElement('div'));
-$divRec4->setAttribute('class','post');
-$imgRec4 = $divRec4->appendChild($doc->createElement('img'));
-$imgRec4->setAttribute('class','r1');
-$imgRec4->setAttribute('src','Immagini/locandinaGioco.png');
-$imgRec4->setAttribute('alt','locandina videogioco recensito');
-$divCommento4 = $divRec4->appendChild($doc->createElement('div'));
-$divCommento4->setAttribute('class','commento');
-$divContenutoRec4 = $divCommento4->appendChild($doc->createElement('div'));
-$divContenutoRec4->setAttribute('class','contenutoRecensione');
-$spanRec4 = $divContenutoRec4->appendChild($doc->createElement('span'));
-$spanRec4->setAttribute('class','titoloCritica');
-$linkSpanRec4 = $spanRec4->appendChild($doc->createElement('a'));
-$linkSpanRec4->setAttribute('href','recensioneGioco.php');
-$linkSpanRec4 = $linkSpanRec4->appendChild($doc->createTextNode('Titolo recensione videogioco: breve commento'));
-$contenutoRec4 = $divContenutoRec4->appendChild($doc->createElement('p'));
-$rec4 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità&agrave; di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso &egrave; stato raggiunto con uno slancio formidabile, e questo &egrave; di fatto l'unico spoiler che troverete in questa recensione";
-$contenutoRec4 = $contenutoRec4->appendChild($doc->createTextNode($rec1));
-$punteggio4 = $divCommento4->appendChild($doc->createElement('p'));
-$punteggio4->setAttribute('class','punteggio');
-$punteggio4 = $punteggio4->appendChild($doc->createTextNode('7.5'));
-
-$divRec5 = $divRec->appendChild($doc->createElement('div'));
-$divRec5->setAttribute('class','post');
-$imgRec5 = $divRec5->appendChild($doc->createElement('img'));
-$imgRec5->setAttribute('class','r1');
-$imgRec5->setAttribute('src','Immagini/locandinaGioco.png');
-$imgRec5->setAttribute('alt','locandina videogioco recensito');
-$divCommento5 = $divRec5->appendChild($doc->createElement('div'));
-$divCommento5->setAttribute('class','commento');
-$divContenutoRec5 = $divCommento5->appendChild($doc->createElement('div'));
-$divContenutoRec5->setAttribute('class','contenutoRecensione');
-$spanRec5 = $divContenutoRec5->appendChild($doc->createElement('span'));
-$spanRec5->setAttribute('class','titoloCritica');
-$linkSpanRec5 = $spanRec5->appendChild($doc->createElement('a'));
-$linkSpanRec5->setAttribute('href','recensioneGioco.php');
-$linkSpanRec5 = $linkSpanRec5->appendChild($doc->createTextNode('Titolo recensione videogioco: breve commento'));
-$contenutoRec5 = $divContenutoRec5->appendChild($doc->createElement('p'));
-$rec5 = "una gelida avventura dell'ultimo viaggio di Santa Monica Studio tra i regni della mitologia norrena, che arriva ad oltre quattro anni dall'esordio di una delle migliori esclusive della scorsa generazione. Sulle spalle del team diretto da Eric Williams grava dunque il peso di un'immane responsabilità, che coincide con la necessità&agrave; di chiudere nel migliore dei modi un'odissea creativa assolutamente memorabile. Un ambizioso traguardo che a nostro avviso &egrave; stato raggiunto con uno slancio formidabile, e questo &egrave; di fatto l'unico spoiler che troverete in questa recensione";
-$contenutoRec5 = $contenutoRec5->appendChild($doc->createTextNode($rec1));
-$punteggio5 = $divCommento5->appendChild($doc->createElement('p'));
-$punteggio5->setAttribute('class','punteggio');
-$punteggio5 = $punteggio5->appendChild($doc->createTextNode('7.5'));
 
 //ultimi commenti --> prendere da recensioneGioco.php
 
