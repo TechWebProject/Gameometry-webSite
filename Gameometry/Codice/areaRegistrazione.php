@@ -45,6 +45,7 @@ $spanMail2 = $labelMail->appendChild($doc->createElement('span'));
 $spanMail2->setAttribute('lang','en');
 $spanMail2 = $spanMail2->appendChild($doc->createTextNode('Email'));
 $spanMailInput = $spanMail->appendChild($doc->createElement('input'));
+$spanMailInput->setAttribute('type','email');
 $spanMailInput->setAttribute('name','email');
 $spanMailInput->setAttribute('id','email');
 $spanMailInput->setAttribute('placeholder','Digita la tua mail');

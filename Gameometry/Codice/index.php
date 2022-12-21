@@ -42,11 +42,16 @@ $dir = scandir("Locandine");
 $str = 'Locandine/';
 
 $imgz = array(count($dir)-2);
+$imgz = array_fill(0,10,null);
 
 for($i = 2; $i < 12; $i++){ /* per il momento impostato così, sarebbe bello farlo randomico */
     $res = $str.$dir[$i];
     $trimmedword = RemoveSpecialChar($dir,$i);
-    $imgz[$i-2]=array('src' => $res , 'alt' => $trimmedword);
+    $j=rand(0,9);
+    while($imgz[$j]!=NULL){
+        $j=rand(0,9);
+    }   
+    $imgz[$j]=array('src' => $res , 'alt' => $trimmedword);
 }
 
 foreach ($imgz as $attributes) {
