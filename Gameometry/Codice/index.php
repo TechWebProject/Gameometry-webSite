@@ -44,7 +44,7 @@ $str = 'Locandine/';
 $imgz = array(count($dir)-2);
 $imgz = array_fill(0,10,null);
 
-for($i = 2; $i < 12; $i++){ /* per il momento impostato così, sarebbe bello farlo randomico */
+for($i = 2; $i < 12; $i++){ 
     $res = $str.$dir[$i];
     $trimmedword = RemoveSpecialChar($dir,$i);
     $j=rand(0,9);
@@ -91,11 +91,11 @@ $h1Recensioni = $h1Recensioni->appendChild($doc->createTextNode('ULTIME RECENSIO
 $divRec = $main->appendChild($doc->createElement('div'));
 $divRec->setAttribute('id','recensioni-critica');
 
-//ultime recensioni
-$db2=OpenCon();
+//ultime recensioni codice php
+$db=OpenCon();
 $query = "SELECT * FROM recensione ORDER BY dataPubblicazione desc LIMIT 5";
-$result2 = mysqli_query($db2,$query);
-$arr = mysqli_fetch_all($result2,MYSQLI_ASSOC);
+$result = mysqli_query($db,$query);
+$arr = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
 for($i=0;$i<5;$i++){
 //Query che prende in base alla data più recente le ultime 5 (abbiamo attributo data su recensione) -> la query mi deve restituire contenuto,data,voto,chiave esterna
@@ -104,14 +104,12 @@ for($i=0;$i<5;$i++){
     $contenuto = $arr[$i]['contenuto'];
     $voto = $arr[$i]['voto'];
 
-    $db3=OpenCon();
-    $chiavesterna=mysqli_real_escape_string($db3,$chiavesterna);
+    $chiavesterna=mysqli_real_escape_string($db,$chiavesterna);
     $queryXimg = "SELECT * FROM videogioco WHERE titolo='$chiavesterna'";
-    $result3 = mysqli_query($db3,$queryXimg);
-    $rr = mysqli_fetch_all($result3,MYSQLI_ASSOC);
-    $percorsoImg=$rr[0]['imgLocandina'];
-    mysqli_free_result($result3);
-    CloseCon($db3);
+    $result = mysqli_query($db,$queryXimg);
+    $rr=$result->fetch_array(MYSQLI_ASSOC);
+    $percorsoImg=$rr['imgLocandina'];
+    mysqli_free_result($result);
 
 // -> con la chiave esterna titolo riesco a reperirmi la img del gioco
     $divRecX = $divRec->appendChild($doc->createElement('div'));
@@ -137,8 +135,7 @@ for($i=0;$i<5;$i++){
     $punteggioX = $punteggioX->appendChild($doc->createTextNode($voto));
 }
 
-mysqli_free_result($result2);
-CloseCon($db2);
+CloseCon($db);
 
 
 //ultimi commenti --> prendere da recensioneGioco.php
