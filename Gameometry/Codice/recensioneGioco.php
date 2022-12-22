@@ -15,29 +15,33 @@ $head = str_replace("videogioco, videogiochi, utente, recensioni", "gameometry, 
 $html->appendChild($doc->createTextNode($head));
 
 //header
-$giocoRecensito = $_POST['recensione'];
-$header=file_get_contents('sezioniComuni/header.html');
-$header = str_replace("Notizie","<a href=recensioni.php>Recensioni</a> &raquo; Recensione Videogioco",$header); /*Recensione dovrà essere sostituita con il titolo del relativo gioco*/
-$body->appendChild($doc->createTextNode($header));
+$giocoRecensito;
+if(isset($_POST['recensione'])){
+    $giocoRecensito=$_POST['recensione'];
+}elseif(isset($_GET['titRec'])){
+    $giocoRecensito=$_GET['titRec'];
+}
 
 //QUERY
 $db1=OpenCon();
 $title=mysqli_real_escape_string($db1,$giocoRecensito);
-$tmpquery= "SELECT recensione.titolo,imgBanner,contenuto,voto FROM recensione,videogioco WHERE recensione.idVideogioco=videogioco.titolo titolo='$giocoRecensito'";
+$tmpquery= "SELECT recensione.titolo as title,videogioco.titolo as videogioco,imgBanner,contenuto,voto FROM recensione,videogioco WHERE recensione.idVideogioco=videogioco.titolo and recensione.titolo='$title'";
 
 $result = mysqli_query($db1,$tmpquery);
 
 $r = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
-$trama = $r[0]['trama'];
-$data_uscita=$r[0]['rilascio'];
-$publisher=$r[0]['casaProduttrice'];
+$titoloRec = $r[0]['title'];
+$titoloGioco = $r[0]['videogioco'];
 $banner=$r[0]['imgBanner'];
-$imgLocandina=$r[0]['imgLocandina'];
-$piattaforma=$r[0]['piattaformaV'];
-$genere=$r[0]['genereV'];
+$contenutoRec=$r[0]['contenuto'];
+$voto=$r[0]['voto'];
 mysqli_free_result($result); 
 CloseCon($db1);
+
+$header=file_get_contents('sezioniComuni/header.html');
+$header = str_replace("Notizie","<a href=recensioni.php>Recensioni</a> &raquo; Recensione $titoloGioco",$header); /*Recensione dovrà essere sostituita con il titolo del relativo gioco*/
+$body->appendChild($doc->createTextNode($header));
 
 //main
 $main = $body->appendChild($doc->createElement('main'));
@@ -48,13 +52,16 @@ $divheader->setAttribute('id', 'headerRecensione');
 
 $h1_Titolo = $divheader->appendChild($doc->createElement('h1'));
 $h1_Titolo->setAttribute('id','titoloRecensione');
-$h1_Titolo = $h1_Titolo->appendChild($doc->createTextNode(''));
+$h1_Titolo = $h1_Titolo->appendChild($doc->createTextNode($titoloRec));
 
 $span_sTitolo = $divheader->appendChild($doc->createElement('span'));
 $span_sTitolo = $span_sTitolo->appendChild($doc->createTextNode(''));
 
 $div_copert = $divheader->appendChild($doc->createElement('div'));
 $div_copert->setAttribute('id','copertina');
+$imgCoper = $div_copert->appendChild($doc->createElement('img'));
+$imgCoper->setAttribute('id','bannerRecensione');
+$imgCoper->setAttribute('src',$banner);
 
 $div_scores = $divheader->appendChild($doc->createElement('div'));
 $div_scores->setAttribute('class','scores');
@@ -64,13 +71,14 @@ $div_rec->setAttribute('id','rec');
 
 $span_pCritica = $div_rec->appendChild($doc->createElement('span'));
 $span_pCritica->setAttribute('id', 'punteggioCritica');
-$span_pCritica = $span_pCritica->appendChild($doc->createTextNode('9'));
+$span_pCritica = $span_pCritica->appendChild($doc->createTextNode($voto));
 
 $span_textPunt = $div_rec->appendChild($doc->createElement('span'));
 $span_textPunt = $span_textPunt->appendChild($doc->createTextNode('Il nostro punteggio'));
 
 $p_contenuto = $main->appendChild($doc->createElement('p'));
 $p_contenuto->setAttribute('id', 'contenuto');
+$p_contenuto->appendChild($doc->createTextNode($contenutoRec));
 
 $h2_giveComment = $main->appendChild($doc->createElement('h2'));
 $h2_giveComment->setAttribute('class', 'titleH2');

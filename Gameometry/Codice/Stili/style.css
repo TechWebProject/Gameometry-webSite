@@ -682,7 +682,7 @@ PAGINA SINGOLA RECENSIONE
     width: 50%;
     justify-content: space-evenly;
     margin-bottom: 2em;
-    margin-top: 1em
+    margin-top: 1em;
 }
 
 .scores>div {
@@ -913,7 +913,6 @@ TEMPLATE GIOCO
 ==============
 */
 
-
 #bannergioco {
     width: 100%;
     /*filter: blur(2px);*/
@@ -1009,10 +1008,6 @@ TEMPLATE GIOCO
     margin-top: 3em;
 }
 
-.scores {
-    flex: 3;
-}
-
 #recutenti {
     background-color: rgb(92, 0, 184);
     margin-right: 20%;
@@ -1022,6 +1017,10 @@ TEMPLATE GIOCO
 .scores>#rec {
     margin-left: 20%;
     min-width: 50%;
+}
+
+#bannerRecensione{
+    width: 100%;
 }
 
 /*
