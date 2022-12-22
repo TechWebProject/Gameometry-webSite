@@ -29,18 +29,18 @@ $tmpquery= "SELECT recensione.titolo as title,videogioco.titolo as videogioco,im
 
 $result = mysqli_query($db1,$tmpquery);
 
-$r = $result->fetch_array(MYSQLI_ASSOC);
+$r = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
-$titoloRec = $r['title'];
-$titoloGioco = $r['videogioco'];
-$banner=$r['imgBanner'];
-$contenutoRec=$r['contenuto'];
-$voto=$r['voto'];
+$titoloRec = $r[0]['title'];
+$titoloGioco = $r[0]['videogioco'];
+$banner=$r[0]['imgBanner'];
+$contenutoRec=$r[0]['contenuto'];
+$voto=$r[0]['voto'];
 mysqli_free_result($result); 
 CloseCon($db1);
 
 $header=file_get_contents('sezioniComuni/header.html');
-$header = str_replace("Notizie","<a href=recensioni.php>Recensioni</a> &raquo; Recensione $titoloGioco",$header); /*Recensione dovrà essere sostituita con il titolo del relativo gioco*/
+$header = str_replace("Notizie","<a href=recensioni.php>Recensioni</a> &raquo; Recensione $titoloGioco",$header); 
 $body->appendChild($doc->createTextNode($header));
 
 //main
