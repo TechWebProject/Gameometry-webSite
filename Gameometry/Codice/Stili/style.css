@@ -422,7 +422,7 @@ ULTIME RECENSIONI
 
 .r1 {
     float: left;
-    height: 15em;
+    height: 20.0em;
     width: 25%;
     padding: 0.1em;
     margin: 0.5em;
@@ -498,6 +498,7 @@ h1,
     background-color: white;
     color: #F77F00;
     font-weight: bold;
+    margin-left: 1.0em;
     padding: 0.5em;
     border-radius: 7px;
     font-size: 1.5em;
