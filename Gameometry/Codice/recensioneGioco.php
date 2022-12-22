@@ -29,13 +29,13 @@ $tmpquery= "SELECT recensione.titolo as title,videogioco.titolo as videogioco,im
 
 $result = mysqli_query($db1,$tmpquery);
 
-$r = mysqli_fetch_all($result,MYSQLI_ASSOC);
+$r = $result->fetch_array(MYSQLI_ASSOC);
 
-$titoloRec = $r[0]['title'];
-$titoloGioco = $r[0]['videogioco'];
-$banner=$r[0]['imgBanner'];
-$contenutoRec=$r[0]['contenuto'];
-$voto=$r[0]['voto'];
+$titoloRec = $r['title'];
+$titoloGioco = $r['videogioco'];
+$banner=$r['imgBanner'];
+$contenutoRec=$r['contenuto'];
+$voto=$r['voto'];
 mysqli_free_result($result); 
 CloseCon($db1);
 
