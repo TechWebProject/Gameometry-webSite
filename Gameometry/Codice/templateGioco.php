@@ -27,7 +27,7 @@ $html->appendChild($doc->createTextNode($header));
 //QUERY
 $db1=OpenCon();
 $title=mysqli_real_escape_string($db1,$title);
-$tmpquery= "SELECT recensione.titolo as title,trama,rilascio,casaProduttrice,imgBanner,imgLocandina,piattaformaV,genereV FROM recensione,videogioco WHERE recensione.idVideogioco=videogioco.titolo and videogioco.titolo='$title'";
+$tmpquery= "SELECT recensione.titolo as title,trama,rilascio,casaProduttrice,imgBanner,imgLocandina,piattaformaV,genereV,voto FROM recensione,videogioco WHERE recensione.idVideogioco=videogioco.titolo and videogioco.titolo='$title'";
 
 $result = mysqli_query($db1,$tmpquery);
 
@@ -41,6 +41,7 @@ $banner=$r[0]['imgBanner'];
 $imgLocandina=$r[0]['imgLocandina'];
 $piattaforma=$r[0]['piattaformaV'];
 $genere=$r[0]['genereV'];
+$voto=$r[0]['voto'];
 mysqli_free_result($result); 
 CloseCon($db1); 
 
@@ -131,7 +132,7 @@ $scores->appendChild($rec);
 
 $puntegiocritica = $html->appendChild($doc->createElement('span'));
 $puntegiocritica->setAttribute('id', 'punteggioCritica');
-$puntegiocritica->appendChild($doc->createTextNode('null')); 
+$puntegiocritica->appendChild($doc->createTextNode($voto)); 
 $rec->appendChild($puntegiocritica);
 
 $nostropunteggio = $html->appendChild($doc->createElement('span'));

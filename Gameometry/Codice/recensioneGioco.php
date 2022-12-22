@@ -39,7 +39,7 @@ mysqli_free_result($result);
 CloseCon($db1);
 
 $header=file_get_contents('sezioniComuni/header.html');
-$header = str_replace("Notizie","<a href=recensioni.php>Recensioni</a> &raquo; Recensione $titoloGioco",$header); /*Recensione dovrà essere sostituita con il titolo del relativo gioco*/
+$header = str_replace("Notizie","<a href=recensioni.php>Recensioni</a> &raquo; Recensione $titoloGioco",$header);
 $body->appendChild($doc->createTextNode($header));
 
 //main
