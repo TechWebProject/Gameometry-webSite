@@ -28,19 +28,18 @@ $title=mysqli_real_escape_string($db1,$giocoRecensito);
 $tmpquery= "SELECT recensione.titolo as title,videogioco.titolo as videogioco,imgBanner,contenuto,voto FROM recensione,videogioco WHERE recensione.idVideogioco=videogioco.titolo and recensione.titolo='$title'";
 
 $result = mysqli_query($db1,$tmpquery);
+$r = $result->fetch_array(MYSQLI_ASSOC);
 
-$r = mysqli_fetch_all($result,MYSQLI_ASSOC);
-
-$titoloRec = $r[0]['title'];
-$titoloGioco = $r[0]['videogioco'];
-$banner=$r[0]['imgBanner'];
-$contenutoRec=$r[0]['contenuto'];
-$voto=$r[0]['voto'];
+$titoloRec = $r['title'];
+$titoloGioco = $r['videogioco'];
+$banner=$r['imgBanner'];
+$contenutoRec=$r['contenuto'];
+$voto=$r['voto'];
 mysqli_free_result($result); 
 CloseCon($db1);
 
 $header=file_get_contents('sezioniComuni/header.html');
-$header = str_replace("Notizie","<a href=recensioni.php>Recensioni</a> &raquo; Recensione $titoloGioco",$header); 
+$header = str_replace("Notizie","<a href=recensioni.php>Recensioni</a> &raquo; Recensione $titoloGioco",$header); /*Recensione dovrà essere sostituita con il titolo del relativo gioco*/
 $body->appendChild($doc->createTextNode($header));
 
 //main
