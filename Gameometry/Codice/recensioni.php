@@ -64,6 +64,7 @@ for($i=0;$i<$n_rows;$i++){
     $buttonImg = $imgForm->appendChild($doc->createElement('button'));
     $buttonImg->setAttribute('name','recensione');
     $buttonImg->setAttribute('value',$titoloRecX);
+    $buttonImg->setAttribute('aria-label','vai alla recensione di '.$chiavesterna);
     $imgRecX = $buttonImg->appendChild($doc->createElement('img'));
     $imgRecX->setAttribute('class','r1'); 
     $imgRecX->setAttribute('src',$percorsoImg);
@@ -78,6 +79,13 @@ for($i=0;$i<$n_rows;$i++){
     $linkSpanRecX->setAttribute('href','./recensioneGioco.php?titRec='.$titoloRecX);
     $linkSpanRecX = $linkSpanRecX->appendChild($doc->createTextNode($titoloRecX));
     $contenutoRecX = $divContenutoRecX->appendChild($doc->createElement('p'));
+    $length=strlen($contenuto);
+    $cont=500;
+    while($contenuto[$cont]!="."){
+        $cont++;
+    }
+    $contenuto=substr($contenuto,0,$cont);
+    $contenuto.="...";
     $contenutoRecX = $contenutoRecX->appendChild($doc->createTextNode($contenuto));
     $punteggioX = $divCommentoX->appendChild($doc->createElement('p'));
     $punteggioX->setAttribute('class','punteggio');

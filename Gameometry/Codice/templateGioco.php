@@ -27,12 +27,13 @@ $html->appendChild($doc->createTextNode($header));
 //QUERY
 $db1=OpenCon();
 $title=mysqli_real_escape_string($db1,$title);
-$tmpquery= "SELECT trama,rilascio,casaProduttrice,imgBanner,imgLocandina,piattaformaV,genereV FROM videogioco WHERE titolo='$title'";
+$tmpquery= "SELECT recensione.titolo as title,trama,rilascio,casaProduttrice,imgBanner,imgLocandina,piattaformaV,genereV FROM recensione,videogioco WHERE recensione.idVideogioco=videogioco.titolo and videogioco.titolo='$title'";
 
 $result = mysqli_query($db1,$tmpquery);
 
 $r = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
+$titoloGioco = $r[0]['title'];
 $trama = $r[0]['trama'];
 $data_uscita=$r[0]['rilascio'];
 $publisher=$r[0]['casaProduttrice'];
@@ -105,10 +106,13 @@ $attributo4db->appendChild($doc->createTextNode($genere));
 $listaattributi->appendChild($attributo4db);
 //
 
-$div_Recensione = $html->appendChild($doc->createElement('div'));
+$div_Recensione = $html->appendChild($doc->createElement('form'));
+$div_Recensione->setAttribute('action','recensioneGioco.php');
+$div_Recensione->setAttribute('method','POST');
 $div_Recensione->setAttribute('id', 'link_recensione');
-$nostrarecensione = $div_Recensione->appendChild($doc->createElement('a'));
-$nostrarecensione->setAttribute('href', ''); //Pagina recensione
+$nostrarecensione = $div_Recensione->appendChild($doc->createElement('button'));
+$nostrarecensione->setAttribute('name', 'recensione'); 
+$nostrarecensione->setAttribute('value',$titoloGioco);
 $nostrarecensione->setAttribute('id', 'lanostrarecensione');
 $nostrarecensione->appendChild($doc->createTextNode("Leggi la nostra recensione"));
 $main->appendChild($div_Recensione);

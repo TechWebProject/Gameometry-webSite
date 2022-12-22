@@ -423,7 +423,7 @@ ULTIME RECENSIONI
 
 .r1 {
     height: 22.0em;
-    width: 80%;
+    width: 16.0em;
     padding: 0.1em;
     margin: 0.5em;
     padding-top: 1em;
@@ -474,6 +474,10 @@ h1,
 
 .MameUser {
     margin-top: 1em;
+}
+
+.scores {
+    flex: 3;
 }
 
 .contenutoRecensione li:last-child {
@@ -647,8 +651,8 @@ PAGINA SINGOLA RECENSIONE
 }
 
 #titoloRecensione {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    line-height: 1.5em;
     border: none;
     background-color: unset;
     margin-top: unset;
@@ -679,8 +683,9 @@ PAGINA SINGOLA RECENSIONE
 
 .scores {
     display: flex;
-    width: 50%;
-    justify-content: space-evenly;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
     margin-bottom: 2em;
     margin-top: 1em;
 }
@@ -710,6 +715,7 @@ PAGINA SINGOLA RECENSIONE
 
 #rec {
     background-color: #f78000;
+    width: 50%;
 }
 
 #contenuto {
@@ -1004,19 +1010,14 @@ TEMPLATE GIOCO
 
 #boxpunteggi {
     display: flex;
+    justify-content: center;
     flex-direction: row;
     margin-top: 3em;
 }
 
 #recutenti {
     background-color: rgb(92, 0, 184);
-    margin-right: 20%;
-    min-width: 50%;
-}
-
-.scores>#rec {
-    margin-left: 20%;
-    min-width: 50%;
+    width: 50%;
 }
 
 #bannerRecensione{

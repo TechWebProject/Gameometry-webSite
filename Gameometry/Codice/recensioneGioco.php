@@ -93,7 +93,7 @@ $text_area = $form_commento->appendChild($doc->createElement('textarea'));
 $text_area->setAttribute('id','areaCommento');
 $text_area->setAttribute('name','commento');
 $text_area->setAttribute('rows','10');
-$text_area->setAttribute('placeholder','Lascia un commento');
+$text_area->setAttribute('placeholder',' Lascia un commento');
 $text_area->setAttribute('maxlength','900');
 
 
