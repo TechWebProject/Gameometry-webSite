@@ -11,7 +11,7 @@ $body = $doc->appendChild($doc->createElement('body'));
 $head = file_get_contents('sezioniComuni/head.html');
 $head = str_replace("<title>Gameometry</title>", "Error 500", $head);
 $head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Pagina di errore", $head);
-$head = str_replace("Stili/style.css", "./Stili/style500.css", $head);
+$head = str_replace("Stili/style.css", "./Stili/style404.css", $head);
 $head = str_replace("<meta name=&quot;keywords&quot; content=&quot;videogioco, videogiochi, utente, recensioni&quot; />", "", $head);
 $html->appendChild($doc->createTextNode($head));
 
