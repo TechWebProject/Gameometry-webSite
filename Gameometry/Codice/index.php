@@ -113,20 +113,26 @@ for($i=0;$i<5;$i++){
 
 // -> con la chiave esterna titolo riesco a reperirmi la img del gioco
     $divRecX = $divRec->appendChild($doc->createElement('div'));
-    $imgRecX = $divRecX->appendChild($doc->createElement('img'));
+    $imgForm = $divRecX->appendChild($doc->createElement('form'));
+    $imgForm->setAttribute('action', 'recensioneGioco.php');
+    $imgForm->setAttribute('method', 'POST');
+    $imgForm->setAttribute('class','formRecensioni');
+    $buttonImg = $imgForm->appendChild($doc->createElement('button'));
+    $buttonImg->setAttribute('name','recensione');
+    $imgtag = $buttonImg->appendChild($doc->createElement('img'));
+    $imgRecX = $buttonImg->appendChild($doc->createElement('img'));
     $imgRecX->setAttribute('class','r1'); 
     $imgRecX->setAttribute('src',$percorsoImg);
     $imgRecX->setAttribute('alt',$chiavesterna);
     $imgRecX->setAttribute('name','immagine');
-    $imgRecX->setAttribute('value',$chiavesterna);
+    $imgRecX->setAttribute('value',$titoloRecX);
     $divCommentoX = $divRecX->appendChild($doc->createElement('div'));
     $divCommentoX->setAttribute('class','commento');
     $divContenutoRecX = $divCommentoX->appendChild($doc->createElement('div'));
     $divContenutoRecX->setAttribute('class','contenutoRecensione');
     $spanRecX = $divContenutoRecX->appendChild($doc->createElement('span'));
     $spanRecX->setAttribute('class','titoloCritica');
-    $linkSpanRecX = $spanRecX->appendChild($doc->createElement('a'));
-    $linkSpanRecX->setAttribute('href','recensioneGioco.php');
+    $linkSpanRecX = $spanRecX->appendChild($doc->createElement('p'));
     $linkSpanRecX = $linkSpanRecX->appendChild($doc->createTextNode($titoloRecX));
     $contenutoRecX = $divContenutoRecX->appendChild($doc->createElement('p'));
     $contenutoRecX = $contenutoRecX->appendChild($doc->createTextNode($contenuto));
@@ -136,10 +142,6 @@ for($i=0;$i<5;$i++){
 }
 
 CloseCon($db);
-
-
-//ultimi commenti --> prendere da recensioneGioco.php
-
 
 //footer
 $footer=file_get_contents("sezioniComuni/footer.html");

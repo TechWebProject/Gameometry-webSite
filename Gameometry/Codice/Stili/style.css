@@ -383,6 +383,7 @@ ULTIME RECENSIONI
 */
 
 .titoloCritica {
+    font-weight: bolder;
     font-size: 1.2em;
 }
 
@@ -421,9 +422,8 @@ ULTIME RECENSIONI
 }
 
 .r1 {
-    float: left;
-    height: 20.0em;
-    width: 25%;
+    height: 22.0em;
+    width: 80%;
     padding: 0.1em;
     margin: 0.5em;
     padding-top: 1em;
@@ -514,6 +514,15 @@ h1,
     border-radius: 7px;
     color: rgb(22, 179, 232);
     font-size: 1.5em;
+}
+
+.formRecensioni{
+    float: left;
+}
+.formRecensioni button{
+    background: transparent;
+    cursor: pointer;
+    border: 0;
 }
 
 /*

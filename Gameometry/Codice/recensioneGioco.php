@@ -15,9 +15,29 @@ $head = str_replace("videogioco, videogiochi, utente, recensioni", "gameometry, 
 $html->appendChild($doc->createTextNode($head));
 
 //header
+$giocoRecensito = $_POST['recensione'];
 $header=file_get_contents('sezioniComuni/header.html');
 $header = str_replace("Notizie","<a href=recensioni.php>Recensioni</a> &raquo; Recensione Videogioco",$header); /*Recensione dovrà essere sostituita con il titolo del relativo gioco*/
 $body->appendChild($doc->createTextNode($header));
+
+//QUERY
+$db1=OpenCon();
+$title=mysqli_real_escape_string($db1,$giocoRecensito);
+$tmpquery= "SELECT recensione.titolo,imgBanner,contenuto,voto FROM recensione,videogioco WHERE recensione.idVideogioco=videogioco.titolo titolo='$giocoRecensito'";
+
+$result = mysqli_query($db1,$tmpquery);
+
+$r = mysqli_fetch_all($result,MYSQLI_ASSOC);
+
+$trama = $r[0]['trama'];
+$data_uscita=$r[0]['rilascio'];
+$publisher=$r[0]['casaProduttrice'];
+$banner=$r[0]['imgBanner'];
+$imgLocandina=$r[0]['imgLocandina'];
+$piattaforma=$r[0]['piattaformaV'];
+$genere=$r[0]['genereV'];
+mysqli_free_result($result); 
+CloseCon($db1);
 
 //main
 $main = $body->appendChild($doc->createElement('main'));
