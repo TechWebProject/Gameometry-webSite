@@ -27,7 +27,7 @@ $html->appendChild($doc->createTextNode($header));
 //QUERY
 $db1=OpenCon();
 $title=mysqli_real_escape_string($db1,$title);
-$tmpquery= "SELECT recensione.titolo as title,trama,rilascio,casaProduttrice,imgBanner,imgLocandina,piattaformaV,genereV,voto FROM recensione,videogioco WHERE recensione.idVideogioco=videogioco.titolo and videogioco.titolo='$title'";
+$tmpquery= "SELECT cast(AVG(commento.voto) as int) as votoU, recensione.titolo as title,trama,rilascio,casaProduttrice,imgBanner,imgLocandina,piattaformaV,genereV,recensione.voto as votoV FROM recensione,videogioco,commento WHERE commento.idVideogioco=videogioco.titolo and recensione.idVideogioco=videogioco.titolo and videogioco.titolo='$title'";
 
 $result = mysqli_query($db1,$tmpquery);
 
@@ -41,7 +41,8 @@ $banner=$r[0]['imgBanner'];
 $imgLocandina=$r[0]['imgLocandina'];
 $piattaforma=$r[0]['piattaformaV'];
 $genere=$r[0]['genereV'];
-$voto=$r[0]['voto'];
+$voto=$r[0]['votoV'];
+$votoU=$r[0]['votoU'];
 mysqli_free_result($result); 
 CloseCon($db1); 
 
@@ -156,7 +157,7 @@ $scoresutenti->appendChild($recutenti);
 
 $punteggioutenti = $html->appendChild($doc->createElement('span'));
 $punteggioutenti->setAttribute('id', 'punteggioUtenti');
-$punteggioutenti->appendChild($doc->createTextNode('null')); 
+$punteggioutenti->appendChild($doc->createTextNode($votoU)); 
 $recutenti->appendChild($punteggioutenti);
 
 $punteggioutentispan = $html->appendChild($doc->createElement('span'));

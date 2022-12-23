@@ -225,28 +225,54 @@ $h2_commenti = $h2_commenti->appendChild($doc->createTextNode('COMMENTI'));
 $div_commenti = $main->appendChild($doc->createElement('div'));
 $div_commenti->setAttribute('id', 'recensioni-utenti');
 
-//parte per costruire i commenti 
-$div_post= $div_commenti->appendChild($doc->createElement('div'));
-$div_post->setAttribute('class', 'post');
+//commenti
+$db2=OpenCon();
+$title1=mysqli_real_escape_string($db2,$giocoRecensito);
 
-$img_utente= $div_post->appendChild($doc->createElement('img'));
-$img_utente->setAttribute('class', 'r2');
-$img_utente->setAttribute('alt', 'immagine profilo utente registrato');
-$img_utente->setAttribute('src', 'Immagini/utente.png');
+$query_nrows="SELECT COUNT(*) as nRighe FROM utente,commento,recensione,videogioco WHERE commento.idUtente=utente.email and commento.idVideogioco=videogioco.titolo and recensione.idVideogioco=videogioco.titolo and recensione.titolo='$title1'";
+$result=mysqli_query($db2,$query_nrows);
+$tmparr=$result->fetch_array(MYSQLI_ASSOC);
+$n_rows=$tmparr['nRighe'];
+mysqli_free_result($result);
 
-$div_postCommento = $div_post->appendChild($doc->createElement('div'));
-$div_postCommento->setAttribute('class', 'commento');
+$tmpquery2= "SELECT utente.nickname as nickname, commento.contenuto as contenutoU, commento.voto as votoU FROM utente,commento,recensione,videogioco WHERE commento.idUtente=utente.email and commento.idVideogioco=videogioco.titolo and recensione.idVideogioco=videogioco.titolo and recensione.titolo='$title1' ORDER BY commento.data desc";
+$result2 = mysqli_query($db2,$tmpquery2);
+$arr2 = mysqli_fetch_all($result2,MYSQLI_ASSOC);
+mysqli_free_result($result2);
 
-$ul_contenuto = $div_postCommento->appendChild($doc->createElement('ul'));
-$ul_contenuto->setAttribute('class', 'contenutoRecensione');
+CloseCon($db2);
 
-$li_utente = $ul_contenuto->appendChild($doc->createElement('li'));
-$li_commento = $ul_contenuto->appendChild($doc->createElement('li'));
+for($i=0;$i<$n_rows;$i++){
+    $nickname = $arr2[$i]['nickname'];
+    $contenuto=$arr2[$i]['contenutoU'];
+    $votoU=$arr2[$i]['votoU']; 
 
-$div_punteggio = $div_postCommento->appendChild($doc->createElement('div'));
-$p_punteggio = $div_punteggio->appendChild($doc->createElement('p'));
-$p_punteggio->setAttribute('id', 'punteggioU');
+    $div_post= $div_commenti->appendChild($doc->createElement('div'));
+    $div_post->setAttribute('class', 'post');
 
+    $img_utente= $div_post->appendChild($doc->createElement('img'));
+    $img_utente->setAttribute('class', 'r2');
+    $img_utente->setAttribute('alt', 'immagine profilo utente registrato');
+    $img_utente->setAttribute('src', 'Immagini/avatar.png');
+
+    $div_postCommento = $div_post->appendChild($doc->createElement('div'));
+    $div_postCommento->setAttribute('class', 'commento');
+
+    $ul_contenuto = $div_postCommento->appendChild($doc->createElement('ul'));
+    $ul_contenuto->setAttribute('class', 'contenutoRecensioneU');
+
+    $li_utente = $ul_contenuto->appendChild($doc->createElement('li'));
+    $li_utente->setAttribute('class','toBold');
+    $li_utente = $li_utente->appendChild($doc->createTextNode($nickname));
+    $li_commento = $ul_contenuto->appendChild($doc->createElement('li'));
+    $li_commento = $li_commento->appendChild($doc->createTextNode($contenuto));
+
+    $div_punteggio = $div_post->appendChild($doc->createElement('div'));
+    $div_punteggio->setAttribute('class','boxPunteggioU');
+    $p_punteggio = $div_punteggio->appendChild($doc->createElement('p'));
+    $p_punteggio->setAttribute('class', 'punteggioU');
+    $p_punteggio = $p_punteggio->appendChild($doc->createTextNode($votoU));
+}
 
 //footer
 $footer=file_get_contents("sezioniComuni/footer.html");
