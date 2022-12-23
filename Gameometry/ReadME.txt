@@ -14,7 +14,7 @@ LETTURA DIRECTORY
 
 -Immagini: cartella che corrisponde alla cartella per le immagini utilizzate nel progetto
 
--imgs: cartella utilizzata dal codice per reperire le img attualmente presenti in locale ma anche sul DB
+-Locandine/Banner: cartelle utilizzate dal codice per reperire le img attualmente presenti in locale ma anche sul DB
 
 -connect.php: file importato, serve per connettersi al DB + una funzione per rimuovere dal nome le estensioni dei file
 
