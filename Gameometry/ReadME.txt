@@ -22,4 +22,4 @@ LETTURA DIRECTORY
 
 -*deletephotosDBandDIR: codice da runnare da vs non appena si decide di rimuovere un'immagine, lo si avvia e si specifica su console l'esatto nome del file senza estensioni (corrisponde all'attributo "titolo" sul DB)
 
-*per utilizzare questi file è necessario avere il DB "gameometry" creato con la tabella "videogioco" e due attributi di testo "titolo" e "imgLocandina"
+*per utilizzare questi file è necessario avere il DB "gameometrydb" creato tramite le query presenti nel file DB.sql
