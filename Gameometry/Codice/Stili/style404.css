@@ -46,6 +46,22 @@ abbr {
     max-width: 30em;
 }
 
+.error-message500 {
+    margin-top: 6em;
+    margin-left: 2em;
+    max-width: 1300px;
+    color: white;
+    font-size: 25px;
+    line-height: 2em;
+}
+
+.error-image500 {
+    float: left;
+    margin-top: 5em;
+    padding-left: 15%;
+    max-width: 20em;
+}
+
 @media screen and (max-width: 950px) {
     .errorflex {
         display: flex;
@@ -74,6 +90,22 @@ abbr {
     .error-image {
         float: none;
         padding-top: 3em;
+        padding-left: 25%;
+        max-width: 20em;
+    }
+
+    .error-message500 {
+        max-width: 50%;
+        padding-top: 0em;
+        max-width: 1300px;
+        color: white;
+        font-size: 25px;
+        line-height: 2em;
+    }
+
+    .error-image500 {
+        float: none;
+        padding-top: 1em;
         padding-left: 25%;
         max-width: 20em;
     }
