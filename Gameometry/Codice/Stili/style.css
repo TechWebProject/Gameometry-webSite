@@ -16,6 +16,10 @@ abbr {
     text-decoration: none;
 }
 
+p {
+    line-height: 1.5em;
+}
+
 /*
 ==============
 SEZIONE HEADER
@@ -495,7 +499,8 @@ h1,
     grid-column: 3;
     justify-self: end;
     background-color: white;
-    height: 2.5em;
+    height: 3.0em;
+    width: 50%;
     border-radius: 8px;
 }
 
@@ -527,7 +532,7 @@ h1,
     padding: 0.5em;
     border-radius: 7px;
     font-size: 1.5em;
-    max-height: 1.0em;
+    height: 1.3em;
     text-align: center;
 }
 
@@ -538,7 +543,6 @@ h1,
     color: rgb(92, 0, 184);
     text-align: center;
     font-size: 1.5em;
-    width: 12%;
 }
 
 .formRecensioni{
@@ -708,7 +712,7 @@ PAGINA SINGOLA RECENSIONE
     text-align: center;
     width: 30%;
     margin-bottom: 2em;
-    margin-top: 2em;
+    margin-top: 0.5em;
 }
 
 .scores>div {
@@ -741,6 +745,7 @@ PAGINA SINGOLA RECENSIONE
 
 #contenuto {
     line-break: anywhere;
+    font-size: 1.0em;
     color: white;
     margin: 1.5em;
     margin-bottom: 3em;
@@ -1007,9 +1012,9 @@ TEMPLATE GIOCO
 #link_recensione{
     display: flex;
     justify-content: center;
-
 }
 #lanostrarecensione {
+    cursor: pointer;
     text-align: center;
     background-color: white;
     font-weight: bolder;
@@ -1043,6 +1048,7 @@ TEMPLATE GIOCO
 
 #bannerRecensione{
     width: 100%;
+    height: 20.0em;
 }
 
 /*

@@ -114,14 +114,18 @@ ULTIME NEWS
     display: grid;
     grid-template-areas:
         'news1'
+        'news1'
+        'news2'
         'news2'
         'news3'
+        'news3'
         'news4'
+        'news4'
+        'news5'
         'news5';
     grid-template-columns: 105%;
-    gap: 7em;
+    gap: 3em;
     padding-top: 1.7em;
-    padding-bottom: 5.5em;
     padding-right: 2.5em;
 }
 
@@ -165,8 +169,8 @@ ULTIME NEWS
 
 .mainnews-box>img,
 .news-box>img{
-    min-height: 15em;
-    max-height: 20em;
+    min-height: 35.0em;
+    height: 35.0em;
 }
 
 /*
