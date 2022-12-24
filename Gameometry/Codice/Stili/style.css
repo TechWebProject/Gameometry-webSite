@@ -224,6 +224,11 @@ SLIDER
     margin-right: 0.5em;
 }
 
+.horizontal-wrapper .imgs{
+    width: 3.2em;
+    height: 4.2em;
+}
+
 .carousel::-webkit-scrollbar {
     display: none;
 }

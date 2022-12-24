@@ -105,6 +105,17 @@ main{
 }
 
 /*
+======
+SLIDER
+======
+*/
+
+.horizontal-wrapper .imgs{
+    width: 4.5em;
+    height: 6em;
+}
+
+/*
 ===========
 ULTIME NEWS
 ===========
