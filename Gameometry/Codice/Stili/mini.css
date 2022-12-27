@@ -4,8 +4,8 @@ SEZIONE HEADER
 ==============
 */
 
-header{
-    padding: 0.5em;  
+header {
+    padding: 0.5em;
     display: grid;
     flex-direction: column;
     grid-template-columns: 1fr;
@@ -13,54 +13,55 @@ header{
     grid-gap: 15px;
     padding-bottom: 1em;
     max-height: 9.0em;
-}  
+}
 
-#logoSito{
+#logoSito {
     grid-row: 1;
     grid-column: 1;
     display: flex;
     justify-content: center;
     padding: unset;
 }
-#logoSito img{
+
+#logoSito img {
     padding-top: 0.8em;
     width: auto;
 }
 
-#menu{
+#menu {
     display: list-item;
     padding: 0.5em;
     grid-row: 2;
     grid-column: 1;
 }
 
-#menu ul li{
+#menu ul li {
     padding-left: 1.5em;
     padding-right: 1.5em;
     padding-top: 0;
-    padding-bottom:0;
+    padding-bottom: 0;
     font-size: 1.5em;
     border-right: 1px solid white;
     grid-row: 2;
     grid-column: 1;
 }
 
-#menu ul li:last-child{
+#menu ul li:last-child {
     border-right: none;
 }
 
-header div{
+header div {
     display: flex;
     justify-content: center;
 }
 
-#navUtente{
+#navUtente {
     display: flex;
     align-items: center;
-    
+
 }
 
-#ricerca{
+#ricerca {
     grid-row: 3;
     grid-column: 1;
     padding-top: 0.6em;
@@ -70,10 +71,11 @@ header div{
     border-radius: 5px;
 }
 
-#cerca img{
+#cerca img {
     padding-left: 0.5em;
 }
-#searchBar{
+
+#searchBar {
     all: unset;
     width: 70%;
     height: 2.0em;
@@ -81,7 +83,7 @@ header div{
     font-size: 1.4em;
 }
 
-#areaRiservata{
+#areaRiservata {
     grid-row: 4;
     grid-column: 1;
 }
@@ -97,11 +99,22 @@ SEZIONE CONTENUTO
 =================
 */
 
-main{
+main {
     max-width: 1024px;
     margin: auto;
     padding-top: 14em;
-    background-color: #191919; 
+    background-color: #191919;
+}
+
+/*
+======
+SLIDER
+======
+*/
+
+.horizontal-wrapper .imgs {
+    width: 4.5em;
+    height: 6em;
 }
 
 /*
@@ -110,22 +123,26 @@ ULTIME NEWS
 ===========
 */
 
-#news-grid-container{
+#news-grid-container {
     display: grid;
     grid-template-areas:
         'news1'
+        'news1'
+        'news2'
         'news2'
         'news3'
+        'news3'
         'news4'
+        'news4'
+        'news5'
         'news5';
     grid-template-columns: 105%;
-    gap: 7em;
+    gap: 3em;
     padding-top: 1.7em;
-    padding-bottom: 5.5em;
     padding-right: 2.5em;
 }
 
-#breadcrumb{
+#breadcrumb {
     align-content: center;
     font-size: 1.0em;
     padding: 0.3em 0em 0.3em 1em;
@@ -134,39 +151,42 @@ ULTIME NEWS
 }
 
 .news-box,
-.mainnews-box{
+.mainnews-box {
     min-height: 18.0em;
     max-height: 20.0em;
 }
+
 .sidenews-section>h2,
-.mainnews-section>h2{
+.mainnews-section>h2 {
     font-weight: bolder;
     line-height: 1.5em;
     font-size: 1.50em;
     padding-top: 0.5em;
 }
 
-.carousel img{
+.carousel img {
     height: 25vh;
 }
 
-#btn-left, #btn-right{
+#btn-left,
+#btn-right {
     width: 30%;
 }
 
-.mainnews-section>.author{
+.mainnews-section>.author {
     padding-top: 1.0em;
 }
 
-.news-topic,.sidenews-topic{
+.news-topic,
+.sidenews-topic {
     font-size: 1em;
     padding: 0.0em;
 }
 
 .mainnews-box>img,
-.news-box>img{
-    min-height: 15em;
-    max-height: 20em;
+.news-box>img {
+    min-height: 35.0em;
+    height: 35.0em;
 }
 
 /*
@@ -175,76 +195,81 @@ ULTIME RECENSIONI
 =================
 */
 
-.titoloCritica{
-    font-size: 0.8em;
+.titoloCritica {
+    font-size: 15px;
 }
 
-#recensioni-critica p{
-    font-size: 0.7em;
+#recensioni-critica p {
+    font-size: 15px;
 }
 
-.contenutoRecensione li{
-    font-size: 0.7em;
+.contenutoRecensione li {
+    font-size: 15px;
 }
 
-.contenutoRecensione li:last-child{
-    padding-top: 1.2em;
+.contenutoRecensione li:last-child {
+    padding-top: 0.8em;
 }
 
 .punteggio {
-    max-height: 1.8em;
+    max-height: 2em;
 }
 
 
-.scores{
-    font-size: 27px;
+.scores {
+    font-size: 34px;
 }
 
-#punteggioCritica,#punteggioUtenti{
+#punteggioCritica,
+#punteggioUtenti {
     margin-bottom: 1em;
 }
 
-#boxattributi{
+#boxattributi {
     flex-direction: column;
     align-items: center;
 }
-#locandinagioco{
+
+#locandinagioco {
     width: 50%;
     height: auto;
 }
-#attributigioco{
-    font-size:26px;
-    padding-bottom:2em; 
+
+#attributigioco {
+    font-size: 26px;
+    padding-bottom: 2em;
 }
 
-#lanostrarecensione{
+#lanostrarecensione {
     font-size: 26px;
 }
 
-#descrizione{
-    font-size:20px;
+#descrizione {
+    font-size: 20px;
 }
+
 /*
 ==============
 SEZIONE FOOTER
 ==============
 */
 
-footer{
+footer {
     margin-top: 3.0em;
     background-color: #F77F00;
     text-align: center;
 }
 
-#boxFooter img{
+#boxFooter img {
     width: 20%;
 }
 
-#aboutUs{
+#aboutUs {
     padding-bottom: 0.2em;
     font-size: 0.4em;
 }
-#infoAzienda{
+
+#infoAzienda {
     padding-bottom: 0.5em;
     font-size: 0.4em;
 }
@@ -282,7 +307,7 @@ PAGINA DI ACCESSO
 =================
 */
 
-#logIn{
+#logIn {
     padding-bottom: 28.5em;
 }
 
@@ -292,37 +317,38 @@ PAGINA RECENSIONE
 =================
 */
 
-#recensioneGioco{
+#recensioneGioco {
     padding-top: 19.0em;
 }
 
-#areaCommento{
+#areaCommento {
     font-size: 1.5em;
 }
-#inviaCommento{
+
+#inviaCommento {
     font-size: 2.0em;
 }
 
 
-@media screen and (max-width: 820px){
-    #menu ul li{
+@media screen and (max-width: 820px) {
+    #menu ul li {
         padding-left: 1.2em;
         padding-right: 1.2em;
         font-size: 1em;
     }
 
-    #ricerca{
+    #ricerca {
         padding-bottom: 0.5em;
         height: 0.8em;
     }
-    
-    #cerca img{
+
+    #cerca img {
         padding-left: 0.5em;
         width: 50%;
         height: 1.2em;
     }
 
-    #searchBar{
+    #searchBar {
         width: 100%;
         font-size: 1em;
     }
@@ -331,40 +357,43 @@ PAGINA RECENSIONE
         width: 80%;
         height: 2em;
     }
-    .scores{
+
+    .scores {
         font-size: 16px;
     }
-    
-    #boxattributi{
+
+    #boxattributi {
         flex-direction: column;
         align-items: center;
         margin-bottom: 2em;
     }
-    #locandinagioco{
+
+    #locandinagioco {
         width: 35%;
         height: auto;
     }
-    #attributigioco{
-        font-size:16px;
-        padding-bottom:2em; 
-    }
-    
-    #lanostrarecensione{
+
+    #attributigioco {
         font-size: 16px;
-    }
-    
-    #descrizione{
-        font-size:16px;
+        padding-bottom: 2em;
     }
 
-    #trama{
+    #lanostrarecensione {
+        font-size: 16px;
+    }
+
+    #descrizione {
+        font-size: 16px;
+    }
+
+    #trama {
         padding-bottom: 1em;
     }
 }
 
 
-@media screen and (max-width: 600px){
-    #menu ul li{
+@media screen and (max-width: 600px) {
+    #menu ul li {
         padding-left: 1.2em;
         padding-right: 1.2em;
         font-size: 0.8em;
@@ -374,11 +403,11 @@ PAGINA RECENSIONE
 
 @media screen and (max-device-width: 600px) {
 
-    #menu{
-        margin-top:2em;
+    #menu {
+        margin-top: 2em;
     }
 
-    #menu ul li{
+    #menu ul li {
         padding-left: 0.6em;
         padding-right: 0.6em;
         font-size: 2em;
@@ -386,19 +415,19 @@ PAGINA RECENSIONE
         grid-column: 1;
     }
 
-    
-    #ricerca{
+
+    #ricerca {
         padding-bottom: 0.8em;
         height: 1.4em;
     }
-    
-    #cerca img{
+
+    #cerca img {
         padding-left: 0.5em;
         width: 100%;
         height: 2em;
     }
 
-    #searchBar{
+    #searchBar {
         width: 200%;
         font-size: 1.8em;
     }
@@ -408,11 +437,11 @@ PAGINA RECENSIONE
         height: 4em;
     }
 
-    #navUtente{
+    #navUtente {
         margin-top: 3.5em;
     }
-    
-    #breadcrumb{
+
+    #breadcrumb {
         font-size: 1.8em;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
@@ -429,7 +458,5 @@ PAGINA RECENSIONE
         background-color: #F77F00;
         border: 0.5px solid #F77F00;
     }
-    
+
 }
-
-

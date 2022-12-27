@@ -161,7 +161,7 @@ $punteggioutenti->appendChild($doc->createTextNode($votoU));
 $recutenti->appendChild($punteggioutenti);
 
 $punteggioutentispan = $html->appendChild($doc->createElement('span'));
-$punteggioutentispan->appendChild($doc->createTextNode('Punteggio degli Utenti'));
+$punteggioutentispan->appendChild($doc->createTextNode('Punteggio degli utenti'));
 $recutenti->appendChild($punteggioutentispan);
 
 $htrama = $html->appendChild($doc->createElement('h2'));

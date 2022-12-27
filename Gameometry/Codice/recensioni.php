@@ -79,7 +79,6 @@ for($i=0;$i<$n_rows;$i++){
     $linkSpanRecX->setAttribute('href','./recensioneGioco.php?titRec='.$titoloRecX);
     $linkSpanRecX = $linkSpanRecX->appendChild($doc->createTextNode($titoloRecX));
     $contenutoRecX = $divContenutoRecX->appendChild($doc->createElement('p'));
-    $length=strlen($contenuto);
     $cont=500;
     while($contenuto[$cont]!="."){
         $cont++;
