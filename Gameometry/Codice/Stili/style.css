@@ -60,6 +60,7 @@ header h1 {
 }
 
 #header {
+    z-index: 1;
     position: fixed;
     width: 100%;
     background-color: #F77F00;
@@ -438,8 +439,7 @@ ULTIME RECENSIONI
     margin-right: 1.0em;
     padding-right: 1.0em;
 }
-
-.r1:hover{
+.r1:hover,.imgs:hover{
     opacity:70%;
 }
 
