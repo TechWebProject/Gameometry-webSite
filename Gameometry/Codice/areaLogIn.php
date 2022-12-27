@@ -72,14 +72,20 @@ $buttonS = $spanRegister->appendChild($doc->createElement('button'));
 $buttonS->setAttribute('id','submit');
 $buttonS->setAttribute('aria-label','clicca per accedere al sito');
 $linkAccesso = $buttonS->appendChild($doc->createElement('a'));
-$linkAccesso->setAttribute('href','#'); /* da definire dove l'utente finisce dopo l'accesso */
+$linkAccesso->setAttribute('href','areaUtente.php'); /* da definire dove l'utente finisce dopo l'accesso */
 $linkAccesso = $linkAccesso->appendChild($doc->createTextNode('accedi'));
-$buttonR = $spanRegister->appendChild($doc->createElement('button'));
-$buttonR->setAttribute('id','registrati');
-$buttonR->setAttribute('aria-label','clicca per registrarti al sito');
-$linkRegistrazione = $buttonR->appendChild($doc->createElement('a'));
-$linkRegistrazione->setAttribute('href','areaRegistrazione.php');
-$linkRegistrazione = $linkRegistrazione->appendChild($doc->createTextNode('registrati'));
+$linkR = $spanRegister->appendChild($doc->createElement('p'));
+$linkR->setAttribute('id','linkRegistrazione');
+$spazioP = $linkR->appendChild($doc->createElement('span'));
+$spazioP->setAttribute('id','spanLinkR');
+$spazioP = $spazioP->appendChild($doc->createTextNode('Non possiedi un account?'));
+$linkR1 = $linkR->appendChild($doc->createElement('a'));
+$linkR1->setAttribute('href','areaRegistrazione.php');
+$linkR1 = $linkR1->appendChild($doc->createTextNode('Clicca qui'));
+$spazioP1 = $linkR->appendChild($doc->createElement('span'));
+$spazioP1 = $spazioP1->appendChild($doc->createTextNode(' per registrarti.'));
+
+
 
 //footer
 $footer=file_get_contents("sezioniComuni/footer.html");
