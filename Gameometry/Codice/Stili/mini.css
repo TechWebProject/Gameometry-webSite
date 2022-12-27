@@ -80,7 +80,12 @@ header div {
     width: 70%;
     height: 2.0em;
     margin-right: 2em;
+    margin-left: 2em;
     font-size: 1.4em;
+}
+
+#SezRicerca{
+    width: 50%;
 }
 
 #areaRiservata {

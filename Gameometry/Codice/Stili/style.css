@@ -96,33 +96,34 @@ header div {
     justify-content: center;
 }
 
-#ricerca {
-    grid-row: 1;
-    grid-column: 3/4;
-    padding: 0.6em;
+#SezRicerca{
     background-color: #f8f0e3;
-    width: 79%;
-    height: 1em;
     border-radius: 5px;
-    display: flex;
-    align-self: center;
-    flex-direction: row;
-    margin-right: 1.5em;
-    padding-right: 0em;
-    align-items: center;
+    height: 2.5em;
+    margin-right: 1em;
+}
+
+#ricerca {
+    width: 79%;
 }
 
 #searchBar {
     all: unset;
-    width: 70%;
     height: 2.0em;
     margin-right: 2.5em;
-    font-size: 0.9em;
+    padding-left: 1em;
+    margin-top:0.5em;
+    margin-bottom: 0.2em;
+    font-size: 1em;
+    width: 80%;
+    display: flex;
+    align-self: flex-start;
 }
 
 #cerca {
-    float: right;
+    
     cursor: pointer;
+    align-self: center;
     height: 1.5em;
     width: 50px;
 }
@@ -130,6 +131,37 @@ header div {
 #arrTitoli{
     display: none;
 }
+
+  #ricerca.active input{
+    border-radius: 5px 5px 0 0;
+  }
+
+  #ricerca .autocom-box{
+    background-color: #191919;
+    border: 1px solid black;
+    opacity: 1;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .autocom-box li{
+    list-style: none;
+    padding: 1em;
+    display: none;
+    width: 100%;
+    cursor: default;
+    color: white;
+    border-bottom: 1px solid #F77F00;
+  }
+
+  #ricerca .autocom-box li{
+    display: block;
+  }
+  .autocom-box li:hover{
+    background: #efefef;
+  }
 
 #cerca img {
     padding-right: 0.5em;
@@ -1077,7 +1109,9 @@ ALTERAZIONE DIMENSIONI PAGINA
     }
 
     #searchBar {
-        font-size: 0.8em;
+        margin-top: 0.3em;
+        padding-left: 0.8em;
+        font-size: 1.0em;
     }
 }
 
@@ -1112,4 +1146,5 @@ ALTERAZIONE DIMENSIONI PAGINA
     .scores{
         font-size: 16px;
     }
+
 }
