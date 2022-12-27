@@ -37,7 +37,6 @@ SEZIONE HEADER
 }
 
 #menu a:hover {
-    text-decoration: underline;
     text-decoration: underline solid 1.5px;
 }
 
@@ -220,7 +219,6 @@ SEZIONE BREADCRUMB
 }
 
 #breadcrumb a:hover {
-    text-decoration: underline;
     text-decoration: underline solid 1.5px;
 }
 
@@ -305,12 +303,8 @@ SLIDER
     cursor: pointer;
     text-align: center;
     color: white;
-    border: none;
-    border-radius: 50%;
-    opacity: 0.5;
     font-size: 4.0em;
     font-weight: bold;
-    background-color: transparent;
     display: contents;
 }
 
@@ -742,7 +736,6 @@ PAGINA SINGOLA RECENSIONE
     margin-top: 2em;
     width: 100%;
     height: 300px;
-    background-image: url('../Codice/Immagini/copertina5.jpg');
     background-size: cover;
     padding-bottom: 2em;
     margin-left: 1em;
@@ -925,7 +918,7 @@ PAGINA DI ACCESSO
 
 #logIn form fieldset {
     border: none;
-    height: 12.0em;
+    height: 13.5em;
 }
 
 #registrazione form fieldset {
@@ -947,6 +940,9 @@ PAGINA DI ACCESSO
     display: block;
     margin-bottom: 1.5em;
 }
+#passwordBox {
+    margin-bottom: 1.0em;
+}
 
 #username,
 #password,
@@ -959,8 +955,7 @@ PAGINA DI ACCESSO
 }
 
 #submit,
-#register,
-#registrati {
+#register {
     padding: 0.4em;
     padding-left: 0.5em;
     padding-right: 0.5em;
@@ -972,15 +967,29 @@ PAGINA DI ACCESSO
     border: none;
     background-color: white;
 }
-
-#registrati {
-    margin-right: 1.0em;
+#submit {
+    margin-bottom: 1.0em;
 }
 
 #registrati a,
 #register a,
 #submit a {
     color: black;
+}
+
+#linkRegistrazione{
+    color: white;
+    font-size: 0.8em;
+}
+#linkRegistrazione a{
+    color: white;
+    font-weight: bolder;
+}
+#linkRegistrazione a:hover {
+    text-decoration: underline 2px solid white;
+}
+#spanLinkR {
+    display: block;
 }
 
 /*
