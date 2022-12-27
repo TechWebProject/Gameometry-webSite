@@ -23,5 +23,5 @@ function RemoveSpecialChar($dir,$n){
     '.png' , '.jpeg'), '', $dir[$n]);
     return $res;
 }
-   
+
 ?>

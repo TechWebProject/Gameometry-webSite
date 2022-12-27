@@ -21,6 +21,39 @@ $body->appendChild($doc->createTextNode($header));
 //main
 $main = $body->appendChild($doc->createElement('main'));
 
+$db=OpenCon();
+
+
+$query_nrows="SELECT COUNT(*) as nrighe FROM videogioco";
+$result=mysqli_query($db,$query_nrows);
+$tmparr=$result->fetch_array(MYSQLI_ASSOC);
+$n_rows=$tmparr['nrighe'];
+
+mysqli_free_result($result);
+
+$query = "SELECT titolo FROM videogioco";
+$result = mysqli_query($db,$query);
+$arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+CloseCon($db);
+
+$labelTitoli = $main->appendChild($doc->createElement('label'));
+$pippo ='';
+
+for ($i = 0; $i < $n_rows; $i++){
+    if($i == $n_rows-1){
+        $pippo .= $arr[$i]['titolo'];
+    }else{
+        $pippo .= $arr[$i]['titolo'].',';
+    }
+}
+
+
+$labelTitoli->appendChild($doc->createTextNode($pippo));
+$labelTitoli->setAttribute('id', 'arrTitoli');
+
+
 //slider
 $h1 = $main->appendChild($doc->createElement('h1'));
 $h1 = $h1->appendChild($doc->createTextNode('GIOCHI PIÙ VOTATI'));
@@ -79,6 +112,10 @@ $leftRow = $leftRow->appendChild($doc->createTextNode('&rsaquo;'));
 $sliderScript = $main->appendChild($doc->createElement('script'));
 $sliderScript->setAttribute('type','text/JavaScript');
 $sliderScript->setAttribute('src','Componenti/scriptjs.js');
+
+$searchscript = $main->appendChild($doc->createElement('script'));
+$searchscript->setAttribute('type','text/JavaScript');
+$searchscript->setAttribute('src','Componenti/scriptSearch.js');
 
 //breaking news
 $listaBN = file_get_contents('Componenti/listaBN.html');
