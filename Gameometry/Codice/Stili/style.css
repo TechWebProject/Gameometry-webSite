@@ -439,6 +439,10 @@ ULTIME RECENSIONI
     padding-right: 1.0em;
 }
 
+.r1:hover{
+    opacity:70%;
+}
+
 #recensioni-critica>div {
     border-bottom: 1px solid #F77F00;
     border-top: none;
