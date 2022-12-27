@@ -135,10 +135,11 @@ header div {
     border-radius: 5px 5px 0 0;
   }
 
-  #ricerca .autocom-box{
+  #ricerca .autocom-box.active{
     background-color: #191919;
     border: 1px solid black;
     opacity: 1;
+    width: 120%;
     pointer-events: auto;
     display: flex;
     flex-direction: column;

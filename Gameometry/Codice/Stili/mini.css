@@ -88,6 +88,10 @@ header div {
     width: 50%;
 }
 
+#ricerca .autocom-box {
+    width: 110%;
+}
+
 #areaRiservata {
     grid-row: 4;
     grid-column: 1;
