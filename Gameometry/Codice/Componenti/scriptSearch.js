@@ -16,7 +16,7 @@ inputBox.addEventListener("input",function(e){
   }
   if(userData){
     emptyArray = emptyArray.filter((data) =>{
-      return data.toLocaleLowerCase().search(userData.toLocaleLowerCase());
+      return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
     });
 
     emptyArray = emptyArray.map((data)=>{
