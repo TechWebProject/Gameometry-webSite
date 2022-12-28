@@ -90,16 +90,13 @@ header nav {
     padding: 2.0em;
 }
 
-header div {
-    display: flex;
-    justify-content: center;
-}
 
 #SezRicerca{
     background-color: #f8f0e3;
     border-radius: 5px;
     height: 2.5em;
     margin-right: 1em;
+    justify-content: space-between;
 }
 
 #ricerca {
@@ -110,13 +107,10 @@ header div {
     all: unset;
     height: 2.0em;
     margin-right: 2.5em;
+    margin-top: 0.2em;
     padding-left: 1em;
-    margin-top:0.5em;
-    margin-bottom: 0.2em;
     font-size: 1em;
     width: 80%;
-    display: flex;
-    align-self: flex-start;
 }
 
 #cerca {
@@ -127,7 +121,15 @@ header div {
 }
 
 #arrTitoli{
-    display: none;
+    display: none
+}
+#navUtente{
+    display: flex;
+    
+}
+#navUtente div{ 
+    display: flex;
+    
 }
 
   #ricerca.active input{
@@ -136,23 +138,34 @@ header div {
 
   #ricerca .autocom-box.active{
     background-color: #191919;
-    border: 1px solid black;
     opacity: 1;
-    width: 120%;
+    width: 125%;
     pointer-events: auto;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    margin-top: 0.2em;
+  }
+
+  .autocom-box.active::-webkit-scrollbar{
+    display: none;
   }
 
   .autocom-box li{
     list-style: none;
-    padding: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 0.5em;
+    max-width: -webkit-fill-available;
     display: none;
     width: 100%;
     cursor: default;
     color: white;
     border-bottom: 1px solid #F77F00;
+  }
+
+  .autocom-box li:last-child{
+    border-bottom: none;
   }
 
   #ricerca .autocom-box li{
@@ -163,7 +176,7 @@ header div {
   }
 
 #cerca img {
-    padding-right: 0.5em;
+    padding-right: 1em;
 }
 
 #areaR {
@@ -1118,7 +1131,6 @@ ALTERAZIONE DIMENSIONI PAGINA
     }
 
     #searchBar {
-        margin-top: 0.3em;
         padding-left: 0.8em;
         font-size: 1.0em;
     }
@@ -1139,6 +1151,11 @@ ALTERAZIONE DIMENSIONI PAGINA
         padding-left: 1em;
     }
 
+    #ricerca .autocom-box.active{
+        width: 120%;
+    }
+
+
 }
 
 @media screen and (max-width:972px) {
@@ -1150,10 +1167,16 @@ ALTERAZIONE DIMENSIONI PAGINA
 
     #searchBar {
         font-size: 0.8em;
+        margin-top: 0.5em;
     }
 
     .scores{
         font-size: 16px;
+    }
+
+    #ricerca .autocom-box.active{
+        margin-top: 0.35em;
+        
     }
 
 }
