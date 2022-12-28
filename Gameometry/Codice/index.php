@@ -57,7 +57,7 @@ $labelTitoli->setAttribute('id', 'arrTitoli');
 
 //slider
 $h1 = $main->appendChild($doc->createElement('h1'));
-$h1 = $h1->appendChild($doc->createTextNode('GIOCHI PIÙ VOTATI'));
+$h1 = $h1->appendChild($doc->createTextNode('VIDEOGIOCHI PIÙ VOTATI'));
 
 $divCarousel = $main->appendChild($doc->createElement('div'));
 $divCarousel->setAttribute('class','wrapper');
