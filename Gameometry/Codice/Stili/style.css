@@ -140,6 +140,7 @@ header nav {
     background-color: #191919;
     opacity: 1;
     width: 125%;
+    position: relative;
     pointer-events: auto;
     display: flex;
     flex-direction: column;
@@ -156,24 +157,38 @@ header nav {
     padding-top: 1em;
     padding-bottom: 1em;
     padding-left: 0.5em;
-    max-width: -webkit-fill-available;
+    max-width: fit-content;
+    text-align: left;
     display: none;
     width: 100%;
     cursor: default;
     color: white;
-    border-bottom: 1px solid #F77F00;
+
   }
 
   .autocom-box li:last-child{
     border-bottom: none;
   }
 
+  #bt{
+    background: none;
+	color: inherit;
+	padding: 0;
+	font: inherit;
+    border-bottom: 1px solid #F77F00;
+	cursor: pointer;
+	outline: inherit;
+    width: -webkit-fill-available;
+  }
+
+  #bt:hover{
+    background: #525252;
+  }
+
   #ricerca .autocom-box li{
     display: block;
   }
-  .autocom-box li:hover{
-    background: #efefef;
-  }
+
 
 #cerca img {
     padding-right: 1em;

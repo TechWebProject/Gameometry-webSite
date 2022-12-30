@@ -23,7 +23,6 @@ $main = $body->appendChild($doc->createElement('main'));
 
 $db=OpenCon();
 
-
 $query_nrows="SELECT COUNT(*) as nrighe FROM videogioco";
 $result=mysqli_query($db,$query_nrows);
 $tmparr=$result->fetch_array(MYSQLI_ASSOC);
@@ -39,18 +38,18 @@ $arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
 CloseCon($db);
 
 $labelTitoli = $main->appendChild($doc->createElement('label'));
-$pippo ='';
+$t ='';
 
 for ($i = 0; $i < $n_rows; $i++){
     if($i == $n_rows-1){
-        $pippo .= $arr[$i]['titolo'];
+        $t .= $arr[$i]['titolo'];
     }else{
-        $pippo .= $arr[$i]['titolo'].',';
+        $t .= $arr[$i]['titolo'].',';
     }
 }
 
 
-$labelTitoli->appendChild($doc->createTextNode($pippo));
+$labelTitoli->appendChild($doc->createTextNode($t));
 $labelTitoli->setAttribute('id', 'arrTitoli');
 
 

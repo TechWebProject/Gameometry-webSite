@@ -22,6 +22,40 @@ $body->appendChild($doc->createTextNode($header));
 //main
 $main = $body->appendChild($doc->createElement('main'));
 
+$db=OpenCon();
+
+$query_nrows="SELECT COUNT(*) as nrighe FROM videogioco";
+$result=mysqli_query($db,$query_nrows);
+$tmparr=$result->fetch_array(MYSQLI_ASSOC);
+$n_rows=$tmparr['nrighe'];
+
+mysqli_free_result($result);
+
+$query = "SELECT titolo FROM videogioco";
+$result = mysqli_query($db,$query);
+$arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+CloseCon($db);
+
+$labelTitoli = $main->appendChild($doc->createElement('label'));
+$t ='';
+
+for ($i = 0; $i < $n_rows; $i++){
+    if($i == $n_rows-1){
+        $t .= $arr[$i]['titolo'];
+    }else{
+        $t .= $arr[$i]['titolo'].',';
+    }
+}
+
+$labelTitoli->appendChild($doc->createTextNode($t));
+$labelTitoli->setAttribute('id', 'arrTitoli');
+
+$searchscript = $main->appendChild($doc->createElement('script'));
+$searchscript->setAttribute('type','text/JavaScript');
+$searchscript->setAttribute('src','Componenti/scriptSearch.js');
+
 $h1 = $main->appendChild($doc->createElement('h1'));
 $h1 = $h1->appendChild($doc->createTextNode('LE NOSTRE RECENSIONI'));
 

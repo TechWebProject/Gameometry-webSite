@@ -21,6 +21,40 @@ $body->appendChild($doc->createTextNode($header));
 
 //main
 $main = file_get_contents('Componenti/areaUtente.html');
+
+$db=OpenCon();
+
+$query_nrows="SELECT COUNT(*) as nrighe FROM videogioco";
+$result=mysqli_query($db,$query_nrows);
+$tmparr=$result->fetch_array(MYSQLI_ASSOC);
+$n_rows=$tmparr['nrighe'];
+
+mysqli_free_result($result);
+
+$query = "SELECT titolo FROM videogioco";
+$result = mysqli_query($db,$query);
+$arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+CloseCon($db);
+
+$labelTitoli = $body->appendChild($doc->createElement('label'));
+$t ='';
+
+for ($i = 0; $i < $n_rows; $i++){
+    if($i == $n_rows-1){
+        $t .= $arr[$i]['titolo'];
+    }else{
+        $t .= $arr[$i]['titolo'].',';
+    }
+}
+
+$labelTitoli->appendChild($doc->createTextNode($t));
+$labelTitoli->setAttribute('id', 'arrTitoli');
+
+$searchscript = $body->appendChild($doc->createElement('script'));
+$searchscript->setAttribute('type','text/JavaScript');
+$searchscript->setAttribute('src','Componenti/scriptSearch.js');
 //$main = str_replace("user_name", nome utente database);     ( X il database)
 $commenti = file_get_contents('Componenti/commenti.html');
 $body->appendChild($doc->createTextNode($main));   //Le recensioni vanno aggiunte tramite database
