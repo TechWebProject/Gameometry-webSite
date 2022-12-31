@@ -328,7 +328,7 @@ PAGINA RECENSIONE
 */
 
 #recensioneGioco {
-    padding-top: 19.0em;
+    padding-top: 12.0em;
 }
 
 #areaCommento {
@@ -411,7 +411,10 @@ PAGINA RECENSIONE
 
 
 @media screen and (max-device-width: 600px) {
-
+    
+    #recensioneGioco {
+        padding-top: 19.0em;
+    }
     #menu {
         margin-top: 2em;
     }
@@ -459,6 +462,14 @@ PAGINA RECENSIONE
         margin-top: 2em;
     }
 
+    .wrapper {
+        height: 25vh;
+    }
+
+    #titoloRecensione {
+        font-size: 3em;
+    }
+
     h1 {
         font-size: 2.5em;
         margin-top: 3em;
@@ -484,4 +495,33 @@ PAGINA RECENSIONE
         margin-top: 1em;
     }
 
+    #votazione { 
+        color: white;
+        
+        margin-top: 2.0em;
+    }
+    
+    #votazione input{
+        font-size: 2.5em;
+        width: 0.7em;
+        height: 0.7em;
+        float: left;
+
+    }
+
+    #votazione p {
+        margin-bottom: 1em;
+        float: inherit;
+        font-size: 2.5em;
+        
+    }
+
+    #voto{
+        float: left;
+        font-size: 1.3em;
+        margin-right: 1em;
+        margin-left: 0.2em;
+    }
+
+    
 }
