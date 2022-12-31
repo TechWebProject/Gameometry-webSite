@@ -144,13 +144,10 @@ header nav {
     pointer-events: auto;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    overflow-y: scroll;
     margin-top: 0.2em;
   }
 
-  .autocom-box.active::-webkit-scrollbar{
-    display: none;
-  }
 
   .autocom-box li{
     list-style: none;
