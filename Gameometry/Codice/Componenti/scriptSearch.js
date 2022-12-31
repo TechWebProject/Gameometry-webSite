@@ -4,40 +4,37 @@ const searchWrapper = document.querySelector("#ricerca");
 
 const inputBox = document.getElementById("searchBar");
 const suggBox = document.querySelector(".autocom-box");
-const formRicerca = document.getElementById("caricaRicerca");
+
+const formRicerca = document.getElementById("caricaRicerca"); //dead code? togliendolo funge lo stesso
 
 var arrTitoli = document.getElementById("arrTitoli").textContent;
 var titoli = arrTitoli.split(",");
 
-inputBox.addEventListener("input",function(e){
-  let userData = e.target.value;
+inputBox.addEventListener("input",()=>{
+  let userData = inputBox.value;
   let emptyArray= [];
   for(var i=0; i<titoli.length; i++){
     emptyArray.push(titoli[i]);
   }
+
   if(userData){
-    emptyArray = emptyArray.filter((data) =>{
-      return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
-    });
 
-    emptyArray = emptyArray.map((data)=>{
-        
-        data= '<form><button><li>' + data + '</li></button></form>';
-        
-        return data;
-    });
-
+    let filteredArray = emptyArray.filter(checkIfMatch);
+  
+    for(let i=0;i<filteredArray.length;i++){
+      let elem='<form><button><li>' + filteredArray[i] + '</li></button></form>';
+      filteredArray[i]=elem;
+    }
     
     searchWrapper.classList.add("active");
     suggBox.classList.add("active");
     
-    showSuggestions(emptyArray);
+    showSuggestions(filteredArray);
 
     let formList = suggBox.querySelectorAll("form");
     for (let i = 0; i < formList.length; i++) {
       formList[i].setAttribute("action", "templateGioco.php");
       formList[i].setAttribute("method", "POST");
-
     }
 
     let imageList = suggBox.querySelectorAll("button");
@@ -45,7 +42,6 @@ inputBox.addEventListener("input",function(e){
       imageList[i].setAttribute("id", "bt");
       imageList[i].setAttribute("name", "immagine");
       imageList[i].setAttribute("value", imageList[i].textContent);
-
     }
 
     let allList = suggBox.querySelectorAll("li");
@@ -60,6 +56,10 @@ inputBox.addEventListener("input",function(e){
   }
 });
 
+function checkIfMatch(elem){
+  return elem.toLowerCase().startsWith(inputBox.value.toLowerCase());
+}
+
 function select(element){
   let selectData = element.textContent;
   inputBox.value = selectData;
@@ -71,14 +71,11 @@ function select(element){
 
 function showSuggestions(list){
   let listData;
-  
   if(!list.length){
     userValue = inputBox.value;
     listData = '<li>' + userValue + '</li>';
-    
   }else{
     listData = list.join('');
     suggBox.setHTML(listData);
-    
   }
 }
