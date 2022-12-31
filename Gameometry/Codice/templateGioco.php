@@ -30,19 +30,18 @@ $title=mysqli_real_escape_string($db1,$title);
 $tmpquery= "SELECT cast(AVG(commento.voto) as int) as votoU, recensione.titolo as title,trama,rilascio,casaProduttrice,imgBanner,imgLocandina,piattaformaV,genereV,recensione.voto as votoV FROM recensione,videogioco,commento WHERE commento.idVideogioco=videogioco.titolo and recensione.idVideogioco=videogioco.titolo and videogioco.titolo='$title'";
 
 $result = mysqli_query($db1,$tmpquery);
+$r = $result->fetch_array(MYSQLI_ASSOC);
 
-$r = mysqli_fetch_all($result,MYSQLI_ASSOC);
-
-$titoloGioco = $r[0]['title'];
-$trama = $r[0]['trama'];
-$data_uscita=$r[0]['rilascio'];
-$publisher=$r[0]['casaProduttrice'];
-$banner=$r[0]['imgBanner'];
-$imgLocandina=$r[0]['imgLocandina'];
-$piattaforma=$r[0]['piattaformaV'];
-$genere=$r[0]['genereV'];
-$voto=$r[0]['votoV'];
-$votoU=$r[0]['votoU'];
+$titoloGioco = $r['title'];
+$trama = $r['trama'];
+$data_uscita=$r['rilascio'];
+$publisher=$r['casaProduttrice'];
+$banner=$r['imgBanner'];
+$imgLocandina=$r['imgLocandina'];
+$piattaforma=$r['piattaformaV'];
+$genere=$r['genereV'];
+$voto=$r['votoV'];
+$votoU=$r['votoU'];
 mysqli_free_result($result); 
 CloseCon($db1); 
 
@@ -111,7 +110,9 @@ $listaattributi->setAttribute('id', 'attributigioco');
 $lista->appendChild($listaattributi);
 
 $attributo1 = $html->appendChild($doc->createElement('dt'));
-$attributo1->appendChild($doc->createTextNode("Publisher")); 
+$spanAtt1 = $attributo1->appendChild($doc->createElement('span'));
+$spanAtt1->setAttribute('lang','en');
+$spanAtt1->appendChild($doc->createTextNode("Publisher")); 
 $listaattributi->appendChild($attributo1);
 //
 $attributo1db = $html->appendChild($doc->createElement('dd'));
