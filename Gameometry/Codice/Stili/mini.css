@@ -305,9 +305,12 @@ PAGINA VIDEOGIOCHI
 }
 
 #sezioneVideogiochi img {
-    width: 42.0em;
-    height: 60.0em;
-    padding-bottom: 4.0em;
+    width: auto;
+    height: 40.0em;
+    margin-bottom: 1.5em;
+}
+
+.btImg{
     border-bottom: 1px solid #F77F00;
 }
 
@@ -521,6 +524,16 @@ PAGINA RECENSIONE
         font-size: 1.3em;
         margin-right: 1em;
         margin-left: 0.2em;
+    }
+
+    #sezioneVideogiochi img {
+        width: 42.0em;
+        height: 60.0em;
+        margin-bottom: 1.5em;
+    }
+    
+    .imgSpan{
+        font-size: 3em;
     }
 
     

@@ -120,6 +120,15 @@ header nav {
     height: 1.5em;
 }
 
+#cercaM{
+    display: flex;
+}
+
+#btSearch{
+    display: contents;
+    cursor: pointer;
+}
+
 #arrTitoli{
     display: none
 }
@@ -664,7 +673,7 @@ PAGINA VIDEOGIOCHI
     height: 22.0em;
 }
 
-#sezioneVideogiochi button {
+.btImg {
     background: transparent;
     border: none;
 }
@@ -684,6 +693,15 @@ PAGINA VIDEOGIOCHI
     justify-items: center;
 }
 
+.imgSpan{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 1.2em;
+    margin-top: 0.8em;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
 /*
 =============
 PAGINA EVENTI

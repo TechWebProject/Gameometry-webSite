@@ -82,12 +82,16 @@ foreach ($imgz as $attributes) {
     $imgForm->setAttribute('method', 'POST');
     $buttonImg = $imgForm->appendChild($doc->createElement('button'));
     $buttonImg->setAttribute('name','immagine');
+    $buttonImg->setAttribute('class','btImg');
     $imgtag = $buttonImg->appendChild($doc->createElement('img'));
+    $imgSpan = $buttonImg->appendChild($doc->createElement('span'));
+    $imgSpan->setAttribute('class','imgSpan');
     foreach ($attributes as $key => $value) {
         $imgtag->setAttribute($key, $value);
         if($key=='alt'){
             $value=str_replace('locandina ','',$value);
             $buttonImg->setAttribute('value',$value);
+            $imgSpan = $imgSpan->appendChild($doc->createTextNode($value));
         }
     }
     $imgtag->setAttribute('class','imgs');
