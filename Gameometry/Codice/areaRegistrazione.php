@@ -35,7 +35,6 @@ $query = "SELECT titolo FROM videogioco";
 $result = mysqli_query($db,$query);
 $arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-
 CloseCon($db);
 
 $labelTitoli = $main->appendChild($doc->createElement('label'));
@@ -63,7 +62,8 @@ $div = $main->appendChild($doc->createElement('div'));
 $div->setAttribute('id','registrazione');
 
 $form = $div->appendChild($doc->createElement('form'));
-$form->setAttribute('action','registrazione');
+$form->setAttribute('action','areaRegistrazione.php');
+$form->setAttribute('method','POST');
 
 $h2 = $form->appendChild($doc->createElement('h2'));
 $h2->setAttribute('id','loginTitle');
@@ -83,7 +83,7 @@ $spanMailInput->setAttribute('type','email');
 $spanMailInput->setAttribute('name','email');
 $spanMailInput->setAttribute('id','email');
 $spanMailInput->setAttribute('placeholder','Digita la tua mail');
-$spanMailInput->setAttribute('maxlength','30'); /* deve essere uguale alla dimensione dell'attributo nel DB */
+$spanMailInput->setAttribute('maxlength','100'); 
 
 $spanUser = $fieldset->appendChild($doc->createElement('span'));
 $spanUser->setAttribute('id','usernameBox');
@@ -96,7 +96,7 @@ $spanUserInput = $spanUser->appendChild($doc->createElement('input'));
 $spanUserInput->setAttribute('name','username');
 $spanUserInput->setAttribute('id','username');
 $spanUserInput->setAttribute('placeholder','Scegli il tuo username');
-$spanUserInput->setAttribute('maxlength','30'); /* deve essere uguale alla dimensione dell'attributo nel DB */
+$spanUserInput->setAttribute('maxlength','30'); 
 
 $spanPassword = $fieldset->appendChild($doc->createElement('span'));
 $spanPassword->setAttribute('id','passwordBox');
@@ -110,16 +110,48 @@ $spanPasswordInput->setAttribute('type','password');
 $spanPasswordInput->setAttribute('name','password');
 $spanPasswordInput->setAttribute('id','password');
 $spanPasswordInput->setAttribute('placeholder','Scegli la tua password');
-$spanPasswordInput->setAttribute('maxlength','30'); /* deve essere uguale alla dimensione dell'attributo nel DB */
+$spanPasswordInput->setAttribute('maxlength','12'); 
 
 $spanRegister = $fieldset->appendChild($doc->createElement('span'));
 $spanRegister->setAttribute('id','submitButton');
 $buttonR = $spanRegister->appendChild($doc->createElement('button'));
 $buttonR->setAttribute('id','register');
+$buttonR->setAttribute('type','submit');
+$buttonR->setAttribute('name','registerButton');
 $buttonR->setAttribute('aria-label','clicca per registrarti al sito');
-$linkRegistrazione = $buttonR->appendChild($doc->createElement('a'));
-$linkRegistrazione->setAttribute('href','#');
-$linkRegistrazione = $linkRegistrazione->appendChild($doc->createTextNode('registrati'));
+$buttonR->appendChild($doc->createTextNode('registrati'));
+
+function function_alert($message) {
+    echo "<script>alert('$message');</script>";
+} 
+
+if(isset($_POST['registerButton']) && isset($_POST['email']) && isset($_POST['username']) && $_POST['password']){
+    $inputEmail = $_POST['email'];
+    $inputNickname = $_POST['username'];
+    $inputPassword = $_POST['password'];
+
+    $db=OpenCon();
+
+    $query_check="SELECT * FROM utente WHERE utente.email='$inputEmail' OR utente.nickname='$inputNickname'"; /* effettua il controllo che i dati siano univoci (email e nickname) non siano già presenti nel DB */
+    $result=mysqli_query($db,$query_check);
+    $tmparr=$result->fetch_array(MYSQLI_ASSOC);
+
+    if(!isset($tmparr)){
+        $currentDate = date("Y-m-d");
+        $insertUser="insert into utente (email, nickname, password, dataIscrizione) values ('$inputEmail', '$inputNickname', '$inputPassword', '$currentDate')";
+        $resultInsert=mysqli_query($db,$insertUser);
+        function_alert("Utente registrato con successo");
+    } else {
+        function_alert("Utente già presente nel sistema");
+    }
+
+    mysqli_free_result($result);
+
+    CloseCon($db);
+}
+else if(isset($_POST['registerButton'])) {
+    function_alert("Per poterti registare al sito è necessario riempire tutti i campi");
+}
 
 //footer
 $footer=file_get_contents("sezioniComuni/footer.html");
