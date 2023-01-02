@@ -122,6 +122,10 @@ SLIDER
 ======
 */
 
+.wrapper {
+    margin-top: 1.5em;
+}
+
 .horizontal-wrapper .imgs {
     width: 4.5em;
     height: 6em;
@@ -228,16 +232,21 @@ ULTIME RECENSIONI
 
 .scores {
     font-size: 34px;
-}
-
-#punteggioCritica,
-#punteggioUtenti {
-    margin-bottom: 1em;
+    line-height: 1.5em;
 }
 
 #boxattributi {
     flex-direction: column;
     align-items: center;
+    padding: 0;
+    padding-bottom: 0;
+}
+#boxattributi img {
+    margin-top: 3.0em;
+}
+
+#bannergioco{
+    padding-top: 4.0em;
 }
 
 #locandinagioco {
@@ -246,8 +255,9 @@ ULTIME RECENSIONI
 }
 
 #attributigioco {
-    font-size: 26px;
-    padding-bottom: 2em;
+    padding-top: 2.0em;
+    padding-bottom: 0;
+    font-size: 36px;
 }
 
 #lanostrarecensione {
