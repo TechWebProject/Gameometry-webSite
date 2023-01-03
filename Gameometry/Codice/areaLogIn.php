@@ -35,7 +35,6 @@ $query = "SELECT titolo FROM videogioco";
 $result = mysqli_query($db,$query);
 $arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-
 CloseCon($db);
 
 $labelTitoli = $main->appendChild($doc->createElement('label'));
@@ -63,7 +62,7 @@ $div = $main->appendChild($doc->createElement('div'));
 $div->setAttribute('id','logIn');
 
 $form = $div->appendChild($doc->createElement('form'));
-$form->setAttribute('action','accesso');
+$form->setAttribute('action','areaUtente.php');
 
 $h2 = $form->appendChild($doc->createElement('h2'));
 $h2->setAttribute('id','loginTitle');
@@ -84,7 +83,7 @@ $spanUserInput = $spanUser->appendChild($doc->createElement('input'));
 $spanUserInput->setAttribute('name','username');
 $spanUserInput->setAttribute('id','username');
 $spanUserInput->setAttribute('placeholder','Digita il tuo username');
-$spanUserInput->setAttribute('maxlength','30'); /* deve essere uguale alla dimensione dell'attributo nel DB */
+$spanUserInput->setAttribute('maxlength','30');
 
 $spanPassword = $fieldset->appendChild($doc->createElement('span'));
 $spanPassword->setAttribute('id','passwordBox');
@@ -98,7 +97,7 @@ $spanPasswordInput->setAttribute('type','password');
 $spanPasswordInput->setAttribute('name','password');
 $spanPasswordInput->setAttribute('id','password');
 $spanPasswordInput->setAttribute('placeholder','Digita la tua password');
-$spanPasswordInput->setAttribute('maxlength','30'); /* deve essere uguale alla dimensione dell'attributo nel DB */
+$spanPasswordInput->setAttribute('maxlength','12'); 
 
 $spanRegister = $fieldset->appendChild($doc->createElement('span'));
 $spanRegister->setAttribute('id','registerBox');
@@ -106,7 +105,7 @@ $buttonS = $spanRegister->appendChild($doc->createElement('button'));
 $buttonS->setAttribute('id','submit');
 $buttonS->setAttribute('aria-label','clicca per accedere al sito');
 $linkAccesso = $buttonS->appendChild($doc->createElement('a'));
-$linkAccesso->setAttribute('href','areaUtente.php'); /* da definire dove l'utente finisce dopo l'accesso */
+$linkAccesso->setAttribute('href','areaUtente.php'); 
 $linkAccesso = $linkAccesso->appendChild($doc->createTextNode('accedi'));
 $linkR = $spanRegister->appendChild($doc->createElement('p'));
 $linkR->setAttribute('id','linkRegistrazione');
@@ -118,8 +117,6 @@ $linkR1->setAttribute('href','areaRegistrazione.php');
 $linkR1 = $linkR1->appendChild($doc->createTextNode('Clicca qui'));
 $spazioP1 = $linkR->appendChild($doc->createElement('span'));
 $spazioP1 = $spazioP1->appendChild($doc->createTextNode(' per registrarti.'));
-
-
 
 //footer
 $footer=file_get_contents("sezioniComuni/footer.html");
