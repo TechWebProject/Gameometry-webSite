@@ -52,8 +52,6 @@ for ($i = 0; $i < $n_rows; $i++){
 $labelTitoli->appendChild($doc->createTextNode($t));
 $labelTitoli->setAttribute('id', 'arrTitoli');
 
-
-
 //slider
 $h1 = $main->appendChild($doc->createElement('h1'));
 $h1 = $h1->appendChild($doc->createTextNode('VIDEOGIOCHI PIÙ VOTATI'));

@@ -890,30 +890,32 @@ dl {
     color: rgb(255, 255, 255);
 }
 
-.user-info>dt {
+#user-info>dt {
     font-weight: bolder;
     float: left;
     margin-left: 3em;
+    margin-right: 0.8em;
+}
+#user-info dd{
+    margin-bottom: 0.5em;
 }
 
-.user-info {
-    padding-top: 8em;
-    padding-bottom: 5em;
-    line-height: 2em;
+#user-info {
+    padding-top: 3em;
+    line-height: 1.5em;
 }
 
-.user-icon {
-    height: 15em;
-    width: 15em;
-    padding: 0.5em;
-    margin: 5em;
+#user-icon {
+    height: 12em;
+    width: 20%;
+    margin-top: 2.0em;
+    margin-left: 3em;
     float: left;
-    background-color: white;
     border-radius: 100%;
 }
 
-.user-info>dt::after {
-    content: ": ";
+#user-info>dt::after {
+    content: " :";
 }
 
 .title {
@@ -927,6 +929,23 @@ dl {
     text-align: left;
     background-color: #F77F00;
     border: 0.5px solid #F77F00;
+}
+
+#logoutB {
+    padding: 0.4em;
+    padding-right: 0.5em;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    margin: 0.6em 1.0em 2em 2.0em;
+    border: none;
+    background-color: rgb(100, 149, 237);
+}
+#logoutB span {
+    text-align: center;
+}
+#logoutB a {
+    text-decoration: none;
+    color: white;
 }
 
 /*

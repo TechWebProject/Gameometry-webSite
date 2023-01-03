@@ -19,9 +19,7 @@ $header = file_get_contents('sezioniComuni/header.html');
 $header = str_replace("Notizie", "Area riservata", $header);
 $body->appendChild($doc->createTextNode($header));
 
-//main
-$main = file_get_contents('Componenti/areaUtente.html');
-
+//searchBar
 $db=OpenCon();
 
 $query_nrows="SELECT COUNT(*) as nrighe FROM videogioco";
@@ -34,7 +32,6 @@ mysqli_free_result($result);
 $query = "SELECT titolo FROM videogioco";
 $result = mysqli_query($db,$query);
 $arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
 
 CloseCon($db);
 
@@ -54,11 +51,27 @@ $labelTitoli->setAttribute('id', 'arrTitoli');
 
 $searchscript = $body->appendChild($doc->createElement('script'));
 $searchscript->setAttribute('type','text/JavaScript');
-$searchscript->setAttribute('src','Componenti/scriptSearch.js');
-//$main = str_replace("user_name", nome utente database);     ( X il database)
-$commenti = file_get_contents('Componenti/commenti.html');
-$body->appendChild($doc->createTextNode($main));   //Le recensioni vanno aggiunte tramite database
-$body->appendChild($doc->createTextNode($commenti));
+$searchscript->setAttribute('src','Componenti/scriptSearch.js');  
+
+//main
+$main = $body->appendChild($doc->createElement('main'));
+
+$userInfo = file_get_contents('Componenti/userInfo.html');
+$main->appendChild($doc->createTextNode($userInfo));
+
+$divLogout = $main->appendChild($doc->createElement('div'));
+$buttonLogout = $divLogout->appendChild($doc->createElement('button'));
+$buttonLogout->setAttribute('id','logoutB');
+$buttonLogout->setAttribute('name','logoutButton');
+$spanButtonLogout = $buttonLogout->appendChild($doc->createElement('span'));
+$spanButtonLogout->setAttribute('lang','en');
+$linkSpan = $spanButtonLogout->appendChild($doc->createElement('a'));
+$linkSpan->setAttribute('href','areaLogin.php');
+$linkSpan = $linkSpan->appendChild($doc->createTextNode('Logout')); /* dovrà chiudere la sessione attiva */
+
+$listaCommenti = $main->appendChild($doc->createElement('h2'));
+$listaCommenti->setAttribute('class','titleH2');
+$listaCommenti = $listaCommenti->appendChild($doc->createTextNode('I MIEI COMMENTI'));
 
 //footer
 $footer = file_get_contents("sezioniComuni/footer.html");
