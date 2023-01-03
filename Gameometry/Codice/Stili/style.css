@@ -108,13 +108,11 @@ header nav {
     height: 2.0em;
     margin-right: 2.5em;
     margin-top: 0.2em;
-    padding-left: 1em;
-    font-size: 1em;
+    padding-left: 1.0em;
     width: 80%;
 }
 
 #cerca {
-    
     cursor: pointer;
     align-self: center;
     height: 1.5em;
@@ -137,8 +135,8 @@ header nav {
     
 }
 #navUtente div{ 
-    display: flex;
-    
+    display: flex;  
+    align-self: center;
 }
 
   #ricerca.active input{
@@ -901,7 +899,8 @@ dl {
 }
 
 #user-info {
-    padding-top: 3em;
+    padding-top: 2.5em;
+    font-size: 1.2em;
     line-height: 1.5em;
 }
 
