@@ -3,8 +3,8 @@
 http_response_code(500);
 
 $doc = new DOMDocument;
-$html = $doc->appendChild($doc->createElement('html'));
 $doc->appendChild($doc->createTextNode('<!DOCTYPE html>'));
+$html = $doc->appendChild($doc->createElement('html'));
 $html->setAttribute('lang', 'it');
 $body = $doc->appendChild($doc->createElement('body'));
 
