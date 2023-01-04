@@ -17,6 +17,9 @@ $html->appendChild($doc->createTextNode($head));
 //header
 $header=file_get_contents('sezioniComuni/header.html');
 $header = str_replace("Notizie","Accesso",$header);
+if(isset($_SESSION['username'])){
+    $header = str_replace('<a id="areaRiservata" href="areaLogIn.php">','<a id="areaRiservata" href="areaUtente.php">',$header);
+}
 $body->appendChild($doc->createTextNode($header));
 
 //main
@@ -122,16 +125,20 @@ if(isset($_POST['loginButton']) && $_POST['username']!="" && $_POST['password']!
     $query_check="SELECT utente.email as emailU, utente.dataIscrizione as dataIscrizioneU FROM utente WHERE utente.nickname='$inputNickname' and utente.password='$inputPassword'"; /* effettua il controllo che i dati siano corretti */
     $result=mysqli_query($db,$query_check);
     $tmparr=$result->fetch_array(MYSQLI_ASSOC);
-    $emailU = $tmparr['emailU'];
-    $dataIscrU = $tmparr['dataIscrizioneU'];
 
     if(isset($tmparr)){
+        $emailU = $tmparr['emailU'];
+        $dataIscrU = $tmparr['dataIscrizioneU'];
+
         session_start();
         $_SESSION['username'] = $inputNickname;
         $_SESSION['email'] = $emailU;
         $_SESSION['dataIscrizione'] = $dataIscrU;
 
         header("Location: areaUtente.php");
+    }
+    else {
+        function_alert("Username o password non corretti, riprovare");
     }
 
     mysqli_free_result($result);

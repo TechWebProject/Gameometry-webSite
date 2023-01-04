@@ -18,6 +18,9 @@ $html->appendChild($doc->createTextNode($head));
 //header
 $header=file_get_contents('sezioniComuni/header.html');
 $header = str_replace("Notizie","Eventi",$header);
+if(isset($_SESSION['username'])){
+    $header = str_replace('<a id="areaRiservata" href="areaLogIn.php">','<a id="areaRiservata" href="areaUtente.php">',$header);
+}
 $body->appendChild($doc->createTextNode($header));
 
 //main

@@ -23,6 +23,9 @@ $header = str_replace(
     '<span lang="en"><a href="index.php">Home</a></span> &raquo; <span lang="it"><a href="videogiochi.php">Videogiochi</a></span> &raquo; '.$title.'</p>',
     $header
 );
+if(isset($_SESSION['username'])){
+    $header = str_replace('<a id="areaRiservata" href="areaLogIn.php">','<a id="areaRiservata" href="areaUtente.php">',$header);
+}
 $html->appendChild($doc->createTextNode($header));
 
 //QUERY

@@ -18,6 +18,9 @@ $html->appendChild($doc->createTextNode($head));
 //header
 $header = file_get_contents('sezioniComuni/header.html');
 $header = str_replace("Notizie", "Area riservata", $header);
+if(isset($_SESSION['username'])){
+    $header = str_replace('<a id="areaRiservata" href="areaLogIn.php">','<a id="areaRiservata" href="areaUtente.php">',$header);
+}
 $body->appendChild($doc->createTextNode($header));
 
 //searchBar
@@ -91,9 +94,6 @@ $listaCommenti = $main->appendChild($doc->createElement('h2'));
 $listaCommenti->setAttribute('class','titleH2');
 $listaCommenti = $listaCommenti->appendChild($doc->createTextNode('I MIEI COMMENTI'));
 
-$div_commenti = $main->appendChild($doc->createElement('div'));
-$div_commenti->setAttribute('id', 'recensioni-utenti');
-
 //commenti
 $tmpquery= "SELECT videogioco.titolo as title, commento.contenuto as contenutoU, commento.voto as votoU FROM utente,commento,recensione,videogioco WHERE commento.idUtente=utente.email and commento.idVideogioco=videogioco.titolo and recensione.idVideogioco=videogioco.titolo and utente.email='$email' ORDER BY commento.data desc";
 $result2 = mysqli_query($db,$tmpquery);
@@ -102,31 +102,50 @@ mysqli_free_result($result2);
 
 CloseCon($db);
 
-for($i=0;$i<$nComm;$i++){
-    $nickname = $arr2[$i]['title'];
-    $contenuto=$arr2[$i]['contenutoU'];
-    $votoU=$arr2[$i]['votoU']; 
+if($nComm>0){
+    $div_commenti = $main->appendChild($doc->createElement('div'));
+    $div_commenti->setAttribute('id', 'recensioni-utenti');
 
-    $div_post= $div_commenti->appendChild($doc->createElement('div'));
-    $div_post->setAttribute('class', 'postU');
-
-    $div_postCommento = $div_post->appendChild($doc->createElement('div'));
-    $div_postCommento->setAttribute('class', 'commento');
-
-    $ul_contenuto = $div_postCommento->appendChild($doc->createElement('ul'));
-    $ul_contenuto->setAttribute('class', 'contenutoRecensioneU1');
-
-    $li_utente = $ul_contenuto->appendChild($doc->createElement('li'));
-    $li_utente->setAttribute('class','toBold');
-    $li_utente = $li_utente->appendChild($doc->createTextNode($nickname));
-    $li_commento = $ul_contenuto->appendChild($doc->createElement('li'));
-    $li_commento = $li_commento->appendChild($doc->createTextNode($contenuto));
-
-    $div_punteggio = $div_post->appendChild($doc->createElement('div'));
-    $div_punteggio->setAttribute('class','boxPunteggioU1');
-    $p_punteggio = $div_punteggio->appendChild($doc->createElement('p'));
-    $p_punteggio->setAttribute('class', 'punteggioU');
-    $p_punteggio = $p_punteggio->appendChild($doc->createTextNode($votoU));
+    for($i=0;$i<$nComm;$i++){
+        $nickname = $arr2[$i]['title'];
+        $contenuto=$arr2[$i]['contenutoU'];
+        $votoU=$arr2[$i]['votoU']; 
+    
+        $div_post= $div_commenti->appendChild($doc->createElement('div'));
+        $div_post->setAttribute('class', 'postU');
+    
+        $div_postCommento = $div_post->appendChild($doc->createElement('div'));
+        $div_postCommento->setAttribute('class', 'commento');
+    
+        $ul_contenuto = $div_postCommento->appendChild($doc->createElement('ul'));
+        $ul_contenuto->setAttribute('class', 'contenutoRecensioneU1');
+    
+        $li_utente = $ul_contenuto->appendChild($doc->createElement('li'));
+        $li_utente->setAttribute('class','toBold');
+        $li_utente = $li_utente->appendChild($doc->createTextNode($nickname));
+        $li_commento = $ul_contenuto->appendChild($doc->createElement('li'));
+        $li_commento = $li_commento->appendChild($doc->createTextNode($contenuto));
+    
+        $div_punteggio = $div_post->appendChild($doc->createElement('div'));
+        $div_punteggio->setAttribute('class','boxPunteggioU1');
+        $p_punteggio = $div_punteggio->appendChild($doc->createElement('p'));
+        $p_punteggio->setAttribute('class', 'punteggioU');
+        $p_punteggio = $p_punteggio->appendChild($doc->createTextNode($votoU));
+    }
+}
+else {
+    $divMess = $main->appendChild($doc->createElement('div'));
+    $divMess->setAttribute('id','messageU');
+    $message = $divMess->appendChild($doc->createElement('span'));
+    $message->setAttribute('id','messageU1');
+    $message = $message->appendChild($doc->createTextNode('Non hai ancora commentanto nessun videogioco. Per farlo recati '));
+    $messageLink = $divMess->appendChild($doc->createElement('a'));
+    $messageLink->setAttribute('id','messageU2');
+    $messageLink->setAttribute('href','recensioni.php');
+    $messageLink = $messageLink->appendChild($doc->createTextNode('qui'));
+    $messagept2 = $divMess->appendChild($doc->createElement('span'));
+    $messagept2->setAttribute('id','messageU3');
+    $messagept2 = $messagept2->appendChild($doc->createTextNode(", leggi una delle recensioni che ti proponiamo e dacci anche una tua opinione sul videogioco!"));
 }
 
 //footer

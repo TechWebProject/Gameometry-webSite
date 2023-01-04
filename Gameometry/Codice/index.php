@@ -10,13 +10,16 @@ $body = $doc->appendChild($doc->createElement('body'));
 
 //head
 $head=file_get_contents('sezioniComuni/head.html');
+$head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Questa pagina &egrave; dedicata al mondo videoludico e, pi&ugrave; nello specifico, alle recensioni legate a questo tipo di mondo", $head);
+$head = str_replace("videogioco, videogiochi, utente, recensioni", "gameometry, videogioco, videogiochi, console, pc, computer, recensione, recensioni, voto, notizie", $head);
 $html->appendChild($doc->createTextNode($head));
 
 //header
 $header=file_get_contents('sezioniComuni/header.html');
 $header = str_replace("&raquo; Notizie","",$header);
-$head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Questa pagina &egrave; dedicata al mondo videoludico e, pi&ugrave; nello specifico, alle recensioni legate a questo tipo di mondo", $head);
-$head = str_replace("videogioco, videogiochi, utente, recensioni", "gameometry, videogioco, videogiochi, console, pc, computer, recensione, recensioni, voto, notizie", $head);
+if(isset($_SESSION['username'])){
+    $header = str_replace('<a id="areaRiservata" href="areaLogIn.php">','<a id="areaRiservata" href="areaUtente.php">',$header);
+}
 $body->appendChild($doc->createTextNode($header));
 
 //main

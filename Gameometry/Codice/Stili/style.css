@@ -965,6 +965,20 @@ dl {
     border-radius: 8px;
 }
 
+#messageU {
+    font-size: 1.3em;
+    line-height: 1.5em;
+    color: white;
+    padding: 1.5em 0em 1.5em 0.6em;
+}
+#messageU a:link {
+    text-decoration: 1px underline white;
+}
+#messageU a:visited {
+    color: #AD343E;
+    text-decoration: 1px underline #AD343E;
+}
+
 /*
 =================
 PAGINA DI ACCESSO
