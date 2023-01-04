@@ -62,7 +62,8 @@ $div = $main->appendChild($doc->createElement('div'));
 $div->setAttribute('id','logIn');
 
 $form = $div->appendChild($doc->createElement('form'));
-$form->setAttribute('action','areaUtente.php');
+$form->setAttribute('action','areaLogin.php');
+$form->setAttribute('method','POST');
 
 $h2 = $form->appendChild($doc->createElement('h2'));
 $h2->setAttribute('id','loginTitle');
@@ -107,6 +108,40 @@ $buttonS->setAttribute('id','submit');
 $buttonS->setAttribute('name','loginButton');
 $buttonS->setAttribute('aria-label','clicca per accedere al sito');
 $buttonS = $buttonS->appendChild($doc->createTextNode('accedi'));
+
+function function_alert($message) {
+    echo "<script>alert('$message');</script>";
+} 
+
+if(isset($_POST['loginButton']) && $_POST['username']!="" && $_POST['password']!=""){
+    $inputNickname = $_POST['username'];
+    $inputPassword = $_POST['password'];
+
+    $db=OpenCon();
+
+    $query_check="SELECT utente.email as emailU, utente.dataIscrizione as dataIscrizioneU FROM utente WHERE utente.nickname='$inputNickname' and utente.password='$inputPassword'"; /* effettua il controllo che i dati siano corretti */
+    $result=mysqli_query($db,$query_check);
+    $tmparr=$result->fetch_array(MYSQLI_ASSOC);
+    $emailU = $tmparr['emailU'];
+    $dataIscrU = $tmparr['dataIscrizioneU'];
+
+    if(isset($tmparr)){
+        session_start();
+        $_SESSION['username'] = $inputNickname;
+        $_SESSION['email'] = $emailU;
+        $_SESSION['dataIscrizione'] = $dataIscrU;
+
+        header("Location: areaUtente.php");
+    }
+
+    mysqli_free_result($result);
+
+    CloseCon($db);
+}
+else if(isset($_POST['loginButton'])) {
+    function_alert("Username o password non corretti, riprovare");
+}
+
 $linkR = $spanRegister->appendChild($doc->createElement('p'));
 $linkR->setAttribute('id','linkRegistrazione');
 $spazioP = $linkR->appendChild($doc->createElement('span'));

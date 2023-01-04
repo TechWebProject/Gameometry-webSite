@@ -3,6 +3,7 @@ include "Componenti/connect.php";
 
 $doc = new DOMDocument;
 $doc->appendChild($doc->createTextNode('<!DOCTYPE html>'));
+session_start();
 $html = $doc->appendChild($doc->createElement('html'));
 $html->setAttribute('lang','it');
 $body = $doc->appendChild($doc->createElement('body'));
@@ -125,7 +126,7 @@ function function_alert($message) {
     echo "<script>alert('$message');</script>";
 } 
 
-if(isset($_POST['registerButton']) && isset($_POST['email']) && isset($_POST['username']) && $_POST['password']){
+if(isset($_POST['registerButton']) && $_POST['email']!="" && $_POST['username']!="" && $_POST['password']!=""){
     $inputEmail = $_POST['email'];
     $inputNickname = $_POST['username'];
     $inputPassword = $_POST['password'];

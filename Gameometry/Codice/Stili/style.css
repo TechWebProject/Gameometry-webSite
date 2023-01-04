@@ -931,20 +931,38 @@ dl {
 }
 
 #logoutB {
+    cursor: pointer;
     padding: 0.4em;
     padding-right: 0.5em;
     border-radius: 0.2em;
     font-size: 1.5em;
-    margin: 0.6em 1.0em 2em 2.0em;
+    margin: 0.6em 1.0em 2em 2.3em;
     border: none;
     background-color: rgb(100, 149, 237);
 }
 #logoutB span {
     text-align: center;
-}
-#logoutB a {
-    text-decoration: none;
     color: white;
+}
+
+.postU {
+    display: grid;
+    grid-template-columns: 4fr 0.5fr;
+    grid-gap: 15px;
+}
+.postU li {
+    padding-bottom: 1.0em;
+}
+.contenutoRecensioneU{
+    grid-column: 1;
+}
+.boxPunteggioU1{
+    grid-column: 2;
+    justify-self: end;
+    background-color: white;
+    height: 3.0em;
+    width: 50%;
+    border-radius: 8px;
 }
 
 /*
@@ -1021,6 +1039,7 @@ PAGINA DI ACCESSO
 
 #submit,
 #register {
+    cursor: pointer;
     padding: 0.4em;
     padding-left: 0.5em;
     padding-right: 0.5em;

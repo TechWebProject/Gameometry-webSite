@@ -3,6 +3,7 @@ include "Componenti/connect.php";
 
 $doc = new DOMDocument;
 $doc->appendChild($doc->createTextNode('<!DOCTYPE html>'));
+session_start();
 $html = $doc->appendChild($doc->createElement('html'));
 $html->setAttribute('lang', 'it');
 $body = $doc->appendChild($doc->createElement('body'));
@@ -29,11 +30,9 @@ $n_rows=$tmparr['nrighe'];
 
 mysqli_free_result($result);
 
-$query = "SELECT titolo FROM videogioco";
-$result = mysqli_query($db,$query);
-$arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-CloseCon($db);
+$query="SELECT titolo FROM videogioco";
+$result=mysqli_query($db,$query);
+$arr=mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 $labelTitoli = $body->appendChild($doc->createElement('label'));
 $t ='';
@@ -56,22 +55,79 @@ $searchscript->setAttribute('src','Componenti/scriptSearch.js');
 //main
 $main = $body->appendChild($doc->createElement('main'));
 
+$email = $_SESSION['email'];
+
+$nCommenti="SELECT COUNT(*) as nComm FROM commento WHERE commento.idUtente='$email'";
+$result=mysqli_query($db,$nCommenti);
+$arr=$result->fetch_array(MYSQLI_ASSOC);
+$nComm=$arr['nComm'];
+
 $userInfo = file_get_contents('Componenti/userInfo.html');
+$userInfo = str_replace("genericUser", $_SESSION['username'], $userInfo);
+$userInfo = str_replace("user@dom.it", $_SESSION['email'], $userInfo);
+$userInfo = str_replace("aaaa/mm/gg", $_SESSION['dataIscrizione'], $userInfo);
+$userInfo = str_replace("NaN", "$nComm", $userInfo);
 $main->appendChild($doc->createTextNode($userInfo));
 
-$divLogout = $main->appendChild($doc->createElement('div'));
-$buttonLogout = $divLogout->appendChild($doc->createElement('button'));
+$formLogout = $main->appendChild($doc->createElement('form'));
+$formLogout->setAttribute('action','areaUtente.php');
+$formLogout->setAttribute('method','POST');
+$buttonLogout = $formLogout->appendChild($doc->createElement('button'));
 $buttonLogout->setAttribute('id','logoutB');
+$buttonLogout->setAttribute('type','submit');
 $buttonLogout->setAttribute('name','logoutButton');
 $spanButtonLogout = $buttonLogout->appendChild($doc->createElement('span'));
 $spanButtonLogout->setAttribute('lang','en');
-$linkSpan = $spanButtonLogout->appendChild($doc->createElement('a'));
-$linkSpan->setAttribute('href','areaLogin.php');
-$linkSpan = $linkSpan->appendChild($doc->createTextNode('Logout')); /* dovrà chiudere la sessione attiva */
+$spanButtonLogout = $spanButtonLogout->appendChild($doc->createTextNode('Logout')); 
+
+if(isset($_POST['logoutButton'])){
+    session_unset(); /* azzera le variabili */
+    session_destroy(); /* distrugge la sessione */
+
+    header("Location: areaLogin.php");
+}
 
 $listaCommenti = $main->appendChild($doc->createElement('h2'));
 $listaCommenti->setAttribute('class','titleH2');
 $listaCommenti = $listaCommenti->appendChild($doc->createTextNode('I MIEI COMMENTI'));
+
+$div_commenti = $main->appendChild($doc->createElement('div'));
+$div_commenti->setAttribute('id', 'recensioni-utenti');
+
+//commenti
+$tmpquery= "SELECT videogioco.titolo as title, commento.contenuto as contenutoU, commento.voto as votoU FROM utente,commento,recensione,videogioco WHERE commento.idUtente=utente.email and commento.idVideogioco=videogioco.titolo and recensione.idVideogioco=videogioco.titolo and utente.email='$email' ORDER BY commento.data desc";
+$result2 = mysqli_query($db,$tmpquery);
+$arr2 = mysqli_fetch_all($result2,MYSQLI_ASSOC);
+mysqli_free_result($result2);
+
+CloseCon($db);
+
+for($i=0;$i<$nComm;$i++){
+    $nickname = $arr2[$i]['title'];
+    $contenuto=$arr2[$i]['contenutoU'];
+    $votoU=$arr2[$i]['votoU']; 
+
+    $div_post= $div_commenti->appendChild($doc->createElement('div'));
+    $div_post->setAttribute('class', 'postU');
+
+    $div_postCommento = $div_post->appendChild($doc->createElement('div'));
+    $div_postCommento->setAttribute('class', 'commento');
+
+    $ul_contenuto = $div_postCommento->appendChild($doc->createElement('ul'));
+    $ul_contenuto->setAttribute('class', 'contenutoRecensioneU1');
+
+    $li_utente = $ul_contenuto->appendChild($doc->createElement('li'));
+    $li_utente->setAttribute('class','toBold');
+    $li_utente = $li_utente->appendChild($doc->createTextNode($nickname));
+    $li_commento = $ul_contenuto->appendChild($doc->createElement('li'));
+    $li_commento = $li_commento->appendChild($doc->createTextNode($contenuto));
+
+    $div_punteggio = $div_post->appendChild($doc->createElement('div'));
+    $div_punteggio->setAttribute('class','boxPunteggioU1');
+    $p_punteggio = $div_punteggio->appendChild($doc->createElement('p'));
+    $p_punteggio->setAttribute('class', 'punteggioU');
+    $p_punteggio = $p_punteggio->appendChild($doc->createTextNode($votoU));
+}
 
 //footer
 $footer = file_get_contents("sezioniComuni/footer.html");
