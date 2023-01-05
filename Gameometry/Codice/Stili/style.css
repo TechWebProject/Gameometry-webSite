@@ -855,17 +855,15 @@ PAGINA SINGOLA RECENSIONE
 }
 
 #inviaCommento {
+    cursor: pointer;
     margin-top: 1.0em;
-    border-radius: 0.4em;
-    font-size: 1.0em;
-    padding: 0.6em;
-    background-color: #191919;
+    padding: 0.4em;
+    padding-right: 0.5em;
+    border-radius: 0.5em;
+    font-size: 1.3em;
+    background-color: rgb(100, 149, 237);
     color: white;
-    border: 3px solid white;
-}
-
-#inviaCommento:hover {
-    background-color: #F77F00;
+    border: 2px solid white;
 }
 
 #votazione {
@@ -975,12 +973,14 @@ dl {
     color: white;
     padding: 1.5em 0em 1.5em 0.6em;
 }
-#messageU a:link {
-    text-decoration: 1px underline white;
+#messageU a {
+    font-weight: bolder;
 }
 #messageU a:visited {
     color: #AD343E;
-    text-decoration: 1px underline #AD343E;
+}
+#messageU a:hover {
+    text-decoration: 2px underline;
 }
 
 /*

@@ -84,8 +84,8 @@ $spanButtonLogout->setAttribute('lang','en');
 $spanButtonLogout = $spanButtonLogout->appendChild($doc->createTextNode('Logout')); 
 
 if(isset($_POST['logoutButton'])){
-    session_unset(); /* azzera le variabili */
-    session_destroy(); /* distrugge la sessione */
+    session_unset(); 
+    session_destroy(); 
 
     header("Location: areaLogin.php");
 }
@@ -137,15 +137,12 @@ else {
     $divMess = $main->appendChild($doc->createElement('div'));
     $divMess->setAttribute('id','messageU');
     $message = $divMess->appendChild($doc->createElement('span'));
-    $message->setAttribute('id','messageU1');
     $message = $message->appendChild($doc->createTextNode('Non hai ancora commentanto nessun videogioco. Per farlo recati '));
     $messageLink = $divMess->appendChild($doc->createElement('a'));
-    $messageLink->setAttribute('id','messageU2');
     $messageLink->setAttribute('href','recensioni.php');
     $messageLink = $messageLink->appendChild($doc->createTextNode('qui'));
     $messagept2 = $divMess->appendChild($doc->createElement('span'));
-    $messagept2->setAttribute('id','messageU3');
-    $messagept2 = $messagept2->appendChild($doc->createTextNode(", leggi una delle recensioni che ti proponiamo e dacci anche una tua opinione sul videogioco!"));
+    $messagept2 = $messagept2->appendChild($doc->createTextNode(" , leggi una delle recensioni che ti proponiamo e dacci una tua opinione sul videogioco scelto!"));
 }
 
 //footer
