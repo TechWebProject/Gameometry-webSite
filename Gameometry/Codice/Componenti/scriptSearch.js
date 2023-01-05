@@ -8,6 +8,32 @@ const suggBox = document.querySelector(".autocom-box");
 var arrTitoli = document.getElementById("arrTitoli").textContent;
 var titoli = arrTitoli.split(",");
 
+let imageList;
+var focus=-1;
+
+inputBox.addEventListener("keydown", function(event){
+  if(event.key=="ArrowDown"){
+    if(focus+1<imageList.length){
+      focus++;
+      imageList[focus].setAttribute("class","active");
+      if(focus-1>=0) imageList[focus-1].removeAttribute("class","active");
+    }else if(focus==imageList.length-1){
+      imageList[focus].removeAttribute("class","active");
+      focus=0;
+      imageList[focus].setAttribute("class","active");
+    }
+  }else if(event.key=="ArrowUp"){
+    if(focus-1>=0){
+      imageList[focus].removeAttribute("class");
+      focus--;
+      imageList[focus].setAttribute("class","active");
+    } 
+  }
+  if(event.key=="Enter"){
+    imageList[focus].click();
+  }
+});
+
 inputBox.addEventListener("input",()=>{
   let userData = inputBox.value;
   let emptyArray= [];
@@ -35,16 +61,12 @@ inputBox.addEventListener("input",()=>{
       formList[i].setAttribute("method", "POST");
     }
 
-    let imageList = suggBox.querySelectorAll("button");
+    imageList = suggBox.querySelectorAll("button");
     for (let i = 0; i < imageList.length; i++) {
       imageList[i].setAttribute("id", "bt");
       imageList[i].setAttribute("name", "immagine");
       imageList[i].setAttribute("value", imageList[i].textContent);
-    }
-
-    let allList = suggBox.querySelectorAll("li");
-    for (let i = 0; i < allList.length; i++) {
-      allList[i].setAttribute("onclick", "select(this)");
+      imageList[i].setAttribute("aria-label",imageList[i].textContent);
     }
 
   }else{
@@ -74,5 +96,6 @@ function showSuggestions(list){
   }else{
     listData = list.join('');
   }
+  focus=-1;
   suggBox.setHTML(listData);
 }

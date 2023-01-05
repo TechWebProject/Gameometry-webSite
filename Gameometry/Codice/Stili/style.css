@@ -189,6 +189,10 @@ header nav {
     width: -webkit-fill-available;
   }
 
+  #bt.active{
+    background:#525252;
+  }
+
   #bt:hover{
     background: #525252;
   }
