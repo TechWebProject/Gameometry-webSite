@@ -13,6 +13,7 @@ var focus=-1;
 
 inputBox.addEventListener("keydown", function(event){
   if(event.key=="ArrowDown"){
+    suggBox.focus();
     if(focus+1<imageList.length){
       focus++;
       imageList[focus].setAttribute("class","active");
@@ -30,6 +31,7 @@ inputBox.addEventListener("keydown", function(event){
     } 
   }
   if(event.key=="Enter"){
+    event.preventDefault();
     imageList[focus].click();
   }
 });
