@@ -5,8 +5,6 @@ const searchWrapper = document.querySelector("#ricerca");
 const inputBox = document.getElementById("searchBar");
 const suggBox = document.querySelector(".autocom-box");
 
-const formRicerca = document.getElementById("caricaRicerca"); //dead code? togliendolo funge lo stesso
-
 var arrTitoli = document.getElementById("arrTitoli").textContent;
 var titoli = arrTitoli.split(",");
 
@@ -72,10 +70,9 @@ function select(element){
 function showSuggestions(list){
   let listData;
   if(!list.length){
-    userValue = inputBox.value;
-    listData = '<li>' + userValue + '</li>';
+    listData = '<li>' + "Nessun risultato" + '</li>';
   }else{
     listData = list.join('');
-    suggBox.setHTML(listData);
   }
+  suggBox.setHTML(listData);
 }
