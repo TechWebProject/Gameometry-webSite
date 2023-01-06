@@ -63,6 +63,10 @@ abbr {
     max-width: 20em;
 }
 
+/*     */
+
+
+
 @media screen and (max-width: 950px) {
     .error404 {
         padding-top: 0em;
