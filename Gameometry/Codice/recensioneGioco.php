@@ -259,52 +259,53 @@ if(isset($_SESSION['email'])){
     $submit_voto->setAttribute('type','submit');
     $submit_voto->setAttribute('name','inviaCommento');
     $submit_voto->setAttribute('value','Commenta');
-}
 
-//inserimento commento
-function function_alert($message) {
-    echo "<script>alert('$message');</script>";
-}
 
-function generateRandomString($length = 30) {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $charactersLength = strlen($characters);
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    //inserimento commento
+    function function_alert($message) {
+        echo "<script>alert('$message');</script>";
     }
-    return $randomString;
-}
 
-if(isset($_POST['inviaCommento']) && isset($_SESSION['email']) && isset($_POST['commentoU']) && isset($_POST['rating'])){
-    $commentoUtente = $_POST['commentoU'];
-    $votoUtente = $_POST['rating'];
-    $votoUtente = number_format($votoUtente);
-    $email = $_SESSION['email'];
-    $currentDate = date("Y-m-d");
+    function generateRandomString($length = 30) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
 
-    $db=OpenCon();
+    if(isset($_POST['inviaCommento']) && isset($_POST['commentoU']) && isset($_POST['rating'])){
+        $commentoUtente = $_POST['commentoU'];
+        $votoUtente = $_POST['rating'];
+        $votoUtente = number_format($votoUtente);
+        $email = $_SESSION['email'];
+        $currentDate = date("Y-m-d");
 
-    do{
-        $idCommento = generateRandomString();
+        $db=OpenCon();
 
-        $query_check="SELECT * FROM commento WHERE commento.idCommento='$idCommento'";
-        $result=mysqli_query($db,$query_check);
-        $tmparr=$result->fetch_array(MYSQLI_ASSOC);
-    }while(isset($tmparr));
+        do{
+            $idCommento = generateRandomString();
 
-    $query_insert="insert into commento (idCommento, data, voto, contenuto, idUtente, idVideogioco) values ('$idCommento', '$currentDate', $votoUtente, '$commentoUtente', '$email', $titoloGioco)";
+            $query_check="SELECT * FROM commento WHERE commento.idCommento='$idCommento'";
+            $result=mysqli_query($db,$query_check);
+            $tmparr=$result->fetch_array(MYSQLI_ASSOC);
+        }while(isset($tmparr));
 
-    $result = mysqli_query($db,$query_insert);
+        $query_insert="insert into commento (idCommento, data, voto, contenuto, idUtente, idVideogioco) values ('$idCommento', '$currentDate', $votoUtente, '$commentoUtente', '$email', '$titoloGioco')";
 
-    mysqli_free_result($result);
+        $result = mysqli_query($db,$query_insert);
 
-    CloseCon($db);
+        mysqli_free_result($result);
 
-    header("Location: areaUtente.php");
-}
-else if(isset($_POST['inviaCommento'])){
-    function_alert("Per poter commentare un videogioco devi inserire un commento e un voto. Controlla di averli inseriti entrambi e riprova");
+        CloseCon($db);
+
+        header("Location: areaUtente.php");
+    }
+    else if(isset($_POST['inviaCommento'])){
+        function_alert("Per poter commentare un videogioco devi inserire un commento e un voto. Controlla di averli inseriti entrambi e riprova");
+    }
 }
 
 $h2_commenti = $main->appendChild($doc->createElement('h2'));
