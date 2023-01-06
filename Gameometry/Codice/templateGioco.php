@@ -8,15 +8,16 @@ $html = $doc->appendChild($doc->createElement('html'));
 $html->setAttribute('lang', 'it');
 $body = $doc->appendChild($doc->createElement('body'));
 
+$title = $_POST['immagine'];
+
 //head
 $head = file_get_contents('sezioniComuni/head.html');
-$head = str_replace("<title>Gameometry</title>", "<title>Gameometry | Videogioco</title>", $head);
+$head = str_replace("<title>Gameometry</title>", "<title>Gameometry | $title</title>", $head);
 $head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Pagina dedicata a uno specifico videogioco", $head);
 $head = str_replace("videogioco, videogiochi, utente, recensioni", "gameometry, videogioco, videogiochi, utente, recensioni", $head);
 $html->appendChild($doc->createTextNode($head));
 
 //header
-$title = $_POST['immagine'];
 $header = file_get_contents('sezioniComuni/header.html');
 $header = str_replace(
     '<span lang="en"><a href="index.php">Home</a></span> &raquo; Notizie</p>',

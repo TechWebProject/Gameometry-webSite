@@ -8,14 +8,6 @@ $html = $doc->appendChild($doc->createElement('html'));
 $html->setAttribute('lang','it');
 $body = $doc->appendChild($doc->createElement('body'));
 
-//head
-$head=file_get_contents('sezioniComuni/head.html');
-$head = str_replace("<title>Gameometry</title>","<title>Gameometry | Recensione</title>", $head); /*Recensione dovrà essere sostituita con il titolo del relativo gioco*/
-$head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Questa pagina &egrave; dedicata alle recensioni videoludiche sugli ultimi prodotti usciti", $head);
-$head = str_replace("videogioco, videogiochi, utente, recensioni", "gameometry, recensioni, recensione, videogioco, videogiochi, voto, commento", $head);
-$html->appendChild($doc->createTextNode($head));
-
-//header
 $giocoRecensito;
 if(isset($_POST['recensione'])){
     $giocoRecensito=$_POST['recensione'];
@@ -41,6 +33,14 @@ mysqli_free_result($result);
 
 CloseCon($db1);
 
+//head
+$head=file_get_contents('sezioniComuni/head.html');
+$head = str_replace("<title>Gameometry</title>","<title>Gameometry | Recensione $titoloGioco</title>", $head);
+$head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Questa pagina &egrave; dedicata alle recensioni videoludiche sugli ultimi prodotti usciti", $head);
+$head = str_replace("videogioco, videogiochi, utente, recensioni", "gameometry, recensioni, recensione, videogioco, videogiochi, voto, commento", $head);
+$html->appendChild($doc->createTextNode($head));
+
+//header
 $header=file_get_contents('sezioniComuni/header.html');
 $header = str_replace("Notizie","<a href=recensioni.php>Recensioni</a> &raquo; Recensione $titoloGioco",$header);
 if(isset($_SESSION['username'])){
