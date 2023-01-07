@@ -5,7 +5,13 @@
 
 :root {
     --backgroundColor: rgba(0, 0, 0, 0.650);
-    
+    --sideColor: #191919;
+    --textColor: white;
+    --visitedLink: #AD343E;
+    --mainColor: #F77F00;
+    --alternativeTextColor: #F8F0E3;
+    --highlightedBox: #525252;
+    --puntegggioUtente: rgb(92, 0, 184);
 }
 
 html,
@@ -32,13 +38,13 @@ SEZIONE HEADER
 */
 
 #menu a:link {
-    color: white;
+    color: var(--textColor);
     font-weight: bold;
     text-decoration: none;
 }
 
 #menu a:visited {
-    color: #AD343E;
+    color: var(--visitedLink);
 }
 
 #menu a:hover {
@@ -46,7 +52,7 @@ SEZIONE HEADER
 }
 
 #menu a:active {
-    color: white;
+    color: var(--textColor);
 }
 
 header {
@@ -67,7 +73,7 @@ header h1 {
     z-index: 1;
     position: fixed;
     width: 100%;
-    background-color: #F77F00;
+    background-color: var(--mainColor);
 }
 
 #logoSito {
@@ -97,7 +103,7 @@ header nav {
 
 
 #SezRicerca{
-    background-color: #f8f0e3;
+    background-color: var(--alternativeTextColor);
     border-radius: 5px;
     height: 2.5em;
     margin-right: 1em;
@@ -144,12 +150,12 @@ header nav {
     align-self: center;
 }
 
-  #ricerca.active input{
+#ricerca.active input{
     border-radius: 5px 5px 0 0;
-  }
+}
 
-  #ricerca .autocom-box.active{
-    background-color: #191919;
+#ricerca .autocom-box.active{
+    background-color: var(--sideColor);
     opacity: 1;
     width: 125%;
     position: relative;
@@ -158,10 +164,9 @@ header nav {
     flex-direction: column;
     overflow-y: scroll;
     margin-top: 0.2em;
-  }
+}
 
-
-  .autocom-box li{
+.autocom-box li{
     list-style: none;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -171,40 +176,39 @@ header nav {
     display: none;
     width: 100%;
     cursor: default;
-    color: white;
+    color: var(--textColor);
+}
 
-  }
-
-  .autocom-box li:hover{
+.autocom-box li:hover{
     cursor: pointer;
-  }
+}
 
-  .autocom-box li:last-child{
+.autocom-box li:last-child{
     border-bottom: none;
-  }
+}
 
-  #bt{
+#bt{
     background: none;
-	color: inherit;
-	padding: 0;
-	font: inherit;
-    border-bottom: 1px solid #F77F00;
-	cursor: pointer;
-	outline: inherit;
+    color: inherit;
+    padding: 0;
+    font: inherit;
+    border-bottom: 1px solid var(--mainColor);
+    cursor: pointer;
+    outline: inherit;
     width: -webkit-fill-available;
-  }
+}
 
-  #bt.active{
-    background:#525252;
-  }
+#bt.active{
+    background:var(--highlightedBox);
+}
 
-  #bt:hover{
-    background: #525252;
-  }
+#bt:hover{
+    background: var(--highlightedBox);
+}
 
-  #ricerca .autocom-box li{
+#ricerca .autocom-box li{
     display: block;
-  }
+}
 
 
 #cerca img {
@@ -212,7 +216,7 @@ header nav {
 }
 
 #areaR {
-    background-color: #F77F00;
+    background-color: var(--mainColor);
     border: none;
     margin-right: 2.0em;
 }
@@ -250,7 +254,7 @@ SEZIONE BREADCRUMB
     padding: 0.3em 0em 0.3em 1em;
     font-weight: bold;
     color: black;
-    background-color: #f8f0e3;
+    background-color: var(--alternativeTextColor);
     max-height: 1.4em;
     text-align: center;
 }
@@ -260,7 +264,7 @@ SEZIONE BREADCRUMB
 }
 
 #breadcrumb a:visited {
-    color: #AD343E;
+    color: var(--visitedLink);
 }
 
 #breadcrumb a:hover {
@@ -347,7 +351,7 @@ SLIDER
 .wrapper button {
     cursor: pointer;
     text-align: center;
-    color: white;
+    color: var(--textColor);
     font-size: 4.0em;
     font-weight: bold;
     display: contents;
@@ -361,7 +365,7 @@ main {
     max-width: 1024px;
     margin: auto;
     padding-top: 6.0em;
-    background-color: #191919;
+    background-color: var(--sideColor);
 }
 
 /*
@@ -470,13 +474,13 @@ ULTIME RECENSIONI
 }
 
 .titoloCritica a:link {
-    color: white;
+    color: var(--textColor);
     font-weight: bold;
     text-decoration: none;
 }
 
 .titoloCritica a:visited {
-    color: #AD343E;
+    color: var(--visitedLink);
 }
 
 .titoloCritica a:hover {
@@ -485,12 +489,12 @@ ULTIME RECENSIONI
 }
 
 .titoloCritica a:active {
-    color: white;
+    color: var(--textColor);
 }
 
 .contenutoRecensione p {
     padding-top: 0.5em;
-    color: white;
+    color: var(--textColor);
 }
 
 .commento {
@@ -518,7 +522,7 @@ ULTIME RECENSIONI
 }
 
 #recensioni-critica>div {
-    border-bottom: 1px solid #F77F00;
+    border-bottom: 1px solid var(--mainColor);
     border-top: none;
     overflow: hidden;
     padding: 1.0em;
@@ -534,10 +538,10 @@ h1,
     margin-right: 0.3em;
     padding: 0.4em;
     border-radius: 7px;
-    color: white;
+    color: var(--textColor);
     text-align: left;
-    background-color: #F77F00;
-    border: 0.5px solid #F77F00;
+    background-color: var(--mainColor);
+    border: 0.5px solid var(--mainColor);
 }
 
 #recensioni-critica div:last-child {
@@ -549,13 +553,13 @@ h1,
 }
 
 #recensioni-utenti>div {
-    border-bottom: 1px solid #F77F00;
+    border-bottom: 1px solid var(--mainColor);
     border-top: none;
     padding: 1.0em;
     overflow: hidden;
     margin-left: 0.5em;
     margin-right: 0.5em;
-    color: white;
+    color: var(--textColor);
 }
 
 .MameUser {
@@ -581,7 +585,7 @@ h1,
 .boxPunteggioU{
     grid-column: 3;
     justify-self: end;
-    background-color: white;
+    background-color: var(--textColor);
     height: 3.0em;
     width: 50%;
     border-radius: 8px;
@@ -608,8 +612,8 @@ h1,
 }
 
 .punteggio {
-    background-color: white;
-    color: #F77F00;
+    background-color: var(--textColor);
+    color: var(--mainColor);
     font-weight: bold;
     margin-left: 1.0em;
     padding: 0.5em;
@@ -623,7 +627,7 @@ h1,
     font-weight: bold;
     padding: 0.35em;
     border-radius: 7px;
-    color: rgb(92, 0, 184);
+    color: var(--puntegggioUtente);
     text-align: center;
     font-size: 1.5em;
 }
@@ -645,7 +649,7 @@ SEZIONE FOOTER
 
 footer {
     margin-top: 3.0em;
-    background-color: #F77F00;
+    background-color: var(--mainColor);
     text-align: center;
 }
 
@@ -703,7 +707,7 @@ PAGINA VIDEOGIOCHI
 .imgSpan{
     display: flex;
     justify-content: center;
-    color: white;
+    color: var(--textColor);
     font-size: 1.2em;
     margin-top: 0.8em;
     margin-bottom: 1em;
@@ -760,7 +764,7 @@ PAGINA SINGOLA RECENSIONE
     margin-left: 1.5em;
     margin-right: 1.5em;
     padding-top: 1em;
-    border-bottom: #F77F00 solid 1px;
+    border-bottom: var(--mainColor) solid 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -776,14 +780,14 @@ PAGINA SINGOLA RECENSIONE
     padding-bottom: 0.6em;
     font-weight: bold;
     font-size: 2em;
-    color: white;
+    color: var(--textColor);
 }
 
 #headerRecensione>span {
     display: flex;
     justify-content: center;
     font-size: 1em;
-    color: white;
+    color: var(--textColor);
 }
 
 #copertina {
@@ -818,7 +822,7 @@ PAGINA SINGOLA RECENSIONE
 }
 
 .scores span {
-    color: white;
+    color: var(--textColor);
 }
 
 #punteggioCritica,
@@ -837,7 +841,7 @@ PAGINA SINGOLA RECENSIONE
 #contenuto {
     line-break: anywhere;
     font-size: 1.0em;
-    color: white;
+    color: var(--textColor);
     margin: 1.5em;
     margin-bottom: 3em;
 }
@@ -851,8 +855,8 @@ PAGINA SINGOLA RECENSIONE
     display: block;
     font-family: "Poppins", "sans-serif";
     font-size: 1.2em;
-    background-color: #191919;
-    color: white;
+    background-color: var(--sideColor);
+    color: var(--textColor);
     resize: none;
     line-height: 1.5em;
     border-radius: 5px;
@@ -867,12 +871,12 @@ PAGINA SINGOLA RECENSIONE
     border-radius: 0.5em;
     font-size: 1.3em;
     background-color: rgb(100, 149, 237);
-    color: white;
-    border: 2px solid white;
+    color: var(--textColor);
+    border: 2px solid var(--textColor);
 }
 
 #votazione {
-    color: white;
+    color: var(--textColor);
     margin-top: 1.0em;
 }
 
@@ -931,10 +935,10 @@ dl {
     margin-right: 0.3em;
     padding: 0.4em;
     border-radius: 7px;
-    color: white;
+    color: var(--textColor);
     text-align: left;
-    background-color: #F77F00;
-    border: 0.5px solid #F77F00;
+    background-color: var(--mainColor);
+    border: 0.5px solid var(--mainColor);
 }
 
 #logoutB {
@@ -949,7 +953,7 @@ dl {
 }
 #logoutB span {
     text-align: center;
-    color: white;
+    color: var(--textColor);
 }
 
 .postU {
@@ -966,7 +970,7 @@ dl {
 .boxPunteggioU1{
     grid-column: 2;
     justify-self: end;
-    background-color: white;
+    background-color: var(--textColor);
     height: 3.0em;
     width: 50%;
     border-radius: 8px;
@@ -975,14 +979,14 @@ dl {
 #messageU {
     font-size: 1.3em;
     line-height: 1.5em;
-    color: white;
+    color: var(--textColor);
     padding: 1.5em 0em 1.5em 0.6em;
 }
 #messageU a {
     font-weight: bolder;
 }
 #messageU a:visited {
-    color: #AD343E;
+    color: var(--visitedLink);
 }
 #messageU a:hover {
     text-decoration: 2px underline;
@@ -1009,7 +1013,7 @@ PAGINA DI ACCESSO
 }
 
 #loginTitle {
-    color: white;
+    color: var(--textColor);
     font-weight: bolder;
     padding: 1.0em;
     font-size: 1.2em;
@@ -1019,7 +1023,7 @@ PAGINA DI ACCESSO
 #registrazione form {
     width: 50%;
     border-radius: 0.5em;
-    background-color: #F77F00;
+    background-color: var(--mainColor);
 }
 
 #logIn form fieldset {
@@ -1036,7 +1040,7 @@ PAGINA DI ACCESSO
 #registrazione label {
     display: block;
     padding-bottom: 0.4em;
-    color: white;
+    color: var(--textColor);
 }
 
 #mailBox,
@@ -1072,7 +1076,7 @@ PAGINA DI ACCESSO
     margin-right: 1.0em;
     margin-bottom: 0.6em;
     border: none;
-    background-color: white;
+    background-color: var(--textColor);
 }
 #submit {
     margin-bottom: 1.0em;
@@ -1085,15 +1089,15 @@ PAGINA DI ACCESSO
 }
 
 #linkRegistrazione{
-    color: white;
+    color: var(--textColor);
     font-size: 0.8em;
 }
 #linkRegistrazione a{
-    color: white;
+    color: var(--textColor);
     font-weight: bolder;
 }
 #linkRegistrazione a:hover {
-    text-decoration: underline 2px solid white;
+    text-decoration: underline 2px solid var(--textColor);
 }
 #spanLinkR {
     display: block;
@@ -1166,7 +1170,7 @@ TEMPLATE GIOCO
     font-weight: bolder;
     font-size: 32px;
     font-size: 28px;
-    color: white;
+    color: var(--textColor);
 }
 
 #link_recensione{
@@ -1176,7 +1180,7 @@ TEMPLATE GIOCO
 #lanostrarecensione {
     cursor: pointer;
     text-align: center;
-    background-color: white;
+    background-color: var(--textColor);
     font-weight: bolder;
     border-radius: 3em;
     color: black;
@@ -1184,11 +1188,11 @@ TEMPLATE GIOCO
 }
 
 #lanostrarecensione:hover {
-    background-color: #F77F00;
+    background-color: var(--mainColor);
 }
 
 #descrizione {
-    color: white;
+    color: var(--textColor);
     padding-left: 8%;
     padding-right: 8%;
     padding-bottom: 3em;
@@ -1202,7 +1206,7 @@ TEMPLATE GIOCO
 }
 
 #recutenti {
-    background-color: rgb(92, 0, 184);
+    background-color: var(--puntegggioUtente);
     width: 50%;
 }
 
