@@ -3,12 +3,17 @@
     margin: 0em;
 }
 
+:root {
+    --backgroundColor: rgba(0, 0, 0, 0.650);
+    
+}
+
 html,
 body {
     font-family: "Poppins", "sans-serif";
     line-height: 1.5em;
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.650);
+    background-color: var(--backgroundColor);
 }
 
 a,

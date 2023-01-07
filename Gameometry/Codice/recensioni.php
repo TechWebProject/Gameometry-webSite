@@ -8,6 +8,8 @@ $html = $doc->appendChild($doc->createElement('html'));
 $html->setAttribute('lang','it');
 $body = $doc->appendChild($doc->createElement('body'));
 
+if(isset($_GET['message'])){header("Location: areaUtente.php");}
+
 //head
 $head=file_get_contents('sezioniComuni/head.html');
 $head = str_replace("<title>Gameometry</title>","<title>Gameometry | Recensioni</title>", $head);
@@ -22,6 +24,10 @@ if(isset($_SESSION['username'])){
     $header = str_replace('<a id="areaRiservata" href="areaLogIn.php">','<a id="areaRiservata" href="areaUtente.php">',$header);
 }
 $body->appendChild($doc->createTextNode($header));
+
+function function_alert($message) {
+    echo "<script>alert('$message');</script>";
+}
 
 //main
 $main = $body->appendChild($doc->createElement('main'));

@@ -94,6 +94,51 @@ $listaCommenti = $main->appendChild($doc->createElement('h2'));
 $listaCommenti->setAttribute('class','titleH2');
 $listaCommenti = $listaCommenti->appendChild($doc->createTextNode('I MIEI COMMENTI'));
 
+//inserimento commento
+function function_alert($message) {
+    echo "<script>alert('$message');</script>";
+}
+
+function generateRandomString($length = 30) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
+if(isset($_POST['inviaCommento']) && isset($_POST['commentoU']) && isset($_POST['rating'])){
+    $gameTitle = $_POST['inviaCommento2'];
+
+    $commentoUtente = $_POST['commentoU'];
+    $votoUtente = $_POST['rating'];
+    $votoUtente = number_format($votoUtente);
+    $email = $_SESSION['email'];
+    $currentDate = date("Y-m-d");
+
+    do{
+        $idCommento = generateRandomString();
+
+        $query_check="SELECT * FROM commento WHERE commento.idCommento='$idCommento'";
+        $result=mysqli_query($db,$query_check);
+        $tmparr=$result->fetch_array(MYSQLI_ASSOC);
+    }while(isset($tmparr));
+
+    $gameTitle=mysqli_real_escape_string($db,$gameTitle);
+
+    $query_insert="insert into commento (idCommento, data, voto, contenuto, idUtente, idVideogioco) values ('$idCommento', '$currentDate', $votoUtente, '$commentoUtente', '$email', '$gameTitle')";
+
+    $result = mysqli_query($db,$query_insert);
+
+    function_alert("Commento caricato con successo");
+    header("Location: recensioni.php?message=success");
+}
+else if(isset($_POST['inviaCommento'])){
+    function_alert("Per poter commentare un videogioco devi inserire un commento e un voto. Controlla di averli inseriti entrambi e riprova");
+}
+
 //commenti
 $tmpquery= "SELECT videogioco.titolo as title, commento.contenuto as contenutoU, commento.voto as votoU FROM utente,commento,recensione,videogioco WHERE commento.idUtente=utente.email and commento.idVideogioco=videogioco.titolo and recensione.idVideogioco=videogioco.titolo and utente.email='$email' ORDER BY commento.data desc";
 $result2 = mysqli_query($db,$tmpquery);
