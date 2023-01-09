@@ -986,8 +986,8 @@ dl {
     grid-column: 2;
     justify-self: end;
     background-color: var(--textColor);
-    height: 3.0em;
-    width: 50%;
+    height: 2.5em;
+    width: 45%;
     border-radius: 8px;
 }
 
