@@ -175,6 +175,8 @@ if($nComm>0){
         $titoloRec=$r['titoloRec'];
 
         $link_titolo->setAttribute('href','./recensioneGioco.php?titRec=' .$titoloRec);
+        $link_titolo->setAttribute('class','');
+        $nickname=str_replace("\'","'",$nickname);
         $link_titolo->appendChild($doc->createTextNode($nickname));
         $li_commento = $ul_contenuto->appendChild($doc->createElement('li'));
         $li_commento = $li_commento->appendChild($doc->createTextNode($contenuto));

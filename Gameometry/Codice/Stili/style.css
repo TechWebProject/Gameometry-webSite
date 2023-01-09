@@ -11,7 +11,7 @@
     --mainColor: #F77F00;
     --alternativeTextColor: #F8F0E3;
     --highlightedBox: #525252;
-    --puntegggioUtente: rgb(92, 0, 184);
+    --punteggioUtente: rgb(92, 0, 184);
 }
 
 html,
@@ -25,10 +25,6 @@ body {
 a,
 abbr {
     text-decoration: none;
-}
-
-p {
-    line-height: 1.5em;
 }
 
 /*
@@ -547,6 +543,25 @@ h1,
     border-bottom: none;
 }
 
+#recensioni-utenti a:link {
+    color: var(--textColor);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#recensioni-utenti a:visited {
+    color: var(--visitedLink);
+}
+
+#recensioni-utenti a:hover {
+    text-decoration: underline;
+    text-decoration: underline solid 1.5px;
+}
+
+#recensioni-utenti a:active {
+    color: var(--textColor);
+}
+
 #recensioni-utenti div:last-child {
     border-bottom: none;
 }
@@ -618,7 +633,7 @@ h1,
     padding: 0.5em;
     border-radius: 7px;
     font-size: 1.5em;
-    height: 1.3em;
+    height: 1.0em;
     text-align: center;
 }
 
@@ -626,7 +641,7 @@ h1,
     font-weight: bold;
     padding: 0.35em;
     border-radius: 7px;
-    color: var(--puntegggioUtente);
+    color: var(--punteggioUtente);
     text-align: center;
     font-size: 1.5em;
 }
@@ -697,13 +712,11 @@ PAGINA VIDEOGIOCHI
     display: grid;
     object-fit: contain;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(auto-fill, 1fr);
     grid-row-gap: 2.0em;
     grid-column-gap: 2.0em;
     padding-bottom: 1.5em;
     margin-top: 2.0em;
     margin-bottom: 5.0em;
-    align-items: center;
     justify-items: center;
 }
 
@@ -722,7 +735,7 @@ PAGINA EVENTI
 =============
 */
 
-#ultimiEventi:last-child,#ultime-notizie:last-child {
+#ultimiEventi:last-child, #ultime-notizie:last-child {
     padding-bottom: 0.6em;
 }
 
@@ -733,7 +746,6 @@ PAGINA EVENTI
     flex-direction: column;
     color: rgb(255, 255, 255);
     background-color: gray;
-    padding: 0em;
 }
 
 .evento h2 {
@@ -1210,7 +1222,7 @@ TEMPLATE GIOCO
 }
 
 #recutenti {
-    background-color: var(--puntegggioUtente);
+    background-color: var(--punteggioUtente);
     width: 50%;
 }
 
