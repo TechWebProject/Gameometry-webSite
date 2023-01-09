@@ -60,7 +60,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 4fr 2fr;
     grid-gap: 15px;
-    max-height: 3.0em;
+    max-height: 3.5em;
 }
 
 header h1 {
@@ -100,7 +100,6 @@ header nav {
     display: inline;
     padding: 2.0em;
 }
-
 
 #SezRicerca{
     background-color: var(--alternativeTextColor);
@@ -671,6 +670,10 @@ footer {
 #infoAzienda {
     padding-bottom: 0.5em;
 }
+#infoAzienda address {
+    display: inline;
+    font-style: normal;
+}
 
 /*
 ==================
@@ -999,7 +1002,7 @@ PAGINA DI ACCESSO
 */
 
 #logIn,
-#registrazione {
+#mainRegistrazione {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -1008,8 +1011,9 @@ PAGINA DI ACCESSO
     padding-bottom: 3em;
 }
 
-#registrazione {
+#mainRegistrazione {
     padding-top: 1.0em;
+    
 }
 
 #loginTitle {
@@ -1020,7 +1024,7 @@ PAGINA DI ACCESSO
 }
 
 #logIn form,
-#registrazione form {
+#mainRegistrazione form {
     width: 50%;
     border-radius: 0.5em;
     background-color: var(--mainColor);
@@ -1031,13 +1035,13 @@ PAGINA DI ACCESSO
     height: 13.5em;
 }
 
-#registrazione form fieldset {
+#mainRegistrazione form fieldset {
     border: none;
     height: 15.0em;
 }
 
 #logIn label,
-#registrazione label {
+#mainRegistrazione label {
     display: block;
     padding-bottom: 0.4em;
     color: var(--textColor);

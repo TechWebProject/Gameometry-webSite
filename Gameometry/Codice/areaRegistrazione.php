@@ -63,7 +63,7 @@ $h1 = $main->appendChild($doc->createElement('h1'));
 $h1 = $h1->appendChild($doc->createTextNode('REGISTRAZIONE'));
 
 $div = $main->appendChild($doc->createElement('div'));
-$div->setAttribute('id','registrazione');
+$div->setAttribute('id','mainRegistrazione');
 
 $form = $div->appendChild($doc->createElement('form'));
 $form->setAttribute('action','areaRegistrazione.php');
