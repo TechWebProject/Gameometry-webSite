@@ -58,7 +58,7 @@ $labelTitoli->setAttribute('id', 'arrTitoli');
 
 //slider
 $h1 = $main->appendChild($doc->createElement('h1'));
-$h1->setAttribute('tabindex', '0');
+//$h1->setAttribute('tabindex', '0');
 $h1 = $h1->appendChild($doc->createTextNode('VIDEOGIOCHI PIÙ VOTATI'));
 
 $divCarousel = $main->appendChild($doc->createElement('div'));
@@ -129,7 +129,7 @@ $main->appendChild($doc->createTextNode($listaBN));
 
 //ultime recensioni
 $h1Recensioni = $main->appendChild($doc->createElement('h1'));
-$h1Recensioni->setAttribute('tabindex', '0');
+//$h1Recensioni->setAttribute('tabindex', '0');
 $h1Recensioni = $h1Recensioni->appendChild($doc->createTextNode('ULTIME RECENSIONI'));
 
 $divRec = $main->appendChild($doc->createElement('div'));
@@ -179,7 +179,7 @@ for ($i = 0; $i < 5; $i++) {
     $linkSpanRecX->setAttribute('href', './recensioneGioco.php?titRec=' . $titoloRecX);
     $linkSpanRecX = $linkSpanRecX->appendChild($doc->createTextNode($titoloRecX));
     $contenutoRecX = $divContenutoRecX->appendChild($doc->createElement('p'));
-    $contenutoRecX->setAttribute('tabindex', '0');
+    //$contenutoRecX->setAttribute('tabindex', '0');
     $cont = 500;
     while ($contenuto[$cont] != ".") {
         $cont++;
@@ -189,7 +189,7 @@ for ($i = 0; $i < 5; $i++) {
     $contenutoRecX = $contenutoRecX->appendChild($doc->createTextNode($contenuto));
     $punteggioX = $divCommentoX->appendChild($doc->createElement('p'));
     $punteggioX->setAttribute('class', 'punteggio');
-    $punteggioX->setAttribute('tabindex', '0');
+    //$punteggioX->setAttribute('tabindex', '0');
     $punteggioX = $punteggioX->appendChild($doc->createTextNode($voto));
 }
 

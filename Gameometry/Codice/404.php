@@ -10,7 +10,7 @@ $body = $doc->appendChild($doc->createElement('body'));
 
 //head
 $head = file_get_contents('sezioniComuni/head.html');
-$head = str_replace("<title>Gameometry</title>", "", $head);
+$head = str_replace("<title>Gameometry</title>", "<title>Error 404</title>", $head);
 $head = str_replace("Pagina dedicata alle informazioni di un singolo utente", "Pagina di errore", $head);
 $head = str_replace("Stili/style.css", "./Stili/style404.css", $head);
 $head = str_replace('<link rel="stylesheet" href="Stili/mini.css" media="handheld, screen and (max-width:820px), only screen and (max-device-width: 800px)" /> ', "", $head);

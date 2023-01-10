@@ -101,6 +101,7 @@ $div_copert->setAttribute('id','copertina');
 $imgCoper = $div_copert->appendChild($doc->createElement('img'));
 $imgCoper->setAttribute('id','bannerRecensione');
 $imgCoper->setAttribute('src',$banner);
+$imgCoper->setAttribute('tabindex','0');
 
 $div_scores = $divheader->appendChild($doc->createElement('div'));
 $div_scores->setAttribute('class','scores');
@@ -110,6 +111,7 @@ $div_rec->setAttribute('id','rec');
 
 $span_pCritica = $div_rec->appendChild($doc->createElement('span'));
 $span_pCritica->setAttribute('id', 'punteggioCritica');
+$span_pCritica->setAttribute('tabindex','0')
 $span_pCritica = $span_pCritica->appendChild($doc->createTextNode($voto));
 
 $span_textPunt = $div_rec->appendChild($doc->createElement('span'));
@@ -117,6 +119,7 @@ $span_textPunt = $span_textPunt->appendChild($doc->createTextNode('Il nostro pun
 
 $p_contenuto = $main->appendChild($doc->createElement('p'));
 $p_contenuto->setAttribute('id', 'contenuto');
+$p_contenuto->setAttribute('tabindex','0')
 $p_contenuto->appendChild($doc->createTextNode($contenutoRec));
 
 if(isset($_SESSION['email'])){
@@ -328,4 +331,3 @@ $body->appendChild($doc->createTextNode($footer));
 
 $doc->formatOutput=true;
 echo html_entity_decode($doc->saveHTML(),ENT_QUOTES,"UTF-8");
-?>
