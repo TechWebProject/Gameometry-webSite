@@ -9,7 +9,7 @@ body {
     font-family: "Poppins", "sans-serif";
     line-height: 1.5em;
     margin: auto;
-    background-color: white;
+    background-color: var(--textColor);
 }
 
 a,
@@ -180,7 +180,7 @@ main {
 .mainnews-section,
 .sidenews-section {
     padding: 3%;
-    background-color: white;
+    background-color: var(--textColor);
     max-height: 8em;
 }
 
@@ -281,7 +281,7 @@ ULTIME RECENSIONI
 }
 
 #recensioni-critica>div {
-    border-bottom: 1px solid #F77F00;
+    border-bottom: 1px solid var(--mainColor);
     border-top: none;
     overflow: hidden;
     padding: 1.0em;
@@ -299,8 +299,8 @@ h1,
     border-radius: 7px;
     /*color: white;*/
     text-align: left;
-    background-color: #F77F00;
-    border: 0.5px solid #F77F00;
+    background-color: var(--mainColor);
+    border: 0.5px solid var(--mainColor);
 }
 
 #recensioni-critica div:last-child {
@@ -312,7 +312,7 @@ h1,
 }
 
 #recensioni-utenti>div {
-    border-bottom: 1px solid #F77F00;
+    border-bottom: 1px solid var(--mainColor);
     border-top: none;
     padding: 1.0em;
     overflow: hidden;
@@ -346,7 +346,7 @@ h1,
 .boxPunteggioU {
     grid-column: 3;
     justify-self: end;
-    background-color: white;
+    background-color: var(--textColor);
     height: 3.0em;
     width: 50%;
     border-radius: 8px;
@@ -374,8 +374,8 @@ h1,
 }
 
 .punteggio {
-    background-color: white;
-    /*color: #F77F00;*/
+    background-color: var(--textColor);
+    /*color: var(--mainColor);*/
     font-weight: bold;
     margin-left: 1.0em;
     padding: 0.5em;
@@ -506,7 +506,7 @@ dl {
     padding: 1em;
     width: 15em;
     float: left;
-    background-color: white;
+    background-color: var(--textColor);
     border-radius: 99%;
 }
 
@@ -523,8 +523,8 @@ dl {
     border-radius: 7px;
     color: black;
     text-align: left;
-    background-color: #F77F00;
-    border: 0.5px solid #F77F00;
+    background-color: var(--mainColor);
+    border: 0.5px solid var(--mainColor);
 }
 
 /*
@@ -556,7 +556,7 @@ PAGINA SINGOLA RECENSIONE
     overflow: hidden;
     margin-top: 1em;
     padding-top: 1em;
-    border-bottom: #F77F00 solid 1px;
+    border-bottom: var(--mainColor) solid 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -699,7 +699,7 @@ dl {
     padding: 1em;
     width: 15em;
     float: left;
-    background-color: white;
+    background-color: var(--textColor);
     border-radius: 99%;
 }
 
@@ -716,8 +716,8 @@ dl {
     border-radius: 7px;
     color: black;
     text-align: left;
-    background-color: #F77F00;
-    border: 0.5px solid #F77F00;
+    background-color: var(--mainColor);
+    border: 0.5px solid var(--mainColor);
 }
 
 /*
@@ -745,7 +745,7 @@ PAGINA DI ACCESSO
 #logIn form {
     width: 50%;
     border-radius: 0.5em;
-    background-color: #F77F00;
+    background-color: var(--mainColor);
 }
 
 #logIn form fieldset {
@@ -852,7 +852,7 @@ TEMPLATE GIOCO
     font-weight: bolder;
     font-size: 32px;
     font-size: 28px;
-    color: white;
+    color: var(--textColor);
 }
 
 #link_recensione {
@@ -863,7 +863,7 @@ TEMPLATE GIOCO
 #lanostrarecensione {
     cursor: pointer;
     text-align: center;
-    background-color: white;
+    background-color: var(--textColor);
     font-weight: bolder;
     border-radius: 3em;
     color: black;
@@ -871,11 +871,11 @@ TEMPLATE GIOCO
 }
 
 #lanostrarecensione:hover {
-    background-color: #F77F00;
+    background-color: var(--mainColor);
 }
 
 #descrizione {
-    color: white;
+    color: var(--textColor);
     padding-left: 8%;
     padding-right: 8%;
     padding-bottom: 3em;
@@ -890,7 +890,7 @@ TEMPLATE GIOCO
 }
 
 #recutenti {
-    background-color: rgb(92, 0, 184);
+    background-color: var(--puntegggioUtente);
     width: 50%;
 }
 

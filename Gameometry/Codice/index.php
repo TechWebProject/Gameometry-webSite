@@ -98,7 +98,6 @@ foreach ($imgz as $attributes) {
     $imgForm->setAttribute('method', 'POST');
     $buttonImg = $imgForm->appendChild($doc->createElement('button'));
     $buttonImg->setAttribute('name', 'immagine');
-    //$buttonImg->setAttribute('tabindex', '0');
     $imgtag = $buttonImg->appendChild($doc->createElement('img'));
     foreach ($attributes as $key => $value) {
         $imgtag->setAttribute($key, $value);

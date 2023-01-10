@@ -145,8 +145,6 @@ $result2 = mysqli_query($db,$tmpquery);
 $arr2 = mysqli_fetch_all($result2,MYSQLI_ASSOC);
 mysqli_free_result($result2);
 
-CloseCon($db);
-
 if($nComm>0){
     $div_commenti = $main->appendChild($doc->createElement('div'));
     $div_commenti->setAttribute('id', 'recensioni-utenti');
@@ -167,7 +165,19 @@ if($nComm>0){
     
         $li_utente = $ul_contenuto->appendChild($doc->createElement('li'));
         $li_utente->setAttribute('class','toBold');
-        $li_utente = $li_utente->appendChild($doc->createTextNode($nickname));
+        $link_titolo=$li_utente->appendChild($doc->createElement('a'));
+
+        $nickname=mysqli_real_escape_string($db,$nickname);
+        $queryxtitrec="SELECT titolo as titoloRec FROM recensione WHERE idVideogioco='$nickname'";
+        $result2 = mysqli_query($db,$queryxtitrec);
+        $r=$result2->fetch_array(MYSQLI_ASSOC);
+        mysqli_free_result($result2);
+        $titoloRec=$r['titoloRec'];
+
+        $link_titolo->setAttribute('href','./recensioneGioco.php?titRec=' .$titoloRec);
+        $link_titolo->setAttribute('class','');
+        $nickname=str_replace("\'","'",$nickname);
+        $link_titolo->appendChild($doc->createTextNode($nickname));
         $li_commento = $ul_contenuto->appendChild($doc->createElement('li'));
         $li_commento = $li_commento->appendChild($doc->createTextNode($contenuto));
     
@@ -177,6 +187,7 @@ if($nComm>0){
         $p_punteggio->setAttribute('class', 'punteggioU');
         $p_punteggio = $p_punteggio->appendChild($doc->createTextNode($votoU));
     }
+    CloseCon($db);
 }
 else {
     $divMess = $main->appendChild($doc->createElement('div'));

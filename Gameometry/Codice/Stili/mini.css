@@ -41,7 +41,7 @@ header {
     padding-top: 0;
     padding-bottom: 0;
     font-size: 1.5em;
-    border-right: 1px solid white;
+    border-right: 1px solid var(--textColor);
     grid-row: 2;
     grid-column: 1;
 }
@@ -110,10 +110,7 @@ SEZIONE CONTENUTO
 */
 
 main {
-    max-width: 1024px;
-    margin: auto;
     padding-top: 14em;
-    background-color: #191919;
 }
 
 /*
@@ -276,7 +273,7 @@ SEZIONE FOOTER
 
 footer {
     margin-top: 3.0em;
-    background-color: #F77F00;
+    background-color: var(--mainColor);
     text-align: center;
 }
 
@@ -286,12 +283,12 @@ footer {
 
 #aboutUs {
     padding-bottom: 0.2em;
-    font-size: 0.4em;
+    font-size: 0.6em;
 }
 
 #infoAzienda {
     padding-bottom: 0.5em;
-    font-size: 0.4em;
+    font-size: 0.6em;
 }
 
 /*
@@ -321,7 +318,7 @@ PAGINA VIDEOGIOCHI
 }
 
 .btImg{
-    border-bottom: 1px solid #F77F00;
+    border-bottom: 1px solid var(--mainColor);
 }
 
 /*
@@ -332,6 +329,11 @@ PAGINA DI ACCESSO
 
 #logIn {
     padding-bottom: 28.5em;
+}
+
+#mainRegistrazione {
+    padding-top: 3.0em;
+    padding-bottom: 26.0em;
 }
 
 /*
@@ -511,10 +513,10 @@ PAGINA UTENTE
         margin-top: 3em;
         padding: 0.4em;
         border-radius: 7px;
-        color: white;
+        color: var(--textColor);
         text-align: left;
-        background-color: #F77F00;
-        border: 0.5px solid #F77F00;
+        background-color: var(--mainColor);
+        border: 0.5px solid var(--mainColor);
     }
 
     .autocom-box li{
@@ -532,7 +534,7 @@ PAGINA UTENTE
     }
 
     #votazione { 
-        color: white;
+        color: var(--textColor);
         
         margin-top: 2.0em;
     }
