@@ -61,6 +61,10 @@ $h1 = $main->appendChild($doc->createElement('h1'));
 //$h1->setAttribute('tabindex', '0');
 $h1 = $h1->appendChild($doc->createTextNode('VIDEOGIOCHI PIÙ VOTATI'));
 
+$skipCarousel = $main->appendChild($doc->createElement('a'));
+$skipCarousel->setAttribute('href', '#ultimenotizie');
+$skipCarousel->setAttribute('id', 'saltacarosello');
+$skipCarousel = $skipCarousel->appendChild($doc->createTextNode('Salta lo <lang="en">slider</lang>'));
 $divCarousel = $main->appendChild($doc->createElement('div'));
 $divCarousel->setAttribute('class', 'wrapper');
 $divInternalCarousel = $divCarousel->appendChild($doc->createElement('div'));
@@ -98,6 +102,7 @@ foreach ($imgz as $attributes) {
     $imgForm->setAttribute('method', 'POST');
     $buttonImg = $imgForm->appendChild($doc->createElement('button'));
     $buttonImg->setAttribute('name', 'immagine');
+    //$buttonImg->setAttribute('tabindex', '0');
     $imgtag = $buttonImg->appendChild($doc->createElement('img'));
     foreach ($attributes as $key => $value) {
         $imgtag->setAttribute($key, $value);

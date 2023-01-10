@@ -96,7 +96,7 @@ header nav {
     padding: 2.0em;
 }
 
-#SezRicerca{
+#SezRicerca {
     background-color: var(--alternativeTextColor);
     border-radius: 5px;
     height: 2.5em;
@@ -123,32 +123,34 @@ header nav {
     height: 1.5em;
 }
 
-#cercaM{
+#cercaM {
     display: flex;
 }
 
-#btSearch{
+#btSearch {
     display: contents;
     cursor: pointer;
 }
 
-#arrTitoli{
+#arrTitoli {
     display: none
 }
-#navUtente{
+
+#navUtente {
     display: flex;
-    
+
 }
-#navUtente div{ 
-    display: flex;  
+
+#navUtente div {
+    display: flex;
     align-self: center;
 }
 
-#ricerca.active input{
+#ricerca.active input {
     border-radius: 5px 5px 0 0;
 }
 
-#ricerca .autocom-box.active{
+#ricerca .autocom-box.active {
     background-color: var(--sideColor);
     opacity: 1;
     width: 125%;
@@ -160,7 +162,7 @@ header nav {
     margin-top: 0.2em;
 }
 
-.autocom-box li{
+.autocom-box li {
     list-style: none;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -173,15 +175,15 @@ header nav {
     color: var(--textColor);
 }
 
-.autocom-box li:hover{
+.autocom-box li:hover {
     cursor: pointer;
 }
 
-.autocom-box li:last-child{
+.autocom-box li:last-child {
     border-bottom: none;
 }
 
-#bt{
+#bt {
     background: none;
     color: inherit;
     padding: 0;
@@ -192,15 +194,15 @@ header nav {
     width: -webkit-fill-available;
 }
 
-#bt.active{
-    background:var(--highlightedBox);
-}
-
-#bt:hover{
+#bt.active {
     background: var(--highlightedBox);
 }
 
-#ricerca .autocom-box li{
+#bt:hover {
+    background: var(--highlightedBox);
+}
+
+#ricerca .autocom-box li {
     display: block;
 }
 
@@ -281,6 +283,13 @@ SLIDER
 ======
 */
 
+#saltacarosello {
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
 .wrapper {
     display: flex;
     justify-content: center;
@@ -302,7 +311,7 @@ SLIDER
     margin-right: 0.5em;
 }
 
-.horizontal-wrapper .imgs{
+.horizontal-wrapper .imgs {
     width: 3.2em;
     height: 4.2em;
 }
@@ -511,8 +520,10 @@ ULTIME RECENSIONI
     margin-right: 1.0em;
     padding-right: 1.0em;
 }
-.r1:hover,.imgs:hover{
-    opacity:70%;
+
+.r1:hover,
+.imgs:hover {
+    opacity: 70%;
 }
 
 #recensioni-critica>div {
@@ -592,10 +603,12 @@ h1,
     grid-template-columns: 2fr 4fr 0.5fr;
     grid-gap: 15px;
 }
-.contenutoRecensioneU{
+
+.contenutoRecensioneU {
     grid-column: 2;
 }
-.boxPunteggioU{
+
+.boxPunteggioU {
     grid-column: 3;
     justify-self: end;
     background-color: var(--textColor);
@@ -607,11 +620,12 @@ h1,
 .contenutoRecensioneU li {
     margin-bottom: 1.0em;
 }
+
 .contenutoRecensioneU li:last-child {
     margin-bottom: none;
 }
 
-.toBold{
+.toBold {
     font-weight: bolder;
 }
 
@@ -645,10 +659,11 @@ h1,
     font-size: 1.5em;
 }
 
-.formRecensioni{
+.formRecensioni {
     float: left;
 }
-.formRecensioni button{
+
+.formRecensioni button {
     background: transparent;
     cursor: pointer;
     border: 0;
@@ -684,6 +699,7 @@ footer {
 #infoAzienda {
     padding-bottom: 0.5em;
 }
+
 #infoAzienda address {
     display: inline;
     font-style: normal;
@@ -719,7 +735,7 @@ PAGINA VIDEOGIOCHI
     justify-items: center;
 }
 
-.imgSpan{
+.imgSpan {
     display: flex;
     justify-content: center;
     color: var(--textColor);
@@ -728,13 +744,15 @@ PAGINA VIDEOGIOCHI
     margin-bottom: 1em;
     cursor: pointer;
 }
+
 /*
 =============
 PAGINA EVENTI
 =============
 */
 
-#ultimiEventi:last-child, #ultime-notizie:last-child {
+#ultimiEventi:last-child,
+#ultime-notizie:last-child {
     padding-bottom: 0.6em;
 }
 
@@ -919,7 +937,8 @@ dl {
     margin-left: 3em;
     margin-right: 0.8em;
 }
-#user-info dd{
+
+#user-info dd {
     margin-bottom: 0.5em;
 }
 
@@ -965,6 +984,7 @@ dl {
     border: none;
     background-color: rgb(100, 149, 237);
 }
+
 #logoutB span {
     text-align: center;
     color: var(--textColor);
@@ -975,13 +995,16 @@ dl {
     grid-template-columns: 4fr 0.5fr;
     grid-gap: 15px;
 }
+
 .postU li {
     padding-bottom: 1.0em;
 }
-.contenutoRecensioneU{
+
+.contenutoRecensioneU {
     grid-column: 1;
 }
-.boxPunteggioU1{
+
+.boxPunteggioU1 {
     grid-column: 2;
     justify-self: end;
     background-color: var(--textColor);
@@ -996,12 +1019,15 @@ dl {
     color: var(--textColor);
     padding: 1.5em 0em 1.5em 0.6em;
 }
+
 #messageU a {
     font-weight: bolder;
 }
+
 #messageU a:visited {
     color: var(--visitedLink);
 }
+
 #messageU a:hover {
     text-decoration: 2px underline;
 }
@@ -1024,7 +1050,7 @@ PAGINA DI ACCESSO
 
 #mainRegistrazione {
     padding-top: 1.0em;
-    
+
 }
 
 #loginTitle {
@@ -1065,6 +1091,7 @@ PAGINA DI ACCESSO
     display: block;
     margin-bottom: 1.5em;
 }
+
 #passwordBox {
     margin-bottom: 1.0em;
 }
@@ -1093,6 +1120,7 @@ PAGINA DI ACCESSO
     border: none;
     background-color: var(--textColor);
 }
+
 #submit {
     margin-bottom: 1.0em;
 }
@@ -1103,17 +1131,20 @@ PAGINA DI ACCESSO
     color: black;
 }
 
-#linkRegistrazione{
+#linkRegistrazione {
     color: var(--textColor);
     font-size: 0.8em;
 }
-#linkRegistrazione a{
+
+#linkRegistrazione a {
     color: var(--textColor);
     font-weight: bolder;
 }
+
 #linkRegistrazione a:hover {
     text-decoration: underline 2px solid var(--textColor);
 }
+
 #spanLinkR {
     display: block;
 }
@@ -1138,7 +1169,7 @@ TEMPLATE GIOCO
     margin-bottom: 5em;
 }
 
-#boxattributi dd{
+#boxattributi dd {
     text-indent: 0em;
     padding-left: 3em;
 }
@@ -1188,10 +1219,11 @@ TEMPLATE GIOCO
     color: var(--textColor);
 }
 
-#link_recensione{
+#link_recensione {
     display: flex;
     justify-content: center;
 }
+
 #lanostrarecensione {
     cursor: pointer;
     text-align: center;
@@ -1225,7 +1257,7 @@ TEMPLATE GIOCO
     width: 50%;
 }
 
-#bannerRecensione{
+#bannerRecensione {
     width: 100%;
     height: 20.0em;
 }
@@ -1264,7 +1296,7 @@ ALTERAZIONE DIMENSIONI PAGINA
         padding-left: 1em;
     }
 
-    #ricerca .autocom-box.active{
+    #ricerca .autocom-box.active {
         width: 120%;
     }
 
@@ -1283,13 +1315,13 @@ ALTERAZIONE DIMENSIONI PAGINA
         margin-top: 0.5em;
     }
 
-    .scores{
+    .scores {
         font-size: 16px;
     }
 
-    #ricerca .autocom-box.active{
+    #ricerca .autocom-box.active {
         margin-top: 0.35em;
-        
+
     }
 
 }
