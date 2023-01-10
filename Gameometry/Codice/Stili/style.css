@@ -56,7 +56,6 @@ header {
     display: grid;
     grid-template-columns: 1fr 4fr 2fr;
     grid-gap: 15px;
-    max-height: 3.5em;
 }
 
 header h1 {
