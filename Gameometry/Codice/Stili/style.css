@@ -599,7 +599,7 @@ h1,
     grid-column: 3;
     justify-self: end;
     background-color: var(--textColor);
-    height: 3.0em;
+    height: 2.5em;
     width: 50%;
     border-radius: 8px;
 }
