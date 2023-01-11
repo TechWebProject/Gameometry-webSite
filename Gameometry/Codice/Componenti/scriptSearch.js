@@ -5,6 +5,10 @@ const searchWrapper = document.querySelector("#ricerca");
 const inputBox = document.getElementById("searchBar");
 const suggBox = document.querySelector(".autocom-box");
 
+const btnSearch = document.getElementById("btSearch");
+btnSearch.setAttribute("name","immagine");
+const Lente = document.getElementById("ricercaLente");
+
 var arrTitoli = document.getElementById("arrTitoli").textContent;
 var titoli = arrTitoli.split(",");
 
@@ -32,11 +36,16 @@ inputBox.addEventListener("keydown", function(event){
   }
   if(event.key=="Enter"){
     event.preventDefault();
-    imageList[focus].click();
+    if(focus==-1){
+      btnSearch.click();
+    }else{
+      imageList[focus].click();
+    }
   }
 });
 
 inputBox.addEventListener("input",()=>{
+  btnSearch.setAttribute("value",inputBox.value);
   let userData = inputBox.value;
   let emptyArray= [];
   for(var i=0; i<titoli.length; i++){

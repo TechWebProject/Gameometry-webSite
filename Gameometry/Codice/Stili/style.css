@@ -1175,6 +1175,11 @@ TEMPLATE GIOCO
     padding-left: 3em;
 }
 
+#noresult_text{
+    color:var(--alternativeTextColor);
+    font-size: 1.5em;
+}
+
 #titologioco {
     background-color: transparent;
     padding-top: 3em;

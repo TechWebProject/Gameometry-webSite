@@ -28,17 +28,22 @@ $main = $body->appendChild($doc->createElement('main'));
 
 $db=OpenCon();
 
-$query_nrows="SELECT COUNT(*) as nrighe FROM videogioco";
-$result=mysqli_query($db,$query_nrows);
-$tmparr=$result->fetch_array(MYSQLI_ASSOC);
-$n_rows=$tmparr['nrighe'];
+$titoloh1Video;
+$query;
+if(isset($_POST["immagine"])){
+    $titolo=$_POST["immagine"];
+    $titolo=mysqli_real_escape_string($db,$titolo);
+    $query = "SELECT titolo , imgLocandina FROM videogioco WHERE titolo like '%$titolo%'";
+    $titoloh1Video = "RISULTATI DELLA RICERCA";
+}else{
+    $query = "SELECT titolo , imgLocandina FROM videogioco";
+    $titoloh1Video = "LA NOSTRA SELEZIONE DI VIDEOGIOCHI";
+}
 
-mysqli_free_result($result);
-
-$query = "SELECT titolo FROM videogioco";
 $result = mysqli_query($db,$query);
 $arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
+$n_rows=mysqli_num_rows($result);
+mysqli_free_result($result);
 
 CloseCon($db);
 
@@ -62,41 +67,41 @@ $searchscript->setAttribute('src','Componenti/scriptSearch.js');
 
 $h1_Video = $main->appendChild($doc->createElement('h1'));
 $h1_Video->setAttribute('id','newsTitle');
-$h1_Video = $h1_Video->appendChild($doc->createTextNode('LA NOSTRA SELEZIONE DI VIDEOGIOCHI'));
+$h1_Video = $h1_Video->appendChild($doc->createTextNode($titoloh1Video));
 
 $div_sezioneVideogiochi = $main->appendChild($doc->createElement('div'));
 $div_sezioneVideogiochi->setAttribute('id','sezioneVideogiochi');
 
-$dir = scandir("Locandine");
-$str = 'Locandine/';
+$imgz = array($n_rows);
 
-$imgz = array(count($dir)-2);
-
-for($i = 2; $i < count($dir); $i++){
-    $res = $str.$dir[$i];
-    $trimmedword = RemoveSpecialChar($dir,$i);
-    $imgz[$i-2]=array('src' => $res , 'alt' => $trimmedword);
+for($i = 0; $i < $n_rows; $i++){
+    $imgz[$i]=array('src' => $arr[$i]['imgLocandina'],'alt'=> $arr[$i]['titolo']);
 }
-
-foreach ($imgz as $attributes) {
-    $imgForm = $div_sezioneVideogiochi->appendChild($doc->createElement('form'));
-    $imgForm->setAttribute('action', 'templateGioco.php');
-    $imgForm->setAttribute('method', 'POST');
-    $buttonImg = $imgForm->appendChild($doc->createElement('button'));
-    $buttonImg->setAttribute('name','immagine');
-    $buttonImg->setAttribute('class','btImg');
-    $imgtag = $buttonImg->appendChild($doc->createElement('img'));
-    $imgSpan = $buttonImg->appendChild($doc->createElement('span'));
-    $imgSpan->setAttribute('class','imgSpan');
-    foreach ($attributes as $key => $value) {
-        $imgtag->setAttribute($key, $value);
-        if($key=='alt'){
-            $value=str_replace('locandina ','',$value);
-            $buttonImg->setAttribute('value',$value);
-            $imgSpan = $imgSpan->appendChild($doc->createTextNode($value));
+if($n_rows==0){
+    $no_risultati = $div_sezioneVideogiochi->appendChild($doc->createElement('p'));
+    $no_risultati->setAttribute('id','noresult_text');
+    $no_risultati->appendChild($doc->createTextNode("Nessun risultato"));
+}else{
+    foreach ($imgz as $attributes) {
+        $imgForm = $div_sezioneVideogiochi->appendChild($doc->createElement('form'));
+        $imgForm->setAttribute('action', 'templateGioco.php');
+        $imgForm->setAttribute('method', 'POST');
+        $buttonImg = $imgForm->appendChild($doc->createElement('button'));
+        $buttonImg->setAttribute('name','immagine');
+        $buttonImg->setAttribute('class','btImg');
+        $imgtag = $buttonImg->appendChild($doc->createElement('img'));
+        $imgSpan = $buttonImg->appendChild($doc->createElement('span'));
+        $imgSpan->setAttribute('class','imgSpan');
+        foreach ($attributes as $key => $value) {
+            $imgtag->setAttribute($key, $value);
+            if($key=='alt'){
+                $value=str_replace('locandina ','',$value);
+                $buttonImg->setAttribute('value',$value);
+                $imgSpan = $imgSpan->appendChild($doc->createTextNode($value));
+            }
         }
+        $imgtag->setAttribute('class','imgs');
     }
-    $imgtag->setAttribute('class','imgs');
 }
 
 //footer
