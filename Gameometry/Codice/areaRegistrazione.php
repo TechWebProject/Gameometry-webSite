@@ -144,7 +144,8 @@ if(isset($_POST['registerButton']) && $_POST['email']!="" && $_POST['username']!
         $currentDate = date("Y-m-d");
         $insertUser="insert into utente (email, nickname, password, dataIscrizione) values ('$inputEmail', '$inputNickname', '$inputPassword', '$currentDate')";
         $resultInsert=mysqli_query($db,$insertUser);
-        function_alert("Utente registrato con successo");
+
+        header("Location: areaLogin.php?success=done");
     } else {
         function_alert("Utente già presente nel sistema");
     }

@@ -106,7 +106,7 @@ if(isset($_POST['deleteU'])){
     session_unset(); 
     session_destroy(); 
 
-    header("Location: areaLogin.php");
+    header("Location: areaLogin.php?message=success");
 }
 
 $listaCommenti = $main->appendChild($doc->createElement('h2'));

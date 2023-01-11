@@ -116,6 +116,14 @@ function function_alert($message) {
     echo "<script>alert('$message');</script>";
 } 
 
+if(isset($_GET['success'])){
+    function_alert("Utente registrato con successo");
+}
+
+if(isset($_GET['message'])){
+    function_alert("Profilo eliminato dal sistema");
+}
+
 if(isset($_POST['loginButton']) && $_POST['username']!="" && $_POST['password']!=""){
     $inputNickname = $_POST['username'];
     $inputPassword = $_POST['password'];
