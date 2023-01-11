@@ -110,11 +110,7 @@ $buttonS->setAttribute('type','submit');
 $buttonS->setAttribute('id','submit');
 $buttonS->setAttribute('name','loginButton');
 $buttonS->setAttribute('aria-label','clicca per accedere al sito');
-$buttonS = $buttonS->appendChild($doc->createTextNode('accedi'));
-
-function function_alert($message) {
-    echo "<script>alert('$message');</script>";
-} 
+$buttonS = $buttonS->appendChild($doc->createTextNode('accedi')); 
 
 if(isset($_POST['loginButton']) && $_POST['username']!="" && $_POST['password']!=""){
     $inputNickname = $_POST['username'];

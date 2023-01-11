@@ -75,15 +75,34 @@ $main->appendChild($doc->createTextNode($userInfo));
 $formLogout = $main->appendChild($doc->createElement('form'));
 $formLogout->setAttribute('action','areaUtente.php');
 $formLogout->setAttribute('method','POST');
+
 $buttonLogout = $formLogout->appendChild($doc->createElement('button'));
 $buttonLogout->setAttribute('id','logoutB');
 $buttonLogout->setAttribute('type','submit');
 $buttonLogout->setAttribute('name','logoutButton');
-$spanButtonLogout = $buttonLogout->appendChild($doc->createElement('span'));
-$spanButtonLogout->setAttribute('lang','en');
-$spanButtonLogout = $spanButtonLogout->appendChild($doc->createTextNode('Logout')); 
+$buttonLogout = $buttonLogout->appendChild($doc->createTextNode('Esci')); 
+
+$buttonDeleteU = $formLogout->appendChild($doc->createElement('button'));
+$buttonDeleteU->setAttribute('id','deleteAccount');
+$buttonDeleteU->setAttribute('type','submit');
+$buttonDeleteU->setAttribute('name','deleteU');
+$buttonDeleteU = $buttonDeleteU->appendChild($doc->createTextNode('Elimina profilo')); 
+
+function function_alert($message) {
+    echo "<script>alert('$message');</script>";
+}
 
 if(isset($_POST['logoutButton'])){
+    session_unset(); 
+    session_destroy(); 
+
+    header("Location: areaLogin.php");
+}
+
+if(isset($_POST['deleteU'])){
+    $deleteUser="DELETE FROM utente WHERE utente.email = '$email'";
+    $result=mysqli_query($db,$deleteUser);
+
     session_unset(); 
     session_destroy(); 
 
@@ -95,10 +114,6 @@ $listaCommenti->setAttribute('class','titleH2');
 $listaCommenti = $listaCommenti->appendChild($doc->createTextNode('I MIEI COMMENTI'));
 
 //inserimento commento
-function function_alert($message) {
-    echo "<script>alert('$message');</script>";
-}
-
 function generateRandomString($length = 30) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
