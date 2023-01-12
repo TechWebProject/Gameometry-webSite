@@ -97,6 +97,8 @@ if($n_rows==0){
             if($key=='alt'){
                 $value=str_replace('locandina ','',$value);
                 $buttonImg->setAttribute('value',$value);
+                $valueAL=str_replace($value,'vai alla pagina di '.$value,$value);
+                $buttonImg->setAttribute('aria-label',$valueAL);
                 $imgSpan = $imgSpan->appendChild($doc->createTextNode($value));
             }
         }

@@ -72,9 +72,6 @@ $h1 = $h1->appendChild($doc->createTextNode('LE NOSTRE RECENSIONI'));
 $divRec = $main->appendChild($doc->createElement('div'));
 $divRec->setAttribute('id','recensioni-critica');
 
-//ultime recensioni codice php
-//query per sapere quante recensioni ho nel db
-
 $db=OpenCon();
 $query_nrows="SELECT COUNT(*) as nrighe FROM recensione";
 $result=mysqli_query($db,$query_nrows);

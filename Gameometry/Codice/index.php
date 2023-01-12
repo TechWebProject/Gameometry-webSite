@@ -58,7 +58,6 @@ $labelTitoli->setAttribute('id', 'arrTitoli');
 
 //slider
 $h1 = $main->appendChild($doc->createElement('h1'));
-//$h1->setAttribute('tabindex', '0');
 $h1 = $h1->appendChild($doc->createTextNode('VIDEOGIOCHI PIÙ VOTATI'));
 
 $skipCarousel = $main->appendChild($doc->createElement('a'));
@@ -72,9 +71,7 @@ $divInternalCarousel->setAttribute('class', 'horizontal-wrapper');
 
 $rightRow = $divInternalCarousel->appendChild($doc->createElement('button'));
 $rightRow->setAttribute('id', 'btn-left');
-//$rightRow->setAttribute('tabindex', '0');
-$rightRow->setAttribute('alt', 'scorri a sinistra');
-$rightRow->setAttribute('aria-label', 'Scorrimento a sinistra');
+$rightRow->setAttribute('aria-label', 'scorri a sinistra');
 $rightRow = $rightRow->appendChild($doc->createTextNode('&lsaquo;'));
 
 $divSlider = $divInternalCarousel->appendChild($doc->createElement('div'));
@@ -102,13 +99,13 @@ foreach ($imgz as $attributes) {
     $imgForm->setAttribute('method', 'POST');
     $buttonImg = $imgForm->appendChild($doc->createElement('button'));
     $buttonImg->setAttribute('name', 'immagine');
-    //$buttonImg->setAttribute('tabindex', '0');
     $imgtag = $buttonImg->appendChild($doc->createElement('img'));
     foreach ($attributes as $key => $value) {
         $imgtag->setAttribute($key, $value);
         if ($key == 'alt') {
-            $value = str_replace('locandina ', '', $value);
+            $value = str_replace('locandina ', 'vai alla pagina di ', $value);
             $buttonImg->setAttribute('value', $value);
+            $buttonImg->setAttribute('aria-label', $value);
         }
     }
     $imgtag->setAttribute('class', 'imgs');
@@ -116,7 +113,7 @@ foreach ($imgz as $attributes) {
 
 $leftRow = $divInternalCarousel->appendChild($doc->createElement('button'));
 $leftRow->setAttribute('id', 'btn-right');
-$leftRow->setAttribute('aria-label', 'Scorrimento a destra');
+$leftRow->setAttribute('aria-label', 'Scorri a destra');
 $leftRow = $leftRow->appendChild($doc->createTextNode('&rsaquo;'));
 
 $sliderScript = $main->appendChild($doc->createElement('script'));
@@ -133,13 +130,11 @@ $main->appendChild($doc->createTextNode($listaBN));
 
 //ultime recensioni
 $h1Recensioni = $main->appendChild($doc->createElement('h1'));
-//$h1Recensioni->setAttribute('tabindex', '0');
 $h1Recensioni = $h1Recensioni->appendChild($doc->createTextNode('ULTIME RECENSIONI'));
 
 $divRec = $main->appendChild($doc->createElement('div'));
 $divRec->setAttribute('id', 'recensioni-critica');
 
-//ultime recensioni codice php
 $db = OpenCon();
 $query = "SELECT * FROM recensione ORDER BY dataPubblicazione desc LIMIT 5";
 $result = mysqli_query($db, $query);
@@ -183,7 +178,6 @@ for ($i = 0; $i < 5; $i++) {
     $linkSpanRecX->setAttribute('href', './recensioneGioco.php?titRec=' . $titoloRecX);
     $linkSpanRecX = $linkSpanRecX->appendChild($doc->createTextNode($titoloRecX));
     $contenutoRecX = $divContenutoRecX->appendChild($doc->createElement('p'));
-    //$contenutoRecX->setAttribute('tabindex', '0');
     $cont = 500;
     while ($contenuto[$cont] != ".") {
         $cont++;
@@ -193,7 +187,6 @@ for ($i = 0; $i < 5; $i++) {
     $contenutoRecX = $contenutoRecX->appendChild($doc->createTextNode($contenuto));
     $punteggioX = $divCommentoX->appendChild($doc->createElement('p'));
     $punteggioX->setAttribute('class', 'punteggio');
-    //$punteggioX->setAttribute('tabindex', '0');
     $punteggioX = $punteggioX->appendChild($doc->createTextNode($voto));
 }
 

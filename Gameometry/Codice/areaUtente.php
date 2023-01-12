@@ -72,18 +72,20 @@ $userInfo = str_replace("aaaa/mm/gg", $_SESSION['dataIscrizione'], $userInfo);
 $userInfo = str_replace("NaN", "$nComm", $userInfo);
 $main->appendChild($doc->createTextNode($userInfo));
 
-$formLogout = $main->appendChild($doc->createElement('form'));
-$formLogout->setAttribute('action','areaUtente.php');
-$formLogout->setAttribute('method','POST');
+$formUserOptions = $main->appendChild($doc->createElement('form'));
+$formUserOptions->setAttribute('action','areaUtente.php');
+$formUserOptions->setAttribute('method','POST');
 
-$buttonLogout = $formLogout->appendChild($doc->createElement('button'));
+$buttonLogout = $formUserOptions->appendChild($doc->createElement('button'));
 $buttonLogout->setAttribute('id','logoutB');
+$buttonLogout->setAttribute('aria-label','esci dal tuo profilo');
 $buttonLogout->setAttribute('type','submit');
 $buttonLogout->setAttribute('name','logoutButton');
 $buttonLogout = $buttonLogout->appendChild($doc->createTextNode('Esci')); 
 
-$buttonDeleteU = $formLogout->appendChild($doc->createElement('button'));
+$buttonDeleteU = $formUserOptions->appendChild($doc->createElement('button'));
 $buttonDeleteU->setAttribute('id','deleteAccount');
+$buttonDeleteU->setAttribute('aria-label','elimina il tuo profilo');
 $buttonDeleteU->setAttribute('type','submit');
 $buttonDeleteU->setAttribute('name','deleteU');
 $buttonDeleteU = $buttonDeleteU->appendChild($doc->createTextNode('Elimina profilo')); 

@@ -109,7 +109,7 @@ $buttonS = $spanRegister->appendChild($doc->createElement('button'));
 $buttonS->setAttribute('type','submit');
 $buttonS->setAttribute('id','submit');
 $buttonS->setAttribute('name','loginButton');
-$buttonS->setAttribute('aria-label','clicca per accedere al sito');
+$buttonS->setAttribute('aria-label','accedi alla tua area personale');
 $buttonS = $buttonS->appendChild($doc->createTextNode('accedi')); 
 
 function function_alert($message) {

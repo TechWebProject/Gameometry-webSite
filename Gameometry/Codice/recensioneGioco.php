@@ -14,6 +14,7 @@ if (isset($_POST['recensione'])) {
 } elseif (isset($_GET['titRec'])) {
     $giocoRecensito = $_GET['titRec'];
 }
+$giocoRecensito = str_replace('vai alla recensione di ','',$giocoRecensito);
 
 //QUERY
 $db1 = OpenCon();
@@ -262,8 +263,10 @@ if (isset($_SESSION['email'])) {
     $submit_prova->setAttribute('name', 'inviaCommento2');
     $submit_prova->setAttribute('value', $titoloGioco);
 
-    $submit_voto = $form_commento->appendChild($doc->createElement('input'));
+    $submit_voto = $form_commento->appendChild($doc->createElement('button'));
+    $submit_voto->appendChild($doc->createTextNode("Commenta"));
     $submit_voto->setAttribute('id', 'inviaCommento');
+    $submit_voto->setAttribute('aria-label','invia commento');
     $submit_voto->setAttribute('type', 'submit');
     $submit_voto->setAttribute('name', 'inviaCommento');
     $submit_voto->setAttribute('value', 'Commenta');

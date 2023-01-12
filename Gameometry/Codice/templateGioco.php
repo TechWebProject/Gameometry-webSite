@@ -9,6 +9,7 @@ $html->setAttribute('lang', 'it');
 $body = $doc->appendChild($doc->createElement('body'));
 
 $title = $_POST['immagine'];
+$title = str_replace('vai alla pagina di ','',$title);
 
 //head
 $head = file_get_contents('sezioniComuni/head.html');
