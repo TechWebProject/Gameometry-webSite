@@ -501,7 +501,6 @@ ULTIME RECENSIONI
 }
 
 .commento {
-    display: flex;
     margin-top: 2em;
     margin-bottom: 1em;
 }
@@ -711,17 +710,6 @@ PAGINA VIDEOGIOCHI
 ==================
 */
 
-#sezioneVideogiochi img {
-    padding: none;
-    width: 16.0em;
-    height: 22.0em;
-}
-
-.btImg {
-    background: transparent;
-    border: none;
-}
-
 #sezioneVideogiochi {
     width: 100%;
     display: grid;
@@ -731,8 +719,19 @@ PAGINA VIDEOGIOCHI
     grid-column-gap: 2.0em;
     padding-bottom: 1.5em;
     margin-top: 2.0em;
-    margin-bottom: 5.0em;
+    margin-bottom: 20.0em;
     justify-items: center;
+}
+
+#sezioneVideogiochi img {
+    padding: none;
+    width: 16.0em;
+    height: 22.0em;
+}
+
+.btImg {
+    background: transparent;
+    border: none;
 }
 
 .imgSpan {
@@ -931,6 +930,12 @@ dl {
     color: rgb(255, 255, 255);
 }
 
+#user-info {
+    padding-top: 2.5em;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
 #user-info>dt {
     font-weight: bolder;
     float: left;
@@ -940,12 +945,6 @@ dl {
 
 #user-info dd {
     margin-bottom: 0.5em;
-}
-
-#user-info {
-    padding-top: 2.5em;
-    font-size: 1.2em;
-    line-height: 1.5em;
 }
 
 #user-icon {
@@ -1158,7 +1157,6 @@ TEMPLATE GIOCO
 
 #bannergioco {
     width: 100%;
-    /*filter: blur(2px);*/
 }
 
 #boxattributi {
@@ -1182,12 +1180,11 @@ TEMPLATE GIOCO
 
 #titologioco {
     background-color: transparent;
-    padding-top: 3em;
-    padding-top: 1em;
+    padding-top: 0.5em;
     border: 0em;
     font-weight: bolder;
     text-align: center;
-    font-size: 32px;
+    font-size: 2.0em;
 }
 
 #locandinagioco {
@@ -1201,7 +1198,7 @@ TEMPLATE GIOCO
 }
 
 #attributigioco {
-    font-size: 18px;
+    font-size: 1.2em;
     flex: 3;
     padding-top: 4em;
     padding-bottom: 4em;
@@ -1216,12 +1213,9 @@ TEMPLATE GIOCO
     background-color: transparent;
     padding-top: 1.5em;
     padding-bottom: 1.5em;
-    padding-right: 0%;
-    padding-left: 8%;
-    border: 0em;
+    padding-left: 2.5em;
     font-weight: bolder;
-    font-size: 32px;
-    font-size: 28px;
+    font-size: 2.0em;
     color: var(--textColor);
 }
 
@@ -1246,9 +1240,10 @@ TEMPLATE GIOCO
 
 #descrizione {
     color: var(--textColor);
-    padding-left: 8%;
-    padding-right: 8%;
+    padding-left: 4.2em;
+    padding-right: 2.5em;
     padding-bottom: 3em;
+    font-size: 1.2em;
 }
 
 #boxpunteggi {

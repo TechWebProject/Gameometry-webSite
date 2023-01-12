@@ -243,7 +243,7 @@ ULTIME RECENSIONI
 }
 
 #bannergioco{
-    padding-top: 4.0em;
+    padding-top: 3.0em;
 }
 
 #locandinagioco {
@@ -315,10 +315,6 @@ PAGINA VIDEOGIOCHI
     width: auto;
     height: 40.0em;
     margin-bottom: 1.5em;
-}
-
-.btImg{
-    border-bottom: 1px solid var(--mainColor);
 }
 
 /*
