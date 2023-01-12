@@ -125,6 +125,9 @@ $spanPasswordInput->setAttribute('maxlength','12');
 $spanPasswordMessage = $fieldset->appendChild($doc->createElement('span'));
 $spanPasswordMessage->setAttribute('id','errorPasswordRegister');
 
+$spanGeneralMessage = $fieldset->appendChild($doc->createElement('span'));
+$spanGeneralMessage->setAttribute('id','errorGeneralRegister');
+
 $spanRegister = $fieldset->appendChild($doc->createElement('span'));
 $spanRegister->setAttribute('id','submitButton');
 $buttonR = $spanRegister->appendChild($doc->createElement('button'));
@@ -132,18 +135,12 @@ $buttonR->setAttribute('id','register');
 $buttonR->setAttribute('type','submit');
 $buttonR->setAttribute('name','registerButton');
 $buttonR->setAttribute('aria-label','clicca per registrarti al sito');
-$buttonR->appendChild($doc->createTextNode('REGISTRATI'));
-
-function function_alert($message) {
-    echo "<script>alert('$message');</script>";
-} 
+$buttonR->appendChild($doc->createTextNode('REGISTRATI')); 
 
 if(isset($_POST['registerButton']) && $_POST['email']!="" && $_POST['username']!="" && $_POST['password']!=""){
     $inputEmail = $_POST['email'];
     $inputNickname = $_POST['username'];
     $inputPassword = $_POST['password'];
-
-    $notAllowed = array(" ","'","?","!","$");
 
     $db=OpenCon();
 
@@ -151,34 +148,60 @@ if(isset($_POST['registerButton']) && $_POST['email']!="" && $_POST['username']!
     $result_email=mysqli_query($db,$query_check_email);
     $emailOK=$result_email->fetch_array(MYSQLI_ASSOC);
 
-    if(!isset($emailOK)){ /* controllo del tipo a@a gestito dal tag html */
-        $testEmail = str_split($inputEmail);
-        $correctEmail = true;
-        foreach($testEmail as $test){
-            if(in_array($notAllowed, $test)){
-                $correctEmail = false;
-            }
+    //controllo email --> i caratteri vengono controllati dal tag
+    $correctEmail = true;
+    if(isset($emailOK)){
+        $correctEmail = false;
+        $spanMailMessage->appendChild($doc->createTextNode('Email già utilizzata'));
+    }
+
+    //controllo del nickname
+    $testNickName = str_split($inputNickname);
+    $correctNickname = true;
+
+    $notAllowed = array(" ","'","?","!","$");
+
+    foreach($testNickName as $test){
+        if(in_array($test, $notAllowed)){
+            $correctNickname = false;
         }
-        if($correctEmail==false){
-            $spanMailMessage->appendChild($doc->createTextNode('Sintassi della mail non corretta, evitare di inserire caratteri speciali o spazi'));
-        }
+    }
+
+    if($correctNickname==false){
+        $spanUsernameMessage->appendChild($doc->createTextNode('Sintassi del nickname errata'));
     }
     else {
-        $spanMailMessage->appendChild($doc->createTextNode('Email già in uso nel sistema'));
+        $query_check_nickname="SELECT * FROM utente WHERE utente.nickname='$inputNickname'";
+        $result_nickname=mysqli_query($db,$query_check_nickname);
+        $nicknameOK=$result_nickname->fetch_array(MYSQLI_ASSOC);
+        if(isset($nicknameOK)){
+            $spanUsernameMessage->appendChild($doc->createTextNode('Nickname già in uso nel sistema'));
+        } 
     }
-    
-    $query_check_nickname="SELECT * FROM utente WHERE utente.nickname='$inputNickname'";
-    $result_nickname=mysqli_query($db,$query_check_nickname);
-    $nicknameOK=$result_nickname->fetch_array(MYSQLI_ASSOC);
 
-    if(!isset($tmparr)){
+    //controllo della password
+    $testPassword = str_split($inputPassword);
+    $correctPassword = true;
+
+    $passwordNotAllowed = array(" ","'",'"');
+
+    foreach($testPassword as $test){
+        if(in_array($test, $passwordNotAllowed)){
+            $correctPassword = false;
+        }
+    }
+
+    if($correctPassword==false){
+        $spanPasswordMessage->appendChild($doc->createTextNode('Non è possibile utilizzare spazi, '."' ". 'o "'));
+    }
+
+    //controllo validità sul DB
+    if($correctEmail && $correctNickname && $correctPassword){
         $currentDate = date("Y-m-d");
         $insertUser="insert into utente (email, nickname, password, dataIscrizione) values ('$inputEmail', '$inputNickname', '$inputPassword', '$currentDate')";
         $resultInsert=mysqli_query($db,$insertUser);
 
-        header("Location: areaLogin.php?success=done");
-    } else {
-        /*$spanPasswordMessage = $spanPasswordMessage->appendChild($doc->createTextNode('Utente già presente nel sistema'));*/
+        $spanGeneralMessage->appendChild($doc->createTextNode('Utente correttamente registrato'));
     }
 
     mysqli_free_result($result);
@@ -186,7 +209,7 @@ if(isset($_POST['registerButton']) && $_POST['email']!="" && $_POST['username']!
     CloseCon($db);
 }
 else if(isset($_POST['registerButton'])) {
-    $spanPasswordMessage = $spanPasswordMessage->appendChild($doc->createTextNode('Tutti i campi devono essere compilati'));
+    $spanGeneralMessage = $spanGeneralMessage->appendChild($doc->createTextNode('Tutti i campi devono essere compilati'));
 }
 
 //footer

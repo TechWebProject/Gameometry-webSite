@@ -89,6 +89,9 @@ $spanUserInput->setAttribute('id','username');
 $spanUserInput->setAttribute('placeholder','Digita il tuo username');
 $spanUserInput->setAttribute('maxlength','30');
 
+$spanUsernameMessage = $fieldset->appendChild($doc->createElement('span'));
+$spanUsernameMessage->setAttribute('id','errorUsernameRegister');
+
 $spanPassword = $fieldset->appendChild($doc->createElement('span'));
 $spanPassword->setAttribute('id','passwordBox');
 $labelPassword = $spanPassword->appendChild($doc->createElement('label'));
@@ -103,6 +106,12 @@ $spanPasswordInput->setAttribute('id','password');
 $spanPasswordInput->setAttribute('placeholder','Digita la tua password');
 $spanPasswordInput->setAttribute('maxlength','12'); 
 
+$spanPasswordMessage = $fieldset->appendChild($doc->createElement('span'));
+$spanPasswordMessage->setAttribute('id','errorPasswordRegister');
+
+$spanGeneralMessage = $fieldset->appendChild($doc->createElement('span'));
+$spanGeneralMessage->setAttribute('id','errorGeneralRegister');
+
 $spanRegister = $fieldset->appendChild($doc->createElement('span'));
 $spanRegister->setAttribute('id','registerBox');
 $buttonS = $spanRegister->appendChild($doc->createElement('button'));
@@ -116,10 +125,6 @@ function function_alert($message) {
     echo "<script>alert('$message');</script>";
 } 
 
-if(isset($_GET['success'])){
-    function_alert("Utente registrato con successo");
-}
-
 if(isset($_GET['message'])){
     function_alert("Profilo eliminato dal sistema");
 }
@@ -130,11 +135,41 @@ if(isset($_POST['loginButton']) && $_POST['username']!="" && $_POST['password']!
 
     $db=OpenCon();
 
-    $query_check="SELECT utente.email as emailU, utente.dataIscrizione as dataIscrizioneU FROM utente WHERE utente.nickname='$inputNickname' and utente.password='$inputPassword'"; /* effettua il controllo che i dati siano corretti */
-    $result=mysqli_query($db,$query_check);
-    $tmparr=$result->fetch_array(MYSQLI_ASSOC);
+    //controllo del nickname
+    $correctNickname = false;
 
-    if(isset($tmparr)){
+    $query_check_nickname="SELECT * FROM utente WHERE utente.nickname='$inputNickname'";
+    $result_nickname=mysqli_query($db,$query_check_nickname);
+    $nicknameOK=$result_nickname->fetch_array(MYSQLI_ASSOC);
+    if(!isset($nicknameOK)){
+        $spanUsernameMessage->appendChild($doc->createTextNode('Nickname errato'));
+    } 
+    else {
+        $correctNickname = true;
+    }
+
+    //controllo della password
+    $correctPassword = false;
+
+    $query_check_password="SELECT * FROM utente WHERE utente.nickname='$inputNickname' and utente.password='$inputPassword'";
+    $result_nickname=mysqli_query($db,$query_check_password);
+    $passwordOK=$result_nickname->fetch_array(MYSQLI_ASSOC);
+    if(!isset($passwordOK)){
+        $spanPasswordMessage->appendChild($doc->createTextNode('Password errata'));
+    } 
+    else {
+        $correctPassword = true;
+    }
+
+    if($correctNickname && $correctPassword){
+        $query_check="SELECT utente.email as emailU, utente.dataIscrizione as dataIscrizioneU FROM utente WHERE utente.nickname='$inputNickname' and utente.password='$inputPassword'"; 
+        $result=mysqli_query($db,$query_check);
+        $tmparr=$result->fetch_array(MYSQLI_ASSOC);
+
+        mysqli_free_result($result);
+
+        CloseCon($db);
+
         $emailU = $tmparr['emailU'];
         $dataIscrU = $tmparr['dataIscrizioneU'];
 
@@ -145,16 +180,9 @@ if(isset($_POST['loginButton']) && $_POST['username']!="" && $_POST['password']!
 
         header("Location: areaUtente.php");
     }
-    else {
-        function_alert("Username o password non corretti, riprovare");
-    }
-
-    mysqli_free_result($result);
-
-    CloseCon($db);
 }
 else if(isset($_POST['loginButton'])) {
-    function_alert("Username o password non corretti, riprovare");
+    $spanGeneralMessage = $spanGeneralMessage->appendChild($doc->createTextNode('Tutti i campi devono essere compilati'));
 }
 
 $linkR = $spanRegister->appendChild($doc->createElement('p'));

@@ -1073,7 +1073,7 @@ PAGINA DI ACCESSO
 
 #logIn form fieldset {
     border: none;
-    height: 13.5em;
+    height: 15em;
 }
 
 #mainRegistrazione form fieldset {
@@ -1093,18 +1093,18 @@ PAGINA DI ACCESSO
 #passwordBox,
 #registerBox {
     display: block;
-    margin-bottom: 1.0em;
+    margin-bottom: 0.3em;
 }
 
-#errorEmailRegister, #errorUsernameRegister, #errorPasswordRegister {
+#errorGeneralRegister {
+    margin-top: 1.0em;
+}
+
+#errorEmailRegister, #errorUsernameRegister, #errorPasswordRegister, #errorGeneralRegister {
     display: block;
     color: black;
     font-size: 0.8em;
     font-weight: bolder;
-    margin-bottom: 1.0em;
-}
-
-#passwordBox {
     margin-bottom: 1.0em;
 }
 
@@ -1127,7 +1127,6 @@ PAGINA DI ACCESSO
     border-radius: 0.2em;
     font-size: 0.7em;
     margin-top: 0.2em;
-    margin-right: 1.0em;
     margin-bottom: 0.6em;
     border: none;
     background-color: var(--textColor);
