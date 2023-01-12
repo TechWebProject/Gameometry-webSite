@@ -501,6 +501,11 @@ ULTIME RECENSIONI
 }
 
 .commento {
+    display: flex;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+.commentoU {
     margin-top: 2em;
     margin-bottom: 1em;
 }

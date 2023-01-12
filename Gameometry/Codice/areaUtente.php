@@ -173,7 +173,7 @@ if($nComm>0){
         $div_post->setAttribute('class', 'postU');
     
         $div_postCommento = $div_post->appendChild($doc->createElement('div'));
-        $div_postCommento->setAttribute('class', 'commento');
+        $div_postCommento->setAttribute('class', 'commentoU');
     
         $ul_contenuto = $div_postCommento->appendChild($doc->createElement('ul'));
         $ul_contenuto->setAttribute('class', 'contenutoRecensioneU1');
