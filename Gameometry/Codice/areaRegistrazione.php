@@ -89,6 +89,9 @@ $spanMailInput->setAttribute('id','email');
 $spanMailInput->setAttribute('placeholder','Digita la tua mail');
 $spanMailInput->setAttribute('maxlength','100'); 
 
+$spanMailMessage = $fieldset->appendChild($doc->createElement('span'));
+$spanMailMessage->setAttribute('id','errorEmailRegister');
+
 $spanUser = $fieldset->appendChild($doc->createElement('span'));
 $spanUser->setAttribute('id','usernameBox');
 $labelUser = $spanUser->appendChild($doc->createElement('label'));
@@ -101,6 +104,9 @@ $spanUserInput->setAttribute('name','username');
 $spanUserInput->setAttribute('id','username');
 $spanUserInput->setAttribute('placeholder','Scegli il tuo username');
 $spanUserInput->setAttribute('maxlength','30'); 
+
+$spanUsernameMessage = $fieldset->appendChild($doc->createElement('span'));
+$spanUsernameMessage->setAttribute('id','errorUsernameRegister');
 
 $spanPassword = $fieldset->appendChild($doc->createElement('span'));
 $spanPassword->setAttribute('id','passwordBox');
@@ -116,6 +122,9 @@ $spanPasswordInput->setAttribute('id','password');
 $spanPasswordInput->setAttribute('placeholder','Scegli la tua password');
 $spanPasswordInput->setAttribute('maxlength','12'); 
 
+$spanPasswordMessage = $fieldset->appendChild($doc->createElement('span'));
+$spanPasswordMessage->setAttribute('id','errorPasswordRegister');
+
 $spanRegister = $fieldset->appendChild($doc->createElement('span'));
 $spanRegister->setAttribute('id','submitButton');
 $buttonR = $spanRegister->appendChild($doc->createElement('button'));
@@ -123,7 +132,7 @@ $buttonR->setAttribute('id','register');
 $buttonR->setAttribute('type','submit');
 $buttonR->setAttribute('name','registerButton');
 $buttonR->setAttribute('aria-label','clicca per registrarti al sito');
-$buttonR->appendChild($doc->createTextNode('registrati'));
+$buttonR->appendChild($doc->createTextNode('REGISTRATI'));
 
 function function_alert($message) {
     echo "<script>alert('$message');</script>";
@@ -134,11 +143,33 @@ if(isset($_POST['registerButton']) && $_POST['email']!="" && $_POST['username']!
     $inputNickname = $_POST['username'];
     $inputPassword = $_POST['password'];
 
+    $notAllowed = array(" ","'","?","!","$");
+
     $db=OpenCon();
 
-    $query_check="SELECT * FROM utente WHERE utente.email='$inputEmail' OR utente.nickname='$inputNickname'"; /* effettua il controllo che i dati siano univoci (email e nickname) non siano già presenti nel DB */
-    $result=mysqli_query($db,$query_check);
-    $tmparr=$result->fetch_array(MYSQLI_ASSOC);
+    $query_check_email="SELECT * FROM utente WHERE utente.email='$inputEmail'";
+    $result_email=mysqli_query($db,$query_check_email);
+    $emailOK=$result_email->fetch_array(MYSQLI_ASSOC);
+
+    if(!isset($emailOK)){ /* controllo del tipo a@a gestito dal tag html */
+        $testEmail = str_split($inputEmail);
+        $correctEmail = true;
+        foreach($testEmail as $test){
+            if(in_array($notAllowed, $test)){
+                $correctEmail = false;
+            }
+        }
+        if($correctEmail==false){
+            $spanMailMessage->appendChild($doc->createTextNode('Sintassi della mail non corretta, evitare di inserire caratteri speciali o spazi'));
+        }
+    }
+    else {
+        $spanMailMessage->appendChild($doc->createTextNode('Email già in uso nel sistema'));
+    }
+    
+    $query_check_nickname="SELECT * FROM utente WHERE utente.nickname='$inputNickname'";
+    $result_nickname=mysqli_query($db,$query_check_nickname);
+    $nicknameOK=$result_nickname->fetch_array(MYSQLI_ASSOC);
 
     if(!isset($tmparr)){
         $currentDate = date("Y-m-d");
@@ -147,7 +178,7 @@ if(isset($_POST['registerButton']) && $_POST['email']!="" && $_POST['username']!
 
         header("Location: areaLogin.php?success=done");
     } else {
-        function_alert("Utente già presente nel sistema");
+        /*$spanPasswordMessage = $spanPasswordMessage->appendChild($doc->createTextNode('Utente già presente nel sistema'));*/
     }
 
     mysqli_free_result($result);
@@ -155,7 +186,7 @@ if(isset($_POST['registerButton']) && $_POST['email']!="" && $_POST['username']!
     CloseCon($db);
 }
 else if(isset($_POST['registerButton'])) {
-    function_alert("Per poterti registare al sito è necessario riempire tutti i campi");
+    $spanPasswordMessage = $spanPasswordMessage->appendChild($doc->createTextNode('Tutti i campi devono essere compilati'));
 }
 
 //footer

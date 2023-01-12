@@ -110,7 +110,7 @@ $buttonS->setAttribute('type','submit');
 $buttonS->setAttribute('id','submit');
 $buttonS->setAttribute('name','loginButton');
 $buttonS->setAttribute('aria-label','accedi alla tua area personale');
-$buttonS = $buttonS->appendChild($doc->createTextNode('accedi')); 
+$buttonS = $buttonS->appendChild($doc->createTextNode('ACCEDI')); 
 
 function function_alert($message) {
     echo "<script>alert('$message');</script>";

@@ -1055,7 +1055,6 @@ PAGINA DI ACCESSO
 
 #mainRegistrazione {
     padding-top: 1.0em;
-
 }
 
 #loginTitle {
@@ -1079,7 +1078,7 @@ PAGINA DI ACCESSO
 
 #mainRegistrazione form fieldset {
     border: none;
-    height: 15.0em;
+    height: 17.0em;
 }
 
 #logIn label,
@@ -1094,7 +1093,15 @@ PAGINA DI ACCESSO
 #passwordBox,
 #registerBox {
     display: block;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.0em;
+}
+
+#errorEmailRegister, #errorUsernameRegister, #errorPasswordRegister {
+    display: block;
+    color: black;
+    font-size: 0.8em;
+    font-weight: bolder;
+    margin-bottom: 1.0em;
 }
 
 #passwordBox {
