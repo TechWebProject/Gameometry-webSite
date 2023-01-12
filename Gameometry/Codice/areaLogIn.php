@@ -142,7 +142,7 @@ if(isset($_POST['loginButton']) && $_POST['username']!="" && $_POST['password']!
     $result_nickname=mysqli_query($db,$query_check_nickname);
     $nicknameOK=$result_nickname->fetch_array(MYSQLI_ASSOC);
     if(!isset($nicknameOK)){
-        $spanUsernameMessage->appendChild($doc->createTextNode('Nickname errato'));
+        $spanUsernameMessage->appendChild($doc->createTextNode('Nickname errato o inesistente'));
     } 
     else {
         $correctNickname = true;

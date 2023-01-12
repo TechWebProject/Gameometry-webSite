@@ -212,6 +212,10 @@ else if(isset($_POST['registerButton'])) {
     $spanGeneralMessage = $spanGeneralMessage->appendChild($doc->createTextNode('Tutti i campi devono essere compilati'));
 }
 
+$scriptControllo = $main->appendChild($doc->createElement('script'));
+$scriptControllo->setAttribute('type', 'text/JavaScript');
+$scriptControllo->setAttribute('src', 'Componenti/scriptControllo.js');
+
 //footer
 $footer=file_get_contents("sezioniComuni/footer.html");
 $body->appendChild($doc->createTextNode($footer));
