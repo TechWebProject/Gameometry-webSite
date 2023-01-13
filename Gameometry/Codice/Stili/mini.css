@@ -4,7 +4,7 @@ SEZIONE HEADER
 ==============
 */
 body {
-    background-color: var(--backgroundColor);
+    background-color: var(--mainColor);
 }
 
 header {
@@ -24,6 +24,7 @@ header {
     display: flex;
     justify-content: center;
     padding: unset;
+    height: 4.8em;
 }
 
 #logoSito img {
