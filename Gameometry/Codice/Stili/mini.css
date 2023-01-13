@@ -3,6 +3,9 @@
 SEZIONE HEADER
 ==============
 */
+body {
+    background-color: var(--backgroundColor);
+}
 
 header {
     padding: 0.5em;
@@ -82,7 +85,7 @@ header div {
     font-size: 1.4em;
 }
 
-#SezRicerca{
+#SezRicerca {
     width: 50%;
     margin-right: 3em;
     align-items: center;
@@ -148,7 +151,7 @@ ULTIME NEWS
         'news5'
         'news5';
     grid-template-columns: 105%;
-    gap: 3em;
+    gap: 60px;
     padding-top: 1.7em;
     padding-right: 2.5em;
 }
@@ -171,8 +174,7 @@ ULTIME NEWS
 .mainnews-section>h2 {
     font-weight: bolder;
     line-height: 1.5em;
-    font-size: 1.50em;
-    padding-top: 0.5em;
+    font-size: 2.5em;
 }
 
 .carousel img {
@@ -190,7 +192,7 @@ ULTIME NEWS
 
 .news-topic,
 .sidenews-topic {
-    font-size: 1em;
+    font-size: 1.5em;
     padding: 0.0em;
 }
 
@@ -207,15 +209,15 @@ ULTIME RECENSIONI
 */
 
 .titoloCritica {
-    font-size: 15px;
+    font-size: 1.2em;
 }
 
 #recensioni-critica p {
-    font-size: 15px;
+    font-size: 1em;
 }
 
 .contenutoRecensione li {
-    font-size: 15px;
+    font-size: 1em;
 }
 
 .contenutoRecensione li:last-child {
@@ -228,7 +230,7 @@ ULTIME RECENSIONI
 
 
 .scores {
-    font-size: 34px;
+    font-size: 1.8em;
     line-height: 1.5em;
 }
 
@@ -238,11 +240,12 @@ ULTIME RECENSIONI
     padding: 0;
     padding-bottom: 0;
 }
+
 #boxattributi img {
     margin-top: 3.0em;
 }
 
-#bannergioco{
+#bannergioco {
     padding-top: 3.0em;
 }
 
@@ -254,15 +257,15 @@ ULTIME RECENSIONI
 #attributigioco {
     padding-top: 2.0em;
     padding-bottom: 0;
-    font-size: 36px;
+    font-size: 1.5em;
 }
 
 #lanostrarecensione {
-    font-size: 26px;
+    font-size: 1.5em;
 }
 
 #descrizione {
-    font-size: 20px;
+    font-size: 1.5em;
 }
 
 /*
@@ -283,12 +286,12 @@ footer {
 
 #aboutUs {
     padding-bottom: 0.2em;
-    font-size: 0.6em;
+    font-size: 1.4em;
 }
 
 #infoAzienda {
     padding-bottom: 0.5em;
-    font-size: 0.6em;
+    font-size: 1.2em;
 }
 
 /*
@@ -358,6 +361,24 @@ PAGINA RECENSIONE
 
 /*
 =============
+PAGINA RECENSIONE
+=============
+*/
+
+#titoloGioco {
+    font-size: 2.5em;
+}
+
+.descrizioneEvento p {
+    font-size: 1.2em;
+}
+
+.evento h2 {
+    font-size: 1.8em;
+}
+
+/*
+=============
 PAGINA UTENTE
 =============
 */
@@ -366,6 +387,7 @@ PAGINA UTENTE
     margin-left: 1.0em;
     margin-top: 0.5em;
 }
+
 #user-info dd {
     font-size: 0.5em;
 }
@@ -418,7 +440,7 @@ PAGINA UTENTE
     }
 
     #attributigioco {
-        font-size: 16px;
+        font-size: 1.5em;
         padding-bottom: 2em;
     }
 
@@ -446,10 +468,11 @@ PAGINA UTENTE
 
 
 @media screen and (max-device-width: 600px) {
-    
+
     #recensioneGioco {
         padding-top: 19.0em;
     }
+
     #menu {
         margin-top: 2em;
     }
@@ -505,7 +528,8 @@ PAGINA UTENTE
     }
 
     h1 {
-        font-size: 2.5em;
+        font-size: 3.5em;
+        line-height: 1.5em;
         margin-top: 3em;
         padding: 0.4em;
         border-radius: 7px;
@@ -515,27 +539,27 @@ PAGINA UTENTE
         border: 0.5px solid var(--mainColor);
     }
 
-    .autocom-box li{
+    .autocom-box li {
         font-size: 2em;
-      }
+    }
 
-      #SezRicerca{
+    #SezRicerca {
         width: 50%;
         padding-bottom: 1.5em;
         margin-right: 3em;
     }
-    
-    #ricerca .autocom-box.active{
+
+    #ricerca .autocom-box.active {
         margin-top: 1em;
     }
 
-    #votazione { 
+    #votazione {
         color: var(--textColor);
-        
+
         margin-top: 2.0em;
     }
-    
-    #votazione input{
+
+    #votazione input {
         font-size: 2.5em;
         width: 0.7em;
         height: 0.7em;
@@ -547,10 +571,10 @@ PAGINA UTENTE
         margin-bottom: 1em;
         float: inherit;
         font-size: 2.5em;
-        
+
     }
 
-    #voto{
+    #voto {
         float: left;
         font-size: 1.3em;
         margin-right: 1em;
@@ -562,10 +586,10 @@ PAGINA UTENTE
         height: 60.0em;
         margin-bottom: 1.5em;
     }
-    
-    .imgSpan{
+
+    .imgSpan {
         font-size: 3em;
     }
 
-    
+
 }
