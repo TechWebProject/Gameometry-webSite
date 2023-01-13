@@ -28,8 +28,8 @@ const errorUser = document.getElementById("errorUsernameRegister");
 
 checkUser.addEventListener("blur",function(e){
     errorUser.innerText="";
-    const specialChars = /[`@#$%^&*()+=\[\]{};':"\\|,.<>\/?~]/;
-    if(checkUser.value.length>0&&checkUser.value.search(/^[a-zA-Z0-9!\-_]{1,30}$/)!=0||specialChars.test(checkUser.value)){
+    const specialChars = /[`@#$%^&*()+=\[\]{};':"\\|,<>\/?~]/;
+    if(checkUser.value.length>0&&checkUser.value.search(/^[a-zA-Z0-9!\-_.]{4,30}$/)!=0||specialChars.test(checkUser.value)){
         errorUser.innerText="Sintassi del nickname errata";
     }
 });
@@ -43,7 +43,7 @@ const errorPsw = document.getElementById("errorPasswordRegister");
 
 checkPsw.addEventListener("blur",function(e){
     errorPsw.innerText="";
-    const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    const specialChars = /[`@#%^&*()_+\-=\[\]{};':"\\|,.<>\/~]/;
     if((checkPsw.value.length>0)&&(checkPsw.value.search(/^[a-zA-Z0-9]*\w{1,12}$/)!=0||specialChars.test(checkPsw.value))){
         errorPsw.innerText="Non è possibile utilizzare spazi o singoli/doppi apici";
     }

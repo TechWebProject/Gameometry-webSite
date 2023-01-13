@@ -506,7 +506,7 @@ ULTIME RECENSIONI
     margin-bottom: 1em;
 }
 .commentoU {
-    margin-top: 2em;
+    margin-top: 1em;
     margin-bottom: 1em;
     font-size: 1.2em;
 }
@@ -979,7 +979,7 @@ dl {
     border: 0.5px solid var(--mainColor);
 }
 
-#logoutB, #deleteAccount {
+#logoutB, #deleteAccount, #modifyAccount {
     display: inline;
     cursor: pointer;
     padding: 0.4em;
@@ -1037,6 +1037,31 @@ dl {
 
 #messageU a:hover {
     text-decoration: 2px underline;
+}
+
+.userButtons{
+    display:block;
+    width:25%;
+}
+
+.btnmod,.btnel{
+    height: 3em;
+    width: 30%;
+    padding: 1em;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+}
+
+.btnel{
+    background-image: url('../Immagini/bin_img.png');
+}   
+
+.btnmod{
+    background-image: url('../Immagini/mod_img.png');
+    margin-right: 1em;
 }
 
 /*

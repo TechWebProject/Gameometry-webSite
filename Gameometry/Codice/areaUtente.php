@@ -90,6 +90,13 @@ $buttonDeleteU->setAttribute('type','submit');
 $buttonDeleteU->setAttribute('name','deleteU');
 $buttonDeleteU = $buttonDeleteU->appendChild($doc->createTextNode('Elimina profilo')); 
 
+$buttonModify = $formUserOptions->appendChild($doc->createElement('button'));
+$buttonModify->setAttribute('id','modifyAccount');
+$buttonModify->setAttribute('aria-label','modifica dati profilo');
+$buttonModify->setAttribute('type','submit');
+$buttonModify->setAttribute('name','modifyU');
+$buttonModify = $buttonModify->appendChild($doc->createTextNode('Modifica profilo')); 
+
 function function_alert($message) {
     echo "<script>alert('$message');</script>";
 }
@@ -173,9 +180,17 @@ if($nComm>0){
     
         $div_post= $div_commenti->appendChild($doc->createElement('div'));
         $div_post->setAttribute('class', 'postU');
-    
+
         $div_postCommento = $div_post->appendChild($doc->createElement('div'));
         $div_postCommento->setAttribute('class', 'commentoU');
+
+        $div_bottoni= $div_postCommento->appendChild($doc->createElement('div'));
+        $div_bottoni->setAttribute('class','userButtons');
+        //$div_bottoni->setAttribute('id','bottoni'.$i);
+        $Modificabtn = $div_bottoni->appendChild($doc->createElement('button'));
+        $Modificabtn->setAttribute("class","btnmod");
+        $Eliminabtn = $div_bottoni->appendChild($doc->createElement('button'));
+        $Eliminabtn->setAttribute("class","btnel");
     
         $ul_contenuto = $div_postCommento->appendChild($doc->createElement('ul'));
         $ul_contenuto->setAttribute('class', 'contenutoRecensioneU1');
@@ -217,6 +232,10 @@ else {
     $messagept2 = $divMess->appendChild($doc->createElement('span'));
     $messagept2 = $messagept2->appendChild($doc->createTextNode(" , leggi una delle nostre recensioni e dacci una tua opinione sul videogioco scelto!"));
 }
+
+$sliderScript = $main->appendChild($doc->createElement('script'));
+$sliderScript->setAttribute('type', 'text/JavaScript');
+$sliderScript->setAttribute('src', 'Componenti/scriptModandDel.js');
 
 //footer
 $footer = file_get_contents("sezioniComuni/footer.html");

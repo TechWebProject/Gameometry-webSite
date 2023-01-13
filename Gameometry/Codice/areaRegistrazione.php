@@ -68,6 +68,7 @@ $div->setAttribute('id','mainRegistrazione');
 $form = $div->appendChild($doc->createElement('form'));
 $form->setAttribute('action','areaRegistrazione.php');
 $form->setAttribute('method','POST');
+$form->setAttribute('novalidate','novalidate');
 
 $h2 = $form->appendChild($doc->createElement('h2'));
 $h2->setAttribute('id','loginTitle');
@@ -150,6 +151,11 @@ if(isset($_POST['registerButton']) && $_POST['email']!="" && $_POST['username']!
 
     //controllo email --> i caratteri vengono controllati dal tag
     $correctEmail = true;
+    if(!filter_var($inputEmail, FILTER_VALIDATE_EMAIL)) {
+        $spanMailMessage->appendChild($doc->createTextNode('Sintassi email errata'));
+        $correctEmail=false;
+    }
+
     if(isset($emailOK)){
         $correctEmail = false;
         $spanMailMessage->appendChild($doc->createTextNode('Email già utilizzata'));
@@ -159,7 +165,7 @@ if(isset($_POST['registerButton']) && $_POST['email']!="" && $_POST['username']!
     $testNickName = str_split($inputNickname);
     $correctNickname = true;
 
-    $notAllowed = array(" ","'","?","!","$");
+    $notAllowed = array(" ","'","\"","?","!","$","~",">","<",",","|","\\",";","}","{","=","+","(",")","*","&","^","%","#","@","`");
 
     foreach($testNickName as $test){
         if(in_array($test, $notAllowed)){
@@ -183,7 +189,7 @@ if(isset($_POST['registerButton']) && $_POST['email']!="" && $_POST['username']!
     $testPassword = str_split($inputPassword);
     $correctPassword = true;
 
-    $passwordNotAllowed = array(" ","'",'"');
+    $passwordNotAllowed = array(" ","'","\"","$","~",">","<",",","|","\\",";","}","{","=","+","(",")","*","&","^","%","#","@","`","-","_");
 
     foreach($testPassword as $test){
         if(in_array($test, $passwordNotAllowed)){
