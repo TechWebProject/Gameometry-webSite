@@ -15,7 +15,7 @@ checkEmail.addEventListener("blur",function(e){
     // l'it o com
     // $ => fine stringa (forse) o che deve finire
     if(checkEmail.value.length>0&&checkEmail.value.search(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)!=0){
-        errorEmail.innerText="Email inserita male!";
+        errorEmail.innerText="Sintassi della mail errata";
     }
 });
 
@@ -29,8 +29,8 @@ const errorUser = document.getElementById("errorUsernameRegister");
 checkUser.addEventListener("blur",function(e){
     errorUser.innerText="";
     const specialChars = /[`@#$%^&*()+=\[\]{};':"\\|,.<>\/?~]/;
-    if(checkUser.value.length>0&&checkUser.value.search(/^[a-zA-Z0-9!\-_]{2,8}$/)!=0||specialChars.test(checkUser.value)){
-        errorUser.innerText="Username inserita male!";
+    if(checkUser.value.length>0&&checkUser.value.search(/^[a-zA-Z0-9!\-_]{1,30}$/)!=0||specialChars.test(checkUser.value)){
+        errorUser.innerText="Sintassi del nickname errata";
     }
 });
 
@@ -45,7 +45,7 @@ checkPsw.addEventListener("blur",function(e){
     errorPsw.innerText="";
     const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
     if((checkPsw.value.length>0)&&(checkPsw.value.search(/^[a-zA-Z0-9]*\w{1,12}$/)!=0||specialChars.test(checkPsw.value))){
-        errorPsw.innerText="Password inserita male!";
+        errorPsw.innerText="Non è possibile utilizzare spazi o singoli/doppi apici";
     }
 });
 

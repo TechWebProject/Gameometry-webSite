@@ -192,7 +192,7 @@ if(isset($_POST['registerButton']) && $_POST['email']!="" && $_POST['username']!
     }
 
     if($correctPassword==false){
-        $spanPasswordMessage->appendChild($doc->createTextNode('Non è possibile utilizzare spazi, '."' ". 'o "'));
+        $spanPasswordMessage->appendChild($doc->createTextNode('Non è possibile utilizzare spazi o singoli/doppi apici'));
     }
 
     //controllo validità sul DB

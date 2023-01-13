@@ -210,12 +210,12 @@ else {
     $divMess = $main->appendChild($doc->createElement('div'));
     $divMess->setAttribute('id','messageU');
     $message = $divMess->appendChild($doc->createElement('span'));
-    $message = $message->appendChild($doc->createTextNode('Non hai ancora commentanto nessun videogioco. Per farlo recati '));
+    $message = $message->appendChild($doc->createTextNode('Non hai ancora commentanto nessun videogioco. Per farlo recati alla pagina '));
     $messageLink = $divMess->appendChild($doc->createElement('a'));
     $messageLink->setAttribute('href','recensioni.php');
-    $messageLink = $messageLink->appendChild($doc->createTextNode('qui'));
+    $messageLink = $messageLink->appendChild($doc->createTextNode('Recensioni'));
     $messagept2 = $divMess->appendChild($doc->createElement('span'));
-    $messagept2 = $messagept2->appendChild($doc->createTextNode(" , leggi una delle recensioni che ti proponiamo e dacci una tua opinione sul videogioco scelto!"));
+    $messagept2 = $messagept2->appendChild($doc->createTextNode(" , leggi una delle nostre recensioni e dacci una tua opinione sul videogioco scelto!"));
 }
 
 //footer

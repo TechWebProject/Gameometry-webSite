@@ -355,7 +355,7 @@ SLIDER
     cursor: pointer;
     text-align: center;
     color: var(--textColor);
-    font-size: 4.0em;
+    font-size: 3.8em;
     font-weight: bold;
     display: contents;
 }
@@ -508,6 +508,7 @@ ULTIME RECENSIONI
 .commentoU {
     margin-top: 2em;
     margin-bottom: 1em;
+    font-size: 1.2em;
 }
 
 #recensioni-critica>dd {
@@ -1011,6 +1012,7 @@ dl {
 
 .boxPunteggioU1 {
     grid-column: 2;
+    margin-top: 1.5em;
     justify-self: end;
     background-color: var(--textColor);
     height: 2.5em;
@@ -1103,7 +1105,7 @@ PAGINA DI ACCESSO
 #errorEmailRegister, #errorUsernameRegister, #errorPasswordRegister, #errorGeneralRegister {
     display: block;
     color: black;
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: bolder;
     margin-bottom: 1.0em;
 }

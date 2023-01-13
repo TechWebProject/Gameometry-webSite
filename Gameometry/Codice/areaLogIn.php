@@ -121,14 +121,6 @@ $buttonS->setAttribute('name','loginButton');
 $buttonS->setAttribute('aria-label','accedi alla tua area personale');
 $buttonS = $buttonS->appendChild($doc->createTextNode('ACCEDI')); 
 
-function function_alert($message) {
-    echo "<script>alert('$message');</script>";
-} 
-
-if(isset($_GET['message'])){
-    function_alert("Profilo eliminato dal sistema");
-}
-
 if(isset($_POST['loginButton']) && $_POST['username']!="" && $_POST['password']!=""){
     $inputNickname = $_POST['username'];
     $inputPassword = $_POST['password'];
@@ -192,9 +184,8 @@ $spazioP->setAttribute('id','spanLinkR');
 $spazioP = $spazioP->appendChild($doc->createTextNode('Non possiedi un account?'));
 $linkR1 = $linkR->appendChild($doc->createElement('a'));
 $linkR1->setAttribute('href','areaRegistrazione.php');
-$linkR1 = $linkR1->appendChild($doc->createTextNode('Clicca qui'));
-$spazioP1 = $linkR->appendChild($doc->createElement('span'));
-$spazioP1 = $spazioP1->appendChild($doc->createTextNode(' per registrarti.'));
+$linkR1 = $linkR1->appendChild($doc->createTextNode('Registrati ora!'));
+
 
 //footer
 $footer=file_get_contents("sezioniComuni/footer.html");
@@ -202,4 +193,12 @@ $body->appendChild($doc->createTextNode($footer));
 
 $doc->formatOutput=true;
 echo html_entity_decode($doc->saveHTML(),ENT_QUOTES,"UTF-8");
+
+function function_alert($message) {
+    echo "<script>alert('$message');</script>";
+} 
+
+if(isset($_GET['message'])){
+    function_alert("Profilo eliminato dal sistema");
+}
 ?>

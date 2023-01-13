@@ -66,9 +66,6 @@ $query = "SELECT titolo FROM videogioco";
 $result = mysqli_query($db, $query);
 $arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-
-CloseCon($db);
-
 $labelTitoli = $main->appendChild($doc->createElement('label'));
 $t = '';
 
@@ -102,7 +99,6 @@ $div_copert->setAttribute('id', 'copertina');
 $imgCoper = $div_copert->appendChild($doc->createElement('img'));
 $imgCoper->setAttribute('id', 'bannerRecensione');
 $imgCoper->setAttribute('src', $banner);
-//$imgCoper->setAttribute('tabindex','0');
 
 $div_scores = $divheader->appendChild($doc->createElement('div'));
 $div_scores->setAttribute('class', 'scores');
@@ -112,7 +108,6 @@ $div_rec->setAttribute('id', 'rec');
 
 $span_pCritica = $div_rec->appendChild($doc->createElement('span'));
 $span_pCritica->setAttribute('id', 'punteggioCritica');
-//$span_pCritica->setAttribute('tabindex','0')
 $span_pCritica = $span_pCritica->appendChild($doc->createTextNode($voto));
 
 $span_textPunt = $div_rec->appendChild($doc->createElement('span'));
@@ -120,156 +115,169 @@ $span_textPunt = $span_textPunt->appendChild($doc->createTextNode('Il nostro pun
 
 $p_contenuto = $main->appendChild($doc->createElement('p'));
 $p_contenuto->setAttribute('id', 'contenuto');
-//$p_contenuto->setAttribute('tabindex','0')
 $p_contenuto->appendChild($doc->createTextNode($contenutoRec));
 
-if (isset($_SESSION['email'])) {
-    $h2_giveComment = $main->appendChild($doc->createElement('h2'));
-    $h2_giveComment->setAttribute('class', 'titleH2');
-    $h2_giveComment = $h2_giveComment->appendChild($doc->createTextNode('LASCIA UN COMMENTO'));
+if(isset($_SESSION['email'])){
+    $emailUser = $_SESSION['email'];
 
-    $div_commento = $main->appendChild($doc->createElement('div'));
-    $div_commento->setAttribute('id', 'inputCommento');
+    $gioco = mysqli_real_escape_string($db, $titoloGioco);
 
-    $form_commento = $div_commento->appendChild($doc->createElement('form'));
-    $form_commento->setAttribute('action', 'areaUtente.php');
-    $form_commento->setAttribute('method', 'POST');
+    $query_check_commento = "SELECT * FROM videogioco,commento WHERE videogioco.titolo=commento.idVideogioco and videogioco.titolo='$gioco' and commento.idUtente='$emailUser'";
+    $result = mysqli_query($db, $query_check_commento);
+    $userNotOk = $result->fetch_array(MYSQLI_ASSOC);
 
-    $text_area = $form_commento->appendChild($doc->createElement('textarea'));
-    $text_area->setAttribute('id', 'areaCommento');
-    $text_area->setAttribute('name', 'commentoU');
-    $text_area->setAttribute('rows', '10');
-    $text_area->setAttribute('placeholder', ' Lascia un commento');
-    $text_area->setAttribute('maxlength', '900');
+    if(!isset($userNotOk)){
+        $h2_giveComment = $main->appendChild($doc->createElement('h2'));
+        $h2_giveComment->setAttribute('class', 'titleH2');
+        $h2_giveComment = $h2_giveComment->appendChild($doc->createTextNode('LASCIA UN COMMENTO'));
 
-    $div_voto = $form_commento->appendChild($doc->createElement('div'));
-    $div_voto->setAttribute('id', 'votazione');
+        $div_commento = $main->appendChild($doc->createElement('div'));
+        $div_commento->setAttribute('id', 'inputCommento');
 
-    $p_voto = $div_voto->appendChild($doc->createElement('p'));
-    $p_voto = $p_voto->appendChild($doc->createTextNode('Lascia un voto'));
+        $form_commento = $div_commento->appendChild($doc->createElement('form'));
+        $form_commento->setAttribute('action', 'areaUtente.php');
+        $form_commento->setAttribute('method', 'POST');
 
-    $input_voto1 = $div_voto->appendChild($doc->createElement('input'));
-    $input_voto1->setAttribute('id', 'rate1');
-    $input_voto1->setAttribute('name', 'rating');
-    $input_voto1->setAttribute('type', 'radio');
-    $input_voto1->setAttribute('value', '1');
+        $text_area = $form_commento->appendChild($doc->createElement('textarea'));
+        $text_area->setAttribute('id', 'areaCommento');
+        $text_area->setAttribute('name', 'commentoU');
+        $text_area->setAttribute('rows', '10');
+        $text_area->setAttribute('placeholder', ' Lascia un commento');
+        $text_area->setAttribute('maxlength', '900');
 
-    $label1 = $div_voto->appendChild($doc->createElement('label'));
-    $label1->setAttribute('id', 'voto');
-    $label1->setAttribute('for', 'rate1');
-    $label1 = $label1->appendChild($doc->createTextNode('1'));
+        $div_voto = $form_commento->appendChild($doc->createElement('div'));
+        $div_voto->setAttribute('id', 'votazione');
 
-    $input_voto2 = $div_voto->appendChild($doc->createElement('input'));
-    $input_voto2->setAttribute('id', 'rate2');
-    $input_voto2->setAttribute('name', 'rating');
-    $input_voto2->setAttribute('type', 'radio');
-    $input_voto2->setAttribute('value', '2');
+        $p_voto = $div_voto->appendChild($doc->createElement('p'));
+        $p_voto = $p_voto->appendChild($doc->createTextNode('Lascia un voto'));
 
-    $label2 = $div_voto->appendChild($doc->createElement('label'));
-    $label2->setAttribute('id', 'voto');
-    $label2->setAttribute('for', 'rate2');
-    $label2 = $label2->appendChild($doc->createTextNode('2'));
+        $input_voto1 = $div_voto->appendChild($doc->createElement('input'));
+        $input_voto1->setAttribute('id', 'rate1');
+        $input_voto1->setAttribute('name', 'rating');
+        $input_voto1->setAttribute('type', 'radio');
+        $input_voto1->setAttribute('value', '1');
 
-    $input_voto3 = $div_voto->appendChild($doc->createElement('input'));
-    $input_voto3->setAttribute('id', 'rate3');
-    $input_voto3->setAttribute('name', 'rating');
-    $input_voto3->setAttribute('type', 'radio');
-    $input_voto3->setAttribute('value', '3');
+        $label1 = $div_voto->appendChild($doc->createElement('label'));
+        $label1->setAttribute('id', 'voto');
+        $label1->setAttribute('for', 'rate1');
+        $label1 = $label1->appendChild($doc->createTextNode('1'));
 
-    $label3 = $div_voto->appendChild($doc->createElement('label'));
-    $label3->setAttribute('id', 'voto');
-    $label3->setAttribute('for', 'rate3');
-    $label3 = $label3->appendChild($doc->createTextNode('3'));
+        $input_voto2 = $div_voto->appendChild($doc->createElement('input'));
+        $input_voto2->setAttribute('id', 'rate2');
+        $input_voto2->setAttribute('name', 'rating');
+        $input_voto2->setAttribute('type', 'radio');
+        $input_voto2->setAttribute('value', '2');
 
-    $input_voto4 = $div_voto->appendChild($doc->createElement('input'));
-    $input_voto4->setAttribute('id', 'rate4');
-    $input_voto4->setAttribute('name', 'rating');
-    $input_voto4->setAttribute('type', 'radio');
-    $input_voto4->setAttribute('value', '4');
+        $label2 = $div_voto->appendChild($doc->createElement('label'));
+        $label2->setAttribute('id', 'voto');
+        $label2->setAttribute('for', 'rate2');
+        $label2 = $label2->appendChild($doc->createTextNode('2'));
 
-    $label4 = $div_voto->appendChild($doc->createElement('label'));
-    $label4->setAttribute('id', 'voto');
-    $label4->setAttribute('for', 'rate4');
-    $label4 = $label4->appendChild($doc->createTextNode('4'));
+        $input_voto3 = $div_voto->appendChild($doc->createElement('input'));
+        $input_voto3->setAttribute('id', 'rate3');
+        $input_voto3->setAttribute('name', 'rating');
+        $input_voto3->setAttribute('type', 'radio');
+        $input_voto3->setAttribute('value', '3');
 
-    $input_voto5 = $div_voto->appendChild($doc->createElement('input'));
-    $input_voto5->setAttribute('id', 'rate5');
-    $input_voto5->setAttribute('name', 'rating');
-    $input_voto5->setAttribute('type', 'radio');
-    $input_voto5->setAttribute('value', '5');
+        $label3 = $div_voto->appendChild($doc->createElement('label'));
+        $label3->setAttribute('id', 'voto');
+        $label3->setAttribute('for', 'rate3');
+        $label3 = $label3->appendChild($doc->createTextNode('3'));
 
-    $label5 = $div_voto->appendChild($doc->createElement('label'));
-    $label5->setAttribute('id', 'voto');
-    $label5->setAttribute('for', 'rate5');
-    $label5 = $label5->appendChild($doc->createTextNode('5'));
+        $input_voto4 = $div_voto->appendChild($doc->createElement('input'));
+        $input_voto4->setAttribute('id', 'rate4');
+        $input_voto4->setAttribute('name', 'rating');
+        $input_voto4->setAttribute('type', 'radio');
+        $input_voto4->setAttribute('value', '4');
 
-    $input_voto6 = $div_voto->appendChild($doc->createElement('input'));
-    $input_voto6->setAttribute('id', 'rate6');
-    $input_voto6->setAttribute('name', 'rating');
-    $input_voto6->setAttribute('type', 'radio');
-    $input_voto6->setAttribute('value', '6');
+        $label4 = $div_voto->appendChild($doc->createElement('label'));
+        $label4->setAttribute('id', 'voto');
+        $label4->setAttribute('for', 'rate4');
+        $label4 = $label4->appendChild($doc->createTextNode('4'));
 
-    $label6 = $div_voto->appendChild($doc->createElement('label'));
-    $label6->setAttribute('id', 'voto');
-    $label6->setAttribute('for', 'rate6');
-    $label6 = $label6->appendChild($doc->createTextNode('6'));
+        $input_voto5 = $div_voto->appendChild($doc->createElement('input'));
+        $input_voto5->setAttribute('id', 'rate5');
+        $input_voto5->setAttribute('name', 'rating');
+        $input_voto5->setAttribute('type', 'radio');
+        $input_voto5->setAttribute('value', '5');
 
-    $input_voto7 = $div_voto->appendChild($doc->createElement('input'));
-    $input_voto7->setAttribute('id', 'rate7');
-    $input_voto7->setAttribute('name', 'rating');
-    $input_voto7->setAttribute('type', 'radio');
-    $input_voto7->setAttribute('value', '7');
+        $label5 = $div_voto->appendChild($doc->createElement('label'));
+        $label5->setAttribute('id', 'voto');
+        $label5->setAttribute('for', 'rate5');
+        $label5 = $label5->appendChild($doc->createTextNode('5'));
 
-    $label7 = $div_voto->appendChild($doc->createElement('label'));
-    $label7->setAttribute('id', 'voto');
-    $label7->setAttribute('for', 'rate7');
-    $label7 = $label7->appendChild($doc->createTextNode('7'));
+        $input_voto6 = $div_voto->appendChild($doc->createElement('input'));
+        $input_voto6->setAttribute('id', 'rate6');
+        $input_voto6->setAttribute('name', 'rating');
+        $input_voto6->setAttribute('type', 'radio');
+        $input_voto6->setAttribute('value', '6');
 
-    $input_voto8 = $div_voto->appendChild($doc->createElement('input'));
-    $input_voto8->setAttribute('id', 'rate8');
-    $input_voto8->setAttribute('name', 'rating');
-    $input_voto8->setAttribute('type', 'radio');
-    $input_voto8->setAttribute('value', '8');
+        $label6 = $div_voto->appendChild($doc->createElement('label'));
+        $label6->setAttribute('id', 'voto');
+        $label6->setAttribute('for', 'rate6');
+        $label6 = $label6->appendChild($doc->createTextNode('6'));
 
-    $label8 = $div_voto->appendChild($doc->createElement('label'));
-    $label8->setAttribute('id', 'voto');
-    $label8->setAttribute('for', 'rate8');
-    $label8 = $label8->appendChild($doc->createTextNode('8'));
+        $input_voto7 = $div_voto->appendChild($doc->createElement('input'));
+        $input_voto7->setAttribute('id', 'rate7');
+        $input_voto7->setAttribute('name', 'rating');
+        $input_voto7->setAttribute('type', 'radio');
+        $input_voto7->setAttribute('value', '7');
 
-    $input_voto9 = $div_voto->appendChild($doc->createElement('input'));
-    $input_voto9->setAttribute('id', 'rate9');
-    $input_voto9->setAttribute('name', 'rating');
-    $input_voto9->setAttribute('type', 'radio');
-    $input_voto9->setAttribute('value', '9');
+        $label7 = $div_voto->appendChild($doc->createElement('label'));
+        $label7->setAttribute('id', 'voto');
+        $label7->setAttribute('for', 'rate7');
+        $label7 = $label7->appendChild($doc->createTextNode('7'));
 
-    $label9 = $div_voto->appendChild($doc->createElement('label'));
-    $label9->setAttribute('id', 'voto');
-    $label9->setAttribute('for', 'rate9');
-    $label9 = $label9->appendChild($doc->createTextNode('9'));
+        $input_voto8 = $div_voto->appendChild($doc->createElement('input'));
+        $input_voto8->setAttribute('id', 'rate8');
+        $input_voto8->setAttribute('name', 'rating');
+        $input_voto8->setAttribute('type', 'radio');
+        $input_voto8->setAttribute('value', '8');
 
-    $input_voto10 = $div_voto->appendChild($doc->createElement('input'));
-    $input_voto10->setAttribute('id', 'rate10');
-    $input_voto10->setAttribute('name', 'rating');
-    $input_voto10->setAttribute('type', 'radio');
-    $input_voto10->setAttribute('value', '10');
+        $label8 = $div_voto->appendChild($doc->createElement('label'));
+        $label8->setAttribute('id', 'voto');
+        $label8->setAttribute('for', 'rate8');
+        $label8 = $label8->appendChild($doc->createTextNode('8'));
 
-    $label10 = $div_voto->appendChild($doc->createElement('label'));
-    $label10->setAttribute('id', 'voto');
-    $label10->setAttribute('for', 'rate10');
-    $label10 = $label10->appendChild($doc->createTextNode('10'));
+        $input_voto9 = $div_voto->appendChild($doc->createElement('input'));
+        $input_voto9->setAttribute('id', 'rate9');
+        $input_voto9->setAttribute('name', 'rating');
+        $input_voto9->setAttribute('type', 'radio');
+        $input_voto9->setAttribute('value', '9');
 
-    $submit_prova = $form_commento->appendChild($doc->createElement('input'));
-    $submit_prova->setAttribute('type', 'hidden');
-    $submit_prova->setAttribute('name', 'inviaCommento2');
-    $submit_prova->setAttribute('value', $titoloGioco);
+        $label9 = $div_voto->appendChild($doc->createElement('label'));
+        $label9->setAttribute('id', 'voto');
+        $label9->setAttribute('for', 'rate9');
+        $label9 = $label9->appendChild($doc->createTextNode('9'));
 
-    $submit_voto = $form_commento->appendChild($doc->createElement('button'));
-    $submit_voto->appendChild($doc->createTextNode("Commenta"));
-    $submit_voto->setAttribute('id', 'inviaCommento');
-    $submit_voto->setAttribute('aria-label','invia commento');
-    $submit_voto->setAttribute('type', 'submit');
-    $submit_voto->setAttribute('name', 'inviaCommento');
-    $submit_voto->setAttribute('value', 'Commenta');
+        $input_voto10 = $div_voto->appendChild($doc->createElement('input'));
+        $input_voto10->setAttribute('id', 'rate10');
+        $input_voto10->setAttribute('name', 'rating');
+        $input_voto10->setAttribute('type', 'radio');
+        $input_voto10->setAttribute('value', '10');
+
+        $label10 = $div_voto->appendChild($doc->createElement('label'));
+        $label10->setAttribute('id', 'voto');
+        $label10->setAttribute('for', 'rate10');
+        $label10 = $label10->appendChild($doc->createTextNode('10'));
+
+        $submit_prova = $form_commento->appendChild($doc->createElement('input'));
+        $submit_prova->setAttribute('type', 'hidden');
+        $submit_prova->setAttribute('name', 'inviaCommento2');
+        $submit_prova->setAttribute('value', $titoloGioco);
+
+        $submit_voto = $form_commento->appendChild($doc->createElement('button'));
+        $submit_voto->appendChild($doc->createTextNode("Commenta"));
+        $submit_voto->setAttribute('id', 'inviaCommento');
+        $submit_voto->setAttribute('aria-label','invia commento');
+        $submit_voto->setAttribute('type', 'submit');
+        $submit_voto->setAttribute('name', 'inviaCommento');
+        $submit_voto->setAttribute('value', 'Commenta');
+    }
+
+    mysqli_free_result($result);
+
+    CloseCon($db);
 }
 
 $h2_commenti = $main->appendChild($doc->createElement('h2'));
