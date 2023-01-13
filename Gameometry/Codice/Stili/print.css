@@ -20,6 +20,14 @@ abbr {
 /*
 HEADER  e BREADCRUMB (NASCOSTI)
 */
+
+#saltacarosello {
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
 #arrTitoli {
     display: none
 }
