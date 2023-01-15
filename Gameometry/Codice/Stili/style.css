@@ -78,7 +78,7 @@ header h1 {
 }
 
 #logoSito img {
-    width: 80%;
+    width: 100%;
 }
 
 header nav {
@@ -119,11 +119,14 @@ header nav {
 
 #cerca {
     cursor: pointer;
-    align-self: center;
+    align-self: flex-end;
+    width: 2em;
     height: 1.5em;
 }
 
 #cercaM {
+    max-width: 8em;
+    max-width: 10em;
     display: flex;
 }
 
@@ -505,6 +508,7 @@ ULTIME RECENSIONI
     margin-top: 2em;
     margin-bottom: 1em;
 }
+
 .commentoU {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -979,7 +983,9 @@ dl {
     border: 0.5px solid var(--mainColor);
 }
 
-#logoutB, #deleteAccount, #modifyAccount {
+#logoutB,
+#deleteAccount,
+#modifyAccount {
     display: inline;
     cursor: pointer;
     padding: 0.4em;
@@ -992,6 +998,7 @@ dl {
     border: none;
     background-color: rgb(100, 149, 237);
 }
+
 #logoutB {
     margin-left: 2.2em;
 }
@@ -1039,12 +1046,13 @@ dl {
     text-decoration: 2px underline;
 }
 
-.userButtons{
-    display:block;
-    width:25%;
+.userButtons {
+    display: block;
+    width: 25%;
 }
 
-.btnmod,.btnel{
+.btnmod,
+.btnel {
     height: 3em;
     width: 30%;
     padding: 1em;
@@ -1055,11 +1063,11 @@ dl {
     margin-bottom: 1.5em;
 }
 
-.btnel{
+.btnel {
     background-image: url('../Immagini/bin_img.png');
-}   
+}
 
-.btnmod{
+.btnmod {
     background-image: url('../Immagini/mod_img.png');
     margin-right: 1em;
 }
@@ -1127,7 +1135,10 @@ PAGINA DI ACCESSO
     margin-top: 1.0em;
 }
 
-#errorEmailRegister, #errorUsernameRegister, #errorPasswordRegister, #errorGeneralRegister {
+#errorEmailRegister,
+#errorUsernameRegister,
+#errorPasswordRegister,
+#errorGeneralRegister {
     display: block;
     color: black;
     font-size: 0.7em;
@@ -1211,8 +1222,8 @@ TEMPLATE GIOCO
     padding-left: 3em;
 }
 
-#noresult_text{
-    color:var(--alternativeTextColor);
+#noresult_text {
+    color: var(--alternativeTextColor);
     font-size: 1.5em;
 }
 
