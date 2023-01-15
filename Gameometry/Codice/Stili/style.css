@@ -25,6 +25,25 @@ body {
 a,
 abbr {
     text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+
+a:link {
+    color: var(--textColor);
+}
+
+a:visited {
+    color: var(--visitedLink);
+    text-decoration: underline solid 1.5px; /* non funziona */
+}
+
+a:hover {
+    text-decoration: underline solid 1.5px;
+}
+
+a:active {
+    color: var(--textColor);
 }
 
 /*
@@ -33,22 +52,8 @@ SEZIONE HEADER
 ==============
 */
 
-#menu a:link {
-    color: var(--textColor);
-    font-weight: bold;
-    text-decoration: none;
-}
-
 #menu a:visited {
     color: var(--visitedLink);
-}
-
-#menu a:hover {
-    text-decoration: underline solid 1.5px;
-}
-
-#menu a:active {
-    color: var(--textColor);
 }
 
 header {
@@ -105,7 +110,7 @@ header nav {
 }
 
 #ricerca {
-    width: 79%;
+    width: 80%;
 }
 
 #searchBar {
@@ -247,24 +252,20 @@ SEZIONE BREADCRUMB
 #breadcrumb {
     align-content: center;
     font-size: 1.0em;
+    line-height: 1.5em;
     padding: 0.3em 0em 0.3em 1em;
     font-weight: bold;
     color: black;
     background-color: var(--alternativeTextColor);
-    max-height: 1.4em;
     text-align: center;
 }
 
 #breadcrumb a:link {
-    text-decoration: none;
+    color: black;
 }
 
 #breadcrumb a:visited {
     color: var(--visitedLink);
-}
-
-#breadcrumb a:hover {
-    text-decoration: underline solid 1.5px;
 }
 
 #breadcrumb a:active {
@@ -476,25 +477,6 @@ ULTIME RECENSIONI
     font-size: 1.2em;
 }
 
-.titoloCritica a:link {
-    color: var(--textColor);
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.titoloCritica a:visited {
-    color: var(--visitedLink);
-}
-
-.titoloCritica a:hover {
-    text-decoration: underline;
-    text-decoration: underline solid 1.5px;
-}
-
-.titoloCritica a:active {
-    color: var(--textColor);
-}
-
 .contenutoRecensione p {
     padding-top: 0.5em;
     color: var(--textColor);
@@ -556,25 +538,6 @@ h1,
 
 #recensioni-critica div:last-child {
     border-bottom: none;
-}
-
-#recensioni-utenti a:link {
-    color: var(--textColor);
-    font-weight: bold;
-    text-decoration: none;
-}
-
-#recensioni-utenti a:visited {
-    color: var(--visitedLink);
-}
-
-#recensioni-utenti a:hover {
-    text-decoration: underline;
-    text-decoration: underline solid 1.5px;
-}
-
-#recensioni-utenti a:active {
-    color: var(--textColor);
 }
 
 #recensioni-utenti div:last-child {
@@ -681,7 +644,6 @@ SEZIONE FOOTER
 */
 
 footer {
-    margin-top: 3.0em;
     background-color: var(--mainColor);
     text-align: center;
 }
@@ -697,12 +659,13 @@ footer {
     padding-bottom: 0.8em;
 }
 
-#aboutUs {
+#aboutUs, #infoAzienda {
     padding-bottom: 0.5em;
 }
 
-#infoAzienda {
-    padding-bottom: 0.5em;
+#infoAzienda abbr {
+    color: black;
+    font-weight: normal;
 }
 
 #infoAzienda address {
@@ -1027,18 +990,6 @@ dl {
     padding: 1.5em 0em 1.5em 0.6em;
 }
 
-#messageU a {
-    font-weight: bolder;
-}
-
-#messageU a:visited {
-    color: var(--visitedLink);
-}
-
-#messageU a:hover {
-    text-decoration: 2px underline;
-}
-
 .userButtons{
     display:block;
     width:25%;
@@ -1071,7 +1022,8 @@ PAGINA DI ACCESSO
 */
 
 #logIn,
-#mainRegistrazione {
+#mainRegistrazione,
+#modificaUtenza {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -1092,13 +1044,14 @@ PAGINA DI ACCESSO
 }
 
 #logIn form,
-#mainRegistrazione form {
+#mainRegistrazione form,
+#modificaUtenza form {
     width: 50%;
     border-radius: 0.5em;
     background-color: var(--mainColor);
 }
 
-#logIn form fieldset {
+#logIn form fieldset{
     border: none;
     height: 15em;
 }
@@ -1108,8 +1061,14 @@ PAGINA DI ACCESSO
     height: 17.0em;
 }
 
+#modificaUtenza form fieldset {
+    border: none;
+    height: 11em;
+}
+
 #logIn label,
-#mainRegistrazione label {
+#mainRegistrazione label,
+#modificaUtenza label {
     display: block;
     padding-bottom: 0.4em;
     color: var(--textColor);
@@ -1163,28 +1122,14 @@ PAGINA DI ACCESSO
     margin-bottom: 1.0em;
 }
 
-#registrati a,
-#register a,
-#submit a {
-    color: black;
-}
-
 #linkRegistrazione {
-    color: var(--textColor);
     font-size: 0.8em;
-}
-
-#linkRegistrazione a {
-    color: var(--textColor);
-    font-weight: bolder;
-}
-
-#linkRegistrazione a:hover {
-    text-decoration: underline 2px solid var(--textColor);
 }
 
 #spanLinkR {
     display: block;
+    color: white;
+    font-weight: bold;
 }
 
 /*
@@ -1352,10 +1297,6 @@ ALTERAZIONE DIMENSIONI PAGINA
     #searchBar {
         font-size: 0.8em;
         margin-top: 0.5em;
-    }
-
-    .scores {
-        font-size: 16px;
     }
 
     #ricerca .autocom-box.active {

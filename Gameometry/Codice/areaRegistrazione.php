@@ -208,6 +208,12 @@ if(isset($_POST['registerButton']) && $_POST['email']!="" && $_POST['username']!
         $resultInsert=mysqli_query($db,$insertUser);
 
         $spanGeneralMessage->appendChild($doc->createTextNode('Utente correttamente registrato'));
+
+        $linkR = $spanRegister->appendChild($doc->createElement('p'));
+        $linkR->setAttribute('id','linkRegistrazione');
+        $spazioP = $linkR->appendChild($doc->createElement('a'));
+        $spazioP->setAttribute('href','areaLogIn.php');
+        $spazioP = $spazioP->appendChild($doc->createTextNode('Accedi ora!'));
     }
 
     mysqli_free_result($result);

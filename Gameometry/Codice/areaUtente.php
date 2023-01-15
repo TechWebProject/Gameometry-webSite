@@ -93,6 +93,7 @@ $buttonDeleteU = $buttonDeleteU->appendChild($doc->createTextNode('Elimina profi
 $buttonModify = $formUserOptions->appendChild($doc->createElement('button'));
 $buttonModify->setAttribute('id','modifyAccount');
 $buttonModify->setAttribute('aria-label','modifica dati profilo');
+$buttonModify->setAttribute('action','modificaUtente.php');
 $buttonModify->setAttribute('type','submit');
 $buttonModify->setAttribute('name','modifyU');
 $buttonModify = $buttonModify->appendChild($doc->createTextNode('Modifica profilo')); 
@@ -116,6 +117,10 @@ if(isset($_POST['deleteU'])){
     session_destroy(); 
 
     header("Location: areaLogin.php?message=success");
+}
+
+if(isset($_POST['modifyU'])){
+    header("Location: modificaUtente.php");
 }
 
 $listaCommenti = $main->appendChild($doc->createElement('h2'));

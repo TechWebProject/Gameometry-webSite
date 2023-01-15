@@ -23,12 +23,11 @@ header {
     grid-column: 1;
     display: flex;
     justify-content: center;
-    padding: unset;
     height: 4.8em;
 }
 
 #logoSito img {
-    padding-top: 0.8em;
+    padding-bottom: 1em;
     width: auto;
 }
 
@@ -114,7 +113,7 @@ SEZIONE CONTENUTO
 */
 
 main {
-    padding-top: 14em;
+    padding-top: 16em;
 }
 
 /*
@@ -247,7 +246,7 @@ ULTIME RECENSIONI
 }
 
 #bannergioco {
-    padding-top: 3.0em;
+    padding-top: 2.5em;
 }
 
 #locandinagioco {
@@ -267,6 +266,7 @@ ULTIME RECENSIONI
 
 #descrizione {
     font-size: 1.5em;
+    padding-left: 3.5em;
 }
 
 /*
@@ -276,8 +276,6 @@ SEZIONE FOOTER
 */
 
 footer {
-    margin-top: 3.0em;
-    background-color: var(--mainColor);
     text-align: center;
 }
 
@@ -285,14 +283,9 @@ footer {
     width: 20%;
 }
 
-#aboutUs {
-    padding-bottom: 0.2em;
-    font-size: 1.4em;
-}
-
-#infoAzienda {
+#aboutUs, #infoAzienda {
     padding-bottom: 0.5em;
-    font-size: 1.2em;
+    font-size: 0.8em;
 }
 
 /*
@@ -327,7 +320,7 @@ PAGINA DI ACCESSO
 =================
 */
 
-#logIn {
+#logIn, #modificaUtenza {
     padding-bottom: 28.5em;
 }
 
@@ -445,14 +438,6 @@ PAGINA UTENTE
         padding-bottom: 2em;
     }
 
-    #lanostrarecensione {
-        font-size: 16px;
-    }
-
-    #descrizione {
-        font-size: 16px;
-    }
-
     #trama {
         padding-bottom: 1em;
     }
@@ -485,7 +470,6 @@ PAGINA UTENTE
         grid-row: 2;
         grid-column: 1;
     }
-
 
     #ricerca {
         padding-bottom: 0.8em;
@@ -555,7 +539,6 @@ PAGINA UTENTE
 
     #votazione {
         color: var(--textColor);
-
         margin-top: 2.0em;
     }
 
@@ -564,14 +547,12 @@ PAGINA UTENTE
         width: 0.7em;
         height: 0.7em;
         float: left;
-
     }
 
     #votazione p {
         margin-bottom: 1em;
         float: inherit;
         font-size: 2.5em;
-
     }
 
     #voto {
@@ -590,6 +571,4 @@ PAGINA UTENTE
     .imgSpan {
         font-size: 3em;
     }
-
-
 }
