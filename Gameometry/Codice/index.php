@@ -130,6 +130,7 @@ $main->appendChild($doc->createTextNode($listaBN));
 
 //ultime recensioni
 $h1Recensioni = $main->appendChild($doc->createElement('h1'));
+$h1Recensioni->setAttribute('id', 'sezionerecensioni');
 $h1Recensioni = $h1Recensioni->appendChild($doc->createTextNode('ULTIME RECENSIONI'));
 
 $divRec = $main->appendChild($doc->createElement('div'));

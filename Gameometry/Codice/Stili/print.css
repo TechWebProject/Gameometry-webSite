@@ -20,6 +20,12 @@ abbr {
 /*
 HEADER  e BREADCRUMB (NASCOSTI)
 */
+#saltanotizie {
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+}
 
 #saltacarosello {
     height: 1px;

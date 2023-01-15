@@ -379,6 +379,12 @@ main {
 ULTIME NEWS
 ===========
 */
+#saltanotizie {
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+}
 
 #news1 {
     grid-area: news1;
