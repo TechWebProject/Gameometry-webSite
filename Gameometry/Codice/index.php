@@ -133,6 +133,11 @@ $h1Recensioni = $main->appendChild($doc->createElement('h1'));
 $h1Recensioni->setAttribute('id', 'sezionerecensioni');
 $h1Recensioni = $h1Recensioni->appendChild($doc->createTextNode('ULTIME RECENSIONI'));
 
+$skipRecensioni = $main->appendChild($doc->createElement('a'));
+$skipRecensioni->setAttribute('href', '#boxFooter');
+$skipRecensioni->setAttribute('id', 'saltarecensioni');
+$skipRecensioni->setAttribute('alt', 'Salta le recensioni');
+$skipRecensioni = $skipRecensioni->appendChild($doc->createTextNode('Salta le recensioni e vai al <lang="en">footer</lang>'));
 $divRec = $main->appendChild($doc->createElement('div'));
 $divRec->setAttribute('id', 'recensioni-critica');
 

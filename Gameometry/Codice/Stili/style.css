@@ -479,6 +479,12 @@ ULTIME NEWS
 ULTIME RECENSIONI
 =================
 */
+#saltarecensioni {
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+}
 
 .titoloCritica {
     font-weight: bolder;
