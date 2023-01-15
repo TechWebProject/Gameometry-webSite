@@ -46,6 +46,12 @@ header {
     display: none;
 }
 
+#saltarecensioni {
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+}
 
 /*
 ======
