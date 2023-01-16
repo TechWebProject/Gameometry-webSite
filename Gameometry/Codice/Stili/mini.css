@@ -270,6 +270,16 @@ ULTIME RECENSIONI
 }
 
 /*
+=============
+PAGINA EVENTI
+=============
+*/
+
+.descrizioneEvento p {
+    line-height: 2.5em;
+}
+
+/*
 ==============
 SEZIONE FOOTER
 ==============
