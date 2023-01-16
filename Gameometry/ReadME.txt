@@ -18,8 +18,4 @@ LETTURA DIRECTORY
 
 -connect.php: file importato, serve per connettersi al DB + una funzione per rimuovere dal nome le estensioni dei file
 
--*autoinsert: codice da runnare da vs non appena si aggiunge una nuova immagine sulla cartella imgs. Invia una query che inserisce sul db le sue info (fin ora utili)
-
--*deletephotosDBandDIR: codice da runnare da vs non appena si decide di rimuovere un'immagine, lo si avvia e si specifica su console l'esatto nome del file senza estensioni (corrisponde all'attributo "titolo" sul DB)
-
 *per utilizzare questi file è necessario avere il DB "gameometrydb" creato tramite le query presenti nel file DB.sql
