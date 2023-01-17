@@ -35,7 +35,8 @@ a:link {
 
 a:visited {
     color: var(--visitedLink);
-    text-decoration: underline solid 1.5px; /* non funziona */
+    text-decoration: underline solid 1.5px;
+    /* non funziona */
 }
 
 a:hover {
@@ -130,6 +131,7 @@ header nav {
 
 #cercaM {
     display: flex;
+    width: 2em;
 }
 
 #btSearch {
@@ -284,7 +286,8 @@ SLIDER
 ======
 */
 
-#saltacarosello,#saltanotizie {
+#saltacarosello,
+#saltanotizie {
     height: 1px;
     width: 1px;
     overflow: hidden;
@@ -412,6 +415,7 @@ ULTIME NEWS
     margin-left: 0.5em;
     margin-right: 0.5em;
 }
+
 #news-grid-container abbr {
     color: black;
     font-weight: normal;
@@ -498,6 +502,7 @@ ULTIME RECENSIONI
     margin-top: 2em;
     margin-bottom: 1em;
 }
+
 .commentoU {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -670,7 +675,8 @@ footer {
     padding-bottom: 0.8em;
 }
 
-#aboutUs, #infoAzienda {
+#aboutUs,
+#infoAzienda {
     padding-bottom: 0.5em;
 }
 
@@ -954,7 +960,9 @@ dl {
     border: 0.5px solid var(--mainColor);
 }
 
-#logoutB, #deleteAccount, #modifyAccount {
+#logoutB,
+#deleteAccount,
+#modifyAccount {
     display: inline;
     cursor: pointer;
     padding: 0.4em;
@@ -967,6 +975,7 @@ dl {
     border: none;
     background-color: rgb(100, 149, 237);
 }
+
 #logoutB {
     margin-left: 2.2em;
 }
@@ -1002,12 +1011,13 @@ dl {
     padding: 1.5em 0em 2em 0.6em;
 }
 
-.userButtons{
-    display:block;
-    width:25%;
+.userButtons {
+    display: block;
+    width: 25%;
 }
 
-.btnmod,.btnel{
+.btnmod,
+.btnel {
     height: 3em;
     width: 30%;
     padding: 1em;
@@ -1018,11 +1028,11 @@ dl {
     margin-bottom: 1.5em;
 }
 
-.btnel{
+.btnel {
     background-image: url('../Immagini/bin_img.png');
-}   
+}
 
-.btnmod{
+.btnmod {
     background-image: url('../Immagini/mod_img.png');
     margin-right: 1em;
 }
@@ -1063,7 +1073,7 @@ PAGINA DI ACCESSO
     background-color: var(--mainColor);
 }
 
-#logIn form fieldset{
+#logIn form fieldset {
     border: none;
     height: 15em;
 }
@@ -1098,7 +1108,10 @@ PAGINA DI ACCESSO
     margin-top: 1.0em;
 }
 
-#errorEmailRegister, #errorUsernameRegister, #errorPasswordRegister, #errorGeneralRegister {
+#errorEmailRegister,
+#errorUsernameRegister,
+#errorPasswordRegister,
+#errorGeneralRegister {
     display: block;
     color: black;
     font-size: 0.7em;
@@ -1168,8 +1181,8 @@ TEMPLATE GIOCO
     padding-left: 3em;
 }
 
-#noresult_text{
-    color:var(--alternativeTextColor);
+#noresult_text {
+    color: var(--alternativeTextColor);
     font-size: 1.5em;
 }
 
