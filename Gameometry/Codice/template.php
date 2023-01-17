@@ -20,10 +20,6 @@ class template{
         $pageToFill = str_replace("</HEAD>",$head,$pageToFill);
         $header = file_get_contents("sezioniComuni/header.html");
         $pageToFill = str_replace("</HEADER>",$header,$pageToFill);
-
-        if (isset($_SESSION['username'])) {
-            $header = str_replace('<a id="areaRiservata" href="areaLogIn.php">', '<a id="areaRiservata" href="areaUtente.php">', $header);
-        }
         
         $db = OpenCon();
 

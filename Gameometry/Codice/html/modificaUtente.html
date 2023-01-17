@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+
+</HEAD>
+
+<body>
+    
+</HEADER>
+
+<main>
+    <label id="arrTitoli"></label>
+    <div id="modificaUtenza">
+        <form action="modificaUtente.php" method="POST">
+            <h2 id="loginTitle"><span lang="en">Modifica i tuoi dati</span></h2>
+            <fieldset>
+                <span id="usernameBox">
+                    <label for="username"><span lang="en">Username</span></label>
+                    <input name="username" id="username" placeholder="Digita il nuovo username" maxlength="30">
+                </span>
+                <span id="errorUsernameRegister"></span>
+                
+                <span id="passwordBox">
+                    <label for="password"><span lang="en">Password</span></label>
+                    <input type="password" name="password" id="password" placeholder="Digita la nuova password" maxlength="12">
+                </span>
+                <span id="errorPasswordRegister"></span>
+                
+                <span id="errorGeneralRegister"></span>
+                
+                <span id="registerBox">
+                    <button type="submit" id="submit" name="modifyButton" aria-label="applica le modifiche al tuo profilo">CONFERMA</button>
+                </span>
+            </fieldset>
+        </form>
+    </div>
+</main>
+    </FOOTER>
+</body>
+<script type="text/JavaScript" src="Componenti/scriptSearch.js"></script>
+<script type="text/JavaScript" src="Componenti/scriptControllo.js"></script>
+</html>
