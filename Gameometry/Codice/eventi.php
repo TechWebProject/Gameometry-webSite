@@ -5,8 +5,6 @@ $template = new template();
 $template->setPage("eventi.html");
 $eventi = $template->initializePage();
 
-$listaEventi = file_get_contents("Componenti/listaEventi.html");
-
 $eventi = str_replace("Titolo_pagina","Gameometry | Eventi",$eventi);
 $eventi = str_replace("parole_chiave", "gameometry, videogiochi, videogioco, videoludico, eventi, ...", $eventi);
 $eventi = str_replace("descrizione","Questa pagina &egrave; dedicata ai diversi eventi videoludici organizzati dagli appassionati di questo mondo", $eventi);
@@ -17,6 +15,5 @@ if(isset($_SESSION['username'])){
 
 $eventi = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span> &raquo; Eventi</p>", $eventi);
 
-$eventi = str_replace("</EVENTI>", $listaEventi, $eventi);
 echo $eventi;
 ?>

@@ -373,6 +373,7 @@ main {
     margin: auto;
     padding-top: 6.0em;
     background-color: var(--sideColor);
+    margin-bottom: 2em;
 }
 
 /*
@@ -747,7 +748,6 @@ PAGINA EVENTI
     display: flex;
     flex-direction: column;
     color: rgb(255, 255, 255);
-    background-color: gray;
 }
 
 .evento h2 {
