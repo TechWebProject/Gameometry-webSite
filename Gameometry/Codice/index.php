@@ -9,6 +9,10 @@ $index = str_replace("Titolo_pagina","Gameometry",$index);
 $index = str_replace("parole_chiave", "gameometry, videogioco, videogiochi, console, pc, computer, recensione, recensioni, voto, notizie", $index);
 $index = str_replace("descrizione","Questa pagina &egrave; dedicata al mondo videoludico e, pi&ugrave; nello specifico, alle recensioni legate a questo tipo di mondo", $index);
 
+if(isset($_SESSION['username'])){
+    $index = str_replace('<a id="areaRiservata" href="areaLogIn.php">', '<a id="areaRiservata" href="areaUtente.php">', $index);
+}
+
 $index = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span></p>", $index);
 
 //CAROSELLO
