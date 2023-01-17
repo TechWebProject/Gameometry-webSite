@@ -9,6 +9,10 @@ $modificaUtente = str_replace("Titolo_pagina","Gameometry | Gestione Utente",$mo
 $modificaUtente = str_replace("parole_chiave", "gameometry, accesso, login, videogioco, videogiochi, utente, recensioni", $modificaUtente);
 $modificaUtente = str_replace("descrizione","Pagina dedicata alla modifica della propria area personale di Gameometry", $modificaUtente);
 
+if(isset($_SESSION['username'])){
+    $modificaUtente = str_replace('<a id="areaRiservata" href="areaLogIn.php">', '<a id="areaRiservata" href="areaUtente.php">', $modificaUtente);
+}
+
 $modificaUtente = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span> &raquo; <a href=\"areaUtente.php\">Area riservata</a> &raquo; Modifica profilo</p>", $modificaUtente);
 
 if(isset($_POST['modifyButton']) && $_POST['username']!="" && $_POST['password']!=""){
@@ -32,7 +36,7 @@ if(isset($_POST['modifyButton']) && $_POST['username']!="" && $_POST['password']
 
     if($correctNickname==false){
         $spanUsernameMessage = "Sintassi del nickname errata";
-        $areaRegistrazione = str_replace("<span id=\"errorUsernameRegister\"></span>","<span id=\"errorUsernameRegister\">".$spanUsernameMessage."</span>",$areaRegistrazione);
+        $modificaUtente = str_replace("<span id=\"errorUsernameRegister\"></span>","<span id=\"errorUsernameRegister\">".$spanUsernameMessage."</span>",$modificaUtente);
     }
     else {
         $query_check_nickname="SELECT * FROM utente WHERE utente.nickname='$inputNickname'";
@@ -40,7 +44,7 @@ if(isset($_POST['modifyButton']) && $_POST['username']!="" && $_POST['password']
         $nicknameOK=$result_nickname->fetch_array(MYSQLI_ASSOC);
         if(isset($nicknameOK)){
             $spanUsernameMessage = "Nickname già in uso nel sistema";
-            $areaRegistrazione = str_replace("<span id=\"errorUsernameRegister\"></span>","<span id=\"errorUsernameRegister\">".$spanUsernameMessage."</span>",$areaRegistrazione);
+            $modificaUtente = str_replace("<span id=\"errorUsernameRegister\"></span>","<span id=\"errorUsernameRegister\">".$spanUsernameMessage."</span>",$modificaUtente);
         } 
     }
     
@@ -58,7 +62,7 @@ if(isset($_POST['modifyButton']) && $_POST['username']!="" && $_POST['password']
 
     if($correctPassword==false){
         $spanPasswordMessage = "Non è possibile utilizzare spazi o singoli/doppi apici";
-        $areaRegistrazione = str_replace("<span id=\"errorPasswordRegister\"></span>","<span id=\"errorPasswordRegister\">".$spanPasswordMessage."</span>",$areaRegistrazione);
+        $modificaUtente = str_replace("<span id=\"errorPasswordRegister\"></span>","<span id=\"errorPasswordRegister\">".$spanPasswordMessage."</span>",$modificaUtente);
     }
 
     //aggiornamento del DB
@@ -69,21 +73,18 @@ if(isset($_POST['modifyButton']) && $_POST['username']!="" && $_POST['password']
 
         $_SESSION['username'] = $inputNickname;
 
-        mysqli_free_result($result);
 
         CloseCon($db);
 
         header("Location: areaUtente.php");
     }
     else {
-        mysqli_free_result($result);
-
         CloseCon($db);
     }
 }
 else if(isset($_POST['modifyButton'])) {
     $spanGeneralMessage = "Tutti i campi devono essere compilati";
-    $areaRegistrazione = str_replace("<span id=\"errorGeneralRegister\"></span>","<span id=\"errorGeneralRegister\">".$spanGeneralMessage."</span>",$areaRegistrazione);
+    $modificaUtente = str_replace("<span id=\"errorGeneralRegister\"></span>","<span id=\"errorGeneralRegister\">".$spanGeneralMessage."</span>",$modificaUtente);
 }
 
 echo $modificaUtente;

@@ -5,18 +5,17 @@ $template = new template();
 $template->setPage("areaUtente.html");
 $areaUtente = $template->initializePage();
 
-$areaUtente = str_replace("Titolo_pagina","Area Utente",$areaUtente);
+$areaUtente = str_replace("Titolo_pagina","Gameometry | Area riservata",$areaUtente);
 $areaUtente = str_replace("parole_chiave", "gameometry, videogioco, videogiochi, console, pc, computer, recensione, recensioni, voto, notizie", $areaUtente);
-$areaUtente = str_replace("descrizione","Pagina rservata all'area personale del singolo utente", $areaUtente);
+$areaUtente = str_replace("descrizione","Pagina rservata all'area personale dell'utente di Gameometry. Gestisci qui la tua esperienza nel sito!", $areaUtente);
 
 if(isset($_SESSION['username'])){
     $areaUtente = str_replace('<a id="areaRiservata" href="areaLogIn.php">', '<a id="areaRiservata" href="areaUtente.php">', $areaUtente);
 }
 
-$areaUtente = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span> &raquo; <a href=\"areaUtente.php\">Area Utente</a></p>", $areaUtente);
+$areaUtente = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span> &raquo; Area riservata</p>", $areaUtente);
 
 //INFO UTENTE
-
 $db = OpenCon();
 
 $email = $_SESSION['email'];
@@ -30,16 +29,12 @@ $areaUtente = str_replace("</EMAIL>", $_SESSION['email'], $areaUtente);
 $areaUtente = str_replace("</ISCRIZIONE>", $_SESSION['dataIscrizione'], $areaUtente);
 $areaUtente = str_replace("</NCOMMENTI>", "$nComm", $areaUtente);
 
-//MODIFICHE
-
 if(isset($_POST['logoutButton'])){
     session_unset(); 
     session_destroy(); 
 
-    header("Location: index.php");
+    header("Location: areaLogIn.php");
 }
-
-/////////
 
 if(isset($_POST['deleteU'])){
     $deleteUser="DELETE FROM utente WHERE utente.email = '$email'";
@@ -55,11 +50,7 @@ if(isset($_POST['modifyU'])){
     header("Location: modificaUtente.php");
 }
 
-//////////
-
-//INSERIMENTO COMMENTO
-
-//ULTIME RECENSIONI
+//COMMENTI
 $tmpquery= "SELECT videogioco.titolo as title, commento.contenuto as contenutoU, commento.voto as votoU FROM utente,commento,recensione,videogioco WHERE commento.idUtente=utente.email and commento.idVideogioco=videogioco.titolo and recensione.idVideogioco=videogioco.titolo and utente.email='$email' ORDER BY commento.data desc";
 $result2 = mysqli_query($db,$tmpquery);
 $arr2 = mysqli_fetch_all($result2,MYSQLI_ASSOC);
@@ -72,10 +63,12 @@ if($nComm>0){
         $titologioco=mysqli_real_escape_string($db,$titologioco);
         $contenuto=$arr2[$i]['contenutoU'];
         $votoU=$arr2[$i]['votoU']; 
+
         $queryxtitrec="SELECT titolo as titoloRec FROM recensione WHERE idVideogioco='$titologioco'";
         $result2 = mysqli_query($db,$queryxtitrec);
         $r=$result2->fetch_array(MYSQLI_ASSOC);
         mysqli_free_result($result2);
+
         $titoloRec=$r['titoloRec'];
         $commenti .= "<div class=\"postU\">
         <div class=\"commentoU\">
@@ -85,7 +78,7 @@ if($nComm>0){
             </div>
             <ul class=\"contenutoRecensioneU1\">
                 <li class=\"toBold\">
-                    <a href=\"./recensioneGioco.php?titRec=$titoloRec\" class=\"\">$titologioco</a></li>
+                    <a href=\"recensioneGioco.php?titRec=$titoloRec\" class=\"\">$titologioco</a></li>
                 <li>$contenuto</li>
             </ul>
             </div>
@@ -100,6 +93,9 @@ else {
 CloseCon($db);
 
 $areaUtente = str_replace("</ULTIME_RECENSIONI>",$commenti,$areaUtente);
+
+$areaUtente = str_replace("\'","'",$areaUtente);
+
 echo $areaUtente;
 
 ?>

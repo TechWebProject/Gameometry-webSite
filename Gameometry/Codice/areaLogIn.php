@@ -66,7 +66,12 @@ if(isset($_POST['loginButton']) && $_POST['username']!="" && $_POST['password']!
     }
 }
 else if(isset($_POST['loginButton'])) {
-    $spanGeneralMessage = "Tutti i campi devono essere compilati";
+    $spanGeneralMessage = "Tutti i campi devono essere compilati!";
+    $areaLogIn = str_replace("<span id=\"errorGeneralRegister\"></span>","<span id=\"errorGeneralRegister\">".$spanGeneralMessage."</span>",$areaLogIn);
+}
+
+if(isset($_GET['message'])){
+    $spanGeneralMessage = "Utente eliminato dal sistema!";
     $areaLogIn = str_replace("<span id=\"errorGeneralRegister\"></span>","<span id=\"errorGeneralRegister\">".$spanGeneralMessage."</span>",$areaLogIn);
 }
 

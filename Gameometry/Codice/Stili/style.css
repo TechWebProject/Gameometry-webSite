@@ -748,12 +748,18 @@ PAGINA EVENTI
     display: flex;
     flex-direction: column;
     color: rgb(255, 255, 255);
+    background-color: rgb(0, 30, 30);
 }
 
 .evento h2 {
+    padding-top: 0.6em;
     padding-bottom: 0.6em;
     font-size: 1.4em;
     line-height: 1.5em;
+}
+
+.evento p {
+    padding-bottom: 0.5em;
 }
 
 .immagineEvento {
@@ -762,7 +768,6 @@ PAGINA EVENTI
 }
 
 .descrizioneEvento {
-    padding: 2%;
     background-color: rgb(30, 30, 30);
 }
 
@@ -1085,7 +1090,7 @@ PAGINA DI ACCESSO
 
 #modificaUtenza form fieldset {
     border: none;
-    height: 11em;
+    height: 13em;
 }
 
 #logIn label,
@@ -1094,6 +1099,11 @@ PAGINA DI ACCESSO
     display: block;
     padding-bottom: 0.4em;
     color: var(--textColor);
+}
+
+#modificaUtenza #passwordchangeAlert {
+    font-size: 0.8em;
+    color: black;
 }
 
 #mailBox,
