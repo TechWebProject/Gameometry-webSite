@@ -1233,7 +1233,7 @@ TEMPLATE GIOCO
     background-color: var(--mainColor);
 }
 
-#descrizione {
+#desc {
     color: var(--textColor);
     padding-left: 4.2em;
     padding-right: 2.5em;
