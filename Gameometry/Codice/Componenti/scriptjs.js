@@ -3,21 +3,23 @@
 CODICE SLIDER 
 ==============
 */
-let ScrollPosition=0;
 
-const btnleft = document.querySelector("#btn-left");
-const btnright = document.querySelector("#btn-right");
-const cCont = document.querySelector(".carousel");
+    let ScrollPosition=0;
 
-cCont.style.left=ScrollPosition;
+    const btnleft = document.querySelector("#btn-left");
+    const btnright = document.querySelector("#btn-right");
+    const cCont = document.querySelector(".carousel");
 
-btnleft.addEventListener("click",()=>{
-    cCont.scrollBy(-800,0);
-});
+    cCont.style.left=ScrollPosition;
 
-btnright.addEventListener("click",()=>{
-    cCont.scrollBy(800,0);
-});
+    btnleft.addEventListener("click",()=>{
+        cCont.scrollBy(-800,0);
+    });
+
+    btnright.addEventListener("click",()=>{
+        cCont.scrollBy(800,0);
+    });
+
 
 /*
 ==============
