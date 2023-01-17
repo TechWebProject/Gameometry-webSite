@@ -364,9 +364,9 @@ PAGINA RECENSIONE
 }
 
 /*
-=============
+=================
 PAGINA RECENSIONE
-=============
+=================
 */
 
 #titoloGioco {
@@ -398,6 +398,10 @@ PAGINA UTENTE
 
 #logoutB {
     margin-left: 3.0em;
+}
+
+#messageU {
+    padding-bottom: 20.0em;
 }
 
 

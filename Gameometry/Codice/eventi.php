@@ -3,19 +3,20 @@ require_once "template.php";
 
 $template = new template();
 $template->setPage("eventi.html");
-$index = $template->initializePage();
-$eventi = file_get_contents("Componenti/listaEventi.html");
+$eventi = $template->initializePage();
 
-$index = str_replace("Titolo_pagina","Gameometry | Eventi",$index);
-$index = str_replace("parole_chiave", "gameometry, videogiochi, videogioco, videoludico, eventi, ...", $index);
-$index = str_replace("descrizione","Questa pagina &egrave; dedicata ai diversi eventi videoludici organizzati dagli appassionati di questo mondo", $index);
+$listaEventi = file_get_contents("Componenti/listaEventi.html");
 
-if(isset($_SESSIONE['username'])){
-    $index = str_replace('<a id="areaRiservata" href="areaLogIn.php', '<a id="areaRiservata" href="areaUtente.php', $index);
+$eventi = str_replace("Titolo_pagina","Gameometry | Eventi",$eventi);
+$eventi = str_replace("parole_chiave", "gameometry, videogiochi, videogioco, videoludico, eventi, ...", $eventi);
+$eventi = str_replace("descrizione","Questa pagina &egrave; dedicata ai diversi eventi videoludici organizzati dagli appassionati di questo mondo", $eventi);
+
+if(isset($_SESSION['username'])){
+    $eventi = str_replace('<a id="areaRiservata" href="areaLogIn.php', '<a id="areaRiservata" href="areaUtente.php', $eventi);
 }
 
-$index = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span>  &raquo; Eventi</p>", $index);
+$eventi = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span> &raquo; Eventi</p>", $eventi);
 
-$index = str_replace("</EVENTI>", $eventi, $index);
-echo $index;
+$eventi = str_replace("</EVENTI>", $listaEventi, $eventi);
+echo $eventi;
 ?>

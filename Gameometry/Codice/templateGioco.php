@@ -3,12 +3,13 @@ require_once "template.php";
 
 $template = new template();
 $template->setPage("templateGioco.html");
-$index = $template->initializePage();
+$templateGioco = $template->initializePage();
 
-$index = str_replace("parole_chiave", "gameometry, videogioco, videogiochi, utente, recensioni", $index);
-$index = str_replace("descrizione","Pagina dedicata a uno specifico videogioco", $index);
-if(isset($_SESSIONE['username'])){
-    $index = str_replace('<a id="areaRiservata" href="areaLogIn.php', '<a id="areaRiservata" href="areaUtente.php', $index);
+$templateGioco = str_replace("parole_chiave", "gameometry, videogioco, videogiochi, utente, recensioni", $templateGioco);
+$templateGioco = str_replace("descrizione","Pagina dedicata a uno specifico videogioco", $templateGioco);
+
+if(isset($_SESSION['username'])){
+    $templateGioco = str_replace('<a id="areaRiservata" href="areaLogIn.php', '<a id="areaRiservata" href="areaUtente.php', $templateGioco);
 }
 
 $title = $_POST['immagine'];
@@ -35,31 +36,31 @@ mysqli_free_result($result);
 CloseCon($db1); 
 
 $tmpBannerName = str_replace("Banner/","",$banner);
-$index = str_replace("altBannerGioco",$tmpBannerName,$index);
-$index = str_replace("bannerGioco",$banner,$index);
+$templateGioco = str_replace("altBannerGioco",$tmpBannerName,$templateGioco);
+$templateGioco = str_replace("bannerGioco",$banner,$templateGioco);
 $title=str_replace("\'","'",$title);
-$index = str_replace("</TITOLOGIOCO>",$title,$index);
+$templateGioco = str_replace("</TITOLOGIOCO>",$title,$templateGioco);
 
 $tmpImgName = str_replace("Locandina/","",$imgLocandina);
-$index = str_replace("altLocandinaGioco",$tmpImgName,$index);
-$index = str_replace("locandinaGioco",$imgLocandina,$index);
+$templateGioco = str_replace("altLocandinaGioco",$tmpImgName,$templateGioco);
+$templateGioco = str_replace("locandinaGioco",$imgLocandina,$templateGioco);
 
-$index = str_replace("</PUBLISHER>",$publisher,$index);
-$index = str_replace("</DATA>",$data_uscita,$index);
-$index = str_replace("</PIATTAFORMA>",$piattaforma,$index);
-$index = str_replace("</GENERE>",$genere,$index);
+$templateGioco = str_replace("</PUBLISHER>",$publisher,$templateGioco);
+$templateGioco = str_replace("</DATA>",$data_uscita,$templateGioco);
+$templateGioco = str_replace("</PIATTAFORMA>",$piattaforma,$templateGioco);
+$templateGioco = str_replace("</GENERE>",$genere,$templateGioco);
 
-$index = str_replace("recGioco",$titoloGioco,$index);
+$templateGioco = str_replace("recGioco",$titoloGioco,$templateGioco);
 
-$index = str_replace("</PUNTEGGIOCRITICA>",$voto,$index);
-$index = str_replace("</PUNTEGGIOUTENTI>",$votoU,$index);
+$templateGioco = str_replace("</PUNTEGGIOCRITICA>",$voto,$templateGioco);
+$templateGioco = str_replace("</PUNTEGGIOUTENTI>",$votoU,$templateGioco);
 
-$index = str_replace("</TRAMA>",$trama,$index);
+$templateGioco = str_replace("</TRAMA>",$trama,$templateGioco);
 
 
-$index = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span> &raquo; <a href=\"videogiochi.php\">Videogiochi</a> &raquo; $title </p>", $index);
-$index = str_replace("Titolo_pagina","Gameometry | $title",$index);
+$templateGioco = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span> &raquo; <a href=\"videogiochi.php\">Videogiochi</a> &raquo; $title </p>", $templateGioco);
+$templateGioco = str_replace("Titolo_pagina","Gameometry | $title",$templateGioco);
 
-echo $index;
+echo $templateGioco;
 
 ?>

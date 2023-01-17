@@ -3,13 +3,13 @@ require_once "template.php";
 
 $template = new template();
 $template->setPage("recensioneGioco.html");
-$index = $template->initializePage();
+$recensioneGioco = $template->initializePage();
 
-$index = str_replace("parole_chiave", "gameometry, recensioni, recensione, videogioco, videogiochi, voto, commento", $index);
-$index = str_replace("descrizione","Questa pagina &egrave; dedicata alle recensioni videoludiche sugli ultimi prodotti usciti", $index);
+$recensioneGioco = str_replace("parole_chiave", "gameometry, recensioni, recensione, videogioco, videogiochi, voto, commento", $recensioneGioco);
+$recensioneGioco = str_replace("descrizione","Questa pagina &egrave; dedicata alle recensioni videoludiche sugli ultimi prodotti usciti", $recensioneGioco);
 
-if(isset($_SESSIONE['username'])){
-    $index = str_replace('<a id="areaRiservata" href="areaLogIn.php', '<a id="areaRiservata" href="areaUtente.php', $index);
+if(isset($_SESSION['username'])){
+    $recensioneGioco = str_replace('<a id="areaRiservata" href="areaLogIn.php', '<a id="areaRiservata" href="areaUtente.php', $recensioneGioco);
 }
 
 $giocoRecensito;
@@ -39,12 +39,12 @@ mysqli_free_result($result);
 CloseCon($db1);
 
 
-$index = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span> &raquo; <a href=\"recensioni.php\">Recensioni</a> &raquo; $titoloGioco </p>", $index);
-$index = str_replace("Titolo_pagina","Gameometry | Recensione $titoloGioco ",$index);
-$index = str_replace("</TITOLOGIOCO>",$titoloRec, $index);
-$index = str_replace("bannerGioco",$banner, $index);
-$index = str_replace("</VOTO>",$voto, $index);
-$index = str_replace("</CONTENUTO>",$contenutoRec, $index);
+$recensioneGioco = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span> &raquo; <a href=\"recensioni.php\">Recensioni</a> &raquo; $titoloGioco </p>", $recensioneGioco);
+$recensioneGioco = str_replace("Titolo_pagina","Gameometry | Recensione $titoloGioco ",$recensioneGioco);
+$recensioneGioco = str_replace("</TITOLOGIOCO>",$titoloRec, $recensioneGioco);
+$recensioneGioco = str_replace("bannerGioco",$banner, $recensioneGioco);
+$recensioneGioco = str_replace("</VOTO>",$voto, $recensioneGioco);
+$recensioneGioco = str_replace("</CONTENUTO>",$contenutoRec, $recensioneGioco);
 
 //SEZIONE RECENSIONE UTENTE
 $db = OpenCon();
@@ -77,7 +77,7 @@ if (isset($_SESSION['email'])) {
     <input type=\"hidden\" name=\"inviaCommento2\" value=\"$titoloGioco\"><button id=\"inviaCommento\" aria-label=\"invia commento\" type=\"submit\" name=\"inviaCommento\" value=\"Commenta\">Commenta</button>
     </form></div>";
     }
-    $index = str_replace("</RECENSIONEU", $recU, $index);
+    $recensioneGioco = str_replace("</RECENSIONEU", $recU, $recensioneGioco);
 }
 CloseCon($db);
 $db2 = OpenCon();
@@ -112,7 +112,7 @@ for ($i = 0; $i < $n_rows; $i++) {
     </div>";
 }
 
-$index = str_replace("</COMMENTI>", $commenti, $index);
+$recensioneGioco = str_replace("</COMMENTI>", $commenti, $recensioneGioco);
 
-echo $index;
+echo $recensioneGioco;
 ?>
