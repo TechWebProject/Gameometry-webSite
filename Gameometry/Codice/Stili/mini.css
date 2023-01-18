@@ -363,6 +363,10 @@ PAGINA RECENSIONE
     margin-bottom: 1.0em;
 }
 
+#contenuto {
+    line-height: 3.0em;
+}
+
 /*
 =================
 PAGINA RECENSIONE
@@ -379,6 +383,10 @@ PAGINA RECENSIONE
 
 .evento h2 {
     font-size: 1.8em;
+}
+
+.commento {
+    line-height: 2.5em;
 }
 
 /*
@@ -404,6 +412,9 @@ PAGINA UTENTE
     padding-bottom: 20.0em;
 }
 
+.contenutoRecensioneU1 {
+    line-height: 2.5em;
+}
 
 @media screen and (max-width: 820px) {
     #menu ul li {

@@ -39,8 +39,8 @@ mysqli_free_result($result);
 CloseCon($db1);
 
 
-$recensioneGioco = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span> &raquo; <a href=\"recensioni.php\">Recensioni</a> &raquo; $titoloGioco </p>", $recensioneGioco);
-$recensioneGioco = str_replace("Titolo_pagina","Gameometry | Recensione $titoloGioco ",$recensioneGioco);
+$recensioneGioco = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span> &raquo; <a href=\"recensioni.php\">Recensioni</a> &raquo; Recensione $titoloGioco </p>", $recensioneGioco);
+$recensioneGioco = str_replace("Titolo_pagina","Recensione $titoloGioco | Gameometry",$recensioneGioco);
 $recensioneGioco = str_replace("</TITOLOGIOCO>",$titoloRec, $recensioneGioco);
 $recensioneGioco = str_replace("bannerGioco",$banner, $recensioneGioco);
 $recensioneGioco = str_replace("</VOTO>",$voto, $recensioneGioco);

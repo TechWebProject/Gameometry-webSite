@@ -5,7 +5,7 @@ $template = new template();
 $template->setPage("areaUtente.html");
 $areaUtente = $template->initializePage();
 
-$areaUtente = str_replace("Titolo_pagina","Gameometry | Area riservata",$areaUtente);
+$areaUtente = str_replace("Titolo_pagina","Area riservata | Gameometry",$areaUtente);
 $areaUtente = str_replace("parole_chiave", "gameometry, videogioco, videogiochi, console, pc, computer, recensione, recensioni, voto, notizie", $areaUtente);
 $areaUtente = str_replace("descrizione","Pagina rservata all'area personale dell'utente di Gameometry. Gestisci qui la tua esperienza nel sito!", $areaUtente);
 

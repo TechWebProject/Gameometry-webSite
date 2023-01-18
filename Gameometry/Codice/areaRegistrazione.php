@@ -5,7 +5,7 @@ $template = new template();
 $template->setPage("areaRegistrazione.html");
 $areaRegistrazione = $template->initializePage();
 
-$areaRegistrazione = str_replace("Titolo_pagina","Gameometry | Registrazione",$areaRegistrazione);
+$areaRegistrazione = str_replace("Titolo_pagina","Registrazione | Gameometry",$areaRegistrazione);
 $areaRegistrazione = str_replace("parole_chiave", "gameometry, registrazione, videogioco, videogiochi, utente, recensioni", $areaRegistrazione);
 $areaRegistrazione = str_replace("descrizione","Non perderti le ultime notizie e le nostre recensioni, registrati al mondo videoludico offerto da Gameometry!", $areaRegistrazione);
 

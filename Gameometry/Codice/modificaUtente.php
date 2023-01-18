@@ -5,7 +5,7 @@ $template = new template();
 $template->setPage("modificaUtente.html");
 $modificaUtente = $template->initializePage();
 
-$modificaUtente = str_replace("Titolo_pagina","Gameometry | Gestione Utente",$modificaUtente);
+$modificaUtente = str_replace("Titolo_pagina","Gestione Utente | Gameometry",$modificaUtente);
 $modificaUtente = str_replace("parole_chiave", "gameometry, accesso, login, videogioco, videogiochi, utente, recensioni", $modificaUtente);
 $modificaUtente = str_replace("descrizione","Pagina dedicata alla modifica della propria area personale di Gameometry", $modificaUtente);
 

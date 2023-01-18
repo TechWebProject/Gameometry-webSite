@@ -5,7 +5,7 @@ $template = new template();
 $template->setPage("recensioni.html");
 $recensioni = $template->initializePage();
 
-$recensioni = str_replace("Titolo_pagina","Gameometry | Recensioni",$recensioni);
+$recensioni = str_replace("Titolo_pagina","Recensioni | Gameometry",$recensioni);
 $recensioni = str_replace("parole_chiave", "gameometry, recensioni, recensione, videogioco, videogiochi, voto, commento", $recensioni);
 $recensioni = str_replace("descrizione","Questa pagina &egrave; dedicata alle recensioni videoludiche sugli ultimi prodotti usciti", $recensioni);
 
@@ -23,7 +23,7 @@ $arr = mysqli_fetch_all($result,MYSQLI_ASSOC);
 $n_rows=mysqli_num_rows($result);
 mysqli_free_result($result);
 
-$recensioniTot = " ";
+$recensioniTot = "";
 
 for($i=0;$i<$n_rows;$i++){
     $chiavesterna = $arr[$i]['idVideogioco'];

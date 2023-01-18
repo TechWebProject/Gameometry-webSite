@@ -5,7 +5,7 @@ $template = new template();
 $template->setPage("areaLogIn.html");
 $areaLogIn = $template->initializePage();
 
-$areaLogIn = str_replace("Titolo_pagina","Gameometry | Accesso",$areaLogIn);
+$areaLogIn = str_replace("Titolo_pagina","Accesso | Gameometry",$areaLogIn);
 $areaLogIn = str_replace("parole_chiave", "gameometry, accesso, login, videogioco, videogiochi, utente, recensioni", $areaLogIn);
 $areaLogIn = str_replace("descrizione","Accedi a Gameometry per gestire la tua esperienza nel sito!", $areaLogIn);
 

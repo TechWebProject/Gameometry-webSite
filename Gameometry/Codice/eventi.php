@@ -5,8 +5,8 @@ $template = new template();
 $template->setPage("eventi.html");
 $eventi = $template->initializePage();
 
-$eventi = str_replace("Titolo_pagina","Gameometry | Eventi",$eventi);
-$eventi = str_replace("parole_chiave", "gameometry, videogiochi, videogioco, videoludico, eventi, ...", $eventi);
+$eventi = str_replace("Titolo_pagina","Eventi | Gameometry",$eventi);
+$eventi = str_replace("parole_chiave", "gameometry, videogiochi, videogioco, videoludico, eventi", $eventi);
 $eventi = str_replace("descrizione","Questa pagina &egrave; dedicata ai diversi eventi videoludici organizzati dagli appassionati di questo mondo", $eventi);
 
 if(isset($_SESSION['username'])){

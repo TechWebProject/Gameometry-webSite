@@ -59,7 +59,7 @@ $templateGioco = str_replace("</TRAMA>",$trama,$templateGioco);
 
 
 $templateGioco = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span> &raquo; <a href=\"videogiochi.php\">Videogiochi</a> &raquo; $title </p>", $templateGioco);
-$templateGioco = str_replace("Titolo_pagina","Gameometry | $title",$templateGioco);
+$templateGioco = str_replace("Titolo_pagina","$title | Gameometry",$templateGioco);
 
 echo $templateGioco;
 

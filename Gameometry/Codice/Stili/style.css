@@ -28,6 +28,9 @@ abbr {
     color: white;
     font-weight: bolder;
 }
+abbr {
+    font-weight: normal;
+}
 
 a:link {
     color: var(--textColor);
@@ -54,7 +57,7 @@ SEZIONE HEADER
 */
 
 #menu a:visited {
-    color: var(--visitedLink);
+    color: var(--textColor);
 }
 
 header {
