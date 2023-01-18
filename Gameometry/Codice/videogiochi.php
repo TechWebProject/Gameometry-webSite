@@ -41,30 +41,28 @@ for($i = 0; $i < $n_rows; $i++){
     $imgz[$i]=array('src' => $arr[$i]['imgLocandina'],'alt'=> $arr[$i]['titolo']);
 }
 
-$imgForm = "";
+$imgForm = " ";
 
 if($n_rows==0){
-    $no_risultati = "<h1 id=\"newsTitle\">RISULTATI DELLA RICERCA</h1>";
-    $videogiochi = str_replace("<h1 id=\"newsTitle\">LA NOSTRA SELEZIONE DI VIDEOGIOCHI</h1>",$no_risultati,$videogiochi);
     $videogiochi = str_replace("</VIDEOGIOCHI>","<p id=\"noresult_text\">Nessun risultato</p>",$videogiochi);
 }else{
     foreach ($imgz as $attributes) {
         $imgForm .= "<form action=\"templateGioco.php\" method=\"POST\"><button name=\"immagine\" class=\"btImg\" value=\"nomeTitoloVideogioco\" aria-label=\"vai alla pagina di nomeTitoloVideogioco\"><img src=\"nomeFileLocandina\" alt=\"nomeTitoloVideogioco\" class=\"imgs\"><span class=\"imgSpan\">nomeTitoloVideogioco</span></button></form>";
-
         foreach ($attributes as $key => $value) {
+            if($key=='src'){
+                $imgForm = str_replace("nomeFileLocandina",$value,$imgForm);
+            }
             if($key=='alt'){
                 $value = str_replace('locandina ','',$value);
-                $imgForm = str_replace("nomeTitoloVideogioco",$value,$videogiochi);
-            }
-            else if($key=='src'){
-                $imgForm = str_replace("nomeFileLocandina",$value,$videogiochi);
-            }    
+                $imgForm = str_replace("nomeTitoloVideogioco",$value,$imgForm);
+            }   
         }
     }
-    $videogiochi = str_replace("</VIDEOGIOCHI>",$imgForm,$videogiochi);
 }
 
 CloseCon($db);
+
+$videogiochi = str_replace("</VIDEOGIOCHI>",$imgForm,$videogiochi);
 
 echo $videogiochi;
 ?>
