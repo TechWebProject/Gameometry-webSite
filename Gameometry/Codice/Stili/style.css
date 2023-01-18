@@ -39,7 +39,7 @@ a:link {
 a:visited {
     color: var(--visitedLink);
     text-decoration: underline solid 1.5px;
-    /* non funziona */
+    
 }
 
 a:hover {
