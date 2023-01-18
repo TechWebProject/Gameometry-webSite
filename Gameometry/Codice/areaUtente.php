@@ -50,6 +50,47 @@ if(isset($_POST['modifyU'])){
     header("Location: modificaUtente.php");
 }
 
+//INSERIMENTO COMMENTO
+function generateRandomString($length = 30) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for($i = 0; $i < $length; $i++){
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
+if(isset($_POST['inviaCommento']) && isset($_POST['commentoU']) && isset($_POST['rating'])){
+    $gameTitle = $_POST['inviaCommento2'];
+
+    $commentoUtente = $_POST['commentoU'];
+    $votoUtente = $_POST['rating'];
+    $votoUtente = number_format($votoUtente);
+    $email = $_SESSION['email'];
+    $currentDate = date("Y-m-d");
+
+    do{
+        $idCommento = generateRandomString();
+
+        $query_check="SELECT * FROM commento WHERE commento.idCommento='$idCommento'";
+        $result=mysqli_query($db,$query_check);
+        $tmparr=$result->fetch_array(MYSQLI_ASSOC);
+    }while(isset($tmparr));
+
+    $gameTitle=mysqli_real_escape_string($db,$gameTitle);
+
+    $query_insert="insert into commento (idCommento, data, voto, contenuto, idUtente, idVideogioco) values ('$idCommento', '$currentDate', $votoUtente, '$commentoUtente', '$email', '$gameTitle')";
+
+    $result = mysqli_query($db,$query_insert);
+
+    header("Location: recensioni.php?message=success");
+    header("Location: areaUtente.php");
+}
+else if(isset($_POST['inviaCommento'])){
+    function_alert("Per poter commentare un videogioco devi inserire un commento e un voto. Controlla di averli inseriti entrambi e riprova");
+}
+
 //COMMENTI
 $tmpquery= "SELECT videogioco.titolo as title, commento.contenuto as contenutoU, commento.voto as votoU FROM utente,commento,recensione,videogioco WHERE commento.idUtente=utente.email and commento.idVideogioco=videogioco.titolo and recensione.idVideogioco=videogioco.titolo and utente.email='$email' ORDER BY commento.data desc";
 $result2 = mysqli_query($db,$tmpquery);
