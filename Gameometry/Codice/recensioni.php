@@ -13,7 +13,7 @@ if(isset($_SESSION['username'])){
     $recensioni = str_replace('<a id="areaRiservata" href="areaLogIn.php">', '<a id="areaRiservata" href="areaUtente.php">', $recensioni);
 }
 
-$recensioni = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span> &raquo; Notizie</p>", $recensioni);
+$recensioni = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span> &raquo; Recensioni</p>", $recensioni);
 
 
 $db = OpenCon();
