@@ -96,7 +96,7 @@ function search(){
   function showSuggestions(list){
     let listData;
     if(!list.length){
-      listData = '<li>' + "Nessun risultato" + '</li>';
+      listData = '<li>' + "Nessun risultato specifico" + '</li>';
     }else{
       listData = list.join('');
     }
