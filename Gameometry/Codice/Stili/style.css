@@ -290,7 +290,8 @@ SLIDER
 */
 
 #saltacarosello,
-#saltanotizie {
+#saltanotizie,
+#tornaheader {
     height: 1px;
     width: 1px;
     overflow: hidden;
@@ -1079,8 +1080,9 @@ PAGINA DI ACCESSO
 #loginTitle {
     color: var(--textColor);
     font-weight: bolder;
-    padding: 1.0em;
     font-size: 1.2em;
+    text-align: center;
+    margin-top: 1.0em;
 }
 
 #logIn form,
