@@ -16,9 +16,9 @@ class template{
     public function initializePage(){
         session_start();
         $pageToFill = file_get_contents("html/".$this->getPage());
-        $head = file_get_contents("sezioniComuni/head.html");
+        $head = file_get_contents("html/sezioniComuni/head.html");
         $pageToFill = str_replace("</HEAD>",$head,$pageToFill);
-        $header = file_get_contents("sezioniComuni/header.html");
+        $header = file_get_contents("html/sezioniComuni/header.html");
         $pageToFill = str_replace("</HEADER>",$header,$pageToFill);
         
         $db = OpenCon();
@@ -42,7 +42,7 @@ class template{
         }
         $pageToFill = str_replace("<label id=\"arrTitoli\">","<label id=\"arrTitoli\">$t",$pageToFill);
 
-        $footer = file_get_contents("sezioniComuni/footer.html");
+        $footer = file_get_contents("html/sezioniComuni/footer.html");
         $pageToFill = str_replace("</FOOTER>",$footer,$pageToFill);
 
         return $pageToFill;

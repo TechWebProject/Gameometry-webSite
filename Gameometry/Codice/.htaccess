@@ -1,8 +1,8 @@
-ErrorDocument 404 /projecttecweb/Gameometry-webSite/Gameometry/Codice/404.php 
-ErrorDocument 500 /projecttecweb/Gameometry-webSite/Gameometry/Codice/500.php
-ErrorDocument 501 /projecttecweb/Gameometry-webSite/Gameometry/Codice/500.php
-ErrorDocument 502 /projecttecweb/Gameometry-webSite/Gameometry/Codice/500.php
-ErrorDocument 503 /projecttecweb/Gameometry-webSite/Gameometry/Codice/500.php
-ErrorDocument 504 /projecttecweb/Gameometry-webSite/Gameometry/Codice/500.php
-ErrorDocument 505 /projecttecweb/Gameometry-webSite/Gameometry/Codice/500.php
-ErrorDocument 507 /projecttecweb/Gameometry-webSite/Gameometry/Codice/500.php
+ErrorDocument 404 /Gameometry/Codice/404.php 
+ErrorDocument 500 /Gameometry/Codice/500.php
+ErrorDocument 501 /Gameometry/Codice/500.php
+ErrorDocument 502 /Gameometry/Codice/500.php
+ErrorDocument 503 /Gameometry/Codice/500.php
+ErrorDocument 504 /Gameometry/Codice/500.php
+ErrorDocument 505 /Gameometry/Codice/500.php
+ErrorDocument 507 /Gameometry/Codice/500.php
