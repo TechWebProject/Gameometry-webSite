@@ -488,7 +488,11 @@ PAGINA UTENTE
 @media screen and (max-device-width: 800px){
 
     main {
-        padding-top: 19em;
+        padding-top: 20em;
+    }
+
+    #mainVideogioco {
+        padding-top: 18em;
     }
     
     #recensioni-critica>div {
@@ -504,7 +508,12 @@ PAGINA UTENTE
 
     .commento {
         flex-direction: column-reverse;
+        align-items: center;
     }
+
+    /* .commento #commentoUtenteRegistrato {
+        DA FIXARE COMMENTI IN RECENSIONEGIOCO
+    } */
 
     .contenutoRecensione{
         display: flex;
