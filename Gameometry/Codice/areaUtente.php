@@ -87,11 +87,7 @@ if(isset($_POST['inviaCommento']) && isset($_POST['commentoU']) && isset($_POST[
 
     $result = mysqli_query($db,$query_insert);
 
-    header("Location: recensioni.php?message=success");
     header("Location: areaUtente.php");
-}
-else if(isset($_POST['inviaCommento'])){
-    function_alert("Per poter commentare un videogioco devi inserire un commento e un voto. Controlla di averli inseriti entrambi e riprova");
 }
 
 //COMMENTI
