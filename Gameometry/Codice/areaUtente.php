@@ -7,7 +7,7 @@ $areaUtente = $template->initializePage();
 
 $areaUtente = str_replace("Titolo_pagina","Area riservata | Gameometry",$areaUtente);
 $areaUtente = str_replace("parole_chiave", "gameometry, videogioco, videogiochi, console, pc, computer, recensione, recensioni, voto, notizie", $areaUtente);
-$areaUtente = str_replace("descrizione","Pagina rservata all'area personale dell'utente di Gameometry. Gestisci qui la tua esperienza nel sito!", $areaUtente);
+$areaUtente = str_replace("descrizione","Pagina riservata all'area personale dell'utente di Gameometry. Gestisci qui la tua esperienza nel sito!", $areaUtente);
 
 if(isset($_SESSION['username'])){
     $areaUtente = str_replace('<a id="areaRiservata" href="areaLogIn.php">', '<a id="areaRiservata" href="areaUtente.php">', $areaUtente);
@@ -129,7 +129,7 @@ if($nComm>0){
 }
 else {
     $commenti .= "<div id=\"messageU\"><span>Non hai ancora commentanto nessun videogioco. 
-    Per farlo recati alla pagina<a href=\"recensioni.php\">Recensioni</a>, leggi una delle nostre recensioni e dacci una tua opinione sul videogioco scelto!</span></div>";
+    Per farlo recati alla pagina <a href=\"recensioni.php\">Recensioni</a> , leggi una delle nostre recensioni e dacci una tua opinione sul videogioco scelto!</span></div>";
 }
 CloseCon($db);
 

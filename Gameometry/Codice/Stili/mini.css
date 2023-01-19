@@ -3,6 +3,7 @@
 SEZIONE HEADER
 ==============
 */
+
 body {
     background-color: var(--mainColor);
 }
@@ -111,10 +112,6 @@ header div {
 SEZIONE CONTENUTO
 =================
 */
-
-main {
-    padding-top: 13em;
-}
 
 /*
 ======
@@ -269,8 +266,17 @@ PAGINA EVENTI
 =============
 */
 
-.descrizioneEvento p {
-    line-height: 2.5em;
+.evento {
+    line-height: 3.0em;
+}
+
+.evento h2 {
+    text-align: center;
+}
+
+.evento h2+p.dataNotizia{
+    text-align: center;
+    padding-bottom: 1.0em;
 }
 
 /*
@@ -377,6 +383,8 @@ PAGINA RECENSIONE
 
 .evento h2 {
     font-size: 1.8em;
+    padding-top: 2.0em;
+    padding-bottom: 1.5em;
 }
 
 .commento {
@@ -475,7 +483,7 @@ PAGINA UTENTE
 @media screen and (max-device-width: 800px){
 
     main {
-        padding-top: 20em;
+        padding-top: 17em;
     }
     
     #recensioni-critica>div {
@@ -502,13 +510,14 @@ PAGINA UTENTE
     .titoloCritica {
         font-size: 2.6em;
         margin-bottom: 0.8em;
-        display: flex;
         line-height: 1.5em;
-        align-self: center;
+        text-align: center;
     }
 
     .contenutoRecensione p {
-        font-size: 0.8em;
+        font-size: 1.4em;
+        text-align: center;
+        line-height: 2.5em;
     }
 
     .punteggio{

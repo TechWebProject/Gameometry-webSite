@@ -709,7 +709,7 @@ PAGINA VIDEOGIOCHI
     grid-column-gap: 2.0em;
     padding-bottom: 1.5em;
     margin-top: 2.0em;
-    margin-bottom: 31.7em;
+    margin-bottom: 6.0em;
     justify-items: center;
 }
 
@@ -717,6 +717,11 @@ PAGINA VIDEOGIOCHI
     padding: none;
     width: 16.0em;
     height: 22.0em;
+}
+
+#toStretch {
+    padding: 2.0em 0em 2.0em 1.0em;
+    margin-bottom: 35.0em;
 }
 
 .btImg {

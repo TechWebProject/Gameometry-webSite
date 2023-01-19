@@ -45,6 +45,7 @@ $imgForm = " ";
 
 if($n_rows==0){
     $videogiochi = str_replace("</VIDEOGIOCHI>","<p id=\"noresult_text\">Nessun risultato</p>",$videogiochi);
+    $videogiochi = str_replace("id=\"sezioneVideogiochi\"","id=\"toStretch\"",$videogiochi);
 }else{
     foreach ($imgz as $attributes) {
         $imgForm .= "<form action=\"templateGioco.php\" method=\"POST\"><button name=\"immagine\" class=\"btImg\" value=\"nomeTitoloVideogioco\" aria-label=\"vai alla pagina di nomeTitoloVideogioco\"><img src=\"nomeFileLocandina\" alt=\"nomeTitoloVideogioco\" class=\"imgs\"><span class=\"imgSpan\">nomeTitoloVideogioco</span></button></form>";
