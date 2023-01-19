@@ -4,8 +4,9 @@ CODICE SLIDER
 ==============
 */
 
+function slider(){
     let ScrollPosition=0;
-
+    
     const btnleft = document.querySelector("#btn-left");
     const btnright = document.querySelector("#btn-right");
     const cCont = document.querySelector(".carousel");
@@ -19,7 +20,7 @@ CODICE SLIDER
     btnright.addEventListener("click",()=>{
         cCont.scrollBy(800,0);
     });
-
+}
 
 /*
 ==============
