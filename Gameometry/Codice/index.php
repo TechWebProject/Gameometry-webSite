@@ -15,21 +15,28 @@ if(isset($_SESSION['username'])){
 
 $index = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span></p>", $index);
 
-//CAROSELLO
+//RANDOM X CAROSELLO + CAROSELLO
 $dir = scandir("Locandine");
 $str = 'Locandine/';
 
-$imgz = array(count($dir) - 2);
+$db = OpenCon();
+$query = "SELECT titolo,imgLocandina FROM videogioco ORDER BY rilascio desc LIMIT 10";
+$result = mysqli_query($db, $query);
+$arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
+mysqli_free_result($result);
+
+$imgz = array();
 $imgz = array_fill(0, 10, null);
 
-for ($i = 2; $i <12; $i++) {
-    $res = $str . $dir[$i];
-    $trimmedword = RemoveSpecialChar($dir, $i);
+for($i=0;$i<10;$i++){
+    $alt=$arr[$i]['titolo'];
+    $src=$arr[$i]['imgLocandina'];
+
     $j = rand(0, 9);
     while ($imgz[$j] != NULL) {
         $j = rand(0, 9);
     }
-    $imgz[$j] = array('src' => $res, 'alt' => $trimmedword);
+    $imgz[$j] = array('src' =>$src, 'alt' => 'locandina '.$alt);
 }
 
 $carousel = "";
@@ -52,7 +59,6 @@ foreach ($imgz as $attributes) {
 $index = str_replace("</CAROUSEL_CONTENT>",$carousel,$index);
 
 //ULTIME RECENSIONI
-$db = OpenCon();
 $query = "SELECT * FROM recensione ORDER BY dataPubblicazione desc LIMIT 5";
 $result = mysqli_query($db, $query);
 $arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
