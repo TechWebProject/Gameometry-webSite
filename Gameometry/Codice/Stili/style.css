@@ -668,6 +668,10 @@ footer {
     text-align: center;
 }
 
+#boxFooter {
+    padding-top: 0.5em;
+}
+
 #boxFooter img {
     width: 10%;
     padding-top: 1.0em;
@@ -1025,7 +1029,6 @@ dl {
 }
 
 .userButtons {
-    display: block;
     width: 25%;
 }
 
@@ -1036,7 +1039,9 @@ dl {
     padding: 1em;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: var(--sideColor);
     cursor: pointer;
+    border: none;
     border-radius: 8px;
     margin-bottom: 1.5em;
 }
