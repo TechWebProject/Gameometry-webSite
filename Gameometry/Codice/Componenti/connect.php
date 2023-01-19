@@ -16,12 +16,4 @@ function OpenCon(){
 function CloseCon($conn){
     $conn -> close();
 }
-
-//Per rimuovere dal nome le estensioni
-function RemoveSpecialChar($dir,$n){
-    $res = str_replace( array( '.webp', '.jpg',
-    '.png' , '.jpeg'), '', $dir[$n]);
-    return $res;
-}
-
 ?>
