@@ -61,20 +61,12 @@ if (isset($_SESSION['email'])) {
     if (!isset($userNotOk)) {
         $recU .= "<h2 class=\"titleH2\">LASCIA UN COMMENTO</h2>
         <div id=\"inputCommento\"><form action=\"areaUtente.php\" method=\"POST\">
-    <textarea id=\"areaCommento\" name=\"commentoU\" rows=\"10\" placeholder=\" Lascia un commento\" maxlength=\"900\"></textarea><div id=\"votazione\">
-    <p>Lascia un voto</p>
-    <input id=\"rate1\" name=\"rating\" type=\"radio\" value=\"1\"><label id=\"voto\" for=\"rate1\">1</label>
-    <input id=\"rate2\" name=\"rating\" type=\"radio\" value=\"2\"><label id=\"voto\" for=\"rate2\">2</label>
-    <input id=\"rate3\" name=\"rating\" type=\"radio\" value=\"3\"><label id=\"voto\" for=\"rate3\">3</label>
-    <input id=\"rate4\" name=\"rating\" type=\"radio\" value=\"4\"><label id=\"voto\" for=\"rate4\">4</label>
-    <input id=\"rate5\" name=\"rating\" type=\"radio\" value=\"5\"><label id=\"voto\" for=\"rate5\">5</label>
-    <input id=\"rate6\" name=\"rating\" type=\"radio\" value=\"6\"><label id=\"voto\" for=\"rate6\">6</label>
-    <input id=\"rate7\" name=\"rating\" type=\"radio\" value=\"7\"><label id=\"voto\" for=\"rate7\">7</label>
-    <input id=\"rate8\" name=\"rating\" type=\"radio\" value=\"8\"><label id=\"voto\" for=\"rate8\">8</label>
-    <input id=\"rate9\" name=\"rating\" type=\"radio\" value=\"9\"><label id=\"voto\" for=\"rate9\">9</label>
-    <input id=\"rate10\" name=\"rating\" type=\"radio\" value=\"10\"><label id=\"voto\" for=\"rate10\">10</label>
-    </div>
-    <input type=\"hidden\" name=\"inviaCommento2\" value=\"$titoloGioco\"><button id=\"inviaCommento\" aria-label=\"invia commento\" type=\"submit\" name=\"inviaCommento\" value=\"Commenta\">Commenta</button></div>";
+        <textarea id=\"areaCommento\" name=\"commentoU\" rows=\"10\" placeholder=\" Lascia un commento\" maxlength=\"900\"></textarea><div id=\"votazione\">
+        <p>Lascia un voto</p>";
+        for($i=1;$i<=10;$i++){
+            $recU .= "<input id=\"rate$i\" name=\"rating\" type=\"radio\" value=\"$i\"><label id=\"voto\" for=\"rate$i\">$i</label>";
+        }
+    $recU .= "</div><input type=\"hidden\" name=\"inviaCommento2\" value=\"$titoloGioco\"><button id=\"inviaCommento\" aria-label=\"invia commento\" type=\"submit\" name=\"inviaCommento\" value=\"Commenta\">Commenta</button></form></div>";
     }
     $recensioneGioco = str_replace("</RECENSIONEU>", $recU, $recensioneGioco);
 }
