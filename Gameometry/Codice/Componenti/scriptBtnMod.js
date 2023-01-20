@@ -10,6 +10,7 @@ function modRec(e){
             const textarea = document.createElement('textarea');
             textarea.setAttribute("id","textarea-mod");
             textarea.innerHTML=ul[i].children[1].innerHTML;
+            textarea.setAttribute("oninput","upgradeValue()");
             var nodetodel = ul[i].children[1];
             ul[i].removeChild(nodetodel);
             ul[i].appendChild(textarea);
@@ -23,9 +24,16 @@ function modRec(e){
             btnInv.setAttribute("id","inviomod");
             btnAnn.setAttribute("id","annullamod");
             btnInv.setAttribute("aria-label","Invio modifiche del commento");
+            btnInv.setAttribute("name","contenutoAgg");
+            btnInv.setAttribute("value",textarea.textContent);
             btnAnn.setAttribute("aria-label","Annulla modifiche del commento");
             btnAnn.setAttribute("onclick","annMod()");
             formInv.appendChild(btnInv);
+            const inputHidden = document.createElement('input');
+            inputHidden.setAttribute("type","hidden");
+            inputHidden.setAttribute("name","idGioco");
+            inputHidden.setAttribute("value",value);
+            formInv.appendChild(inputHidden);
             ul[i].appendChild(btnAnn);
             ul[i].appendChild(formInv);
         }
@@ -37,6 +45,13 @@ function modRec(e){
             userButtons[i].children[1].children[0].hidden = true;
         }
     }
+}
+
+function upgradeValue(){
+    const btninv = document.getElementById("inviomod");
+    const txt = document.getElementById("textarea-mod");
+    btninv.removeAttribute("value");
+    btninv.setAttribute("value",txt.value);
 }
 
 function annMod(){

@@ -147,6 +147,15 @@ if(isset($_POST['eliminaCommento'])){
     header("Location: areaUtente.php");
 }
 
+if(isset($_POST['contenutoAgg'])&&isset($_POST['idGioco'])){
+    $commentoMod = $_POST['contenutoAgg'];
+    $idRec = $_POST['idGioco'];
+    $upgradeComm = "UPDATE commento SET contenuto='$commentoMod' WHERE idCommento='$idRec'";
+    $result=mysqli_query($db,$upgradeComm);
+
+    header("Location: areaUtente.php");
+}
+
 CloseCon($db);
 
 echo $areaUtente;
