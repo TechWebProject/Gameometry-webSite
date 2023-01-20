@@ -56,8 +56,8 @@ SEZIONE HEADER
 ==============
 */
 
-#menu a:visited {
-    color: var(--textColor);
+#menu a, #menu a:link {
+    color: black;
 }
 
 header {
