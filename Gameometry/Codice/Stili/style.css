@@ -1375,6 +1375,7 @@ TEMPLATE GIOCO
     border-radius: 3em;
     color: black;
     padding: 2em;
+    font-size: 0.9em;
 }
 
 #lanostrarecensione:hover {
