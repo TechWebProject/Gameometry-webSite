@@ -100,7 +100,7 @@ for ($i = 0; $i < $n_rows; $i++) {
     <li> $contenuto</li>
     </ul>
     </div>
-    <div class=\"boxPunteggioU\"><p class=\"punteggioU\">$votoU</p></div>
+    <div class=\"boxPunteggioU\"><p class=\"descPunteggio\">punteggio</p><p class=\"punteggioU\">$votoU</p></div>
     </div>";
 }
 

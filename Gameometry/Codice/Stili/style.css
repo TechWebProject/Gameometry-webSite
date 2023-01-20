@@ -290,7 +290,8 @@ SLIDER
 
 #saltacarosello,
 #saltanotizie,
-#tornaheader {
+#tornaheader,
+.descPunteggio {
     height: 1px;
     width: 1px;
     overflow: hidden;
