@@ -146,7 +146,7 @@ ULTIME NEWS
         'news5'
         'news5';
     grid-template-columns: 105%;
-    gap: 60px;
+    grid-gap: 5em;
     padding-top: 1.7em;
     padding-right: 2.5em;
 }
@@ -187,7 +187,8 @@ ULTIME NEWS
 
 .news-topic,
 .sidenews-topic {
-    font-size: 1.5em;
+    font-size: 1.8em;
+    line-height: 1.2em;
     padding: 0.0em;
 }
 
@@ -202,8 +203,6 @@ ULTIME NEWS
 ULTIME RECENSIONI
 =================
 */
-
-
 
 .contenutoRecensione li {
     font-size: 1em;
@@ -251,6 +250,7 @@ ULTIME RECENSIONI
 
 #desc{
     font-size: 1.5em;
+    line-height: 2.0em;
     padding-left: 3.5em;
 }
 
@@ -262,6 +262,10 @@ PAGINA EVENTI
 
 .evento {
     line-height: 3.0em;
+}
+
+.evento p {
+    padding-left: 1.5em;
 }
 
 .evento h2 {
@@ -496,6 +500,10 @@ PAGINA UTENTE
 
     #mainVideogioco {
         padding-top: 18em;
+    }
+
+    #mainRecensione {
+        padding-top: 20em;
     }
     
     #recensioni-critica>div {
