@@ -8,7 +8,7 @@
     --sideColor: #191919;
     --textColor: white;
     --visitedLink: #F77F00;
-    --mainColor: #9D2F38;
+    --mainColor: #B55908/*#9D2F38*/;
     --highlightedBox: #525252;
     --punteggioUtente: rgb(92, 0, 184);
 }
@@ -55,8 +55,8 @@ SEZIONE HEADER
 ==============
 */
 
-#menu a, #menu a:link {
-    color: black;
+#menu a:visited {
+    color: var(--textColor);
 }
 
 header {
@@ -1038,6 +1038,7 @@ dl {
     padding-top: 2.5em;
     font-size: 1.2em;
     line-height: 1.5em;
+    margin-bottom: 0.5em;
 }
 
 #user-info>dt {
