@@ -5,7 +5,7 @@ $template = new template();
 $template->setPage("index.html");
 $index = $template->initializePage();
 
-$index = str_replace("Titolo_pagina","Gameometry",$index);
+$index = str_replace("Titolo_pagina","Home | Gameometry",$index);
 $index = str_replace("parole_chiave", "gameometry, videogioco, videogiochi, console, pc, computer, recensione, recensioni, voto, notizie", $index);
 $index = str_replace("descrizione","Questa pagina &egrave; dedicata al mondo videoludico e, pi&ugrave; nello specifico, alle recensioni legate a questo tipo di mondo", $index);
 
@@ -86,7 +86,7 @@ for ($i = 0; $i < 5; $i++) {
     $contenuto .= "<abbr title=\"la recensione continua nella pagina del videogioco\">...</abbr>";
 
     $ultimeRecensioni .= "<div>
-    <form action=\"recensioneGioco.php\" method=\"POST\" class=\"formRecensioni\"><button name=\"recensione\" value=\"$titoloRecX\" aria-label=\"vai alla recensione di \".\"$chiavesterna\"><img class=\"r1\" src=\"$percorsoImg\" alt=\"locandina \".\"$chiavesterna\"></button></form><div class=\"commento\"><div class=\"contenutoRecensione\"><span class=\"titoloCritica\"><a href=\"./recensioneGioco.php?titRec=$titoloRecX\">$titoloRecX</a></span><p>$contenuto</p></div><p class=\"punteggio\">$voto</p></div></div>";  
+    <form action=\"recensioneGioco.php\" method=\"POST\" class=\"formRecensioni\"><button name=\"recensione\" value=\"$titoloRecX\" aria-label=\"vai alla recensione di \".\"$chiavesterna\"><img class=\"r1\" src=\"$percorsoImg\" alt=\"locandina $chiavesterna\"></button></form><div class=\"commento\"><div class=\"contenutoRecensione\"><span class=\"titoloCritica\"><a href=\"./recensioneGioco.php?titRec=$titoloRecX\">$titoloRecX</a></span><p>$contenuto</p></div><p class=\"punteggio\">$voto</p></div></div>";  
 
 }
 CloseCon($db);

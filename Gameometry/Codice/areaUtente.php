@@ -29,6 +29,7 @@ $areaUtente = str_replace("</EMAIL>", $_SESSION['email'], $areaUtente);
 $areaUtente = str_replace("</ISCRIZIONE>", $_SESSION['dataIscrizione'], $areaUtente);
 $areaUtente = str_replace("</NCOMMENTI>", "$nComm", $areaUtente);
 
+//USCITA DALL'ACCOUNT
 if(isset($_POST['logoutButton'])){
     session_unset(); 
     session_destroy(); 
@@ -36,6 +37,7 @@ if(isset($_POST['logoutButton'])){
     header("Location: areaLogIn.php");
 }
 
+//ELIMINAZIONE DEL PROFILO
 if(isset($_POST['deleteU'])){
     $deleteUser="DELETE FROM utente WHERE utente.email = '$email'";
     $result=mysqli_query($db,$deleteUser);
@@ -46,6 +48,7 @@ if(isset($_POST['deleteU'])){
     header("Location: areaLogin.php?message=success");
 }
 
+//MODIFICA DEI DATI DEL PROFILO
 if(isset($_POST['modifyU'])){
     header("Location: modificaUtente.php");
 }
@@ -84,15 +87,11 @@ if(isset($_POST['inviaCommento']) && isset($_POST['commentoU']) && isset($_POST[
 
     $result = mysqli_query($db,$query_insert);
 
-    header("Location: recensioni.php?message=success");
     header("Location: areaUtente.php");
-}
-else if(isset($_POST['inviaCommento'])){
-    function_alert("Per poter commentare un videogioco devi inserire un commento e un voto. Controlla di averli inseriti entrambi e riprova");
 }
 
 //COMMENTI
-$tmpquery= "SELECT videogioco.titolo as title, commento.contenuto as contenutoU, commento.voto as votoU FROM utente,commento,recensione,videogioco WHERE commento.idUtente=utente.email and commento.idVideogioco=videogioco.titolo and recensione.idVideogioco=videogioco.titolo and utente.email='$email' ORDER BY commento.data desc";
+$tmpquery= "SELECT videogioco.titolo as title, commento.idCommento as codiceCommento, commento.contenuto as contenutoU, commento.voto as votoU FROM utente,commento,recensione,videogioco WHERE commento.idUtente=utente.email and commento.idVideogioco=videogioco.titolo and recensione.idVideogioco=videogioco.titolo and utente.email='$email' ORDER BY commento.data desc";
 $result2 = mysqli_query($db,$tmpquery);
 $arr2 = mysqli_fetch_all($result2,MYSQLI_ASSOC);
 mysqli_free_result($result2);
@@ -100,6 +99,7 @@ mysqli_free_result($result2);
 $commenti = "";
 if($nComm>0){
     for($i=0;$i<$nComm;$i++){
+        $idCommento = $arr2[$i]['codiceCommento'];
         $titologioco = $arr2[$i]['title'];
         $titologioco=mysqli_real_escape_string($db,$titologioco);
         $contenuto=$arr2[$i]['contenutoU'];
@@ -114,13 +114,15 @@ if($nComm>0){
         $commenti .= "<div class=\"postU\">
         <div class=\"commentoU\">
             <div class=\"userButtons\">
-                <button class=\"btnmod\"></button>
-                <button class=\"btnel\"></button>
+                <button class=\"btnmod\" onclick=\"modRec(this)\" value=\"$idCommento\" aria-label=\"modifica il commento\"></button>
+                <form action=\"areaUtente.php\" method=\"POST\">
+                    <button class=\"btnel\" name=\"eliminaCommento\" value=\"$idCommento\" aria-label=\"elimina il commento\"></button>
+                </form>
             </div>
             <ul class=\"contenutoRecensioneU1\">
                 <li class=\"toBold\">
                     <a href=\"recensioneGioco.php?titRec=$titoloRec\" class=\"\">$titologioco</a></li>
-                <li>$contenuto</li>
+                <li id=\"$idCommento\">$contenuto</li>
             </ul>
             </div>
             <div class=\"boxPunteggioU1\"><p class=\"punteggioU\">$votoU</p></div>
@@ -131,11 +133,21 @@ else {
     $commenti .= "<div id=\"messageU\"><span>Non hai ancora commentanto nessun videogioco. 
     Per farlo recati alla pagina <a href=\"recensioni.php\">Recensioni</a> , leggi una delle nostre recensioni e dacci una tua opinione sul videogioco scelto!</span></div>";
 }
-CloseCon($db);
 
 $areaUtente = str_replace("</ULTIME_RECENSIONI>",$commenti,$areaUtente);
 
 $areaUtente = str_replace("\'","'",$areaUtente);
+
+//ELIMINAZIONE DI UN COMMENTO
+if(isset($_POST['eliminaCommento'])){
+    $commentToDelete = $_POST['eliminaCommento'];
+    $deleteUser="DELETE FROM commento WHERE commento.idCommento = '$commentToDelete'";
+    $result=mysqli_query($db,$deleteUser);
+
+    header("Location: areaUtente.php");
+}
+
+CloseCon($db);
 
 echo $areaUtente;
 

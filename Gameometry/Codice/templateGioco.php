@@ -14,6 +14,7 @@ if(isset($_SESSION['username'])){
 
 $title = $_POST['immagine'];
 $title = str_replace('vai alla pagina di ','',$title);
+$title = str_replace('locandina ','',$title);
 
 $db1=OpenCon();
 $title=mysqli_real_escape_string($db1,$title);

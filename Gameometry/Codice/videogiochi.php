@@ -62,9 +62,13 @@ if($n_rows==0){
                 $stringGenere = strip_tags($value);
                 $imgForm = str_replace("genere",$stringGenere,$imgForm);
             }
+                $imgForm = str_replace("valueButtonVideogioco",$value,$imgForm);
+                $imgForm = str_replace("nomeTitoloVideogioco","locandina $value",$imgForm);
+                $imgForm = str_replace("spanVideogioco",$value,$imgForm);
+            }   
         }
     }
-}
+
 
 CloseCon($db);
 

@@ -1,5 +1,5 @@
 
-function checkRegister(){
+function checkEmail(){
     const checkEmail = document.getElementById("email");
     const errorEmail = document.getElementById("errorEmailRegister");
 
@@ -8,7 +8,7 @@ function checkRegister(){
         // \w parola a caso "marco"
         // ([\.-]) marco. oppure marco-
         // ?\w controlla se c'è una parola marco.brigo
-        // @ forzata
+        // @ forzata 
         // \w parola => gmail
         // ([\.-]) punto o trattino
         // parola opzionale che c'è solo se c'è [. o -]
@@ -23,7 +23,9 @@ function checkRegister(){
     checkEmail.addEventListener("input",()=>{
         if(checkEmail.value.length<1)  errorEmail.innerText="";
     });
+}
 
+function checkUser(){
     const checkUser = document.getElementById("username");
     const errorUser = document.getElementById("errorUsernameRegister");
 
@@ -38,15 +40,17 @@ function checkRegister(){
     checkUser.addEventListener("input",()=>{
         if(checkUser.value.length<1)  errorUser.innerText="";
     });
+}
 
+function checkPsw(){
     const checkPsw = document.getElementById("password");
     const errorPsw = document.getElementById("errorPasswordRegister");
 
     checkPsw.addEventListener("blur",function(e){
         errorPsw.innerText="";
         const specialChars = /[`@#%^&*()_+\-=\[\]{};':"\\|,.<>\/~]/;
-        if((checkPsw.value.length>0)&&(checkPsw.value.search(/^[a-zA-Z0-9]*\w{1,12}$/)!=0||specialChars.test(checkPsw.value))){
-            errorPsw.innerText="Non è possibile utilizzare spazi o singoli/doppi apici";
+        if((checkPsw.value.length>0)&&(checkPsw.value.search(/^[a-zA-Z0-9]*\w{4,12}$/)!=0||specialChars.test(checkPsw.value))){
+            errorPsw.innerText="Password corta o caratteri speciali non ammessi";
         }
     });
 
@@ -54,3 +58,4 @@ function checkRegister(){
         if(checkPsw.value.length<1)  errorPsw.innerText="";
     });
 }
+

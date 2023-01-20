@@ -68,14 +68,18 @@ if(isset($_POST['registerButton']) && $_POST['email']!="" && $_POST['username']!
 
     $passwordNotAllowed = array(" ","'","\"","$","~",">","<",",","|","\\",";","}","{","=","+","(",")","*","&","^","%","#","@","`","-","_");
 
+    $count=0;
     foreach($testPassword as $test){
         if(in_array($test, $passwordNotAllowed)){
             $correctPassword = false;
         }
+        $count ++;
     }
 
+    if($count<4){$correctPassword = false;}
+
     if($correctPassword==false){
-        $spanPasswordMessage = "Non è possibile utilizzare spazi o singoli/doppi apici";
+        $spanPasswordMessage = "Password corta o caratteri speciali non ammessi";
         $areaRegistrazione = str_replace("<span id=\"errorPasswordRegister\"></span>","<span id=\"errorPasswordRegister\">".$spanPasswordMessage."</span>",$areaRegistrazione);
     }
 

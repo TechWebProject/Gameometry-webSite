@@ -54,14 +54,18 @@ if(isset($_POST['modifyButton']) && $_POST['username']!="" && $_POST['password']
 
     $passwordNotAllowed = array(" ","'","\"","$","~",">","<",",","|","\\",";","}","{","=","+","(",")","*","&","^","%","#","@","`","-","_");
 
+    $count=0;
     foreach($testPassword as $test){
         if(in_array($test, $passwordNotAllowed)){
             $correctPassword = false;
         }
+        $count ++;
     }
 
+    if($count<4){$correctPassword = false;}
+
     if($correctPassword==false){
-        $spanPasswordMessage = "Non è possibile utilizzare spazi o singoli/doppi apici";
+        $spanPasswordMessage = "Password corta o caratteri speciali non ammessi";
         $modificaUtente = str_replace("<span id=\"errorPasswordRegister\"></span>","<span id=\"errorPasswordRegister\">".$spanPasswordMessage."</span>",$modificaUtente);
     }
 

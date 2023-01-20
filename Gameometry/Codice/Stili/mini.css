@@ -70,7 +70,6 @@ header div {
     grid-column: 1;
     background-color: #f8f0e3;
     width: 100%;
-    height: 1.0em;
     border-radius: 5px;
 }
 
@@ -80,10 +79,9 @@ header div {
 
 #searchBar {
     all: unset;
-    width: 70%;
     margin-right: 2em;
-    margin-left: 2em;
-    font-size: 1.4em;
+    margin-left: 0.2em;
+    text-align: left center;
 }
 
 #SezRicerca {
@@ -148,7 +146,7 @@ ULTIME NEWS
         'news5'
         'news5';
     grid-template-columns: 105%;
-    gap: 60px;
+    grid-gap: 5em;
     padding-top: 1.7em;
     padding-right: 2.5em;
 }
@@ -188,7 +186,8 @@ ULTIME NEWS
 
 .news-topic,
 .sidenews-topic {
-    font-size: 1.5em;
+    font-size: 1.8em;
+    line-height: 1.2em;
     padding: 0.0em;
 }
 
@@ -203,8 +202,6 @@ ULTIME NEWS
 ULTIME RECENSIONI
 =================
 */
-
-
 
 .contenutoRecensione li {
     font-size: 1em;
@@ -252,6 +249,7 @@ ULTIME RECENSIONI
 
 #desc{
     font-size: 1.5em;
+    line-height: 2.0em;
     padding-left: 3.5em;
 }
 
@@ -265,6 +263,10 @@ PAGINA EVENTI
     line-height: 3.0em;
 }
 
+.evento p {
+    padding-left: 1.5em;
+}
+
 .evento h2 {
     text-align: center;
 }
@@ -272,6 +274,11 @@ PAGINA EVENTI
 .evento h2+p.dataNotizia{
     text-align: center;
     padding-bottom: 1.0em;
+}
+
+.evento h2+p, .dataNotizia+p {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
 }
 
 /*
@@ -500,6 +507,10 @@ PAGINA UTENTE
     #mainVideogioco {
         padding-top: 18em;
     }
+
+    #mainRecensione {
+        padding-top: 20em;
+    }
     
     #recensioni-critica>div {
         display: flex;
@@ -606,7 +617,7 @@ PAGINA UTENTE
 
     #searchBar {
         width: 200%;
-        font-size: 1.8em;
+        font-size: 1.5em;
         margin-top: 0.3em;
     }
 
@@ -646,6 +657,7 @@ PAGINA UTENTE
 
     .autocom-box li {
         font-size: 2em;
+        line-height: 1.5em;
     }
 
     #SezRicerca {
