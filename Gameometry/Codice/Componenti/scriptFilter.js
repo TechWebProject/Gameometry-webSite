@@ -8,7 +8,6 @@ var open = 0;
 
 btnFiltro.addEventListener("click", () =>{
     if(!open){
-        console.log("ciao");
         for(i= 0; i<btn.length; i++){
 
         btn.forEach(filtro => {
@@ -33,12 +32,12 @@ for(i= 0; i<btn.length; i++){
         
         videogiochi.forEach((gioco) =>{
             if(filter == "tutti"){
-                gioco.style.display="block";
+                gioco.style.display="block"; /* NO ATTRIBUTO STYLE INLINE (DENTRO IL TAG HTML) */
             }else{
                 if(gioco.classList.contains(filter)){
-                    gioco.style.display="block";
+                    gioco.style.display="block"; /* NO ATTRIBUTO STYLE INLINE (DENTRO IL TAG HTML) */
                 }else{
-                    gioco.style.display="none";
+                    gioco.style.display="none"; /* NO ATTRIBUTO STYLE INLINE (DENTRO IL TAG HTML) */
                 }
             }
         })

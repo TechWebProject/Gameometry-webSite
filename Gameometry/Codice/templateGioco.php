@@ -42,7 +42,7 @@ $templateGioco = str_replace("bannerGioco",$banner,$templateGioco);
 $title=str_replace("\'","'",$title);
 $templateGioco = str_replace("</TITOLOGIOCO>",$title,$templateGioco);
 
-$tmpImgName = str_replace("Locandina/","",$imgLocandina);
+$tmpImgName = str_replace("Locandine/","",$imgLocandina);
 $templateGioco = str_replace("altLocandinaGioco",$tmpImgName,$templateGioco);
 $templateGioco = str_replace("locandinaGioco",$imgLocandina,$templateGioco);
 
