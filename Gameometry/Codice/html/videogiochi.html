@@ -8,12 +8,28 @@
 </HEADER>
 
 <main>
+   
     <label id="arrTitoli"></label>
-    <h1 id="newsTitle">LA NOSTRA SELEZIONE DI VIDEOGIOCHI</h1>
+    <h1 id="firstTitle">LA NOSTRA SELEZIONE DI VIDEOGIOCHI</h1>
+    
+    <div id="filtro"> 
+        <div>
+            <button id="btnImgFiltro"><img id="imgFiltro" src="Immagini/filtro.png"></img></button>
+        </div>
+        <div id="listFilter">
+            <button  class="filtri hide" data-filter="tutti">Nessun filtro</button>
+            <button  class="filtri hide" data-filter="Avventura">Avventura - Avventura Dinamica</button>
+            <button  class="filtri hide" data-filter="Stealth">Stealth</button>
+            <button  class="filtri hide" data-filter="Azione">Azione</button>
+            <button  class="filtri hide" data-filter="Sparatutto">Sparatutto</button>
+        </div>
+    </div>
+
     <div id="sezioneVideogiochi">
         </VIDEOGIOCHI>
     </div>
 </main>
     </FOOTER>
+    <script type="text/JavaScript" src="Componenti/scriptFilter.js"></script>
 </body>
 </html>

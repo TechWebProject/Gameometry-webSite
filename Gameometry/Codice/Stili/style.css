@@ -7,9 +7,8 @@
     --backgroundColor: rgba(0, 0, 0, 0.650);
     --sideColor: #191919;
     --textColor: white;
-    --visitedLink: #AD343E;
-    --mainColor: #F77F00;
-    --alternativeTextColor: #F8F0E3;
+    --visitedLink: #F77F00;
+    --mainColor: #9D2F38;
     --highlightedBox: #525252;
     --punteggioUtente: rgb(92, 0, 184);
 }
@@ -106,7 +105,7 @@ header nav {
 }
 
 #SezRicerca {
-    background-color: var(--alternativeTextColor);
+    background-color: white;
     border-radius: 5px;
     height: 2.5em;
     margin-right: 1em;
@@ -260,8 +259,8 @@ SEZIONE BREADCRUMB
     line-height: 1.5em;
     padding: 0.3em 0em 0.3em 1em;
     font-weight: bold;
-    color: black;
-    background-color: var(--alternativeTextColor);
+    color: white;
+    background-color: var(--sideColor);
     text-align: center;
 }
 
@@ -716,6 +715,57 @@ PAGINA VIDEOGIOCHI
     margin-bottom: 6.0em;
     justify-items: center;
 }
+
+#filtro{
+    display: flex;
+    float:left;
+    margin-left:1.5em;
+    margin-top: 1.2em;
+    margin-bottom: 1.5em;
+    
+}
+
+#btnImgFiltro{
+    cursor: pointer;
+    text-align: left;
+    background: transparent;
+    border: none;
+    margin-right: 1em;
+}
+#imgFiltro{
+    width: 65%;
+
+}
+
+.filtri.hide{
+    display: none;
+    
+}
+
+#listFilter{
+    padding-top: 0.3em;
+}
+#listFilter>button{
+    border-right: 2px solid #9D2F38;
+
+}
+
+#listFilter>button:last-child{
+    border-right: none;
+
+}
+
+.filtri{
+    background: transparent;
+    color: white;
+    
+    cursor:pointer;
+    font-size: 1em;
+    border: none;
+    padding-right:1em;
+    padding-left:1em;
+}
+
 
 #sezioneVideogiochi img {
     padding: none;

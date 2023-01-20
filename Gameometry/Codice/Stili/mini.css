@@ -158,7 +158,6 @@ ULTIME NEWS
     font-size: 1.0em;
     padding: 0.3em 0em 0.3em 1em;
     font-weight: bold;
-    background-color: #f8f0e3;
 }
 
 .news-box,
@@ -430,6 +429,9 @@ PAGINA UTENTE
         font-size: 1em;
     }
 
+    #firstTitle{
+        margin-top:5em;
+    }
     #ricerca {
         padding-bottom: 0.5em;
         height: 0.8em;
@@ -473,6 +475,10 @@ PAGINA UTENTE
     #trama {
         padding-bottom: 1em;
     }
+
+    #filtro{
+        padding-top: 3em;
+    }
 }
 
 
@@ -488,7 +494,7 @@ PAGINA UTENTE
 @media screen and (max-device-width: 800px){
 
     main {
-        padding-top: 20em;
+        padding-top: 15em;
     }
 
     #mainVideogioco {
@@ -542,6 +548,28 @@ PAGINA UTENTE
 
     #recensioni-critica>div {
         border-bottom: 2px solid var(--mainColor);
+    }
+
+
+    #filtro{
+        margin-top: 2em;   
+        flex-direction: column;
+        margin-bottom: 3em;   
+    }
+
+    #btnImgFiltro{
+        margin-bottom: 3em;
+    }
+
+    #imgFiltro{
+        width: 120%;
+    
+    }
+
+    .filtri{
+        margin-bottom:1em;
+        font-size: 2.3em;
+
     }
     
 }
