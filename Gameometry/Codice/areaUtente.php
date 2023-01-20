@@ -114,15 +114,15 @@ if($nComm>0){
         $commenti .= "<div class=\"postU\">
         <div class=\"commentoU\">
             <div class=\"userButtons\">
+                <button class=\"btnmod\" onclick=\"modRec(this)\" value=\"$idCommento\"></button>
                 <form action=\"areaUtente.php\" method=\"POST\">
-                    <button class=\"btnmod\"></button>
                     <button class=\"btnel\" name=\"eliminaCommento\" value=\"$idCommento\"></button>
                 </form>
             </div>
             <ul class=\"contenutoRecensioneU1\">
                 <li class=\"toBold\">
                     <a href=\"recensioneGioco.php?titRec=$titoloRec\" class=\"\">$titologioco</a></li>
-                <li>$contenuto</li>
+                <li id=\"$idCommento\">$contenuto</li>
             </ul>
             </div>
             <div class=\"boxPunteggioU1\"><p class=\"punteggioU\">$votoU</p></div>

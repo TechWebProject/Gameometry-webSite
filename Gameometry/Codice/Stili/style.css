@@ -485,6 +485,31 @@ ULTIME RECENSIONI
 =================
 */
 
+#textarea-mod{
+    resize: none;
+    font-family: "Poppins", "sans-serif";
+    font-size: 0.9em;
+    border-radius: 5px; 
+    background-color: #dddddd;
+    color: #666666; 
+    width:100%;
+    outline:none;
+    line-height: 1.5em;
+    transition: all 0.4s;
+}
+
+#textarea-mod:hover{
+    cursor:pointer;
+    background-color: #eeeeee;
+}
+
+#textarea-mod:focus{
+    cursor:text;
+    background-color: var(--textColor);
+    color: var(--sideColor);
+    border: 1px solid transparent;
+}
+
 #saltarecensioni {
     height: 1px;
     width: 1px;
@@ -1030,6 +1055,8 @@ dl {
 }
 
 .userButtons {
+    display:flex;
+    flex-direction: row;
     width: 25%;
 }
 
