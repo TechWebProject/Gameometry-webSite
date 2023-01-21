@@ -39,7 +39,7 @@ for($i=0;$i<$n_rows;$i++){
     mysqli_free_result($result);
 
     $recensioniTot .= "<div><form action=\"recensioneGioco.php\" method=\"POST\" class=\"formRecensioni\"><button name=\"recensione\" value=\"$titoloRecX\" aria-label=\"vai alla recensione di $chiavesterna\">
-    <img class=\"r1\" src=\"$percorsoImg\" alt=\"$chiavesterna\"></button></form><div class=\"commento\"><div class=\"contenutoRecensione\"><span class=\"titoloCritica\">
+    <img class=\"r1\" src=\"$percorsoImg\" alt=\"$chiavesterna\"></button></form><div class=\"commentoRecensione\"><div class=\"contenutoRecensione\"><span class=\"titoloCritica\">
     <a href=\"./recensioneGioco.php?titRec=$titoloRecX\">$titoloRecX</a></span>";
     
     $cont = 500;

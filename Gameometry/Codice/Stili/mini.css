@@ -394,7 +394,7 @@ PAGINA RECENSIONE
     padding-bottom: 1.5em;
 }
 
-.commento {
+.commento, .commentoRecensione {
     line-height: 2.5em;
 }
 
@@ -524,14 +524,10 @@ PAGINA UTENTE
         width: auto;
     }
 
-    .commento {
+    .commentoRecensione {
         flex-direction: column-reverse;
         align-items: center;
     }
-
-    /* .commento #commentoUtenteRegistrato {
-        DA FIXARE COMMENTI IN RECENSIONEGIOCO
-    } */
 
     .contenutoRecensione{
         display: flex;

@@ -95,7 +95,7 @@ for ($i = 0; $i < $n_rows; $i++) {
     $votoU = $arr2[$i]['votoU'];
 
     $commenti .= "<div class=\"post\">
-    <img class=\"r2\" alt=\"immagine profilo utente registrato\" src=\"Immagini/avatar.png\"><div id=\"commentoUtenteRegistrato\" class=\"commento\"><ul class=\"contenutoRecensioneU\">
+    <img class=\"r2\" alt=\"immagine profilo utente registrato\" src=\"Immagini/avatar.png\"><div class=\"commento\"><ul class=\"contenutoRecensioneU\">
     <li class=\"toBold\">$nickname</li>
     <li> $contenuto</li>
     </ul>

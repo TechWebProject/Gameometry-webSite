@@ -551,7 +551,7 @@ ULTIME RECENSIONI
     color: var(--textColor);
 }
 
-.commento {
+.commento, .commentoRecensione {
     display: flex;
     margin-top: 2em;
     margin-bottom: 1em;
