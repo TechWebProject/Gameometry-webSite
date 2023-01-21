@@ -442,6 +442,7 @@ PAGINA UTENTE
     #ricerca {
         padding-bottom: 0.5em;
         height: 0.8em;
+        background-color: white;
     }
 
     #cerca img {
@@ -606,6 +607,7 @@ PAGINA UTENTE
     #ricerca {
         padding-bottom: 0.8em;
         height: 1.4em;
+        background-color: white;
     }
 
     #cerca img {
