@@ -32,12 +32,16 @@ for(i= 0; i<btn.length; i++){
         
         videogiochi.forEach((gioco) =>{
             if(filter == "tutti"){
-                gioco.style.display="block"; /* NO ATTRIBUTO STYLE INLINE (DENTRO IL TAG HTML) */
+                gioco.classList.remove("noSelected");
+                gioco.classList.add("filtrato");
+                
             }else{
                 if(gioco.classList.contains(filter)){
-                    gioco.style.display="block"; /* NO ATTRIBUTO STYLE INLINE (DENTRO IL TAG HTML) */
+                    gioco.classList.add("filtrato");
+                    gioco.classList.remove("noSelected");
                 }else{
-                    gioco.style.display="none"; /* NO ATTRIBUTO STYLE INLINE (DENTRO IL TAG HTML) */
+                    gioco.classList.remove("filtrato");
+                    gioco.classList.add("noSelected");
                 }
             }
         })

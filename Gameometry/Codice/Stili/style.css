@@ -777,6 +777,13 @@ PAGINA VIDEOGIOCHI
     
 }
 
+.filtrato{
+    display: block;
+}
+
+.noSelected{
+    display: none;
+}
 #btnImgFiltro{
     cursor: pointer;
     text-align: left;

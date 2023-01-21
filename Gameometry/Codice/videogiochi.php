@@ -22,7 +22,7 @@ $query;
 if(isset($_POST["immagine"])){
     $titolo=$_POST["immagine"];
     $titolo=mysqli_real_escape_string($db,$titolo);
-    $query = "SELECT titolo , imgLocandina FROM videogioco WHERE titolo like '%$titolo%'";
+    $query = "SELECT titolo , imgLocandina, genereV FROM videogioco WHERE titolo like '%$titolo%'";
     $titoloh1Video = "<h1 id=\"newsTitle\">RISULTATI DELLA RICERCA</h1>";
     $videogiochi = str_replace("<h1 id=\"newsTitle\">LA NOSTRA SELEZIONE DI VIDEOGIOCHI</h1>",$titoloh1Video,$videogiochi);
 }else{
@@ -49,7 +49,7 @@ if($n_rows==0){
     $videogiochi = str_replace("id=\"sezioneVideogiochi\"","id=\"toStretch\"",$videogiochi);
 }else{
     foreach ($imgz as $attributes) {
-        $imgForm .= "<form action=\"templateGioco.php\" method=\"POST\"><button name=\"immagine\" class=\"btImg\" value=\"valueButtonVideogioco\" aria-label=\"vai alla pagina di nomeTitoloVideogioco\"><img src=\"nomeFileLocandina\" alt=\"nomeTitoloVideogioco\" class=\"imgs\"><span class=\"imgSpan\">spanVideogioco</span></button></form>";
+        $imgForm .= "<form action=\"templateGioco.php\" method=\"POST\" class= \"genere game filtrato\"><button name=\"immagine\" class=\"btImg\" value=\"valueButtonVideogioco\" aria-label=\"vai alla pagina di nomeTitoloVideogioco\"><img src=\"nomeFileLocandina\" alt=\"nomeTitoloVideogioco\" class=\"imgs\"><span class=\"imgSpan\">spanVideogioco</span></button></form>";
         foreach ($attributes as $key => $value) {
             if($key=='src'){
                 $imgForm = str_replace("nomeFileLocandina",$value,$imgForm);
