@@ -116,7 +116,7 @@ if($nComm>0){
             <div class=\"userButtons\">
                 <button class=\"btnmod\" onclick=\"modRec(this)\" value=\"$idCommento\" aria-label=\"modifica il commento\"></button>
                 <form action=\"areaUtente.php\" method=\"POST\">
-                    <button class=\"btnel\" name=\"eliminaCommento\" value=\"$idCommento\" aria-label=\"elimina il commento\"></button>
+                    <button class=\"btnel\" name=\"eliminaCommento\" type=\"submit\" value=\"$idCommento\" aria-label=\"elimina il commento\"></button>
                 </form>
             </div>
             <ul class=\"contenutoRecensioneU1\">

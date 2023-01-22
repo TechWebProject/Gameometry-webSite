@@ -755,6 +755,11 @@ PAGINA VIDEOGIOCHI
 ==================
 */
 
+#noresult_text {
+    color: var(--textColor);
+    font-size: 1.5em;
+}
+
 #sezioneVideogiochi {
     width: 100%;
     display: grid;
@@ -817,7 +822,6 @@ PAGINA VIDEOGIOCHI
 .filtri{
     background: transparent;
     color: white;
-    
     cursor:pointer;
     font-size: 1em;
     border: none;
@@ -834,7 +838,7 @@ PAGINA VIDEOGIOCHI
 
 #toStretch {
     padding: 2.0em 0em 2.0em 1.0em;
-    margin-bottom: 35.0em;
+    margin-bottom: 40.0em;
 }
 
 .btImg {
@@ -1320,11 +1324,6 @@ TEMPLATE GIOCO
 #boxattributi dd {
     text-indent: 0em;
     padding-left: 3em;
-}
-
-#noresult_text {
-    color: var(--alternativeTextColor);
-    font-size: 1.5em;
 }
 
 #titologioco {
