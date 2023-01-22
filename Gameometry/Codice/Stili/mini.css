@@ -701,4 +701,9 @@ PAGINA UTENTE
     .imgSpan {
         font-size: 3em;
     }
+
+    #btn-left,
+    #btn-right {
+        display: none;
+    }
 }

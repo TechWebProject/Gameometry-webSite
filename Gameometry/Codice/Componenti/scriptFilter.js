@@ -28,10 +28,12 @@ for(i= 0; i<btn.length; i++){
 
     btn[i].addEventListener("click", (e)=>{
         
-        const filter = e.target.dataset.filter;
+        var filter = e.target.textContent;
+
+        filter = filter.split(" ").join("");
         
         videogiochi.forEach((gioco) =>{
-            if(filter == "tutti"){
+            if(filter == "Tutti"){
                 gioco.classList.remove("noSelected");
                 gioco.classList.add("filtrato");
                 

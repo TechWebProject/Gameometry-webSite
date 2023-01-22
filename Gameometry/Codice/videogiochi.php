@@ -62,6 +62,7 @@ if($n_rows==0){
             }
             if($key == 'genere'){
                 $stringGenere = strip_tags($value);
+                $stringGenere = str_replace("Avventura dinamica","Avventuradinamica", $stringGenere);
                 $imgForm = str_replace("genere",$stringGenere,$imgForm);
             }
         }   
