@@ -337,13 +337,9 @@ PAGINA DI ACCESSO
 =================
 */
 
-#logIn, #modificaUtenza {
-    padding-bottom: 28.5em;
-}
-
-#mainRegistrazione {
-    padding-top: 3.0em;
-    padding-bottom: 26.0em;
+#logIn, #modificaUtenza, #mainRegistrazione {
+    padding-top: 6em;
+    padding-bottom: 45em;
 }
 
 /*
