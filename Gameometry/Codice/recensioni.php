@@ -39,8 +39,8 @@ for($i=0;$i<$n_rows;$i++){
     mysqli_free_result($result);
 
     $recensioniTot .= "<div><form action=\"recensioneGioco.php\" method=\"POST\" class=\"formRecensioni\"><button name=\"recensione\" value=\"$titoloRecX\" aria-label=\"vai alla recensione di $chiavesterna\">
-    <img class=\"r1\" src=\"$percorsoImg\" alt=\"$chiavesterna\"></button></form><div class=\"commentoRecensione\"><div class=\"contenutoRecensione\"><span class=\"titoloCritica\">
-    <a href=\"./recensioneGioco.php?titRec=$titoloRecX\">$titoloRecX</a></span>";
+    <img class=\"r1\" src=\"$percorsoImg\" alt=\"$chiavesterna\"></button></form><div class=\"commentoRecensione\"><div class=\"contenutoRecensione\"><h2 class=\"titoloCritica\">
+    <a href=\"./recensioneGioco.php?titRec=$titoloRecX\">$titoloRecX</a></h2>";
     
     $cont = 500;
     while ($contenuto[$cont] != ".") {
