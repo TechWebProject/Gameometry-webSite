@@ -1290,7 +1290,7 @@ PAGINA DI ACCESSO
     margin-bottom: 1.0em;
 }
 
-#linkRegistrazione {
+#linkRegistrazione a {
     font-size: 0.8em;
     color: black;
 }
