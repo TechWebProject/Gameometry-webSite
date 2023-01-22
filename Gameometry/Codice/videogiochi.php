@@ -23,8 +23,8 @@ if(isset($_POST["immagine"])){
     $titolo=$_POST["immagine"];
     $titolo=mysqli_real_escape_string($db,$titolo);
     $query = "SELECT titolo , imgLocandina, genereV FROM videogioco WHERE titolo like '%$titolo%'";
-    $titoloh1Video = "<h1 id=\"newsTitle\">RISULTATI DELLA RICERCA</h1>";
-    $videogiochi = str_replace("<h1 id=\"newsTitle\">LA NOSTRA SELEZIONE DI VIDEOGIOCHI</h1>",$titoloh1Video,$videogiochi);
+    $titoloh1Video = "<h1 id=\"firstTitle\">RISULTATI DELLA RICERCA</h1>";
+    $videogiochi = str_replace("<h1 id=\"firstTitle\">LA NOSTRA SELEZIONE DI VIDEOGIOCHI</h1>",$titoloh1Video,$videogiochi);
 }else{
     $query = "SELECT titolo , imgLocandina , genereV FROM videogioco";
 }
