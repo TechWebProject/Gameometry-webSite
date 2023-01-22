@@ -802,8 +802,11 @@ PAGINA VIDEOGIOCHI
 }
 
 .filtri.hide{
-    display: none;
-    
+    display: none;    
+}
+
+.ciao{
+    display:none;
 }
 
 #listFilter{
