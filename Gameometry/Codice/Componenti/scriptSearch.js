@@ -7,7 +7,6 @@ function search(){
 
   const btnSearch = document.getElementById("btSearch");
   btnSearch.setAttribute("name","immagine");
-  const Lente = document.getElementById("ricercaLente");
 
   var arrTitoli = document.getElementById("arrTitoli").textContent;
   var titoli = arrTitoli.split(",");
@@ -28,6 +27,7 @@ function search(){
         imageList[focus].setAttribute("class","active");
       }
       inputBox.value=imageList[focus].textContent;
+      btnSearch.setAttribute("value",inputBox.value);
     }else if(event.key=="ArrowUp"){
       if(focus-1>=0){
         imageList[focus].removeAttribute("class");
@@ -35,6 +35,7 @@ function search(){
         imageList[focus].setAttribute("class","active");
       } 
       inputBox.value=imageList[focus].textContent;
+      btnSearch.setAttribute("value",inputBox.value);
     } 
     if(event.key=="Enter"){
       event.preventDefault();
@@ -55,7 +56,6 @@ function search(){
     }
 
     if(userData){
-
       let filteredArray = emptyArray.filter(checkIfMatch);
     
       for(let i=0;i<filteredArray.length;i++){
