@@ -96,6 +96,7 @@ function annMod(){
             var nodetodel = ul[i].children[1];
             ul[i].removeChild(nodetodel);
             ul[i].appendChild(li);
+            ul[i].removeChild(document.getElementById("votazione"));
             ul[i].removeChild(ul[i].children[2]);
             ul[i].removeChild(document.getElementById("annullamod"));
         }

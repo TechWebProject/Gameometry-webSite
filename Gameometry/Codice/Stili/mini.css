@@ -4,6 +4,10 @@ SEZIONE HEADER
 ==============
 */
 
+#siteNav{
+    position:static;
+}
+
 body {
     background-color: var(--mainColor);
 }
