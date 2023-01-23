@@ -215,7 +215,6 @@ ULTIME RECENSIONI
     max-height: 2em;
 }
 
-
 .scores {
     font-size: 1.8em;
     line-height: 1.5em;
@@ -261,15 +260,22 @@ PAGINA EVENTI
 
 .evento {
     line-height: 4.0em;
-    text-align: center;
 }
 
 .evento h2 {
+    text-align: center;
     line-height: 2.5em;
+    padding-left: 1.0em;
+    padding-right: 1.0em;
 }
 
 .evento p {
-    padding-left: 1.5em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+.dataNotizia {
+    text-align: center;
 }
 
 .evento h2+p.dataNotizia{
@@ -534,8 +540,9 @@ PAGINA UTENTE
 
     .contenutoRecensione p {
         font-size: 1.4em;
-        text-align: center;
-        line-height: 2.5em;
+        line-height: 3.5em;
+        padding-left: 2.5em;
+        padding-right: 2.5em;
     }
 
     .punteggio{
