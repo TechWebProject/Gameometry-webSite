@@ -29,11 +29,36 @@ function modRec(e){
             btnAnn.setAttribute("aria-label","Annulla modifiche del commento");
             btnAnn.setAttribute("onclick","annMod()");
             formInv.appendChild(btnInv);
-            const inputHidden = document.createElement('input');
-            inputHidden.setAttribute("type","hidden");
-            inputHidden.setAttribute("name","idGioco");
-            inputHidden.setAttribute("value",value);
-            formInv.appendChild(inputHidden);
+            const inputHidden1 = document.createElement('input');
+            inputHidden1.setAttribute("type","hidden");
+            inputHidden1.setAttribute("name","idGioco");
+            inputHidden1.setAttribute("value",value);
+            formInv.appendChild(inputHidden1);
+            const inputHidden2 = document.createElement('input');
+            inputHidden2.setAttribute("type","hidden");
+            inputHidden2.setAttribute("name","votoNuovo");
+            inputHidden2.setAttribute("value","No");
+            formInv.appendChild(inputHidden2);
+            const divVoto = document.createElement('div');
+            divVoto.setAttribute("id","votazione");
+            const pVoto = document.createElement("p");
+            pVoto.innerHTML="Inserisci un voto se vuoi modificarlo";
+            divVoto.appendChild(pVoto);
+            for(let j=1;j<11;j++){
+                labelX = document.createElement("label");
+                labelX.setAttribute("id","voto");
+                labelX.setAttribute("for","rate"+j);
+                labelX.innerHTML=j;
+                checkBoxX = document.createElement("input");
+                checkBoxX.setAttribute("id","rate"+j);
+                checkBoxX.setAttribute("name","rating");
+                checkBoxX.setAttribute("type","radio");
+                checkBoxX.setAttribute("value",j);
+                checkBoxX.setAttribute("onclick","upgradeVoto(this)");
+                divVoto.appendChild(checkBoxX);
+                divVoto.appendChild(labelX);
+            }
+            ul[i].appendChild(divVoto);
             ul[i].appendChild(btnAnn);
             ul[i].appendChild(formInv);
         }
@@ -52,6 +77,13 @@ function upgradeValue(){
     const txt = document.getElementById("textarea-mod");
     btninv.removeAttribute("value");
     btninv.setAttribute("value",txt.value);
+}
+
+function upgradeVoto(e){
+    voto=e.value;
+    const input_voto = document.getElementsByName("votoNuovo")[0];
+    input_voto.removeAttribute("value");
+    input_voto.setAttribute("value",voto);
 }
 
 function annMod(){

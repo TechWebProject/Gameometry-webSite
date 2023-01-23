@@ -147,10 +147,14 @@ if(isset($_POST['eliminaCommento'])){
     header("Location: areaUtente.php");
 }
 
-if(isset($_POST['contenutoAgg'])&&isset($_POST['idGioco'])){
+if(isset($_POST['contenutoAgg'])&&isset($_POST['idGioco'])&&isset($_POST['votoNuovo'])){
+    $votoNuovo = $_POST['votoNuovo'];
     $commentoMod = $_POST['contenutoAgg'];
     $idRec = $_POST['idGioco'];
     $upgradeComm = "UPDATE commento SET contenuto='$commentoMod' WHERE idCommento='$idRec'";
+    if($votoNuovo!="No"){
+        $upgradeComm = "UPDATE commento SET contenuto='$commentoMod',voto='$votoNuovo' WHERE idCommento='$idRec'";
+    }
     $result=mysqli_query($db,$upgradeComm);
 
     header("Location: areaUtente.php");
