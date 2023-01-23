@@ -260,25 +260,20 @@ PAGINA EVENTI
 */
 
 .evento {
-    line-height: 3.0em;
+    line-height: 4.0em;
+    text-align: center;
+}
+
+.evento h2 {
+    line-height: 2.5em;
 }
 
 .evento p {
     padding-left: 1.5em;
 }
 
-.evento h2 {
-    text-align: center;
-}
-
 .evento h2+p.dataNotizia{
-    text-align: center;
-    padding-bottom: 1.0em;
-}
-
-.evento h2+p, .dataNotizia+p {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
+    padding-bottom: 2.0em;
 }
 
 /*
