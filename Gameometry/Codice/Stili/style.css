@@ -1319,13 +1319,12 @@ TEMPLATE GIOCO
     display: flex;
     flex-direction: row;
     padding-top: 3em;
-    padding-left: 8%;
-    padding-right: 15%;
+    padding-left: 6em;
+    padding-right: 8em;
     margin-bottom: 5em;
 }
 
 #boxattributi dd {
-    text-indent: 0em;
     padding-left: 3em;
 }
 
