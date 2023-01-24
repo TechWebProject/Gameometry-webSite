@@ -42,12 +42,13 @@ for($i=0;$i<10;$i++){
 $carousel = "";
 
 foreach ($imgz as $attributes) {
-    $carousel .= "<form action=\"templateGioco.php\" method=\"POST\"><button name=\"immagine\" type=\"submit\" value=\"\"aria-label=\"\"><img src=\"\" alt=\"\" class=\"imgs\"></button></form>";
+    $carousel .= "<form action=\"templateGioco.php\" method=\"POST\"><button name=\"immagine\" type=\"submit\" value=\"\" aria-label=\"\"><img src=\"\" alt=\"\" class=\"imgs\"></button></form>";
     foreach ($attributes as $key => $value) {
         if($key=='src'){
             $carousel = str_replace("src=\"\"","src=\"$value\"",$carousel);
         }
         if($key=='alt'){
+            
             $indication = str_replace('locandina ', 'vai alla pagina di ', $value);
             $carousel = str_replace("value=\"\"","value=\"$indication\"",$carousel);
             $carousel = str_replace("aria-label=\"\"","aria-label=\"$indication\"",$carousel);
@@ -86,7 +87,7 @@ for ($i = 0; $i < 5; $i++) {
     $contenuto .= "<abbr title=\"la recensione continua nella pagina del videogioco\">...</abbr>";
 
     $ultimeRecensioni .= "<div>
-    <form action=\"recensioneGioco.php\" method=\"POST\" class=\"formRecensioni\"><button name=\"recensione\" type=\"submit\" value=\"$titoloRecX\" aria-label=\"vai alla recensione di \".\"$chiavesterna\"><img class=\"r1\" src=\"$percorsoImg\" alt=\"locandina $chiavesterna\"></button></form><div class=\"commentoRecensione\"><div class=\"contenutoRecensione\"><h2 class=\"titoloCritica\"><a href=\"./recensioneGioco.php?titRec=$titoloRecX\">$titoloRecX</a></h2><p>$contenuto</p></div><p class=\"descPunteggio\">il nostro punteggio</p><p class=\"punteggio\">$voto</p></div></div>";  
+    <form action=\"recensioneGioco.php\" method=\"POST\" class=\"formRecensioni\"><button name=\"recensione\" type=\"submit\" value=\"$titoloRecX\" aria-label=\"vai alla recensione di $chiavesterna\"><img class=\"r1\" src=\"$percorsoImg\" alt=\"locandina $chiavesterna\"></button></form><div class=\"commentoRecensione\"><div class=\"contenutoRecensione\"><h2 class=\"titoloCritica\"><a href=\"./recensioneGioco.php?titRec=$titoloRecX\">$titoloRecX</a></h2><p>$contenuto</p></div><p class=\"descPunteggio\">il nostro punteggio</p><p class=\"punteggio\">$voto</p></div></div>";  
 
 }
 CloseCon($db);

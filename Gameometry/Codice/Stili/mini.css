@@ -615,6 +615,7 @@ PAGINA UTENTE
 
     #areaRiservata img {
         height: 4em;
+        width: 100%;
     }
 
     #navUtente {

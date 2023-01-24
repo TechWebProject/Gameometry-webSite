@@ -1,54 +1,54 @@
-const btn = document.querySelectorAll(".filtri");
-const videogiochi = document.querySelectorAll(".game");
+function showFilter(){
+    const btn = document.querySelectorAll(".filtri");
+    const videogiochi = document.querySelectorAll(".game");
 
-const btnFiltro = document.getElementById("filtro");
+    const btnFiltro = document.getElementById("filtro");
 
-var open = 0;
+    var open = 0;
 
+    btnFiltro.addEventListener("click", () =>{
+        if(!open){
+            for(i= 0; i<btn.length; i++){
 
-btnFiltro.addEventListener("click", () =>{
-    if(!open){
-        for(i= 0; i<btn.length; i++){
+            btn.forEach(filtro => {
+                filtro.classList.remove("hide");
+            });
+            open=1;
+        }
+        }else{
+            btn.forEach(filtro => {
+                filtro.classList.add("hide");
+            });
+            open=0;
+        }
 
-        btn.forEach(filtro => {
-            filtro.classList.remove("hide");
-        });
-        open=1;
-    }
-    }else{
-        btn.forEach(filtro => {
-            filtro.classList.add("hide");
-           });
-        open=0;
-    }
-
-})
-
-for(i= 0; i<btn.length; i++){
-
-    btn[i].addEventListener("click", (e)=>{
-        
-        var filter = e.target.textContent;
-
-        filter = filter.split(" ").join("");
-        
-        videogiochi.forEach((gioco) =>{
-            if(filter == "Tutti"){
-                gioco.classList.remove("noSelected");
-                gioco.classList.add("filtrato");
-                
-            }else{
-                if(gioco.classList.contains(filter)){
-                    gioco.classList.add("filtrato");
-                    gioco.classList.remove("noSelected");
-                }else{
-                    gioco.classList.remove("filtrato");
-                    gioco.classList.add("noSelected");
-                }
-            }
-        })
-        e.stopPropagation();
     })
 
-}
+    for(i= 0; i<btn.length; i++){
 
+        btn[i].addEventListener("click", (e)=>{
+            
+            var filter = e.target.textContent;
+
+            filter = filter.split(" ").join("");
+            
+            videogiochi.forEach((gioco) =>{
+                if(filter == "Tutti"){
+                    gioco.classList.remove("noSelected");
+                    gioco.classList.add("filtrato");
+                    
+                }else{
+                    if(gioco.classList.contains(filter)){
+                        gioco.classList.add("filtrato");
+                        gioco.classList.remove("noSelected");
+                    }else{
+                        gioco.classList.remove("filtrato");
+                        gioco.classList.add("noSelected");
+                    }
+                }
+            })
+            e.stopPropagation();
+        })
+
+    }
+}

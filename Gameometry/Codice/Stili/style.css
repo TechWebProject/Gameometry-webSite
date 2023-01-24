@@ -142,12 +142,11 @@ header nav {
 }
 
 #arrTitoli {
-    display: none
+    display: none;
 }
 
 #navUtente {
     display: flex;
-
 }
 
 #navUtente div {
@@ -215,15 +214,8 @@ header nav {
     display: block;
 }
 
-
 #cerca img {
     padding-right: 1em;
-}
-
-#areaR {
-    background-color: var(--mainColor);
-    border: none;
-    margin-right: 2.0em;
 }
 
 #areaRiservata {
@@ -235,7 +227,7 @@ header nav {
 
 #areaRiservata img {
     padding-top: 0.2em;
-    height: 2.0em;
+    height: 1.8em;
 }
 
 #menu ul,

@@ -50,7 +50,7 @@ if($n_rows==0){
     $videogiochi = str_replace("id=\"sezioneVideogiochi\"","id=\"toStretch\"",$videogiochi);
 }else{
     foreach ($imgz as $attributes) {
-        $imgForm .= "<form action=\"templateGioco.php\" method=\"POST\" class= \"genere game filtrato\"><button name=\"immagine\" class=\"btImg\" type=\"submit\" value=\"valueButtonVideogioco\" aria-label=\"vai alla pagina di nomeTitoloVideogioco\"><img src=\"nomeFileLocandina\" alt=\"nomeTitoloVideogioco\" class=\"imgs\"><span class=\"imgSpan\">spanVideogioco</span></button></form>";
+        $imgForm .= "<form action=\"templateGioco.php\" method=\"POST\" class= \"genere game filtrato\"><button name=\"immagine\" class=\"btImg\" type=\"submit\" value=\"valueButtonVideogioco\" aria-label=\"vai alla pagina di Pagina\"><img src=\"nomeFileLocandina\" alt=\"nomeTitoloVideogioco\" class=\"imgs\"><span class=\"imgSpan\">spanVideogioco</span></button></form>";
         foreach ($attributes as $key => $value) {
             if($key=='src'){
                 $imgForm = str_replace("nomeFileLocandina",$value,$imgForm);
@@ -59,6 +59,7 @@ if($n_rows==0){
                 $value = str_replace('locandina ','',$value);
                 $imgForm = str_replace("valueButtonVideogioco",$value,$imgForm);
                 $imgForm = str_replace("nomeTitoloVideogioco","locandina $value",$imgForm);
+                $imgForm = str_replace("Pagina",$value,$imgForm);
                 $imgForm = str_replace("spanVideogioco",$value,$imgForm);
             }
             if($key == 'genere'){
