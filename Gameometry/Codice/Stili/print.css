@@ -17,11 +17,28 @@ abbr {
     text-decoration: none;
 }
 
+li,
+ul {
+    list-style: none;
+}
+
+.commento,
+.commentoRecensione {
+    display: flex;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.punteggio {
+    margin-top: 4em;
+}
+
 /*
 HEADER  e BREADCRUMB (NASCOSTI)
 */
 
-#saltacarosello {
+#saltacarosello,
+#saltanotizie {
     height: 1px;
     width: 1px;
     overflow: hidden;
@@ -37,7 +54,6 @@ header {
 }
 
 #logosito {
-    display: block;
     size: auto;
     align-items: center;
 }
@@ -53,84 +69,36 @@ header {
     position: absolute;
 }
 
+#logoutB,
+#deleteAccount,
+#modifyAccount {
+    overflow: hidden;
+    position: absolute;
+    display: none;
+}
+
 /*
 ======
 SLIDER
 ======
 */
-
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 42vh;
-    max-width: auto;
-}
-
-.horizontal-wrapper {
-    width: 100%;
-    height: 40vh;
-    border-radius: 5px;
+.carousel {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-}
-
-.carousel::-webkit-scrollbar {
-    display: none;
-}
-
-.horizontal-wrapper .carousel {
-    scrollbar-width: none;
-    display: flex;
-    transition: 0.5s all ease-out;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
+    flex-wrap: wrap;
 }
 
 .imgs {
-    cursor: pointer;
-    height: 37vh;
-    margin-left: 8px;
-    border-radius: 8px;
+    width: 10em;
+    height: 18em;
+    border-radius: 0px;
 }
 
-#btn-left {
-    width: 10%;
-    float: left;
-    margin-left: 5px;
-}
-
+#btn-left,
 #btn-right {
-    width: 10%;
-    margin-left: 13px;
-}
-
-.carousel {
-    float: left;
-    margin-left: 1.0em;
-    margin-right: 1.15em;
-}
-
-.wrapper button {
-    cursor: pointer;
-    text-align: center;
-    color: black;
-    border: none;
-    border-radius: 50%;
-    opacity: 0.5;
-    font-size: 4.0em;
-    font-weight: bold;
-    background-color: transparent;
-    display: contents;
-}
-
-.wrapper button:hover {
-    opacity: 0.8;
+    overflow: hidden;
+    position: absolute;
+    display: none;
 }
 
 main {
@@ -311,7 +279,7 @@ h1,
     margin-right: 0.3em;
     padding: 0.4em;
     border-radius: 7px;
-    /*color: white;*/
+    color: black;
     text-align: left;
     background-color: var(--mainColor);
     border: 0.5px solid var(--mainColor);
@@ -358,6 +326,7 @@ h1,
 }
 
 .boxPunteggioU {
+    margin-top: 4em;
     grid-column: 3;
     justify-self: end;
     background-color: var(--textColor);
@@ -425,7 +394,7 @@ SEZIONE FOOTER
 */
 
 footer {
-    opacity: 0;
+    display: none;
 }
 
 /*
@@ -434,23 +403,115 @@ PAGINA VIDEOGIOCHI
 ==================
 */
 
-#sezioneVideogiochi img {
-    padding: none;
-    width: 75%;
-    height: 22.0em;
+#btnImgFiltro {
+    display: none;
+}
+
+#noresult_text {
+    color: var(--textColor);
+    font-size: 1.5em;
 }
 
 #sezioneVideogiochi {
     width: 100%;
     display: grid;
+    object-fit: contain;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(auto-fill, 25.0em);
     grid-row-gap: 2.0em;
     grid-column-gap: 2.0em;
     padding-bottom: 1.5em;
-    margin-bottom: 5.0em;
-    align-items: center;
+    margin-top: 2.0em;
+    margin-bottom: 6.0em;
     justify-items: center;
+}
+
+#filtro {
+    display: flex;
+    float: left;
+    margin-left: 1.5em;
+    margin-top: 1.2em;
+    margin-bottom: 1.5em;
+
+}
+
+.filtrato {
+    display: block;
+}
+
+.noSelected {
+    display: none;
+}
+
+#btnImgFiltro {
+    cursor: pointer;
+    text-align: left;
+    background: transparent;
+    border: none;
+    margin-right: 1em;
+}
+
+#imgFiltro {
+    width: 65%;
+
+}
+
+.filtri.hide {
+    display: none;
+}
+
+.ciao {
+    display: none;
+}
+
+#listFilter {
+    padding-top: 0.3em;
+}
+
+#listFilter>button {
+    border-right: 2px solid #9D2F38;
+
+}
+
+#listFilter>button:last-child {
+    border-right: none;
+
+}
+
+.filtri {
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    border: none;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+
+#sezioneVideogiochi img {
+    padding: none;
+    width: 16.0em;
+    height: 22.0em;
+}
+
+#toStretch {
+    padding: 2.0em 0em 2.0em 1.0em;
+    margin-bottom: 40.0em;
+}
+
+.btImg {
+    background: transparent;
+    border: none;
+}
+
+.imgSpan {
+    display: flex;
+    justify-content: center;
+    color: var(--textColor);
+    font-size: 1.2em;
+    margin-top: 0.8em;
+    margin-bottom: 1em;
+    cursor: pointer;
 }
 
 /*
@@ -471,6 +532,10 @@ PAGINA EVENTI
     color: black;
     background-color: gray;
     padding: 0em;
+}
+
+.evento>img {
+    margin-bottom: 1em;
 }
 
 .evento h2 {
@@ -503,17 +568,6 @@ dl {
     color: black;
 }
 
-.user-info>dt {
-    font-weight: bolder;
-    float: left;
-    margin-left: 3em;
-}
-
-.user-info {
-    padding-top: 8em;
-    padding-bottom: 5em;
-    line-height: 2em;
-}
 
 .user-icon {
     margin: 3em;
@@ -528,8 +582,133 @@ dl {
     content: ": ";
 }
 
+#user-info {
+    padding-top: 5em;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-bottom: 5.5em;
+}
+
+#user-info>dt {
+    font-weight: bolder;
+    float: left;
+    margin-left: 3em;
+    margin-right: 0.8em;
+}
+
+#user-info dd {
+    margin-bottom: 0.5em;
+}
+
+
 .title {
     font-size: 2em;
+    margin-top: 1.0em;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    padding: 0.4em;
+    border-radius: 7px;
+    color: black;
+    text-align: left;
+    background-color: var(--mainColor);
+    border: 0.5px solid var(--mainColor);
+}
+
+
+.postU {
+    display: grid;
+    grid-template-columns: 4fr 0.5fr;
+    grid-gap: 15px;
+}
+
+.postU li {
+    padding-bottom: 1.0em;
+}
+
+.contenutoRecensioneU {
+    grid-column: 1;
+}
+
+.boxPunteggioU1 {
+    grid-column: 2;
+    margin-top: 1.5em;
+    justify-self: end;
+    background-color: var(--textColor);
+    height: 2.5em;
+    width: 45%;
+    border-radius: 8px;
+}
+
+#messageU {
+    font-size: 1.3em;
+    line-height: 1.5em;
+    color: var(--textColor);
+    padding: 1.5em 0em 2em 0.6em;
+}
+
+.userButtons {
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+}
+
+.btnmod,
+.btnel {
+    height: 3em;
+    width: 30%;
+    padding: 1em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--sideColor);
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+}
+
+.btnel {
+    background-image: url('../Immagini/bin_img.png');
+}
+
+.btnmod {
+    background-image: url('../Immagini/mod_img.png');
+    margin-right: 1em;
+    margin-left: -1em;
+}
+
+
+dl {
+    color: black;
+}
+
+.user-info>dt {
+    font-weight: bolder;
+    float: left;
+    margin-left: 3em;
+}
+
+.user-info {
+    padding-top: 8em;
+    padding-bottom: 5em;
+    line-height: 2em;
+}
+
+#user-icon {
+    margin: 3em;
+    padding: 1em;
+    width: 200px;
+    height: 200px;
+    float: left;
+    background-color: var(--textColor);
+    border-radius: 99%;
+}
+
+.user-info>dt::after {
+    content: ": ";
+}
+
+.title {
+    font-size: 2.2em;
     margin-top: 1.0em;
     margin-left: 0.3em;
     margin-right: 0.3em;
@@ -558,7 +737,7 @@ PAGINA SINGOLA RECENSIONE
 
 .titleH2 {
     /*Qui bisogna usare id diversi per il titolo della recensione da titolo dei commenti*/
-    display: none;
+    /*display: none;*/
 }
 
 
@@ -566,9 +745,17 @@ PAGINA SINGOLA RECENSIONE
 
 
 
+/*
+=========================
+PAGINA SINGOLA RECENSIONE
+=========================
+*/
+
 #headerRecensione {
     overflow: hidden;
     margin-top: 1em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
     padding-top: 1em;
     border-bottom: var(--mainColor) solid 1px;
     display: flex;
@@ -578,26 +765,257 @@ PAGINA SINGOLA RECENSIONE
 }
 
 #titoloRecensione {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    line-height: 1.5em;
     border: none;
     background-color: unset;
     margin-top: unset;
     padding-bottom: 0.6em;
     font-weight: bold;
-    font-size: 3em;
-    color: black;
-    line-height: 1.5em;
+    font-size: 2em;
+    color: var(--textColor);
 }
 
 #headerRecensione>span {
     display: flex;
     justify-content: center;
-    font-size: 2em;
+    font-size: 1em;
+    color: var(--textColor);
+}
+
+#copertina {
+    margin-top: 2em;
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    padding-bottom: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    margin-bottom: 2em;
+    margin-top: 0.5em;
+}
+
+.scores>div {
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    flex-direction: column;
+    padding-top: 0.8em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.scores span {
     color: black;
 }
 
+#punteggioCritica,
+#punteggioUtenti {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 0.2em;
+    margin-bottom: 0.4em;
+}
 
+#rec {
+    background-color: #f78000;
+    width: 50%;
+}
+
+#contenuto {
+    font-size: 1.0em;
+    color: var(--textColor);
+    margin: 1.5em;
+    margin-bottom: 3em;
+    line-height: 2em;
+}
+
+#inputCommento {
+    margin: 1.0em;
+    width: 70%;
+}
+
+#areaCommento {
+    display: block;
+    font-family: "Poppins", "sans-serif";
+    font-size: 1.2em;
+    background-color: var(--sideColor);
+    color: var(--textColor);
+    resize: none;
+    line-height: 1.5em;
+    border-radius: 5px;
+    width: 138%;
+}
+
+#inviaCommento {
+    cursor: pointer;
+    margin-top: 1.0em;
+    padding: 0.4em;
+    padding-right: 0.5em;
+    border-radius: 0.5em;
+    font-size: 1.3em;
+    background-color: rgb(100, 149, 237);
+    color: var(--textColor);
+    border: 2px solid var(--textColor);
+}
+
+#votazione {
+    color: var(--textColor);
+    margin-top: 1.0em;
+}
+
+#votazione p {
+    float: left;
+    margin-right: 1.0em;
+}
+
+#voto {
+    margin-right: 1.0em;
+}
+
+.descPunteggio {
+    display: none;
+}
+
+/*
+=================
+PAGINA DI ACCESSO
+=================
+*/
+
+#logIn,
+#mainRegistrazione,
+#modificaUtenza {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    color: black;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+#mainRegistrazione {
+    padding-top: 1.0em;
+}
+
+#loginTitle {
+    background-color: transparent;
+    border: none;
+    font-weight: bolder;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 1.0em;
+    margin-bottom: 0.5em;
+}
+
+#logIn form,
+#mainRegistrazione form,
+#modificaUtenza form {
+    width: 50%;
+    border-radius: 0.5em;
+    background-color: var(--mainColor);
+}
+
+#logIn form fieldset {
+    border: none;
+    height: 15em;
+}
+
+#mainRegistrazione form fieldset {
+    border: none;
+    height: 17.0em;
+}
+
+#modificaUtenza form fieldset {
+    border: none;
+    height: 15em;
+}
+
+#logIn label,
+#mainRegistrazione label,
+#modificaUtenza label {
+    display: block;
+    padding-bottom: 0.4em;
+}
+
+#modificaUtenza #passwordchangeAlert {
+    font-size: 0.8em;
+    color: black;
+}
+
+#mailBox,
+#usernameBox,
+#passwordBox,
+#registerBox {
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+#errorGeneralRegister {
+    margin-top: 1.0em;
+}
+
+#errorEmailRegister,
+#errorUsernameRegister,
+#errorPasswordRegister,
+#errorGeneralRegister {
+    display: block;
+    color: black;
+    font-size: 0.7em;
+    font-weight: bolder;
+    margin-bottom: 1.0em;
+}
+
+#username,
+#password,
+#email {
+    font-size: 0.8em;
+    height: 1.5em;
+    border-radius: 0.3em;
+    border: none;
+    text-align: center;
+}
+
+#submit,
+#register {
+    cursor: pointer;
+    padding: 0.4em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-radius: 0.2em;
+    font-size: 0.7em;
+    margin-top: 0.2em;
+    margin-bottom: 0.6em;
+    border: none;
+    background-color: var(--textColor);
+}
+
+#submit {
+    margin-bottom: 1.0em;
+}
+
+#linkRegistrazione a {
+    font-size: 0.8em;
+    color: black;
+}
+
+#linkRegistrazione a:visited {
+    color: black;
+}
+
+#spanLinkR {
+    display: block;
+}
 
 /*
 
@@ -686,53 +1104,6 @@ DA RIGUARDARE
     margin-right: 0.5em;
 }
 
-/*
-=============
-PAGINA UTENTE
-=============
-*/
-
-dl {
-    color: black;
-}
-
-.user-info>dt {
-    font-weight: bolder;
-    float: left;
-    margin-left: 3em;
-}
-
-.user-info {
-    padding-top: 8em;
-    padding-bottom: 5em;
-    line-height: 2em;
-}
-
-.user-icon {
-    margin: 3em;
-    padding: 1em;
-    width: 15em;
-    float: left;
-    background-color: var(--textColor);
-    border-radius: 99%;
-}
-
-.user-info>dt::after {
-    content: ": ";
-}
-
-.title {
-    font-size: 2.2em;
-    margin-top: 1.0em;
-    margin-left: 0.3em;
-    margin-right: 0.3em;
-    padding: 0.4em;
-    border-radius: 7px;
-    color: black;
-    text-align: left;
-    background-color: var(--mainColor);
-    border: 0.5px solid var(--mainColor);
-}
 
 /*
 =================
@@ -804,34 +1175,37 @@ PAGINA DI ACCESSO
 TEMPLATE GIOCO
 ==============
 */
+/*
+==============
+TEMPLATE GIOCO
+==============
+*/
 
 #bannergioco {
     width: 100%;
-    /*filter: blur(2px);*/
 }
 
 #boxattributi {
     display: flex;
     flex-direction: row;
     padding-top: 3em;
-    padding-left: 8%;
-    padding-right: 15%;
+    padding-left: 6em;
+    padding-right: 8em;
     margin-bottom: 5em;
 }
 
 #boxattributi dd {
-    text-indent: 0em;
     padding-left: 3em;
 }
 
 #titologioco {
     background-color: transparent;
-    padding-top: 3em;
-    padding-top: 1em;
+    color: var(--textColor);
+    padding-top: 0.5em;
     border: 0em;
     font-weight: bolder;
     text-align: center;
-    font-size: 32px;
+    font-size: 2.0em;
 }
 
 #locandinagioco {
@@ -845,7 +1219,7 @@ TEMPLATE GIOCO
 }
 
 #attributigioco {
-    font-size: 18px;
+    font-size: 1.2em;
     flex: 3;
     padding-top: 4em;
     padding-bottom: 4em;
@@ -860,12 +1234,9 @@ TEMPLATE GIOCO
     background-color: transparent;
     padding-top: 1.5em;
     padding-bottom: 1.5em;
-    padding-right: 0%;
-    padding-left: 8%;
-    border: 0em;
+    padding-left: 2.5em;
     font-weight: bolder;
-    font-size: 32px;
-    font-size: 28px;
+    font-size: 2.0em;
     color: var(--textColor);
 }
 
@@ -882,17 +1253,19 @@ TEMPLATE GIOCO
     border-radius: 3em;
     color: black;
     padding: 2em;
+    font-size: 0.9em;
 }
 
 #lanostrarecensione:hover {
     background-color: var(--mainColor);
 }
 
-#descrizione {
+#desc {
     color: var(--textColor);
-    padding-left: 8%;
-    padding-right: 8%;
+    padding-left: 4.2em;
+    padding-right: 2.5em;
     padding-bottom: 3em;
+    font-size: 1.2em;
 }
 
 #boxpunteggi {
@@ -900,11 +1273,10 @@ TEMPLATE GIOCO
     justify-content: center;
     flex-direction: row;
     margin-top: 3em;
-    margin-left: 15em;
 }
 
 #recutenti {
-    background-color: var(--puntegggioUtente);
+    background-color: var(--punteggioUtente);
     width: 50%;
 }
 
