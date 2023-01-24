@@ -263,7 +263,7 @@ ULTIME RECENSIONI
 }
 
 #recensioni-critica>div {
-    border-bottom: 1px solid var(--mainColor);
+    border-bottom: 2px solid;
     border-top: none;
     overflow: hidden;
     padding: 1.0em;
@@ -525,13 +525,14 @@ PAGINA EVENTI
 }
 
 .evento {
+    padding-bottom: 1.5em;
     margin: 1.0em;
     margin-bottom: 3.0em;
+    border-bottom: 2px solid;
     display: flex;
     flex-direction: column;
     color: black;
     background-color: gray;
-    padding: 0em;
 }
 
 .evento>img {
