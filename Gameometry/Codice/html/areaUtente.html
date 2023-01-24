@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
     </HEAD>
-</head>
 
 <body>
 
@@ -11,9 +9,8 @@
 <main>
     <label id="arrTitoli"></label>
     <h1> AREA PERSONALE </h1>
-    <dl id="user">
-        <img id="user-icon" src="Immagini/avatar.png" alt="Immagine profilo utente">
-        <dl id="user-info">
+    <img id="user-icon" src="Immagini/avatar.png" alt="Immagine profilo utente">
+    <dl id="user-info">
             <dt><span lang="en">Username</span></dt>
             <dd></USERNAME></dd>
             <dt><span lang="en">Email</span></dt>
@@ -22,13 +19,12 @@
             <dd></ISCRIZIONE></dd>
             <dt>Totale Commenti</dt>
             <dd></NCOMMENTI></dd>
-        </dl>
     </dl>
 
     <form action="areaUtente.php" method="POST">
         <button id="logoutB" aria-label="esci dal tuo profilo" type="submit" name="logoutButton">Esci</button>
         <button id="deleteAccount" aria-label="elimina il tuo profilo" type="submit" name="deleteU">Elimina profilo</button>
-        <button id="modifyAccount" aria-label="modifica dati profilo" action="modificaUtente.php" type="submit" name="modifyU">Modifica profilo</button>
+        <button id="modifyAccount" aria-label="modifica dati profilo" type="submit" name="modifyU">Modifica profilo</button>
     </form>
 
     <h2 class="titleH2">I MIEI COMMENTI</h2>
