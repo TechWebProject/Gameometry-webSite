@@ -200,7 +200,7 @@ header nav {
     border-bottom: 1px solid var(--mainColor);
     cursor: pointer;
     outline: inherit;
-    width: -webkit-fill-available;
+    width: 100%;
 }
 
 #bt.active {
