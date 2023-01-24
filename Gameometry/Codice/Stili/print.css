@@ -519,6 +519,9 @@ PAGINA VIDEOGIOCHI
 PAGINA EVENTI
 =============
 */
+.evento p {
+    margin-top: 0.4em;
+}
 
 #ultimiEventi:last-child {
     padding-bottom: 0.6em;
@@ -540,6 +543,8 @@ PAGINA EVENTI
 }
 
 .evento h2 {
+    line-height: 1em;
+    margin-top: 0.4em;
     padding-bottom: 0.6em;
     font-size: 2em;
 }
