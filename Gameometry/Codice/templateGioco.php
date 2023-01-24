@@ -37,12 +37,14 @@ mysqli_free_result($result);
 CloseCon($db1); 
 
 $tmpBannerName = str_replace("Banner/","",$banner);
+$tmpBannerName = str_replace("_"," ",$tmpBannerName);
 $templateGioco = str_replace("altBannerGioco",$tmpBannerName,$templateGioco);
 $templateGioco = str_replace("bannerGioco",$banner,$templateGioco);
 $title=str_replace("\'","'",$title);
 $templateGioco = str_replace("</TITOLOGIOCO>",$title,$templateGioco);
 
 $tmpImgName = str_replace("Locandine/","",$imgLocandina);
+$tmpImgName = str_replace("_"," ",$tmpImgName);
 $templateGioco = str_replace("altLocandinaGioco",$tmpImgName,$templateGioco);
 $templateGioco = str_replace("locandinaGioco",$imgLocandina,$templateGioco);
 
