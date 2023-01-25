@@ -430,7 +430,6 @@ ULTIME NEWS
 .sidenews-section {
     padding: 3%;
     background-color: rgb(230, 230, 230);
-    max-height: 8em;
 }
 
 .news-box>img {

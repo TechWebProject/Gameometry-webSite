@@ -101,6 +101,6 @@ function search(){
       listData = list.join('');
     }
     focus=-1;
-    suggBox.setHTML(listData);
+    suggBox.innerHTML = listData;
   }
 }
