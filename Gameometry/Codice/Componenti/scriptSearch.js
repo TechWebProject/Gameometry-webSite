@@ -71,7 +71,7 @@ function search(){
       let formList = suggBox.querySelectorAll("form");
       for (let i = 0; i < formList.length; i++) {
         formList[i].setAttribute("action", "templateGioco.php");
-        formList[i].setAttribute("method", "POST");
+        formList[i].setAttribute("method", "GET");
       }
 
       imageList = suggBox.querySelectorAll("button");
