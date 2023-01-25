@@ -217,8 +217,6 @@ ULTIME RECENSIONI
 }
 
 #boxattributi {
-    flex-direction: column;
-    align-items: center;
     padding: 0;
     padding-bottom: 0;
 }
@@ -228,18 +226,8 @@ ULTIME RECENSIONI
 }
 
 #locandinagioco {
-    width: 50%;
+    width: 20%;
     height: auto;
-}
-
-#attributigioco {
-    padding-top: 2.0em;
-    padding-bottom: 0;
-    font-size: 1.5em;
-}
-
-#lanostrarecensione {
-    font-size: 1.5em;
 }
 
 #desc{
@@ -468,10 +456,6 @@ PAGINA UTENTE
         height: auto;
     }
 
-    #attributigioco {
-        font-size: 1.5em;
-        padding-bottom: 2em;
-    }
 
     #trama {
         padding-bottom: 1em;
@@ -539,6 +523,27 @@ PAGINA UTENTE
         line-height: 3.5em;
         padding-left: 2.5em;
         padding-right: 2.5em;
+    }
+
+    #sezioneGioco{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    #boxattributi{
+        margin-top:3em;
+        font-size:2em;
+    }
+
+    #lanostrarecensione {
+        font-size: 1.5em;
+    }
+
+    #locandinagioco {
+        width: 40%;
+        height: auto;
     }
 
     .punteggio{

@@ -1307,18 +1307,13 @@ TEMPLATE GIOCO
     width: 100%;
 }
 
-#boxattributi {
+#sezioneGioco{
     display: flex;
-    flex-direction: row;
-    padding-top: 3em;
-    padding-left: 6em;
-    padding-right: 8em;
-    margin-bottom: 5em;
+    margin-left: 7em;
+    margin-bottom:3em;
+    margin-top:3em;
 }
 
-#boxattributi dd {
-    padding-left: 3em;
-}
 
 #titologioco {
     background-color: transparent;
@@ -1334,21 +1329,26 @@ TEMPLATE GIOCO
     height: 20em;
 }
 
-#attributigioco>dt {
+#boxattributi>dt {
     font-weight: bolder;
     float: left;
     margin-left: 3em;
 }
 
-#attributigioco {
+
+#boxattributi {
     font-size: 1.2em;
-    flex: 3;
-    padding-top: 4em;
-    padding-bottom: 4em;
     line-height: 2em;
+    padding-top: 3em;
+    padding-left: 4em;
+    padding-right: 8em;
 }
 
-#attributigioco>dd::before {
+#boxattributi dd {
+    padding-left: 3em;
+}
+
+#boxattributi>dd::before {
     content: ": ";
 }
 
