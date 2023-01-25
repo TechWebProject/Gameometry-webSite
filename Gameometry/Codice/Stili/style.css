@@ -877,6 +877,10 @@ PAGINA EVENTI
     line-height: 1.5em;
 }
 
+.evento abbr {
+    font-weight: bolder;
+}
+
 .evento p {
     padding-bottom: 0.5em;
 }
