@@ -12,7 +12,7 @@ if(isset($_SESSION['username'])){
     $templateGioco = str_replace('<a id="areaRiservata" href="areaLogIn.php', '<a id="areaRiservata" href="areaUtente.php', $templateGioco);
 }
 
-$title = $_POST['immagine'];
+$title = $_GET['immagine'];
 $title = str_replace('vai alla pagina di ','',$title);
 $title = str_replace('locandina ','',$title);
 

@@ -13,10 +13,11 @@ if(isset($_SESSION['username'])){
 }
 
 $giocoRecensito;
-if (isset($_POST['recensione'])) {
-    $giocoRecensito = $_POST['recensione'];
-} elseif (isset($_GET['titRec'])) {
+if(isset($_GET['titRec'])){
     $giocoRecensito = $_GET['titRec'];
+}
+else if(isset($_GET['recensione'])){
+    $giocoRecensito = $_GET['recensione'];
 }
 $giocoRecensito = str_replace('vai alla recensione di ','',$giocoRecensito);
 
