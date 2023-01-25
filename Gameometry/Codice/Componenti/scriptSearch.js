@@ -57,8 +57,8 @@ function search(){
 
     if(userData){
       let filteredArray = emptyArray.filter(checkIfMatch);
-    
-      for(let i=0;i<filteredArray.length;i++){
+      filteredArray.unshift('<form></form>');
+      for(let i=1;i<filteredArray.length;i++){
         let elem='<form><button><li>' + filteredArray[i] + '</li></button></form>';
         filteredArray[i]=elem;
       }
