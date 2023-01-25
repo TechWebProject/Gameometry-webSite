@@ -21,7 +21,6 @@ else if(isset($_GET['recensione'])){
 }
 $giocoRecensito = str_replace('vai alla recensione di ','',$giocoRecensito);
 
-//QUERY
 $db1 = OpenCon();
 $title = mysqli_real_escape_string($db1, $giocoRecensito);
 $tmpquery = "SELECT recensione.titolo as title,videogioco.titolo as videogioco,imgBanner,contenuto,voto FROM recensione,videogioco WHERE recensione.idVideogioco=videogioco.titolo and recensione.titolo='$title'";

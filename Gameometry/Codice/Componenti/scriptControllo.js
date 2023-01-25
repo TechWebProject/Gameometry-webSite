@@ -5,16 +5,6 @@ function checkEmail(){
 
     checkEmail.addEventListener("blur",function(e){
         errorEmail.innerText="";
-        // \w parola a caso "marco"
-        // ([\.-]) marco. oppure marco-
-        // ?\w controlla se c'è una parola marco.brigo
-        // @ forzata 
-        // \w parola => gmail
-        // ([\.-]) punto o trattino
-        // parola opzionale che c'è solo se c'è [. o -]
-        // poi il punto per forza 
-        // l'it o com
-        // $ => fine stringa (forse) o che deve finire
         if(checkEmail.value.length>0&&checkEmail.value.search(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)!=0){
             errorEmail.innerText="Sintassi della mail errata";
         }

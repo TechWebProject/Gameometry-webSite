@@ -15,7 +15,7 @@ if(isset($_SESSION['username'])){
 
 $index = str_replace("</BREADCRUMB_CONTENT>","<p>Ti trovi in: <span lang=\"en\"><a href=\"index.php\">Home</a></span></p>", $index);
 
-//RANDOM X CAROSELLO + CAROSELLO
+//CAROSELLO
 $dir = scandir("Locandine");
 $str = 'Locandine/';
 

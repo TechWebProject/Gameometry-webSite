@@ -1,9 +1,3 @@
-/*
-==============
-CODICE SLIDER 
-==============
-*/
-
 function slider(){
     const btnleft = document.querySelector("#btn-left");
     const btnright = document.querySelector("#btn-right");
@@ -17,9 +11,3 @@ function slider(){
         cCont.scrollBy(800,0);
     });
 }
-
-/*
-==============
-CODICE SLIDER 
-==============
-*/
