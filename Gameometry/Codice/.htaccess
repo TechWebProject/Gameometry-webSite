@@ -1,8 +1,9 @@
-ErrorDocument 404 /Gameometry/Codice/404.php 
-ErrorDocument 500 /Gameometry/Codice/500.php
-ErrorDocument 501 /Gameometry/Codice/500.php
-ErrorDocument 502 /Gameometry/Codice/500.php
-ErrorDocument 503 /Gameometry/Codice/500.php
-ErrorDocument 504 /Gameometry/Codice/500.php
-ErrorDocument 505 /Gameometry/Codice/500.php
-ErrorDocument 507 /Gameometry/Codice/500.php
+DirectoryIndex index.php
+ErrorDocument 404 http://localhost:30080/fsabbadi/Gameometry-webSite/Gameometry/Codice/404.php
+ErrorDocument 500 http://localhost:30080/fsabbadi/Gameometry-webSite/Gameometry/Codice/500.php
+ErrorDocument 501 http://localhost:30080/fsabbadi/Gameometry-webSite/Gameometry/Codice/500.php
+ErrorDocument 502 http://localhost:30080/fsabbadi/Gameometry-webSite/Gameometry/Codice/500.php
+ErrorDocument 503 http://localhost:30080/fsabbadi/Gameometry-webSite/Gameometry/Codice/500.php
+ErrorDocument 504 http://localhost:30080/fsabbadi/Gameometry-webSite/Gameometry/Codice/500.php
+ErrorDocument 505 http://localhost:30080/fsabbadi/Gameometry-webSite/Gameometry/Codice/500.php
+ErrorDocument 507 http://localhost:30080/fsabbadi/Gameometry-webSite/Gameometry/Codice/500.php
