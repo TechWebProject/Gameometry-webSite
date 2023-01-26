@@ -1270,7 +1270,7 @@ PAGINA DI ACCESSO
     text-align: center;
 }
 
-#submit,
+#loginBtn,
 #register {
     cursor: pointer;
     padding: 0.4em;
@@ -1284,7 +1284,7 @@ PAGINA DI ACCESSO
     background-color: var(--textColor);
 }
 
-#submit {
+#loginBtn {
     margin-bottom: 1.0em;
 }
 
