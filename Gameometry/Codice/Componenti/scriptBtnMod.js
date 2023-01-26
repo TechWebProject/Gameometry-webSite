@@ -65,10 +65,8 @@ function modRec(e){
     }
 
     for(let i=0;i<userButtons.length;i++){
-        if(userButtons[i].children[0].getAttribute("value")==value){
-            userButtons[i].children[0].hidden = true;
-            userButtons[i].children[1].children[0].hidden = true;
-        }
+        userButtons[i].children[0].hidden = true;
+        userButtons[i].children[1].children[0].hidden = true;
     }
 }
 
@@ -102,10 +100,8 @@ function annMod(){
         }
     }
     for(let i=0;i<userButtons.length;i++){
-        if(userButtons[i].children[0].getAttribute("value")==value){
-            userButtons[i].children[0].hidden = false;
-            userButtons[i].children[1].children[0].hidden = false;
-        }
+        userButtons[i].children[0].hidden = false;
+        userButtons[i].children[1].children[0].hidden = false;
     }    
 }
 
