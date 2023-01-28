@@ -417,6 +417,9 @@ ULTIME NEWS
     color: black;
     font-weight: normal;
 }
+#news-grid-container h2 abbr {
+    font-weight: bolder;
+} 
 
 .mainnews-box,
 .news-box {
@@ -877,8 +880,11 @@ PAGINA EVENTI
     line-height: 1.5em;
 }
 
-.evento abbr {
+.evento h2 abbr {
     font-weight: bolder;
+}
+.evento p abbr {
+    font-weight: normal;
 }
 
 .evento p {
