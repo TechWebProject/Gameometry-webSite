@@ -62,12 +62,14 @@ if (isset($_SESSION['email'])) {
     if (!isset($userNotOk)) {
         $recU .= "<h2 class=\"titleH2\">LASCIA UN COMMENTO</h2>
         <div id=\"inputCommento\"><form action=\"areaUtente.php\" method=\"POST\">
-        <textarea id=\"areaCommento\" name=\"commentoU\" rows=\"10\" placeholder=\" Lascia un commento\" maxlength=\"900\"></textarea><div id=\"votazione\">
+        <textarea id=\"areaCommento\" name=\"commentoU\" rows=\"10\" placeholder=\" Lascia un commento\" maxlength=\"900\"></textarea>
+        <span id=\"errCommento\" aria-live=\"assertive\"></span>
+        <div id=\"votazione\">
         <p>Lascia un voto</p>";
         for($i=1;$i<=10;$i++){
             $recU .= "<input id=\"rate$i\" name=\"rating\" type=\"radio\" value=\"$i\"><label id=\"voto\" for=\"rate$i\">$i</label>";
         }
-    $recU .= "</div><input type=\"hidden\" name=\"inviaCommento2\" value=\"$titoloGioco\"><button id=\"inviaCommento\" aria-label=\"invia commento\" type=\"submit\" name=\"inviaCommento\" value=\"Commenta\" onclick=\"checkCommento()\">Commenta</button></form></div>";
+    $recU .= "<span id=\"errVoto\" aria-live=\"assertive\"></span></div><input type=\"hidden\" name=\"inviaCommento2\" value=\"$titoloGioco\"><button id=\"inviaCommento\" aria-label=\"invia commento\" type=\"submit\" name=\"inviaCommento\" value=\"Commenta\" onclick=\"checkCommento()\" disabled>Commenta</button></form></div>";
     }
     $recensioneGioco = str_replace("</RECENSIONEU>", $recU, $recensioneGioco);
 }

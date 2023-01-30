@@ -50,28 +50,48 @@ function checkPsw(){
 }
 
 function checkCommento(){
-    const divCommento = document.getElementById('inputCommento');
-    const form = divCommento.children[0]; //mi prende il form
+    const inviaCommento = document.getElementById('inviaCommento');
     const textarea = document.getElementById('areaCommento');
     let checked=false;
-    const ratings = document.getElementsByName('rating'); //mi prende tutti i voti
-    for(let i=0;i<ratings.length&&!checked;i++){
-        if(ratings[i].checked) checked=true;
+    let fullC = false;
+    const errCommento = document.getElementById('errCommento');
+    const errVoto = document.getElementById('errVoto');
+    const ratings = document.getElementsByName('rating');
+    
+    for(let i= 0; i<ratings.length; i++){
+        ratings.item(i).addEventListener("click", function(){
+            checked = true;
+            reload();
+        })
     }
-    if(textarea.value ==''||!checked){
-        form.disable=true;
-        form.setAttribute("action","#");
-        if(textarea.value ==''&&checked){
-            alert("Commento vuoto!");
+    
+    textarea.addEventListener("blur",function(){
+        if(textarea.value == ''){
+            errCommento.innerText = "Non hai inserito il commento";
+            fullC = false;
+            reload();
         }
-        if(textarea.value !=''&&!checked){
-            alert("Non hai inserito il voto!");
+    })
+
+    textarea.addEventListener("input",function(e){
+        errCommento.innerText = "";
+        fullC = true;
+        reload();
+
+    })
+
+    function reload(){
+        if(checked && fullC){
+            inviaCommento.disabled = false;
         }else{
-            alert("Per commentare inserisci un voto e un commento!");
+            inviaCommento.disabled = true;
         }
-    }else{
-        form.disabled=false;
-        form.setAttribute("action","areaUtente.php");
+        if(!checked){
+            errVoto.innerText = "Non hai inserito il voto";
+        }else{
+            errVoto.innerText = "";
+        }
     }
+
 }
 
