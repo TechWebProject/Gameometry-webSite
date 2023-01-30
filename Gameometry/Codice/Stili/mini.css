@@ -360,6 +360,15 @@ PAGINA RECENSIONE
     line-height: 3.0em;
 }
 
+#errCommento {
+    font-size: 1.8em;
+}
+
+#errVoto {
+    padding-top: 2.0em;
+    font-size: 1.8em;
+}
+
 /*
 =================
 PAGINA RECENSIONE
@@ -403,8 +412,9 @@ PAGINA UTENTE
     margin-left: 3.0em;
 }
 
-#messageU {
+#recensioni-utenti #messageU {
     padding-bottom: 20.0em;
+    line-height: 3.0em;
 }
 
 .contenutoRecensioneU1 {
