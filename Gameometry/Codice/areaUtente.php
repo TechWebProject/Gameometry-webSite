@@ -86,8 +86,7 @@ if(isset($_POST['inviaCommento']) && isset($_POST['commentoU']) && isset($_POST[
     $query_insert="insert into commento (idCommento, data, voto, contenuto, idUtente, idVideogioco) values ('$idCommento', '$currentDate', $votoUtente, '$commentoUtente', '$email', '$gameTitle')";
 
     $result = mysqli_query($db,$query_insert);
-
-    header("Location: areaUtente.php");
+    if(!empty($commentoUtente)) header("Location: areaUtente.php");
 }
 
 //COMMENTI
@@ -147,6 +146,7 @@ if(isset($_POST['eliminaCommento'])){
     header("Location: areaUtente.php");
 }
 
+//MODIFICA DI UN COMMENTO
 if(isset($_POST['contenutoAgg'])&&isset($_POST['idGioco'])&&isset($_POST['votoNuovo'])){
     $votoNuovo = $_POST['votoNuovo'];
     $commentoMod = $_POST['contenutoAgg'];
@@ -155,8 +155,9 @@ if(isset($_POST['contenutoAgg'])&&isset($_POST['idGioco'])&&isset($_POST['votoNu
     if($votoNuovo!="No"){
         $upgradeComm = "UPDATE commento SET contenuto='$commentoMod',voto='$votoNuovo' WHERE idCommento='$idRec'";
     }
-    $result=mysqli_query($db,$upgradeComm);
-
+    if(!empty($commentoMod)){
+        $result=mysqli_query($db,$upgradeComm);
+    }
     header("Location: areaUtente.php");
 }
 

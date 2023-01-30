@@ -49,3 +49,29 @@ function checkPsw(){
     });
 }
 
+function checkCommento(){
+    const divCommento = document.getElementById('inputCommento');
+    const form = divCommento.children[0]; //mi prende il form
+    const textarea = document.getElementById('areaCommento');
+    let checked=false;
+    const ratings = document.getElementsByName('rating'); //mi prende tutti i voti
+    for(let i=0;i<ratings.length&&!checked;i++){
+        if(ratings[i].checked) checked=true;
+    }
+    if(textarea.value ==''||!checked){
+        form.disable=true;
+        form.setAttribute("action","#");
+        if(textarea.value ==''&&checked){
+            alert("Commento vuoto!");
+        }
+        if(textarea.value !=''&&!checked){
+            alert("Non hai inserito il voto!");
+        }else{
+            alert("Per commentare inserisci un voto e un commento!");
+        }
+    }else{
+        form.disabled=false;
+        form.setAttribute("action","areaUtente.php");
+    }
+}
+
