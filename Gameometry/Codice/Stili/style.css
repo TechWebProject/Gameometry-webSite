@@ -280,10 +280,7 @@ SLIDER
 ======
 */
 
-#saltacarosello,
-#saltanotizie,
-#tornaheader,
-.descPunteggio {
+.skip {
     height: 1px;
     width: 1px;
     overflow: hidden;

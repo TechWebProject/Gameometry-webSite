@@ -88,7 +88,7 @@ for ($i = 0; $i < 5; $i++) {
     $contenuto .= "<abbr title=\"la recensione continua nella pagina del videogioco\">...</abbr>";
 
     $ultimeRecensioni .= "<div>
-    <form action=\"recensioneGioco.php\" method=\"GET\" class=\"formRecensioni\"><button name=\"recensione\" type=\"submit\" value=\"$titoloRecX\" aria-label=\"vai alla recensione di $chiavesterna\"><img class=\"r1\" src=\"$percorsoImg\" alt=\"locandina $chiavesterna\"></button></form><div class=\"commentoRecensione\"><div class=\"contenutoRecensione\"><h2 class=\"titoloCritica\"><a href=\"./recensioneGioco.php?titRec=$titoloRec\">$titoloRecX</a></h2><p>$contenuto</p></div><p class=\"descPunteggio\">il nostro punteggio</p><p class=\"punteggio\">$voto</p></div></div>";  
+    <form action=\"recensioneGioco.php\" method=\"GET\" class=\"formRecensioni\"><button name=\"recensione\" type=\"submit\" value=\"$titoloRecX\" aria-label=\"vai alla recensione di $chiavesterna\"><img class=\"r1\" src=\"$percorsoImg\" alt=\"locandina $chiavesterna\"></button></form><div class=\"commentoRecensione\"><div class=\"contenutoRecensione\"><h2 class=\"titoloCritica\"><a href=\"./recensioneGioco.php?titRec=$titoloRec\">$titoloRecX</a></h2><p>$contenuto</p></div><p class=\"skip\">il nostro punteggio</p><p class=\"punteggio\">$voto</p></div></div>";  
 
 }
 CloseCon($db);

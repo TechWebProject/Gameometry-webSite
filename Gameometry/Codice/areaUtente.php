@@ -124,7 +124,7 @@ if($nComm>0){
                 <li id=\"$idCommento\">$contenuto</li>
             </ul>
             </div>
-            <div class=\"boxPunteggioU1\"><p class=\"descPunteggio\">punteggio</p><p class=\"punteggioU\">$votoU</p></div>
+            <div class=\"boxPunteggioU1\"><p class=\"skip\">punteggio</p><p class=\"punteggioU\">$votoU</p></div>
             </div>";
     }
 }

@@ -33,7 +33,7 @@ function showFilter(){
             filter = filter.split(" ").join("");
             
             videogiochi.forEach((gioco) =>{
-                if(filter == "Tutti"){
+                if(filter == "Nessuno"){
                     gioco.classList.remove("noSelected");
                     gioco.classList.add("filtrato");
                     

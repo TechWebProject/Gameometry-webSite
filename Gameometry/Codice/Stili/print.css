@@ -33,12 +33,7 @@ ul {
     margin-top: 4em;
 }
 
-/*
-HEADER  e BREADCRUMB (NASCOSTI)
-*/
-
-#saltacarosello,
-#saltanotizie {
+.skip {
     height: 1px;
     width: 1px;
     overflow: hidden;
@@ -203,9 +198,6 @@ main {
     font-size: 1.2em;
 }
 
-/*Da qui in poi è un po' copia incolla di style.css */
-
-
 /*
 =================
 ULTIME RECENSIONI
@@ -218,27 +210,17 @@ ULTIME RECENSIONI
 }
 
 .titoloCritica a:link {
-    /*color: white;*/
     font-weight: bold;
     text-decoration: none;
 }
-
-/*.titoloCritica a:visited {
-    color: #AD343E;
-}*/
 
 .titoloCritica a:hover {
     text-decoration: underline;
     text-decoration: underline solid 1.5px;
 }
 
-/*.titoloCritica a:active {
-    color: white;
-}*/
-
 .contenutoRecensione p {
     padding-top: 0.5em;
-    /*color: white;*/
 }
 
 .commento {
@@ -300,7 +282,6 @@ h1,
     overflow: hidden;
     margin-left: 0.5em;
     margin-right: 0.5em;
-    /*color: white;*/
 }
 
 .MameUser {
@@ -358,7 +339,6 @@ h1,
 
 .punteggio {
     background-color: var(--textColor);
-    /*color: var(--mainColor);*/
     font-weight: bold;
     margin-left: 1.0em;
     padding: 0.5em;
@@ -372,7 +352,6 @@ h1,
     font-weight: bold;
     padding: 0.35em;
     border-radius: 7px;
-    /*color: rgb(92, 0, 184);*/
     text-align: center;
     font-size: 1.5em;
 }
@@ -732,24 +711,9 @@ PAGINA SINGOLA RECENSIONE
 =========================
 */
 
-
 #inputCommento {
     display: none;
 }
-
-
-
-
-
-.titleH2 {
-    /*Qui bisogna usare id diversi per il titolo della recensione da titolo dei commenti*/
-    /*display: none;*/
-}
-
-
-
-
-
 
 /*
 =========================
@@ -1023,18 +987,11 @@ PAGINA DI ACCESSO
     display: block;
 }
 
-/*
-
-DA RIGUARDARE
-
-*/
 #copertina {
     margin-top: 2em;
     width: 100%;
     height: 300px;
     background-image: url(../Codice/Immagini/copertina5.jpg);
-    /* Per Far vedere l'immagine nella stampa bisogna selezionare
-                                                                "Stampa Sfondi" dalla finestra di stampa ( */
     background-size: cover;
     padding-bottom: 2em;
     margin-left: 1em;
@@ -1097,7 +1054,6 @@ DA RIGUARDARE
 }
 
 #votazione {
-    /*color: white;*/
     margin-top: 1.0em;
 }
 
@@ -1176,11 +1132,6 @@ PAGINA DI ACCESSO
     border: none;
 }
 
-/*
-==============
-TEMPLATE GIOCO
-==============
-*/
 /*
 ==============
 TEMPLATE GIOCO
