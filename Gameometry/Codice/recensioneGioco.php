@@ -69,7 +69,7 @@ if (isset($_SESSION['email'])) {
         for($i=1;$i<=10;$i++){
             $recU .= "<input id=\"rate$i\" name=\"rating\" type=\"radio\" value=\"$i\"><label id=\"voto\" for=\"rate$i\">$i</label>";
         }
-    $recU .= "<span id=\"errVoto\" aria-live=\"assertive\"></span></div><input type=\"hidden\" name=\"inviaCommento2\" value=\"$titoloGioco\"><button id=\"inviaCommento\" aria-label=\"invia commento\" type=\"submit\" name=\"inviaCommento\" value=\"Commenta\" onclick=\"checkCommento()\" disabled>Commenta</button></form></div>";
+    $recU .= "<span id=\"errVoto\" aria-live=\"assertive\"></span></div><input type=\"hidden\" name=\"inviaCommento2\" value=\"$titoloGioco\"><button id=\"inviaCommento\" class=\"disabled-button\"aria-label=\"invia commento\" type=\"submit\" name=\"inviaCommento\" value=\"Commenta\" onclick=\"checkCommento()\" disabled>Commenta</button></form></div>";
     }
     $recensioneGioco = str_replace("</RECENSIONEU>", $recU, $recensioneGioco);
 }

@@ -1027,6 +1027,10 @@ PAGINA SINGOLA RECENSIONE
     border: 2px solid var(--textColor);
 }
 
+.disabled-button{
+    opacity:60%;
+}
+
 #votazione {
     color: var(--textColor);
     margin-top: 1.0em;

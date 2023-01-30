@@ -82,8 +82,10 @@ function checkCommento(){
 
     function reload(){
         if(checked && fullC){
+            inviaCommento.removeAttribute("class","disabled-button");
             inviaCommento.disabled = false;
         }else{
+            inviaCommento.setAttribute("class","disabled-button");
             inviaCommento.disabled = true;
         }
         if(!checked){
