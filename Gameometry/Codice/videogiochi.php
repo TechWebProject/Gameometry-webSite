@@ -50,7 +50,7 @@ if($n_rows==0){
     $videogiochi = str_replace("id=\"sezioneVideogiochi\"","id=\"toStretch\"",$videogiochi);
 }else{
     foreach ($imgz as $attributes) {
-        $imgForm .= "<form action=\"templateGioco.php\" method=\"GET\" class= \"genere game filtrato\"><button name=\"immagine\" class=\"btImg\" type=\"submit\" value=\"valueButtonVideogioco\" aria-label=\"vai alla pagina di Pagina\"><img src=\"nomeFileLocandina\" alt=\"nomeTitoloVideogioco\" class=\"imgs\"><span class=\"imgSpan\">spanVideogioco</span></button></form>";
+        $imgForm .= "<form action=\"templateGioco.php\" method=\"GET\" class= \"genere game filtrato\"><button name=\"immagine\" class=\"btImg\" type=\"submit\" value=\"valueButtonVideogioco\" aria-label=\"vai alla pagina di Pagina\"><img src=\"nomeFileLocandina\" alt=\"nomeTitoloVideogioco\" class=\"imgs\"/><span class=\"imgSpan\">spanVideogioco</span></button></form>";
         foreach ($attributes as $key => $value) {
             if($key=='src'){
                 $imgForm = str_replace("nomeFileLocandina",$value,$imgForm);
