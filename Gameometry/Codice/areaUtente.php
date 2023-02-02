@@ -68,6 +68,7 @@ if(isset($_POST['inviaCommento']) && isset($_POST['commentoU']) && isset($_POST[
     $gameTitle = $_POST['inviaCommento2'];
 
     $commentoUtente = $_POST['commentoU'];
+    $commentoUtente = strip_tags($commentoUtente);
     $votoUtente = $_POST['rating'];
     $votoUtente = number_format($votoUtente);
     $email = $_SESSION['email'];
@@ -150,6 +151,7 @@ if(isset($_POST['eliminaCommento'])){
 if(isset($_POST['contenutoAgg'])&&isset($_POST['idGioco'])&&isset($_POST['votoNuovo'])){
     $votoNuovo = $_POST['votoNuovo'];
     $commentoMod = $_POST['contenutoAgg'];
+    $commentoMod = strip_tags($commentoMod);
     $idRec = $_POST['idGioco'];
     $upgradeComm = "UPDATE commento SET contenuto='$commentoMod' WHERE idCommento='$idRec'";
     if($votoNuovo!="No"){
