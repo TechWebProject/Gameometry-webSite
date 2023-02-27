@@ -230,7 +230,7 @@ ULTIME RECENSIONI
     height: auto;
 }
 
-#desc{
+#desc {
     font-size: 1.5em;
     line-height: 2.0em;
     padding-left: 3.5em;
@@ -262,7 +262,7 @@ PAGINA EVENTI
     text-align: center;
 }
 
-.evento h2+p.dataNotizia{
+.evento h2+p.dataNotizia {
     padding-bottom: 2.0em;
 }
 
@@ -276,7 +276,7 @@ footer {
     text-align: center;
 }
 
-footer ul li{
+footer ul li {
     padding-bottom: 0.5em;
 }
 
@@ -284,10 +284,16 @@ footer ul li{
     width: 20%;
 }
 
-#aboutUs, #infoAzienda {
+#aboutUs,
+#infoAzienda {
     padding-bottom: 0.5em;
     font-size: 1.1em;
     line-height: 2.5em;
+}
+
+#copyrightfooter {
+    font-size: .8em;
+    font-style: italic;
 }
 
 /*
@@ -316,7 +322,7 @@ PAGINA VIDEOGIOCHI
     margin-bottom: 1.5em;
 }
 
-#toStretch{
+#toStretch {
     padding: 2.0em 0em 70.0em 1.0em;
     margin-bottom: 10em;
 }
@@ -327,7 +333,9 @@ PAGINA DI ACCESSO
 =================
 */
 
-#logIn, #modificaUtenza, #mainRegistrazione {
+#logIn,
+#modificaUtenza,
+#mainRegistrazione {
     padding-top: 6em;
     padding-bottom: 45em;
 }
@@ -389,7 +397,8 @@ PAGINA RECENSIONE
     padding-bottom: 1.5em;
 }
 
-.commento, .commentoRecensione {
+.commento,
+.commentoRecensione {
     line-height: 2.5em;
 }
 
@@ -432,9 +441,10 @@ PAGINA UTENTE
         font-size: 1em;
     }
 
-    #firstTitle{
-        margin-top:5em;
+    #firstTitle {
+        margin-top: 5em;
     }
+
     #ricerca {
         padding-bottom: 0.5em;
         height: 0.8em;
@@ -476,7 +486,7 @@ PAGINA UTENTE
         padding-bottom: 1em;
     }
 
-    #filtro{
+    #filtro {
         padding-top: 1.5em;
     }
 }
@@ -491,7 +501,7 @@ PAGINA UTENTE
 }
 
 
-@media screen and (max-device-width: 800px){
+@media screen and (max-device-width: 800px) {
 
     main {
         padding-top: 15em;
@@ -504,7 +514,7 @@ PAGINA UTENTE
     #mainRecensione {
         padding-top: 20em;
     }
-    
+
     #recensioni-critica>div {
         display: flex;
         flex-direction: column;
@@ -521,7 +531,7 @@ PAGINA UTENTE
         align-items: center;
     }
 
-    .contenutoRecensione{
+    .contenutoRecensione {
         display: flex;
         flex-direction: column;
     }
@@ -540,16 +550,16 @@ PAGINA UTENTE
         padding-right: 2.5em;
     }
 
-    #sezioneGioco{
+    #sezioneGioco {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-left: 0;
     }
 
-    #boxattributi{
-        margin-top:3em;
-        font-size:2em;
+    #boxattributi {
+        margin-top: 3em;
+        font-size: 2em;
     }
 
     #lanostrarecensione {
@@ -561,7 +571,7 @@ PAGINA UTENTE
         height: auto;
     }
 
-    .punteggio{
+    .punteggio {
         font-size: 3em;
         margin-left: 0;
         width: 1.5em;
@@ -573,27 +583,27 @@ PAGINA UTENTE
     }
 
 
-    #filtro{
-        margin-top: 2em;   
+    #filtro {
+        margin-top: 2em;
         flex-direction: column;
-        margin-bottom: 3em;   
-    }
-
-    #btnImgFiltro{
         margin-bottom: 3em;
     }
 
-    #imgFiltro{
-        width: 120%;
-    
+    #btnImgFiltro {
+        margin-bottom: 3em;
     }
 
-    .filtri{
-        margin-bottom:1em;
+    #imgFiltro {
+        width: 120%;
+
+    }
+
+    .filtri {
+        margin-bottom: 1em;
         font-size: 2.3em;
 
     }
-    
+
 }
 
 @media screen and (max-device-width: 600px) {
